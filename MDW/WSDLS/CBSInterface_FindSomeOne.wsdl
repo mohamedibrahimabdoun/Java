@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:findsomeonemgr="http://www.huawei.com/bme/cbsinterface/findsomeonemgr" xmlns:findsomeone="http://www.huawei.com/bme/cbsinterface/findsomeone" targetNamespace="http://www.huawei.com/bme/cbsinterface/findsomeonemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:findsomeone="http://www.huawei.com/bme/cbsinterface/findsomeone" targetNamespace="http://www.huawei.com/bme/cbsinterface/findsomeonemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/findsomeone" schemaLocation="CBSInterface_FindSomeOne.xsd"/>
+			<element name="FindSomeOneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="FindSomeOneRequest" type="findsomeone:FindSomeOneRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="FindSomeOneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="FindSomeOneRequestMessage">
+		<part name="FindSomeOneRequestMsg" element="findsomeonemgr:FindSomeOneRequestMsg"/>
+	</message>
+	<message name="FindSomeOneResultMessage">
+		<part name="FindSomeOneResultMsg" element="findsomeonemgr:FindSomeOneResultMsg"/>
+	</message>
+	<portType name="FindSomeOne">
+		<operation name="FindSomeOneMgr">
+			<input message="findsomeonemgr:FindSomeOneRequestMessage"/>
+			<output message="findsomeonemgr:FindSomeOneResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="FindSomeOneBinding" type="findsomeonemgr:FindSomeOne">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="FindSomeOneMgr">
+			<soap:operation soapAction="FindSomeOne"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="FindSomeOneMgrService">
+		<port name="FindSomeOneMgrServicePort" binding="findsomeonemgr:FindSomeOneBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/content/wsdl/CBSInterface_FindSomeOne.wsdl"/>
+		</port>
+	</service>
+</definitions>

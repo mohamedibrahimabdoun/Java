@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:adjustaccount="http://www.huawei.com/bme/cbsinterface/adjustaccount" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/adjustaccount" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ModifyAcctFeeType">
+		<xs:all>
+			<xs:element name="AccountType" type="common:AccountType"/>
+			<xs:element name="CurrAcctChgAmt" type="common:Balance"/>
+			<xs:element name="GLID" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductID" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddMode" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0-old,1-new</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidityType" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0-ExpireTime,3-Days,4-Hours</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidityNum" type="xs:int" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="BalanceId" type="xs:long" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="AdjustAccountRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OldLogID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperateType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>2-调帐，6-修改用户有效期，7-调帐+修改用户有效期</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rtner" type="xs:int" minOccurs="0"/>
+			<xs:element name="AdditionalInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="512"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SPCode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="19"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ModifyAcctFeeList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ModifyAcctFee" type="adjustaccount:ModifyAcctFeeType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidityIncrement" type="xs:int" minOccurs="0"/>
+			<xs:element name="IncSuspendDays" type="xs:int" minOccurs="0"/>
+			<xs:element name="Merchant" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Service" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Reserve" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NotifyFlag" type="xs:int" minOccurs="0"/>
+			<xs:element name="Reason" type="xs:int" minOccurs="0"/>
+			<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="AdjustAccountResult">
+		<xs:sequence>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="LifeCycleState" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="ActiveStop" type="common:Date" minOccurs="0"/>
+			<xs:element name="SuspendStop" type="common:Date" minOccurs="0"/>
+			<xs:element name="DisableStop" type="common:Date" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryAdjustmentLogRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="StartTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="EndTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="QueryType" type="xs:int" minOccurs="0"/>
+			<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryAdjustmentLogResult">
+		<xs:sequence>
+			<xs:element name="AdjustmentLog" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="LogID">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="23"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="InternalSerialNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="23"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="TradeTime" type="common:DateTime"/>
+						<xs:element name="OperatorID" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="24"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="OldActiveStop" type="common:Date"/>
+						<xs:element name="NewActiveStop" type="common:Date"/>
+						<xs:element name="OldSuspendStop" type="common:Date"/>
+						<xs:element name="NewSuspendStop" type="common:Date"/>
+						<xs:element name="OldDisableStop" type="common:Date"/>
+						<xs:element name="NewDisableStop" type="common:Date"/>
+						<xs:element name="AdditionalInfo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="512"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="AdjustmentItem" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="AccountType" type="common:AccountType" nillable="true"/>
+									<xs:element name="AdjustmentAmt" type="common:Balance" nillable="true"/>
+									<xs:element name="CurrBalance" type="common:Balance" nillable="true"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="ResultCode" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ResultFileName" type="common:FileName" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExchangeAccountRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OriAccountType" type="common:AccountType"/>
+			<xs:element name="OriBalanceId" type="xs:long" minOccurs="0"/>
+			<xs:element name="DesAccountType" type="common:AccountType"/>
+			<xs:element name="DesBalanceId" type="xs:long" minOccurs="0"/>
+			<xs:element name="Amount" type="common:Balance"/>
+			<xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExchangeAccountResult">
+		<xs:sequence>
+			<xs:element name="ExchangeHandlingCharge" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="OriAcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DesAcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdjustSubAccountRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="ModifySubAcctList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ModifySubAcct" maxOccurs="10">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BalanceId" type="xs:long"/>
+									<xs:element name="ChgAmount" type="common:Balance"/>
+									<xs:element name="ChgValidity" type="xs:int"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AdditionalInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="512"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="AdjustSubAccountResult">
+		<xs:sequence>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="10"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchAdjustAccountRequest">
+		<xs:all>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="OperateType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>2-调帐，6-修改用户有效期，7-调帐+修改用户有效期</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rtner" type="xs:int" minOccurs="0"/>
+			<xs:element name="AdditionalInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="512"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SPCode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="19"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ModifyAcctFeeList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ModifyAcctFee" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="AccountType" type="xs:string"/>
+									<xs:element name="CurrAcctChgAmt" type="xs:long"/>
+									<xs:element name="GLID" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reserved</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="MinMeasureId" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reserved</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ProductID" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reserved</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ExpireTime" type="xs:string" minOccurs="0"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidityIncrement" type="xs:int" minOccurs="0"/>
+			<xs:element name="Merchant" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Service" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Reason" type="xs:int" minOccurs="0" />
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BatchChgMainBalanceRequest">
+		<xs:all>
+			<xs:element name="FileName" type="common:FileName" />
+			<xs:element name="Flag" type="xs:int" minOccurs="0" />
+			<xs:element name="AccountType" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Reason" type="xs:int" minOccurs="0" />
+			<xs:element name="TaskTime" type="common:DateTime"
+				minOccurs="0" />
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:managehz="http://www.huawei.com/bme/cbsinterface/managehz" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/managehz" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:complexType name="ManSubHomeZoneRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="HomeZoneInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:HomeZoneInfo">
+							<xs:sequence>
+								<xs:element name="NewHomeZoneID" type="xs:int" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType">
+			<xs:simpleType>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1" id="HZAdd"/>
+			<xs:enumeration value="2" id="HZDelete"/>
+			<xs:enumeration value="3" id="HZModify"/>
+		</xs:restriction>
+	</xs:simpleType>
+			</xs:element>
+			<xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HomeZoneInfo">
+		<xs:sequence>
+			<xs:element name="HomeZoneID" type="xs:int"/>
+			<xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ZoneName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubHomeZoneRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubHomeZoneResult">
+		<xs:sequence>
+			<xs:element name="HomeZoneInfo" type="managehz:HomeZoneInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryDefinedZonesInfoRequest">
+		<xs:sequence>
+			<xs:element name="OperationType" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryDefinedZonesInfoResult">
+		<xs:sequence>
+			<xs:element name="DefinedZonesInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ZoneID" type="xs:integer" nillable="true"/>
+						<xs:element name="ZoneName">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="63"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ZoneType" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

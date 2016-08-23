@@ -1,0 +1,2092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:community="http://www.huawei.com/bme/cbsinterface/community" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:bamgrt="http://www.huawei.com/bme/cbsinterface/bamgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/community" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:simpleType name="ValidMode">
+		<xs:annotation>
+			<xs:documentation>Immediately/Next bill cycle</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="4050000" id="Immediately"/>
+			<xs:enumeration value="4050001" id="NextBillCycle"/>
+			<xs:enumeration value="4050002" id="NextDay"/>
+			<xs:enumeration value="4050003" id="FutureDay"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OperationType">
+		<xs:annotation>
+			<xs:documentation>Add/Delete/Modify</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1" id="Add"/>
+			<xs:enumeration value="2" id="Delete"/>
+			<xs:enumeration value="3" id="Modify"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GroupType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="2" id="ParentCompany"/>
+			<xs:enumeration value="3" id="SubsidiaryCompany"/>
+			<xs:enumeration value="11" id="DepartmentLevel1"/>
+			<xs:enumeration value="12" id="DepartmentLevel2"/>
+			<xs:enumeration value="13" id="DepartmentLevel3"/>
+			<xs:enumeration value="14" id="DepartmentLevel4"/>
+			<xs:enumeration value="15" id="DepartmentLevel5"/>
+			<xs:enumeration value="16" id="DepartmentLevel6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GroupNumberType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MemberShortNoType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductOperationType">
+		<xs:annotation>
+			<xs:documentation>Add/Delete/Modify/NoChange</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1" id="AddProduct"/>
+			<xs:enumeration value="2" id="DeleteProduct"/>
+			<xs:enumeration value="3" id="ModifyProduct"/>
+			<xs:enumeration value="6" id="ProductNoChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="OfferOrderInfo">
+		<xs:sequence>
+			<xs:element name="OfferId" type="common:OfferId"/>
+			<xs:element name="OfferOrderKey" type="common:OfferOrderKey"/>
+			<xs:element name="EffectiveDate" type="common:DateTime"/>
+			<xs:element name="ExpireDate" type="common:DateTime"/>
+			<xs:element name="AutoType">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="0" id="PurchasedByCustomer"/>
+						<xs:enumeration value="1" id="PurchasedBySystem"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OfferCode" type="common:OfferCode" minOccurs="0"/>
+			<xs:element name="Status" type="xs:string" minOccurs="0"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductOrderInfoType">
+		<xs:all>
+			<xs:element name="ProductID" type="xs:string"/>
+			<xs:element name="ProductOrderKey" type="xs:string"/>
+			<xs:element name="EffectiveDate" type="xs:string"/>
+			<xs:element name="ExpireDate" type="xs:string"/>
+			<xs:element name="AutoType" type="xs:int"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Service">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Status" type="xs:string" minOccurs="0"/>
+			<xs:element name="RegistrationTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BalanceRecordType">
+		<xs:annotation>
+			<xs:documentation>废弃，使用BalanceType代替</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="BalanceDesc" type="xs:string" minOccurs="0"/>
+			<xs:element name="Balance" type="xs:long"/>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+			<xs:element name="UnitType" type="xs:int" minOccurs="0"/>
+			<xs:element name="AccountType" type="xs:string"/>
+			<xs:element name="ExpireTime" type="xs:string"/>
+			<xs:element name="AccountCredit" type="xs:long" minOccurs="0"/>
+			<xs:element name="AccountKey" type="xs:long" minOccurs="0"/>
+			<xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductOrderKey" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BalanceType">
+		<xs:all>
+			<xs:element name="BalanceId" type="xs:long"/>
+			<xs:element name="AccountType" type="common:AccountType"/>
+			<xs:element name="Amount" type="common:Balance"/>
+			<xs:element name="AccountCredit" type="common:Balance"/>
+			<xs:element name="ApplyTime" type="common:DateTime"/>
+			<xs:element name="ExpireTime" type="common:DateTime"/>
+			<xs:element name="RelatedType" type="xs:int" minOccurs="0"/>
+			<xs:element name="RelatedObjectID" type="xs:long" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="GroupOffer">
+		<xs:sequence>
+			<xs:element name="Id" type="common:OfferId"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:ProductId"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="Service" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="common:ServiceId"/>
+									<xs:element name="SimpleProperty" type="common:SimpleProperty" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Product">
+		<xs:annotation>
+			<xs:documentation>废弃</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupCustomer">
+		<xs:sequence>
+			<xs:element name="ParentGroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupType" type="community:GroupType"/>
+			<xs:element name="GroupName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GroupCustomerCode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="23"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GroupCustomerID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="23"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RegisterNo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="23"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MaxCountOfCug" type="xs:int" minOccurs="0"/>
+			<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+			<xs:element name="MaxHuntingList" type="xs:int" minOccurs="0"/>
+			<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="BelToAreaID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RatingGroupList" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RatingGroup" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OfficeZoneInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CallingCellID">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="19"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MaxMemNumber" type="xs:int" default="0" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Account">
+		<xs:annotation>
+			<xs:documentation>废弃</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Code" type="xs:string" minOccurs="0"/>
+			<xs:element name="Address">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="254"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Title">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="23"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillcycleType" type="xs:string"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MemberInfo">
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="NumberType" type="xs:int"/>
+			<xs:element name="MemberType" type="xs:int"/>
+			<xs:element name="QuotaType" type="xs:int"/>
+			<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="Password" type="common:Password" minOccurs="0"/>
+			<xs:element name="MemberLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="DisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+			<xs:element name="PBXChargeParty" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+			<xs:element name="GroupOffer" type="community:GroupOffer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AccountID" type="common:AccountID" minOccurs="0"/>
+			<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+			<xs:element name="CustomerID" type="common:CustomerID" minOccurs="0"/>
+			<xs:element name="CustomerCode" type="common:CustomerCode" minOccurs="0"/>
+			<xs:element name="SubscriberCode" type="common:SubscriberCode" minOccurs="0"/>
+			<xs:element name="ShareInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="ShareRuleId" type="xs:int" minOccurs="0"/>
+						<xs:element name="ShareType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ServiceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int"/>
+						<xs:element name="ShareValue" type="common:Balance" minOccurs="0"/>
+						<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Priority" type="xs:int"/>
+						<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+						<xs:element name="QuotaNotifyID" type="xs:int" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupMember">
+		<xs:sequence>
+			<xs:element name="ParentGroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="TopGroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType"/>
+			<xs:element name="GrpMemberType" type="xs:int"/>
+			<xs:element name="GrpMemberStatus" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupMemberNo4Input">
+		<xs:sequence>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupMemberNo">
+		<xs:sequence>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupMemberBasicProperty">
+		<xs:sequence>
+			<xs:element name="GrpMemberType" type="xs:string"/>
+			<xs:element name="GrpMemberStatus" type="xs:string"/>
+			<xs:element name="PBXDisplayNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BAAddrInfo">
+		<xs:sequence>
+			<xs:element name="Title" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="23"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FirstName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MiddleName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LastName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillAddress1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillAddress2" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillAddress3" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillAddress4" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillAddress5" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="City" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ZipCode" type="common:ZipCode" minOccurs="0"/>
+			<xs:element name="EmailBillAddr" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SMSBillAddr" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BillLang" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BAScenario">
+		<xs:sequence>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="SCEN_ID" type="xs:long"/>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BADelivery">
+		<xs:sequence>
+			<xs:element name="MediumID" type="xs:int"/>
+			<xs:element name="BillLang" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreateGroupRequest">
+		<xs:annotation>
+			<xs:documentation>废弃，使用NewGroupRequest</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupCustomer" type="community:GroupCustomer"/>
+			<xs:element name="GroupAccount" type="community:Account"/>
+			<xs:element name="GroupProduct" type="community:Product" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CBPID" type="xs:int" minOccurs="0"/>
+			<xs:element name="ValidMode" type="community:ValidMode"/>
+			<xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreateGroupResult">
+		<xs:annotation>
+			<xs:documentation>废弃，使用NewGroupResult</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProductOrderInfo" type="community:ProductOrderInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewGroupRequest">
+		<xs:annotation>
+			<xs:documentation>创建集团</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupCustomer" type="community:GroupCustomer"/>
+			<xs:element name="GroupAccount">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GroupOffer" type="community:GroupOffer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CBPID" type="xs:int" minOccurs="0"/>
+			<xs:element name="ValidMode" type="xs:int"/>
+			<xs:element name="EffectiveDate" type="common:Date" minOccurs="0"/>
+			<xs:element name="BA" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Title" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="23"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="FirstName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="MiddleName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="LastName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress1" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress2" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress3" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress4" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress5" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="City" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="32"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="ZipCode" type="common:ZipCode" minOccurs="0"/>
+									<xs:element name="EmailBillAddr" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="SMSBillAddr" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="32"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillLang">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="8"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="BAScenario" type="community:BAScenario" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="community:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="DefaultFlag" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewGroupResult">
+		<xs:annotation>
+			<xs:documentation>创建集团</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="community:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGroupStatusRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团状态</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="NewStatus" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ApplyDeletingGroupRequest">
+		<xs:annotation>
+			<xs:documentation>申请删除集团</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="SpecifiedDelteDate" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SetDeleteGroupTaskRequest">
+		<xs:annotation>
+			<xs:documentation>设置删除集团任务</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="TaskRunTime" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SetDeleteGroupTaskResult">
+		<xs:sequence>
+			<xs:element name="TaskName" type="xs:string"/>
+			<xs:element name="TaskRunTime" type="common:DateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeGroupProductRequest">
+		<xs:annotation>
+			<xs:documentation>废弃，使用ChangeGroupOfferRequest</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="Product" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="community:Product">
+							<xs:sequence>
+								<xs:element name="OperationType" type="community:ProductOperationType">
+									<xs:annotation>
+										<xs:documentation>Add/Delete/Modify</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="Service" type="community:Service" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="ProductOrderKey" type="xs:string" minOccurs="0"/>
+								<xs:element name="ValidMode" type="community:ValidMode"/>
+								<xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+								<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>
+								<xs:element name="Status" type="xs:int" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeGroupProductResult">
+		<xs:annotation>
+			<xs:documentation>废弃，使用ChangeGroupOfferResult</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProductOrderInfo" type="community:ProductOrderInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeGroupOfferRequest">
+		<xs:annotation>
+			<xs:documentation>变更集团销售品</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="Offer" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="community:GroupOffer">
+							<xs:sequence>
+								<xs:element name="OperationType" type="xs:int">
+									<xs:annotation>
+										<xs:documentation>1-Add,2-Delete,3-Modify</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0"/>
+								<xs:element name="ValidMode" type="xs:int"/>
+								<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+								<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+								<xs:element name="Status" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reserved</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeGroupOfferResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="community:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGroupBasicInfoRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团基本信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupBasicInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupType" type="community:GroupType" minOccurs="0"/>
+						<xs:element name="GroupCustomerCode" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="23"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RegisterNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="23"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="MaxCountOfCug" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxHuntingList" type="xs:int" minOccurs="0"/>
+						<xs:element name="BelToAreaID" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="10"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="RatingGroupList" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="RatingGroup" type="xs:int"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OfficeZoneInfo" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CallingCellID">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="19"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="MaxMemNumber" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeOrgRelationRequest">
+		<xs:annotation>
+			<xs:documentation>变更组织关系</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="NewParentGrpNo" type="community:GroupNumberType"/>
+			<xs:element name="ChangeType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyAllocatedQuotaRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团给成员或子集团限额</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="SubGroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="NewQuota" type="common:Balance"/>
+			<xs:element name="ChangeType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyTopGroupQuotaRequest">
+		<xs:annotation>
+			<xs:documentation>修改顶层集团限额</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="NewQuota" type="common:Balance"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageShareRelationRequest">
+		<xs:annotation>
+			<xs:documentation>共享关系管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int"/>
+			<xs:element name="ShareInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>每个帐户可以有多条付费规则</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="shareRuleId" type="xs:int" minOccurs="0"/>
+						<xs:element name="ShareType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ServiceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ShareValue" type="common:Balance" minOccurs="0"/>
+						<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Priority" type="xs:int" minOccurs="0"/>
+						<xs:element name="Remark" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="254"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="QuotaNotifyID" type="xs:int" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryShareRelationRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团给成员的共享关系</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryShareRelationResult">
+		<xs:sequence>
+			<xs:element name="ShareInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="AccountCode" type="common:AccountCode">
+							<xs:annotation>
+								<xs:documentation>每个帐户可以有多条付费规则</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="shareRuleId" type="xs:int"/>
+						<xs:element name="ShareType" type="xs:int"/>
+						<xs:element name="ServiceType" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int"/>
+						<xs:element name="ShareValue" type="xs:int" minOccurs="0"/>
+						<xs:element name="UsedQuota" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Priority" type="xs:int"/>
+						<xs:element name="Remark">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="254"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupInfoRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupInfoResult">
+		<xs:sequence>
+			<xs:element name="CustomerInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Customer">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:GroupCustomer">
+										<xs:sequence>
+											<xs:element name="AllocatedQuotaAmount" type="common:Balance" minOccurs="0"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OfferOrderInfo" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:OfferOrderInfo">
+										<xs:sequence>
+											<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="ProductId" type="common:ProductId"/>
+														<xs:element name="ProductOrderKey" type="common:ProductOrderKey"/>
+														<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+														<xs:element name="EffectiveDate" type="common:DateTime"/>
+														<xs:element name="ExpireDate" type="common:DateTime"/>
+														<xs:element name="Service" type="community:Service" minOccurs="0" maxOccurs="unbounded"/>
+														<xs:element name="CurCycleStartTime" type="common:DateTime" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>产品当前周期开始时间。仅当产品存在定期事件数据时才返回</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="CurCycleEndTime" type="common:DateTime" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>产品当前周期结束时间。仅当产品存在定期事件数据时才返回</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="BillStatus" type="xs:int" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>产品当前周期租费执行状态。仅当产品存在定期事件数据时才返回</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AccountInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Account" type="common:Account"/>
+						<xs:element name="BalanceRecord" type="community:BalanceType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JoinSuperGroupRequest">
+		<xs:annotation>
+			<xs:documentation>加入超级集团</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SuperGrpNo" type="community:GroupNumberType"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="StartShortNo" type="community:MemberShortNoType"/>
+			<xs:element name="StopShortNo" type="community:MemberShortNoType"/>
+			<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageSuperGrpShortNoRequest">
+		<xs:annotation>
+			<xs:documentation>管理加入超级集团的集团短号范围</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SuperGrpNo" type="community:GroupNumberType"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="StartShortNo" type="community:MemberShortNoType"/>
+			<xs:element name="StopShortNo" type="community:MemberShortNoType"/>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageCrossGroupRequest">
+		<xs:annotation>
+			<xs:documentation>网间集团管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumberA" type="community:GroupNumberType"/>
+			<xs:element name="GroupNumberB" type="community:GroupNumberType"/>
+			<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="OperationType" type="xs:int"/>
+			<xs:element name="CrossGroupLevel" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageGroupOutNoRequest">
+		<xs:annotation>
+			<xs:documentation>集团网外号码管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupOutNoInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupOutNumber" type="xs:string"/>
+						<xs:element name="OutNumberType" type="xs:int"/>
+						<xs:element name="GroupOutShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+						<xs:element name="OutTeamKey" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupOutNoRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团网外号码</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupOutNoResult">
+		<xs:sequence>
+			<xs:element name="GroupOutNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupOutNumber" type="xs:string"/>
+						<xs:element name="GroupOutShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+						<xs:element name="OutTeamKey" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageMemberOutNoRequest">
+		<xs:annotation>
+			<xs:documentation>成员网外号码管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrpMemberNumber" type="common:SubscriberNo"/>
+			<xs:element name="MemberOutNoInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MemberOutNumber" type="xs:string"/>
+						<xs:element name="OutTeamKey" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOutNoRequest">
+		<xs:annotation>
+			<xs:documentation>查询成员网外号码</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOutNoResult">
+		<xs:sequence>
+			<xs:element name="MemberOutNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MemberOutNumber" type="xs:string"/>
+						<xs:element name="OutTeamKey" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageGrpAttendantRequest">
+		<xs:annotation>
+			<xs:documentation>集团话务员管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="AttendantInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+						<xs:element name="LoginFlag" type="xs:int" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpAttendantRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团话务员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpAttendantResult">
+		<xs:sequence>
+			<xs:element name="AttendantInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AttendantNo" type="common:SubscriberNo"/>
+						<xs:element name="LoginFlag" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManGrpCallScreenNoRequest">
+		<xs:annotation>
+			<xs:documentation>集团callscreen号码管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="CallScreenType" type="xs:int"/>
+			<xs:element name="CallScreenNoInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CallScreenNo">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ScreenNoType" type="xs:int" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="WeekStart" type="xs:int" minOccurs="0"/>
+						<xs:element name="WeekStop" type="xs:int" minOccurs="0"/>
+						<xs:element name="TimeStart" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="TimeStop" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RouteNumber" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RoutingMethod" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpCallScreenNoRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团callscreen号码</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="CallScreenType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpCallScreenNoResult">
+		<xs:sequence>
+			<xs:element name="CallScreenNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="CallScreenType" type="xs:int"/>
+						<xs:element name="CallScreenNo">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ScreenNoType" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+						<xs:element name="WeekStart" type="xs:int"/>
+						<xs:element name="WeekStop" type="xs:int"/>
+						<xs:element name="TimeStart">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="TimeStop">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RouteNumber" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RoutingMethod" type="xs:int"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddGroupMemberRequest">
+		<xs:annotation>
+			<xs:documentation>废弃，使用AddGrpMemberRequest代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="NumberType" type="xs:int"/>
+			<xs:element name="MemberType" type="xs:int"/>
+			<xs:element name="QuotaType" type="xs:int"/>
+			<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="Password" type="common:Password" minOccurs="0"/>
+			<xs:element name="MemberLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="DisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+			<xs:element name="PBXChargeParty" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+			<xs:element name="GroupProduct" type="community:Product" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddGroupMemberResult">
+		<xs:annotation>
+			<xs:documentation>废弃，使用AddGrpMemberResult代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProductOrderInfo" type="community:ProductOrderInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddGrpMemberRequest">
+		<xs:annotation>
+			<xs:documentation>增加集团成员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="NumberType" type="xs:int"/>
+			<xs:element name="MemberType" type="xs:int"/>
+			<xs:element name="QuotaType" type="xs:int"/>
+			<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="Password" type="common:Password" minOccurs="0"/>
+			<xs:element name="MemberLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="DisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+			<xs:element name="PBXChargeParty" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+			<xs:element name="GroupOffer" type="community:GroupOffer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AccountID" type="common:AccountID" minOccurs="0"/>
+			<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+			<xs:element name="CustomerID" type="common:CustomerID" minOccurs="0"/>
+			<xs:element name="CustomerCode" type="common:CustomerCode" minOccurs="0"/>
+			<xs:element name="SubscriberCode" type="common:SubscriberCode" minOccurs="0"/>
+			<xs:element name="ShareInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="ShareRuleId" type="xs:int" minOccurs="0"/>
+						<xs:element name="ShareType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ServiceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int"/>
+						<xs:element name="ShareValue" type="common:Balance" minOccurs="0"/>
+						<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Priority" type="xs:int"/>
+						<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+						<xs:element name="QuotaNotifyID" type="xs:int" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidMode" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddGrpMemberResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="community:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteGroupMemberRequest">
+		<xs:annotation>
+			<xs:documentation>删除集团成员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGrpMemberStatusRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团成员状态</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="NewStatus" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupBasicInfoRequest">
+		<xs:annotation>
+			<xs:documentation>废弃，使用QueryGroupInfoRequest代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupBasicInfoResult">
+		<xs:annotation>
+			<xs:documentation>废弃，使用QueryGroupInfoResult代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CustomerInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Customer">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:GroupCustomer">
+										<xs:sequence>
+											<xs:element name="AllocatedQuotaAmount" type="xs:long" minOccurs="0"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:Product">
+										<xs:sequence>
+											<xs:element name="ProductOrderKey" type="xs:string"/>
+											<xs:element name="EffectiveDate" type="xs:string"/>
+											<xs:element name="ExpiredDate" type="xs:string"/>
+											<xs:element name="Status" type="xs:int"/>
+											<xs:element name="Service" type="community:Service" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AccountInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Account" type="community:Account"/>
+						<xs:element name="BalanceRecord" type="community:BalanceType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubGroupRequest">
+		<xs:annotation>
+			<xs:documentation>查询本集团的归属子集团列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubGroupResult">
+		<xs:sequence>
+			<xs:element name="SubGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubGroupNumber" type="community:GroupNumberType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberCountOfGroupRequest">
+		<xs:annotation>
+			<xs:documentation>查询归属于本集团的成员总数</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberCountOfGroupResult">
+		<xs:sequence>
+			<xs:element name="MemberCount" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOfGroupRequest">
+		<xs:annotation>
+			<xs:documentation>查询归属于本集团的成员列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="QueryMode">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Start" type="xs:int" minOccurs="0"/>
+						<xs:element name="Quantity" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOfGroupResult">
+		<xs:sequence>
+			<xs:element name="GroupMember" type="community:GroupMember" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupAdminRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团管理员列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupAdminResult">
+		<xs:sequence>
+			<xs:element name="GroupMember" type="community:GroupMember" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupMemberBasicInfoRequest">
+		<xs:annotation>
+			<xs:documentation>废弃，使用QueryGroupMemberInfoRequest代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupMemberBasicInfoResult">
+		<xs:annotation>
+			<xs:documentation>废弃，使用QueryGroupMemberInfoResult代替</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupMember" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ParentGroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="TopGroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+						<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType"/>
+						<xs:element name="GrpMemberType" type="xs:int"/>
+						<xs:element name="GrpMemberStatus" type="xs:int"/>
+						<xs:element name="AllocatedQuota" type="common:Balance"/>
+						<xs:element name="UsedQuota" type="common:Balance"/>
+						<xs:element name="LeftQuota" type="common:Balance"/>
+						<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+						<xs:element name="PBXDisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:Product">
+										<xs:sequence>
+											<xs:element name="ProductOrderKey" type="xs:string" minOccurs="0"/>
+											<xs:element name="EffectiveDate" type="xs:string"/>
+											<xs:element name="ExpiredDate" type="xs:string"/>
+											<xs:element name="Status" type="xs:int"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupMemberInfoRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团成员信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupMemberInfoResult">
+		<xs:sequence>
+			<xs:element name="GroupMember" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ParentGroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="TopGroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+						<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType"/>
+						<xs:element name="GrpMemberType" type="xs:int"/>
+						<xs:element name="GrpMemberStatus" type="xs:int"/>
+						<xs:element name="AllocatedQuota" type="common:Balance"/>
+						<xs:element name="UsedQuota" type="common:Balance"/>
+						<xs:element name="LeftQuota" type="common:Balance"/>
+						<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+						<xs:element name="PBXDisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="OfferOrderInfo" type="community:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGroupMemberBasicInfoRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团成员基本信息</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="GroupMemberInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpMemberType" type="xs:int" minOccurs="0"/>
+						<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+						<xs:element name="PBXDisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="QuotaType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ShareInfo" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="OperationType" type="xs:int"/>
+									<xs:element name="shareRuleId" type="xs:int" minOccurs="0"/>
+									<xs:element name="ShareType" type="xs:int" minOccurs="0"/>
+									<xs:element name="ServiceType" type="xs:int" minOccurs="0"/>
+									<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+									<xs:element name="ShareValue" type="common:Balance" minOccurs="0"/>
+									<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+									<xs:element name="Priority" type="xs:int" minOccurs="0"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGroupMemberNoRequest">
+		<xs:annotation>
+			<xs:documentation>修改集团成员号码</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType" minOccurs="0"/>
+			<xs:element name="GrpMemberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="GrpMemberShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+			<xs:element name="NewGroupMemberNo" type="community:GroupMemberNo4Input"/>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCugOfGroupRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团中的CUG</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpCugId" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCugOfGroupResult">
+		<xs:sequence>
+			<xs:element name="GroupCug" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpCugId" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+						<xs:element name="GrpCugType" type="xs:int"/>
+						<xs:element name="MaxMemberCount" type="xs:int"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageCugOfGroupRequest">
+		<xs:annotation>
+			<xs:documentation>管理集团中的CUG</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupCug" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpCugId" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="GrpCugType" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxMemberCount" type="xs:int" minOccurs="0"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOfGroupCugRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团CUG成员列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpCugId" type="xs:int"/>
+			<xs:element name="GroupMemberNo" type="community:GroupMemberNo4Input" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMemberOfGroupCugResult">
+		<xs:sequence>
+			<xs:element name="GroupMember" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageMemberOfGroupCugRequest">
+		<xs:annotation>
+			<xs:documentation>管理集团CUG成员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GrpCugId" type="xs:int"/>
+			<xs:element name="GroupMember" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GrpMemberNo" type="common:SubscriberNo"/>
+						<xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupCugOfGroupMemberRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团成员加入的集团CUG列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupMemberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupCugOfGroupMemberResult">
+		<xs:sequence>
+			<xs:element name="GroupCug" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="GrpCugId" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="common:DateTime"/>
+						<xs:element name="ExpireDate" type="common:DateTime"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupOfGroupMemberRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团成员加入的集团列表</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupMemberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupOfGroupMemberResult">
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="EffectiveDate" type="common:DateTime"/>
+			<xs:element name="ExpireDate" type="common:DateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupBatchOperationRequest">
+		<xs:annotation>
+			<xs:documentation>废弃</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BatchModifyGroupMemberStatus" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FileName" type="common:FileName"/>
+						<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="NewStatus" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchModifyGroupMemberNo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FileName" type="common:FileName"/>
+						<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchDelteGroupMember" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FileName" type="common:FileName"/>
+						<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchAddGroupMember" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>该业务类型废弃</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FileName" type="common:FileName"/>
+						<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+						<xs:element name="NumberType" type="xs:int"/>
+						<xs:element name="MemberType" type="xs:int"/>
+						<xs:element name="QuotaType" type="xs:int"/>
+						<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+						<xs:element name="Password" type="common:Password" minOccurs="0"/>
+						<xs:element name="MemberLang" type="xs:int" minOccurs="0"/>
+						<xs:element name="DisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="PBXChargeParty" type="xs:string" minOccurs="0"/>
+						<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+						<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+						<xs:element name="GroupProduct" type="community:Product" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchAddGroupMemberRequest">
+		<xs:annotation>
+			<xs:documentation>批量增加集团成员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="NumberType" type="xs:int"/>
+			<xs:element name="MemberType" type="xs:int"/>
+			<xs:element name="QuotaType" type="xs:int"/>
+			<xs:element name="QuotaAmount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="Password" type="common:Password" minOccurs="0"/>
+			<xs:element name="MemberLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="DisplayNumber" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="PBXChargeParty" type="xs:string" minOccurs="0"/>
+			<xs:element name="JoinedMaxCUG" type="xs:int" minOccurs="0"/>
+			<xs:element name="MaxCountOfGroupOut" type="xs:int" minOccurs="0"/>
+			<xs:element name="GroupOffer" type="community:GroupOffer" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchModGrpMemberStatusRequest">
+		<xs:annotation>
+			<xs:documentation>批量修改集团成员状态</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="NewStatus" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchModGrpMemberNumberRequest">
+		<xs:annotation>
+			<xs:documentation>批量修改集团成员号码</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchDeleteGrpMemberRequest">
+		<xs:annotation>
+			<xs:documentation>批量删除集团成员</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddGroupBARequest">
+		<xs:annotation>
+			<xs:documentation>订购BA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Title" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="23"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="FirstName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="MiddleName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="LastName" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress1" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress2" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress3" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress4" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillAddress5" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="City" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="32"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="ZipCode" type="common:ZipCode" minOccurs="0"/>
+									<xs:element name="EmailBillAddr" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="SMSBillAddr" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="32"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="BillLang">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="8"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="BAScenario" type="community:BAScenario" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="community:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyGroupBARequest">
+		<xs:annotation>
+			<xs:documentation>修改BA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" type="community:BAAddrInfo" minOccurs="0"/>
+						<xs:element name="BAScenario" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:BAScenario">
+										<xs:sequence>
+											<xs:element name="OperType" type="xs:int"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="BADelivery" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="community:BADelivery">
+										<xs:sequence>
+											<xs:element name="OperType" type="xs:int"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteGroupBARequest">
+		<xs:annotation>
+			<xs:documentation>删除BA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupBARequest">
+		<xs:annotation>
+			<xs:documentation>查询BA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="BACode" type="common:BACode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupBAResult">
+		<xs:sequence>
+			<xs:element name="BA" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BillAddr" type="community:BAAddrInfo"/>
+						<xs:element name="ApplyTime" type="common:DateTime"/>
+						<xs:element name="ExpireTime" type="common:DateTime"/>
+						<xs:element name="BAScenario" type="community:BAScenario" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="community:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewSubscriberAddGroupRequest">
+		<xs:annotation>
+			<xs:documentation>开户加集团</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Customer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Customer">
+							<xs:sequence>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-新增，3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Account" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+								<xs:element name="IsCustShareAcct" type="xs:boolean" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>是否客户级共享帐户，缺省值为false</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-增加，3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PrimaryOffer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Subscriber" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="common:Subscriber">
+												<xs:sequence>
+													<xs:element name="Product" type="subscribe:Product" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="ComponentID" type="xs:int" nillable="true" minOccurs="0"/>
+													<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+												</xs:sequence>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reserved</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" type="subscribe:OptionalOfferOrder" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>如果是老客户开户，可以输入用户号码来标识老客户</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MemberInfo" type="community:MemberInfo"/>
+			<xs:element name="Sponsor" type="common:SubscriberNo" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewSubscriberAddGroupResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="community:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

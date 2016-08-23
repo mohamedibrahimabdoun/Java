@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mansubquota="http://www.huawei.com/bme/cbsinterface/mansubquota" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/mansubquota" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ManSubQuotaRequest">
+		<xs:sequence>
+			<xs:element name="AcctId" type="common:AccountID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserve</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AcctCode" type="common:AccountCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserve</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubId" type="common:SubscriberCode" minOccurs="0"/>
+			<xs:element name="Msisdn" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="QuotaType" type="xs:int"/>
+			<xs:element name="OperType" type="xs:int"/>
+			<xs:element name="Amount" type="common:Balance" minOccurs="0"/>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="NotifyNode" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NotifyType" type="xs:int"/>
+						<xs:element name="NotifyMethod" type="xs:int"/>
+						<xs:element name="LimitPercent" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="LimitAmt" type="common:Balance" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

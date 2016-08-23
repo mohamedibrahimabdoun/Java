@@ -1,0 +1,3473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Williams (501) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema targetNamespace="http://bme.huawei.com/winuvsinterface" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bme.huawei.com/winuvsinterface" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ModifyAcctFeeExType2">
+		<xs:all>
+			<xs:element name="AccountType" type="xs:string"/>
+			<xs:element name="FeeItemID" type="xs:string" minOccurs="0"/>
+			<xs:element name="CurAcctChgAmt" type="xs:long"/>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="xs:integer" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyAcctFeeListEx2">
+		<xs:sequence>
+			<xs:element name="ModifyAcctFeeEx2" type="tns:ModifyAcctFeeExType2" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BalanceRecordType">
+		<xs:all>
+			<xs:element name="BalanceDescLang1" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Description of the amount of sub account type.(LANG1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BalanceDescLang2" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of the amount of sub account type.(LANG2)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BalanceDescLang3" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of the amount of sub account type.(LANG3)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Fee" type="tns:MoneyType">
+				<xs:annotation>
+					<xs:documentation>The amount deduct from old prepaid account when MZone switch to GoTone.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnitType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Indicates measure types.
+1: amount
+2: duration
+3: traffic</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountKey" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates an CBE sub account Key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Indicates CBE sub account types,point the use of the account.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BalanceRecordListType">
+		<xs:sequence>
+			<xs:element name="Balance" type="tns:BalanceRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MoneyType">
+		<xs:all>
+			<xs:element name="Value" type="xs:long"/>
+			<xs:element name="MinMeasureId" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="TaxItemType">
+		<xs:all>
+			<xs:element name="TaxCode" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="TaxAmt" type="tns:MoneyType" nillable="true" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="TaxListType">
+		<xs:sequence>
+			<xs:element name="TaxRecord" type="tns:TaxItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VASProductIDItemType">
+		<xs:all>
+			<xs:element name="VASProdID" type="xs:string"/>
+			<xs:element name="VASProdName" type="xs:string"/>
+			<xs:element name="AppendProdType" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VASProductIDListType">
+		<xs:sequence>
+			<xs:element name="VASProductIDItem" type="tns:VASProductIDItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccountChgBalList">
+		<xs:sequence>
+			<xs:element name="AccountChgBal" type="tns:AccountChgBalRecord" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccountChgBalRecord">
+		<xs:all>
+			<xs:element name="AccountKey" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates an account Key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicates an account ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurAcctBalance" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates the current account balance after an operation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChgAcctBalance" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates change amount of an account balance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurExpireTime" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates the current validity period after an operation. (in seconds)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChgExpireTime" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Indicates change amount of the validity period. (in seconds)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinMeasureId" type="xs:int" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Indicates the inner minimum unit of measure. It must accord with which of iBalanceFeeId.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Indicates account types.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccountNumber" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Indicates an account number.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="RequestHeader">
+		<xs:sequence>
+			<xs:element name="CommandId" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="TransactionId" type="xs:string"/>
+			<xs:element name="SequenceId" type="xs:string"/>
+			<xs:element name="RequestType" type="xs:string"/>
+			<xs:element name="TenantId" type="xs:integer" minOccurs="0"/>
+			<xs:element name="Language" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResultHeader">
+		<xs:sequence>
+			<xs:element name="CommandId" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="TransactionId" type="xs:string"/>
+			<xs:element name="SequenceId" type="xs:string"/>
+			<xs:element name="ResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Indicates a code of success/failure, failure reasons.                              0: success                        Other values: failure reasons</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResultDesc" type="xs:string" minOccurs="0"/>
+			<xs:element name="TenantId" type="xs:integer" minOccurs="0"/>
+			<xs:element name="Language" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManCBSServiceListType">
+		<xs:sequence>
+			<xs:element name="CBSServiceItem" type="tns:CBSServiceItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CBSServiceItemType">
+		<xs:all>
+			<xs:element name="ParamID" type="xs:string"/>
+			<xs:element name="ParamValue" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="SessionEntity">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="userID" type="xs:string"/>
+				<xs:element name="password" type="xs:string"/>
+				<xs:element name="remoteAddr" type="xs:string"/>
+				<xs:element name="uploadRoot" type="xs:string"/>
+				<xs:element name="locale" type="xs:string"/>
+				<xs:element name="loginVia" type="xs:string"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<!--The following interface if for M8-->
+	<!--the first part is new interface for M8-->
+	<xs:element name="BatchPSIntegrationQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Post paid integration query request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PSIntegrationReqList" type="tns:PSIntegrationReqListType"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BatchPSIntegrationQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="PSIntegrationList" type="tns:PSIntegrationListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PSIntegrationRecordType">
+		<xs:all>
+			<xs:element name="SubNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberId" type="xs:string" minOccurs="0"/>
+			<xs:element name="HomeZoneNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="TotalCredit" type="tns:MoneyType" minOccurs="0"/>
+			<xs:element name="RemainCredit" type="tns:MoneyType" minOccurs="0"/>
+			<xs:element name="FreeFluxLimit" type="tns:MoneyType" minOccurs="0"/>
+			<xs:element name="RemainFreeFluxValue" type="tns:MoneyType" minOccurs="0"/>
+			<xs:element name="FirstActDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="DueAmount" type="tns:MoneyType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="PSIntegrationListType">
+		<xs:sequence>
+			<xs:element name="PSIntegrationRecord" type="tns:PSIntegrationRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BatchModInitalBalanceRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:BatchModInitalBalanceRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="InitalBalanceList" type="tns:InitalBalanceListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BatchModInitalBalanceResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubNoList" type="tns:SubNoListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="InitalBalanceRecordType">
+		<xs:all>
+			<xs:element name="SubNo" type="xs:string"/>
+			<xs:element name="InitalBalance" type="xs:long"/>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="InitalBalanceListType">
+		<xs:sequence>
+			<xs:element name="InitalBalanceRecord" type="tns:InitalBalanceRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubNoListRecordType">
+		<xs:all>
+			<xs:element name="SubNo" type="xs:string"/>
+			<xs:element name="ReturnCode" type="xs:int"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="SubNoListType">
+		<xs:sequence>
+			<xs:element name="SubNoListRecord" type="tns:SubNoListRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PSIntegrationReqRecordType">
+		<xs:all>
+			<xs:element name="SubNo" type="xs:string"/>
+			<xs:element name="SubscriberId" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="PSIntegrationReqListType">
+		<xs:sequence>
+			<xs:element name="PSIntegrationReqRecord" type="tns:PSIntegrationReqRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BatchModLastActiveDateRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Batch Moddify LastActvieDateRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LastActiveDateList" type="tns:LastActiveDateListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BatchModLastActiveDateResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubNoList" type="tns:SubNoListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="LastActiveDateRecordType">
+		<xs:all>
+			<xs:element name="SubNo" type="xs:string"/>
+			<xs:element name="LastActiveDate" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="LastActiveDateListType">
+		<xs:sequence>
+			<xs:element name="LastActiveDateRecord" type="tns:LastActiveDateRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BatchAdjustAccountRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Invoke DS AdjustAccountExRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperateType" type="xs:string"/>
+										<xs:element name="OperatorID" type="xs:string"/>
+										<xs:element name="LogID" type="xs:string"/>
+										<xs:element name="TradeTime" type="xs:string" minOccurs="0"/>
+										<xs:element name="OperateDescribe" type="xs:string" minOccurs="0"/>
+										<xs:element name="BatchAdjustAccList" type="tns:BatchAdjustAccListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BatchAdjustAccountResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BatchAccChgBalList" type="tns:BatchAccChgBalListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BatchAdjustAccRecordType">
+		<xs:all>
+			<xs:element name="SubscriberID" type="xs:string"/>
+			<xs:element name="AccountID" type="xs:string"/>
+			<xs:element name="ModifyAcctFeeListEx2" type="tns:ModifyAcctFeeListEx2"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BatchAdjustAccListType">
+		<xs:sequence>
+			<xs:element name="BatchAdjustAccRecord" type="tns:BatchAdjustAccRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchAccChgBalRecordType">
+		<xs:all>
+			<xs:element name="ReturnCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberID" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountChgBalList" type="tns:AccountChgBalList" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BatchAccChgBalListType">
+		<xs:sequence>
+			<xs:element name="BatchAccChgBalRecord" type="tns:BatchAccChgBalRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BlockRechargeCardRequest">
+		<xs:annotation>
+			<xs:documentation>SCP:BlockRechargeCardRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Sequence" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BlockRechargeCardResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QryRechargeCardRequest">
+		<xs:annotation>
+			<xs:documentation>SCP:Query Recharge Card info Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Sequence" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QryRechargeCardResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="FaceValue" type="xs:long" minOccurs="0"/>
+										<xs:element name="BatchNo" type="xs:string" minOccurs="0"/>
+										<xs:element name="CardStartDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="CardStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="HotCardFlag" type="xs:string" minOccurs="0"/>
+										<xs:element name="UseState" type="xs:string" minOccurs="0"/>
+										<xs:element name="ServiceNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="RechargeDate" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotBillingRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Hot Billing Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BillTypeList" type="tns:BillType"/>
+										<xs:element name="RequestType" type="xs:string"/>
+										<xs:element name="TradeType" type="xs:string"/>
+										<xs:element name="TaskID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotBillingResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="FileNameTypeList" type="tns:FileNameType" minOccurs="0"/>
+										<xs:element name="AuthTypeList" type="tns:AuthTypeListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillRecordType">
+		<xs:all>
+			<xs:element name="SubscriberID" type="xs:string"/>
+			<xs:element name="AcctID" type="xs:string" minOccurs="0"/>
+			<xs:element name="BillCycleID" type="xs:string" minOccurs="0"/>
+			<xs:element name="EntityType" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BillType">
+		<xs:sequence>
+			<xs:element name="BillRecord" type="tns:BillRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AuthTypeRecordType">
+		<xs:all>
+			<xs:element name="SubscriberID" type="xs:string"/>
+			<xs:element name="AcctID" type="xs:string" minOccurs="0"/>
+			<xs:element name="BillCycleID" type="xs:string" minOccurs="0"/>
+			<xs:element name="EntityType" type="xs:string"/>
+			<xs:element name="ReturnCode" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="AuthTypeListType">
+		<xs:sequence>
+			<xs:element name="AuthTypeRecord" type="tns:AuthTypeRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FileNameRecordType">
+		<xs:all>
+			<xs:element name="FileName" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="FileNameType">
+		<xs:sequence>
+			<xs:element name="FileNameRecord" type="tns:FileNameRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SMSNoticeHistoryListType">
+		<xs:sequence>
+			<xs:element name="SMSNoticeHistoryRecord" type="tns:SMSNoticeHistoryRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SMSNoticeHistoryRecordType">
+		<xs:all>
+			<xs:element name="msisdn" type="xs:string"/>
+			<xs:element name="Time" type="xs:string" minOccurs="0"/>
+			<xs:element name="SMSContents" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="StateChangeLogQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:State Change Log Query Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StateChangeLogQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="StateChgList" type="tns:StateChgListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="StateChgRecordType">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+			<xs:element name="SubCosID" type="xs:string"/>
+			<xs:element name="OldState" type="xs:string"/>
+			<xs:element name="NewState" type="xs:string"/>
+			<xs:element name="OperType" type="xs:string"/>
+			<xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperTime" type="xs:string"/>
+			<xs:element name="IMSI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="StateChgListType">
+		<xs:sequence>
+			<xs:element name="StateChgRecord" type="tns:StateChgRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!---->
+	<xs:element name="IntegrationQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:prepaid Integration Query request for M8</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="SubscriberId" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IntegrationQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="ValidStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="SuspendStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="DisableStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="Status" type="xs:string" minOccurs="0"/>
+										<xs:element name="FirstActDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="LastMonthDay" type="xs:string" minOccurs="0"/>
+										<xs:element name="BalanceRecordList" type="tns:BalanceRecordListType" minOccurs="0"/>
+										<xs:element name="OwedBillAmt" type="tns:MoneyType" nillable="true" minOccurs="0"/>
+										<xs:element name="PreviousStatus" type="xs:string" minOccurs="0"/>
+										<xs:element name="ChangeDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="HomeZoneNo" type="xs:string" nillable="true" minOccurs="0"/>
+										<xs:element name="PromoBalance" type="xs:long" nillable="true" minOccurs="0"/>
+										<xs:element name="ManageStatus" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManualRechargeRequest">
+		<xs:annotation>
+			<xs:documentation>SCP:Manual Recharge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="CardPinNumber" type="xs:string"/>
+										<xs:element name="RechargeType" type="xs:int"/>
+										<xs:element name="OperatorID" type="xs:string"/>
+										<xs:element name="CallingNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="AccessMethod" type="xs:int" minOccurs="0"/>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManualRechargeResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AccountList" type="tns:AccountListType" minOccurs="0"/>
+										<xs:element name="ActivePeriod" type="xs:string" minOccurs="0"/>
+										<xs:element name="SuspendPeriod" type="xs:string" minOccurs="0"/>
+										<xs:element name="DisablePeriod" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AccountRecordType">
+		<xs:all>
+			<xs:element name="AccountBalance" type="xs:long" minOccurs="0"/>
+			<xs:element name="AccountType" type="xs:int" minOccurs="0"/>
+			<xs:element name="ValidityPeriod" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Date Format:YYYYMMDD</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="AccountListType">
+		<xs:sequence>
+			<xs:element name="AccountRecord" type="tns:AccountRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ActiveFirstRequest">
+		<xs:annotation>
+			<xs:documentation>SCP: Subscriber First Activation</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Indicates the MSISDN of a subscriber</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="AccessMethod" type="xs:int">
+											<xs:annotation>
+												<xs:documentation>0-13800138000,1-1861 Call Center,2-MPortal.Default value is 2</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="LogID" type="xs:string"/>
+										<xs:element name="AccessType" type="xs:int" minOccurs="0"/>
+										<xs:element name="OtherNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="SendSMSToOtherNum" type="xs:int" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ActiveFirstResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModCommitmentBalRequest">
+		<xs:annotation>
+			<xs:documentation>open or close commitment balance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Indicates the MSISDN of a subscriber</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="CommitmentBalane" type="xs:long">
+											<xs:annotation>
+												<xs:documentation>0-close >0-open</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="CycleNum" type="xs:int">
+											<xs:annotation>
+												<xs:documentation>commitmentbalance>0-avalible</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ActiveDays" type="xs:int">
+											<xs:annotation>
+												<xs:documentation>activedays</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="OperatorID" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Indicates the operator</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModCommitmentBalResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="CommitmentBlance" type="xs:long" minOccurs="0"/>
+										<xs:element name="ActivePeriod" type="xs:string"/>
+										<xs:element name="SuspendPeriod" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RechargeRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Cash Recharge request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LogID" type="xs:string"/>
+										<xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+										<xs:element name="DeptID" type="xs:string" minOccurs="0"/>
+										<xs:element name="BelToAreaID1" type="xs:string" minOccurs="0"/>
+										<xs:element name="BelToAreaID2" type="xs:string" minOccurs="0"/>
+										<xs:element name="BelToAreaID3" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="PaymentMode" type="xs:string"/>
+										<xs:element name="RechargeAmt" type="tns:MoneyType"/>
+										<xs:element name="SPCode" type="xs:string" minOccurs="0"/>
+										<xs:element name="VoucherType" type="xs:string" minOccurs="0"/>
+										<xs:element name="BankCode" type="xs:string" minOccurs="0"/>
+										<xs:element name="Desc" type="xs:string" minOccurs="0"/>
+										<xs:element name="SequenceID" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+										<xs:element name="AccountType" type="xs:string" minOccurs="0"/>
+										<xs:element name="PeriodType" type="xs:string" minOccurs="0"/>
+										<xs:element name="PeriodMeasureType" type="xs:string" minOccurs="0"/>
+										<xs:element name="PeriodValue" type="xs:int" minOccurs="0"/>
+										<xs:element name="TimeOffset" type="xs:int" minOccurs="0"/>
+										<xs:element name="TimeSchemaID" type="xs:string" minOccurs="0"/>
+										<xs:element name="ChannelID" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RechargeResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AfterBalance" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="SubscriberValidity" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubExtraValidity" type="xs:int" minOccurs="0"/>
+										<xs:element name="AccountChgBalList" type="tns:AccountChgBalList" minOccurs="0"/>
+										<xs:element name="TaxList" type="tns:TaxListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<!--the following only use by BME inner-->
+	<xs:element name="RechargeLogQueryRequest">
+		<xs:annotation>
+			<xs:documentation>DS:Query for recharge log include cash recharge and card recharge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberID" type="xs:string"/>
+										<xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+										<xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubscriberNo" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RechargeLogQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="RechargeLogList" type="tns:RechargeLogListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RechargeLogRecordType">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="RechargeType" type="xs:string"/>
+			<xs:element name="Fee" type="tns:MoneyType"/>
+			<xs:element name="BeforeBalance" type="tns:MoneyType"/>
+			<xs:element name="AfterBalance" type="tns:MoneyType"/>
+			<xs:element name="RechargeDate" type="xs:string"/>
+			<xs:element name="Serial" type="xs:string" minOccurs="0"/>
+			<xs:element name="Batch" type="xs:string" minOccurs="0"/>
+			<xs:element name="Reason" type="xs:int" minOccurs="0"/>
+			<xs:element name="Comment" type="xs:string" minOccurs="0"/>
+			<xs:element name="CardPinNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperOriginCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccessMethod" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="RechargeLogListType">
+		<xs:sequence>
+			<xs:element name="RechargeLogRecord" type="tns:RechargeLogRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransferLogListType">
+		<xs:sequence>
+			<xs:element name="TransferLogRecord" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="TransferorSubNo" type="xs:string"/>
+						<xs:element name="TransfereeSubNo" type="xs:string"/>
+						<xs:element name="Fee" type="tns:MoneyType"/>
+						<xs:element name="TransferDate" type="xs:string"/>
+						<xs:element name="TransferType" type="xs:string" minOccurs="0"/>
+						<xs:element name="TransferBalAftTransfer" type="tns:MoneyType" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--M8 New RequireMent-->
+	<xs:element name="AccountQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query for postpaid and prepaid </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberID" type="xs:string"/>
+										<xs:element name="IncludeLP" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubNo" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AccountQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AccountRecordList" type="tns:AccountRecordListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AccountRecordListType">
+		<xs:sequence>
+			<xs:element name="AccountRecord" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="AccountKey" type="xs:string"/>
+						<xs:element name="AccountType" type="xs:string"/>
+						<xs:element name="InitalBalance" type="tns:MoneyType" minOccurs="0"/>
+						<xs:element name="Balance" type="tns:MoneyType"/>
+						<xs:element name="ExpiryDate" type="xs:string"/>
+						<xs:element name="Reserved1" type="xs:string" minOccurs="0"/>
+						<xs:element name="Reserved2" type="xs:string" minOccurs="0"/>
+						<xs:element name="Reserved3" type="xs:string" minOccurs="0"/>
+						<xs:element name="Reserved4" type="xs:string" minOccurs="0"/>
+						<xs:element name="Reserved5" type="xs:string" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RebateQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query validate Rebate infomation</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberID" type="xs:string"/>
+										<xs:element name="BeginSn" type="xs:int"/>
+										<xs:element name="RecordNum" type="xs:int"/>
+										<xs:element name="QueryMode" type="xs:int"/>
+										<xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RebateQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="TotalNumbers" type="xs:int"/>
+										<xs:element name="RebateRecordList" type="tns:RebateRecordListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RebateRecordType">
+		<xs:all>
+			<xs:element name="PolicyOrderKey" type="xs:string"/>
+			<xs:element name="PeriodSeq" type="xs:string"/>
+			<xs:element name="ProductID" type="xs:string"/>
+			<xs:element name="CreateDate" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>format:YYYYMMDDHHMMSS</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RebateDate" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>format:YYYYMMDDHHMMSS</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FeeID" type="xs:string" minOccurs="0"/>
+			<xs:element name="RebateAmount" type="tns:MoneyType"/>
+			<xs:element name="CycleFlag" type="xs:string"/>
+			<xs:element name="Reserved1" type="xs:string" minOccurs="0"/>
+			<xs:element name="Reserved2" type="xs:string" minOccurs="0"/>
+			<xs:element name="Reserved3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Reserved4" type="xs:string" minOccurs="0"/>
+			<xs:element name="Reserved5" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="RebateRecordListType">
+		<xs:sequence>
+			<xs:element name="RebateRecord" type="tns:RebateRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="VerifyRechargeCardRequest">
+		<xs:annotation>
+			<xs:documentation>UVC: Verify Recharge Card</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AccountNumber" type="xs:string"/>
+										<xs:element name="Sequence" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VerifyRechargeCardResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="MatchResult" type="xs:int" minOccurs="0"/>
+										<xs:element name="Reason" type="xs:string" minOccurs="0"/>
+										<xs:element name="ReserveField1" type="xs:string" minOccurs="0"/>
+										<xs:element name="ReserveField2" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<!--M8 Phase 2 new requirement-->
+	<xs:element name="QueryTimeOfInitCreditRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query the time of bill cycle changing for init credit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberID" type="xs:string" minOccurs="0"/>
+										<xs:element name="AccountID" type="xs:string" minOccurs="0"/>
+										<xs:element name="LatestBillCycleTimes" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryTimeOfInitCreditResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="CreditResetList" type="tns:CreditResetListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CreditResetRecordType">
+		<xs:all>
+			<xs:element name="BillCycleID" type="xs:string"/>
+			<xs:element name="ResetTime" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="CreditResetListType">
+		<xs:sequence>
+			<xs:element name="CreditResetRecord" type="tns:CreditResetRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QueryPointRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query the loyalty point of the subscriber</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="EntityID" type="xs:string"/>
+										<xs:element name="EntityType" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryPointResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="EntityID" type="xs:string" minOccurs="0"/>
+										<xs:element name="Balance" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="ValidityPeriod" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExchangePointToBonusRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Exchange the loyalty point to a kind of bonus</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SerialID" type="xs:string"/>
+										<xs:element name="EntityID" type="xs:string"/>
+										<xs:element name="EntityType" type="xs:string"/>
+										<xs:element name="AdjustMode" type="xs:string"/>
+										<xs:element name="LoyaltyPoint" type="tns:MoneyType"/>
+										<xs:element name="BonusType" type="xs:string"/>
+										<xs:element name="BonusValue" type="tns:MoneyType"/>
+										<xs:element name="Memo" type="xs:string" minOccurs="0"/>
+										<xs:element name="PeriodType" type="xs:string"/>
+										<xs:element name="PeriodMeasureType" type="xs:string"/>
+										<xs:element name="PeriodValue" type="xs:int"/>
+										<xs:element name="TimeSchemaID" type="xs:string"/>
+										<xs:element name="Reserved1" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved2" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved3" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExchangePointToBonusResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LoyaltyPointBalance" type="tns:MoneyType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChangePointRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Change the loyalty point directly</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SerialID" type="xs:string"/>
+										<xs:element name="EntityID" type="xs:string"/>
+										<xs:element name="EntityType" type="xs:string"/>
+										<xs:element name="AdjustMode" type="xs:string"/>
+										<xs:element name="LoyaltyPoint" type="tns:MoneyType"/>
+										<xs:element name="Memo" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved1" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved2" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved3" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChangePointResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LoyaltyPointBalance" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="LoyaltyPointPeriod" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryTimeSchemaRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query the time schema</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LangType" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryTimeSchemaResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="TimeSchemaList" type="tns:TimeSchemaListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TimeSchemaRecordType">
+		<xs:all>
+			<xs:element name="TimeSchemaKey" type="xs:string"/>
+			<xs:element name="TimeSchemaName" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="TimeSchemaListType">
+		<xs:sequence>
+			<xs:element name="TimeSchemaRecord" type="tns:TimeSchemaRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QueryBonusTypeRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Query the bonus type</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LangType" type="xs:string" minOccurs="0"/>
+										<xs:element name="QueryMode" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Query mode flag(
+0:Query all bonustype
+1:Query financing bonustype)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryBonusTypeResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BonusTypeList" type="tns:BonusTypeListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BonusTypeRecordType">
+		<xs:all>
+			<xs:element name="BonusTypeKey" type="xs:string"/>
+			<xs:element name="BonusTypeName" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BonusTypeListType">
+		<xs:sequence>
+			<xs:element name="BonusTypeRecord" type="tns:BonusTypeRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ApplyForAdvanceCreditRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Apply for the credit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SerialID" type="xs:string"/>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="SubscriberID" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApplyForAdvanceCreditResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="CreditValue" type="tns:MoneyType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UniDebitFeeRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Uniform debit fee interface</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string" minOccurs="0"/>
+										<xs:element name="AcctID" type="xs:string" minOccurs="0"/>
+										<xs:element name="LogID" type="xs:string"/>
+										<xs:element name="OperID" type="xs:string"/>
+										<xs:element name="DeptID" type="xs:string"/>
+										<xs:element name="AreaCode" type="xs:string"/>
+										<xs:element name="FeeInfoList" type="tns:FeeInfoListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UniDebitFeeResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AfterBalance" type="tns:MoneyType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FeeInfoRecordType">
+		<xs:all>
+			<xs:element name="FeeType" type="xs:string"/>
+			<xs:element name="FeeAmt" type="tns:MoneyType" minOccurs="0"/>
+			<xs:element name="ProductList" type="tns:ProductListType" minOccurs="0"/>
+			<xs:element name="AddCount" type="xs:int" minOccurs="0"/>
+			<xs:element name="ModifyCount" type="xs:int" minOccurs="0"/>
+			<xs:element name="QueryCount" type="xs:int" minOccurs="0"/>
+			<xs:element name="DeleteCount" type="xs:int" minOccurs="0"/>
+			<xs:element name="OperationID" type="xs:int" minOccurs="0"/>
+			<xs:element name="OperationType" type="xs:string" minOccurs="0"/>
+			<xs:element name="ActionType" type="xs:string" minOccurs="0"/>
+			<xs:element name="TaxList" type="tns:TaxListType" minOccurs="0"/>
+			<xs:element name="AdditionalInfo" type="xs:string" minOccurs="0"/>
+			<xs:element name="CugType" type="xs:int" minOccurs="0"/>
+			<xs:element name="CugId" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="FeeInfoListType">
+		<xs:sequence>
+			<xs:element name="FeeInfoRecord" type="tns:FeeInfoRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductListType">
+		<xs:sequence>
+			<xs:element name="ProductItem" type="tns:ProductItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductItemType">
+		<xs:all>
+			<xs:element name="ProductID" type="xs:string"/>
+			<xs:element name="ProductOrderID" type="xs:string" minOccurs="0"/>
+			<xs:element name="salesProdDefID" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyAcctFeeRecord">
+		<xs:all>
+			<xs:element name="AccountKey" type="xs:long"/>
+			<xs:element name="AccountId" type="xs:string" minOccurs="0"/>
+			<xs:element name="FeeItemKey" type="xs:long"/>
+			<xs:element name="FeeItemId" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductKey" type="xs:long"/>
+			<xs:element name="ProductId" type="xs:string" minOccurs="0"/>
+			<xs:element name="FeeID" type="xs:int"/>
+			<xs:element name="PrevAcctChgAmt" type="xs:long"/>
+			<xs:element name="CurAcctChgAmt" type="xs:long"/>
+			<xs:element name="MinMeasureId" type="xs:int"/>
+			<xs:element name="Reserve" type="xs:int"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyAcctFeeList">
+		<xs:sequence>
+			<xs:element name="ModifyAcctFee" type="tns:ModifyAcctFeeRecord" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QryBorrowInfoRequest">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QryBorrowInfoResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BorrowAmount" type="tns:MoneyType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AcctChgRecType">
+		<xs:all>
+			<xs:element name="CurrAcctBal" type="xs:long"/>
+			<xs:element name="ChgAcctBal" type="xs:long"/>
+			<xs:element name="CurrExpTime" type="xs:string"/>
+			<xs:element name="ChgExpTime" type="xs:int"/>
+			<xs:element name="AccountType" type="xs:string"/>
+			<xs:element name="AccountID" type="xs:string"/>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyAcctFeeType">
+		<xs:all>
+			<xs:element name="AccountType" type="xs:string"/>
+			<xs:element name="CurrAcctChgAmt" type="xs:long"/>
+			<xs:element name="GLID" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+			<xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="TransferAccountRequest">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransfereeNo" type="xs:string"/>
+										<xs:element name="TransferorNo" type="xs:string"/>
+										<xs:element name="TransferType" type="xs:int" minOccurs="0"/>
+										<xs:element name="TransferHandlingCharge" type="xs:long" minOccurs="0"/>
+										<xs:element name="ModifyAcctFeeList">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ModifyAcctFee" type="tns:ModifyAcctFeeType" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="HandlingChargeFlag" type="xs:int" minOccurs="0"/>
+										<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+										<xs:element name="pin" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransferAccountResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="TransfereeHandlingCharge" type="xs:long" minOccurs="0"/>
+										<xs:element name="TransferorHandlingCharge" type="xs:long" minOccurs="0"/>
+										<xs:element name="TransfereeAcctChgList" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AcctChgRec" type="tns:AcctChgRecType" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="TransferorAcctChgList" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AcctChgRec" type="tns:AcctChgRecType" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="TransfereeOldActiveStop" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransfereeNewActiveStop" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransferorOldActiveStop" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransferorNewActiveStop" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QryUnBilledBonusRequest">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberID" type="xs:string"/>
+										<xs:element name="AccountList" type="tns:DaiFuAccountListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QryUnBilledBonusResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="ConsumeAmountList" type="tns:ConsumeAmountListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="DaiFuAccountListType">
+		<xs:sequence>
+			<xs:element name="AccountID" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsumeAmountListType">
+		<xs:sequence>
+			<xs:element name="ConsumeAmountRecord" type="tns:ConsumeAmountRecordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsumeAmountRecordType">
+		<xs:all>
+			<xs:element name="AccountID" type="xs:string"/>
+			<xs:element name="DaiFuAmount" type="tns:MoneyType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="HybridIntegrationQueryRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Hybrid subscriber integration query request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="SubscriberID" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HybridIntegrationQueryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ValidStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="SuspendStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="DisableStopDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="Status" type="xs:string" minOccurs="0"/>
+										<xs:element name="FirstActDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="BalanceRecordList" type="tns:BalanceRecordListType" minOccurs="0"/>
+										<xs:element name="PreviousStatus" type="xs:string" minOccurs="0"/>
+										<xs:element name="ChangeDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="HomeZoneNo" type="xs:string" minOccurs="0"/>
+										<xs:element name="TotalCredit" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="RemainCredit" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="FreeFluxLimit" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="RemainFreeFluxValue" type="tns:MoneyType" minOccurs="0"/>
+										<xs:element name="Reserved1" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved2" type="xs:string" minOccurs="0"/>
+										<xs:element name="Reserved3" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryUserGroupRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="UserGroupID" type="xs:string"/>
+										<xs:element name="UserGroupName" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryUserGroupResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="UserGroup" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="GroupID" type="xs:string"/>
+													<xs:element name="GroupName" type="xs:string"/>
+													<xs:element name="CUGAddress" type="xs:string" minOccurs="0"/>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManGroupMemberRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="UserGroupID" type="xs:string"/>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="OperationType" type="xs:int"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManGroupMemberResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultHeader" type="tns:ResultHeader"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QuerySubscribedGroupRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QuerySubscribedGroupResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="UserGroup" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="GroupID" type="xs:string"/>
+													<xs:element name="GroupName" type="xs:string"/>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrepaidProRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Prepaid Pro recharge notification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperationType" type="xs:int"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrepaidProResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0">
+								<xs:complexType/>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiSubscriberBandRequest">
+		<xs:annotation>
+			<xs:documentation>CBE:Band/Unband multi subscriber identification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperType" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>1: Band Subscriber identification 2: Unband Subscriber identification</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="SubscriberNo" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Original Subscriber No</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="OperatedSubscriberNo" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Operated Subscriber No</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="IMSI" type="xs:string" minOccurs="0"/>
+										<xs:element name="IMEI" type="xs:string" minOccurs="0"/>
+										<xs:element name="OperatedSubscriberNoType" type="xs:int" minOccurs="0"/>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MultiSubscriberBandResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncItemRequest">
+		<xs:annotation>
+			<xs:documentation>SyncItemRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperId" type="xs:int">
+											<xs:annotation>
+												<xs:documentation>1: add 2: del 3:mod</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FeeType" type="xs:int" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>3001: OCC 3101: Rebate 3201:Instalment 3301:other fee</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="SynBaseDataFlag" type="xs:string" minOccurs="0"/>
+										<xs:element name="ItemId" type="xs:string"/>
+										<xs:element name="Name" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncItemResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BillMediumItem">
+		<xs:all>
+			<xs:element name="BillMediumId" type="xs:int"/>
+			<xs:element name="BillMediumName" type="xs:string"/>
+			<xs:element name="SummaryPrice" type="xs:long"/>
+			<xs:element name="ItemPrice" type="xs:long" minOccurs="0"/>
+			<xs:element name="BillCarrier" type="xs:int"/>
+			<xs:element name="DetailFlag" type="xs:int"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BillMediumListType">
+		<xs:sequence>
+			<xs:element name="BillMedium" type="tns:BillMediumItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QueryBillMediumRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BillMediumId" type="xs:int" minOccurs="0"/>
+										<xs:element name="CustomerType" type="xs:int"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryBillMediumResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BillMediumList" type="tns:BillMediumListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryPenaltyAmountRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Subid" type="xs:string"/>
+										<xs:element name="FixAmt" type="xs:string"/>
+										<xs:element name="FloatAmt" type="xs:string"/>
+										<xs:element name="ProductId" type="xs:string"/>
+										<xs:element name="OsTimes" type="xs:int"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryPenaltyAmountResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="PenaltyAmt" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryPaymentTypeRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Msisdn" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryPaymentTypeResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Msisdn" type="xs:string"/>
+										<xs:element name="PaymentType" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="DetailSubItem">
+		<xs:all>
+			<xs:element name="SubId" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="DetailSubListType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="DetailSub" type="tns:DetailSubItem" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderBMItem">
+		<xs:all>
+			<xs:element name="AcctId" type="xs:string" minOccurs="0"/>
+			<xs:element name="BillMediumId" type="xs:int"/>
+			<xs:element name="IsAllItemSub" type="xs:int" minOccurs="0"/>
+			<xs:element name="DetailSubList" type="tns:DetailSubListType" minOccurs="0"/>
+			<xs:element name="EffDate" type="xs:string"/>
+			<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="OrderBMListType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="OrderBM" type="tns:OrderBMItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CancelBMItem">
+		<xs:all>
+			<xs:element name="AcctId" type="xs:string" minOccurs="0"/>
+			<xs:element name="BillMediumId" type="xs:int"/>
+			<xs:element name="ExpDate" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="CancelBMListType">
+		<xs:sequence>
+			<xs:element name="CancelBM" type="tns:CancelBMItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OrderBillMediumRequest">
+		<xs:annotation>
+			<xs:documentation>OrderBillMediumRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AcctId" type="xs:string" minOccurs="0"/>
+										<xs:element name="OrderBMList" type="tns:OrderBMListType" minOccurs="0"/>
+										<xs:element name="CancelBMList" type="tns:CancelBMListType" minOccurs="0"/>
+										<xs:element name="ModifyBMList" type="tns:OrderBMListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderBillMediumResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncOperatorRequest">
+		<xs:annotation>
+			<xs:documentation>SyncOperatorRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperType" type="xs:int"/>
+										<xs:element name="OperOriginCode" type="xs:string"/>
+										<xs:element name="OperNewCode" type="xs:string" minOccurs="0"/>
+										<xs:element name="Password" type="xs:string" minOccurs="0"/>
+										<xs:element name="AdminOperCode" type="xs:string" minOccurs="0"/>
+										<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncOperatorResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageSalesProd2VASProdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SalesProdID" type="xs:string"/>
+										<xs:element name="SalesProdName" type="xs:string"/>
+										<xs:element name="ManageType" type="xs:int"/>
+										<xs:element name="VASProductIDList" type="tns:VASProductIDListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageSalesProd2VASProdResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SplitBillingSetupRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="OperId" type="xs:int"/>
+										<xs:element name="SubscriberId" type="xs:string"/>
+										<xs:element name="PayActionType" type="xs:int"/>
+										<xs:element name="ApplyTime" type="xs:string"/>
+										<xs:element name="ExpiryTime" type="xs:string"/>
+										<xs:element name="ProductDefID" type="xs:string" minOccurs="0"/>
+										<xs:element name="TariffPlanID" type="xs:string" minOccurs="0"/>
+										<xs:element name="OriAccountID" type="xs:string"/>
+										<xs:element name="DestAccountID" type="xs:string"/>
+										<xs:element name="Amt" type="xs:string" minOccurs="0"/>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SplitBillingSetupResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryFNAllInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Msisdn" type="xs:string"/>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryFNAllInfoResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="COB" type="xs:string"/>
+										<xs:element name="UseHis" type="xs:string"/>
+										<xs:element name="CountMon" type="xs:string"/>
+										<xs:element name="HaveSpace" type="xs:string"/>
+										<xs:element name="FeeType" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryRechargeBlackListInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="Msisdn" type="xs:string"/>
+										<xs:element name="LogID" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryRechargeBlackListInfoResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BlackInfo" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransferLogQueryRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="TransferType" type="xs:string" minOccurs="0"/>
+										<xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="BeginPageNum" type="xs:int" minOccurs="0"/>
+										<xs:element name="FetchPageNum" type="xs:int" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransferLogQueryResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="TransferLogList" type="tns:TransferLogListType" minOccurs="0"/>
+										<xs:element name="TotalRowNum" type="xs:long"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdjustNextBillingDateRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="AdjustBillingInfo" type="tns:AdjustBillingInfoType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdjustNextBillingDateResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AdjustBillingInfoType">
+		<xs:all>
+			<xs:element name="ProductOrderKey" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+			<xs:element name="NextBillingDay" type="xs:int"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="ManageMasterRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="MasterNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="operationType" type="xs:string"/>
+										<xs:element name="MasterType" type="xs:string" minOccurs="0"/>
+										<xs:element name="TransactionFlag" type="xs:string" minOccurs="0"/>
+										<xs:element name="MasterDes" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageMasterResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="MasterInfoList" type="tns:MasterInfoListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="MasterInfoListType">
+		<xs:sequence>
+			<xs:element name="MasterInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="MasterNumber" type="xs:string" minOccurs="0"/>
+						<xs:element name="MasterType" type="xs:string" minOccurs="0"/>
+						<xs:element name="TransactionFlag" type="xs:string" minOccurs="0"/>
+						<xs:element name="RechargeTimes" type="xs:long" minOccurs="0"/>
+						<xs:element name="RechargeAmount" type="xs:long" minOccurs="0"/>
+						<xs:element name="MasterDes" type="xs:string" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ManageSlaveRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="MasterNumber" type="xs:string"/>
+										<xs:element name="SlaveNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="operationType" type="xs:string"/>
+										<xs:element name="SlaveStatus" type="xs:int" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageSlaveResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SlaveInfoList" type="tns:SlaveInfoListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SlaveInfoListType">
+		<xs:sequence>
+			<xs:element name="SlaveInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="MasterNumber" type="xs:string" minOccurs="0"/>
+						<xs:element name="SlaveNumber" type="xs:string" minOccurs="0"/>
+						<xs:element name="Balance" type="xs:long" minOccurs="0"/>
+						<xs:element name="SlaveStatus" type="xs:int" minOccurs="0"/>
+						<xs:element name="AddDate" type="xs:string" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ManageTransferForSlaveRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="MasterNumber" type="xs:string"/>
+										<xs:element name="SlaveNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="operationType" type="xs:string"/>
+										<xs:element name="Amount" type="xs:long" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageTransferForSlaveResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModifySubscriberValidityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberList" type="tns:SubscriberListType"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ModifySubscriberValidityResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="SubscriberInfoList" type="tns:SubscriberInfoListType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SubscriberListType">
+		<xs:sequence>
+			<xs:element name="SubscriberInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="SubscriberNo" type="xs:string"/>
+						<xs:element name="ValidityIncrement" type="xs:int"/>
+						<xs:element name="ModifyType" type="xs:int" minOccurs="0"/>
+						<xs:element name="NotifyFlag" type="xs:int" minOccurs="0"/>
+						<xs:element name="SUSCHGDAYS" type="xs:int" minOccurs="0"/>
+						<xs:element name="DISCHGDAYS" type="xs:int" minOccurs="0"/>
+						<xs:element name="UpdateType" type="xs:int" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberInfoListType">
+		<xs:sequence>
+			<xs:element name="SubscriberInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="SubscriberNo" type="xs:string"/>
+						<xs:element name="ResultCode" type="xs:string"/>
+						<xs:element name="LifeCycleState" type="xs:string" minOccurs="0"/>
+						<xs:element name="ActiveStop" type="xs:string" minOccurs="0"/>
+						<xs:element name="SuspendStop" type="xs:string" minOccurs="0"/>
+						<xs:element name="DisableStop" type="xs:string" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QueryUnbilledFUBalRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubId" type="xs:string" minOccurs="0"/>
+										<xs:element name="AcctId" type="xs:string" minOccurs="0"/>
+										<xs:element name="CycleId" type="xs:string" minOccurs="0"/>
+										<xs:element name="MSISDN" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="UnbilledFUBalRecordType">
+		<xs:all>
+			<xs:element name="SubId" type="xs:string"/>
+			<xs:element name="AcctId" type="xs:string"/>
+			<xs:element name="MDN" type="xs:string"/>
+			<xs:element name="CycleId" type="xs:string"/>
+			<xs:element name="AcctType" type="xs:int"/>
+			<xs:element name="ProductId" type="xs:string"/>
+			<xs:element name="LastRollover" type="xs:long"/>
+			<xs:element name="Added" type="xs:long"/>
+			<xs:element name="Used" type="xs:long"/>
+			<xs:element name="CurrentBal" type="xs:long"/>
+			<xs:element name="UnitType" type="xs:int"/>
+			<xs:element name="ApplyTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="UnbilledFUBalRecordListType">
+		<xs:sequence>
+			<xs:element name="UnbilledFUBalRecord" type="tns:UnbilledFUBalRecordType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="QueryUnbilledFUBalResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="UnbilledFUBalList" type="tns:UnbilledFUBalRecordListType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="HeaderType">
+		<xs:sequence>
+			<xs:element name="processTypeID" type="xs:string" minOccurs="0"/>
+			<xs:element name="externalReference" type="xs:string" minOccurs="0"/>
+			<xs:element name="sourceID" type="xs:string" minOccurs="0"/>
+			<xs:element name="username" type="xs:string" minOccurs="0"/>
+			<xs:element name="password" type="xs:string" minOccurs="0"/>
+			<xs:element name="processFlag" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ParameterListType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="parameter" type="tns:attrType" minOccurs="0"/>
+			<xs:element name="parameterList" type="tns:ParameterListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="attrType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ResultType">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+			<xs:element name="instanceId" type="xs:string" minOccurs="0"/>
+			<xs:element name="resultElements" type="tns:ParameterListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SDF_Data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="header" type="tns:HeaderType" minOccurs="0"/>
+				<xs:element name="parameters" type="tns:ParameterListType" minOccurs="0"/>
+				<xs:element name="result" type="tns:ResultType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncCodeDictRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OperType" type="xs:integer"/>
+										<xs:element name="CodeType" type="xs:string"/>
+										<xs:element name="ItemId" type="xs:string"/>
+										<xs:element name="UpperItemId" type="xs:string" minOccurs="0"/>
+										<xs:element name="ItemName" type="xs:string" minOccurs="0"/>
+										<xs:element name="ItemRemark" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncCodeDictResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncContractRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OperType" type="xs:integer"/>
+										<xs:element name="ContractType" type="xs:string"/>
+										<xs:element name="ContractId" type="xs:string"/>
+										<xs:element name="ContractLevel" type="xs:string" minOccurs="0"/>
+										<xs:element name="SubscriberId" type="xs:string" minOccurs="0"/>
+										<xs:element name="AccountId" type="xs:string" minOccurs="0"/>
+										<xs:element name="ProductId" type="xs:string" minOccurs="0"/>
+										<xs:element name="StartDate" type="xs:string"/>
+										<xs:element name="EndDate" type="xs:string"/>
+										<xs:element name="TotalPeriods" type="xs:string"/>
+										<xs:element name="SFID" type="xs:string"/>
+										<xs:element name="TotalAmount" type="xs:string" minOccurs="0"/>
+										<xs:element name="OperDate" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncContractResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManCBSServiceRequest">
+		<xs:annotation>
+			<xs:documentation>SCP: modify Subscriber's CBS Service</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Indicates the MSISDN of a subscriber</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Service" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>MOVOICEBLACK_LEVEL0,MOVOICEBLACK_LEVEL1</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="OperateType" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>1:open, 2:close, 3:modify(reserve)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ManCBSServiceList" type="tns:ManCBSServiceListType" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManCBSServiceResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryCycleEndTimeRequest">
+		<xs:annotation>
+			<xs:documentation>QueryCycleEndTime</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="SubscriberNo" type="xs:string"/>
+										<xs:element name="ProdOrderKey" type="xs:long" minOccurs="0"/>
+										<xs:element name="ProductCode" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QueryCycleEndTimeResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="ExpireTime" type="xs:string"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncTalkGroupMemberInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OperType" type="xs:string"/>
+										<xs:element name="SubscriberID" type="xs:string"/>
+										<xs:element name="SubNo" type="xs:string"/>
+										<xs:element name="TGID" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SyncTalkGroupMemberInfoResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdjustCreditRequest">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="AcctId" type="xs:string" minOccurs="0"/>
+										<xs:element name="AcctCode" type="xs:string" minOccurs="0"/>
+										<xs:element name="subId" type="xs:string" minOccurs="0"/>
+										<xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+										<xs:element name="AdjustType" type="xs:int" minOccurs="0"/>
+										<xs:element name="AdjustFlag" type="xs:int" minOccurs="0"/>
+										<xs:element name="Amount" type="xs:long"/>
+										<xs:element name="AdjustReson" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdjustCreditResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QuerySMSNoticeHistoryRequest">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="RequestMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:RequestHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="msisdn" type="xs:string"/>
+										<xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+										<xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QuerySMSNoticeHistoryResult">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ResultMessage">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="MessageHeader" type="tns:ResultHeader"/>
+							<xs:element name="MessageBody">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SMSNoticeHistoryList" type="tns:SMSNoticeHistoryListType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation/>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:changeprimaryoffermgr="http://www.huawei.com/bme/cbsinterface/changeprimaryoffermgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeprimaryoffermgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:changeprimaryoffer="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeprimaryoffermgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer" schemaLocation="CBSInterface_ChangePrimaryOffer.xsd"/>
+			<element name="ChangePrimaryOfferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangePrimaryOfferRequest" type="changeprimaryoffer:ChangePrimaryOfferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangePrimaryOfferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangePrimaryOfferResult" type="changeprimaryoffer:ChangePrimaryOfferResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchChangePrimaryOfferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchChangePrimaryOfferRequest" type="changeprimaryoffer:BatchChangePrimaryOfferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>	
+			<element name="BatchChangePrimaryOfferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>					
+		</xs:schema>
+	</types>
+	<message name="ChangePrimaryOfferRequestMessage">
+		<part name="ChangePrimaryOfferRequestMsg" element="changeprimaryoffermgr:ChangePrimaryOfferRequestMsg"/>
+	</message>
+	<message name="ChangePrimaryOfferResultMessage">
+		<part name="ChangePrimaryOfferResultMsg" element="changeprimaryoffermgr:ChangePrimaryOfferResultMsg"/>
+	</message>
+	<message name="BatchChangePrimaryOfferRequestMessage">
+		<part name="BatchChangePrimaryOfferRequestMsg" element="changeprimaryoffermgr:BatchChangePrimaryOfferRequestMsg"/>
+	</message>
+	<message name="BatchChangePrimaryOfferResultMessage">
+		<part name="BatchChangePrimaryOfferResultMsg" element="changeprimaryoffermgr:BatchChangePrimaryOfferResultMsg"/>
+	</message>	
+	<portType name="ChangePrimaryOfferMgr">
+		<operation name="ChangePrimaryOffer">
+			<input message="changeprimaryoffermgr:ChangePrimaryOfferRequestMessage"/>
+			<output message="changeprimaryoffermgr:ChangePrimaryOfferResultMessage"/>
+		</operation>
+		<operation name="BatchChangePrimaryOffer">
+			<input message="changeprimaryoffermgr:BatchChangePrimaryOfferRequestMessage"/>
+			<output message="changeprimaryoffermgr:BatchChangePrimaryOfferResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ChangePrimaryOfferMgrBinding" type="changeprimaryoffermgr:ChangePrimaryOfferMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ChangePrimaryOffer">
+			<soap:operation soapAction="changePrimaryOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchChangePrimaryOffer">
+			<soap:operation soapAction="batchChangePrimaryOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>		
+	</binding>
+	<service name="ChangePrimaryOfferMgrService">
+		<port name="ChangePrimaryOfferMgrServicePort" binding="changeprimaryoffermgr:ChangePrimaryOfferMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer/wsdl/CBSInterface_ChangePrimaryOffer.wsdl"/>
+		</port>
+	</service>
+</definitions>

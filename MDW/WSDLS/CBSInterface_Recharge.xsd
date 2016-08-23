@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:recharge="http://www.huawei.com/bme/cbsinterface/recharge" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/recharge" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="SimplePropertyList">
+		<xs:sequence>
+			<xs:element name="SimleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Common">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctChgRecType">
+		<xs:all>
+			<xs:element name="CurrAcctBal" type="xs:long" nillable="true"/>
+			<xs:element name="ChgAcctBal" type="xs:long" nillable="true"/>
+			<xs:element name="CurrExpTime" type="xs:string"/>
+			<xs:element name="ChgExpTime" type="xs:int"/>
+			<xs:element name="AccountType" type="xs:string" nillable="true"/>
+			<xs:element name="AccountID" type="xs:string" nillable="true"/>
+			<xs:element name="MinMeasureId" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+			<xs:element name="CardPinNumber" type="xs:string"/>
+			<xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountType" type="xs:int" minOccurs="0"/>
+			<xs:element name="Location" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeResult">
+		<xs:sequence>
+			<xs:element name="FaceValue" type="xs:long" nillable="true"/>
+			<xs:element name="NewBalance" type="xs:long" nillable="true"/>
+			<xs:element name="NewActiveStop" type="xs:string"/>
+			<xs:element name="ValidityPeriod" type="xs:int" nillable="true"/>
+			<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="PrmAcctType" type="xs:int" nillable="true"/>
+						<xs:element name="PrmAmt" type="xs:long" nillable="true"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoanAmount" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanPoundage" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="PaymentAmt" type="common:Balance"/>
+			<xs:element name="PaymentMode" type="xs:string"/>
+			<xs:element name="AccountType" type="common:AccountType" minOccurs="0"/>
+			<xs:element name="AdditionalInfo" type="xs:string" minOccurs="0"/>
+			<xs:element name="BankCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="CardSerialNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="CardBatchNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="Location" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+			<xs:element name="AgentName" type="xs:string" minOccurs="0"/>
+			<xs:element name="CardType" type="xs:int" minOccurs="0"/>
+			<xs:element name="Validity" type="xs:int" minOccurs="0"/>
+			<xs:element name="ValidityRule" type="xs:string" minOccurs="0"/>
+			<xs:element name="RechargeSetID" type="xs:int" minOccurs="0"/>
+			<xs:element name="RechargeForCust" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0-给用户缺省帐户充值，1-给客户帐户充值，缺省值为1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="PaymentResult">
+		<xs:all>
+			<xs:element name="InternalSerialNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="NewBalance" type="xs:long" nillable="true"/>
+			<xs:element name="NewActiveStop" type="xs:string"/>
+			<xs:element name="ValidityPeriod" type="xs:int" nillable="true"/>
+			<xs:element name="ExtraValidity" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="AcctChgRecList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AcctChgRec" type="recharge:AcctChgRecType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoanAmount" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanPoundage" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ActiveFirstRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="AccessMethod" type="xs:int" minOccurs="0"/>
+			<xs:element name="Location" type="xs:string" minOccurs="0"/>
+			<xs:element name="IVRLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="SMSLang" type="xs:int" minOccurs="0"/>
+			<xs:element name="RechargeAmount" type="common:Balance" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeEnquiryRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+			<xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+			<xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="RechargeResult" type="xs:int" minOccurs="0"/>
+			<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+			<xs:element name="QueryType" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeEnquiryResult">
+		<xs:sequence>
+			<xs:element name="RechargeLog" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubscriberNo" type="xs:string"/>
+						<xs:element name="SubCosID" type="xs:int" nillable="true"/>
+						<xs:element name="TradeTime" type="xs:string"/>
+						<xs:element name="ErrorType" type="xs:string"/>
+						<xs:element name="RechargeType" type="xs:string"/>
+						<xs:element name="Batch" type="xs:string"/>
+						<xs:element name="Sequence" type="xs:string"/>
+						<xs:element name="CardCosID" type="xs:int" nillable="true"/>
+						<xs:element name="OldActiveStop" type="xs:string"/>
+						<xs:element name="NewActiveStop" type="xs:string"/>
+						<xs:element name="OldSuspendStop" type="xs:string"/>
+						<xs:element name="NewSuspendStop" type="xs:string"/>
+						<xs:element name="OldDisableStop" type="xs:string"/>
+						<xs:element name="NewDisableStop" type="xs:string"/>
+						<xs:element name="OldBalance" type="xs:long" nillable="true"/>
+						<xs:element name="NewBalance" type="xs:long" nillable="true"/>
+						<xs:element name="RechargeAmt" type="xs:long" nillable="true"/>
+						<xs:element name="Currency" type="xs:string" minOccurs="0"/>
+						<xs:element name="Validity" type="xs:int" nillable="true"/>
+						<xs:element name="PrmValidity" type="xs:int"/>
+						<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="PrmAcctType" type="xs:int" nillable="true"/>
+									<xs:element name="PrmAmt" type="xs:int" nillable="true"/>
+									<xs:element name="CurrPrmAcctBalance" type="xs:int" nillable="true" minOccurs="0"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+						<xs:element name="RechargeTax" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="RechargePenalty" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="CallingPartyNo" type="xs:string" minOccurs="0"/>
+						<xs:element name="CardSPID" type="xs:string" minOccurs="0"/>
+						<xs:element name="OldPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+						<xs:element name="NewPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+						<xs:element name="LoanAmount" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="LoanPoundage" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="RechargeForCust" type="xs:int" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentEnquiryRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+			<xs:element name="PaymentMode" type="xs:string" minOccurs="0"/>
+			<xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="PaymentResult" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+			<xs:element name="QueryType" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0-查询客户所有帐户的充值日志，1-查询客户缺省帐户的充值日志，2-查询当前用户缺省帐户的充值日志，缺省值为0</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="PaymentEnquiryResult">
+		<xs:sequence>
+			<xs:element name="PaymentLog" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="LogID" type="xs:string"/>
+						<xs:element name="InternalSerialNo" type="xs:string"/>
+						<xs:element name="SubscriberNo" type="xs:string"/>
+						<xs:element name="SubCosID" type="xs:int" nillable="true"/>
+						<xs:element name="TradeTime" type="xs:string"/>
+						<xs:element name="ErrorType" type="xs:string"/>
+						<xs:element name="PaymentMode" type="xs:string"/>
+						<xs:element name="OldActiveStop" type="xs:string"/>
+						<xs:element name="NewActiveStop" type="xs:string"/>
+						<xs:element name="OldSuspendStop" type="xs:string"/>
+						<xs:element name="NewSuspendStop" type="xs:string"/>
+						<xs:element name="OldDisableStop" type="xs:string"/>
+						<xs:element name="NewDisableStop" type="xs:string"/>
+						<xs:element name="OldBalance" type="xs:long" nillable="true"/>
+						<xs:element name="NewBalance" type="xs:long" nillable="true"/>
+						<xs:element name="PaymentAmt" type="xs:long" nillable="true"/>
+						<xs:element name="Currency" type="xs:string" minOccurs="0"/>
+						<xs:element name="Validity" type="xs:int" nillable="true"/>
+						<xs:element name="PrmValidity" type="xs:int"/>
+						<xs:element name="PaymentBonus" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PrmAcctType" type="xs:int" nillable="true"/>
+									<xs:element name="PrmAmt" type="xs:int" nillable="true"/>
+									<xs:element name="CurrPrmAcctBalance" type="xs:int" nillable="true" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="CanceledFlag" type="xs:int" nillable="true"/>
+						<xs:element name="CancelLogID" type="xs:string" minOccurs="0"/>
+						<xs:element name="AdditiontalInfo" type="xs:string"/>
+						<xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+						<xs:element name="PaymentTax" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="PaymentPenalty" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="OperationDes" type="xs:string" minOccurs="0"/>
+						<xs:element name="BankCode" type="xs:string" minOccurs="0"/>
+						<xs:element name="OldPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+						<xs:element name="NewPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+						<xs:element name="Location" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="AgentName" type="xs:string" minOccurs="0"/>
+						<xs:element name="BatchNo" type="xs:string" minOccurs="0"/>
+						<xs:element name="Sequence" type="xs:string" minOccurs="0"/>
+						<xs:element name="LoanAmount" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="LoanPoundage" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="RechargeForCust" type="xs:int" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryBySeqRequest">
+		<xs:all>
+			<xs:element name="Sequence" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryBySeqResult">
+		<xs:all>
+			<xs:element name="Sequence" type="xs:string"/>
+			<xs:element name="BatchNo" type="xs:string"/>
+			<xs:element name="FaceValue" type="xs:int" nillable="true"/>
+			<xs:element name="Currency" type="xs:string"/>
+			<xs:element name="CardCosID" type="xs:string"/>
+			<xs:element name="CardStartDate" type="xs:string"/>
+			<xs:element name="CardStopDate" type="xs:string"/>
+			<xs:element name="HotCardFlag" type="xs:int" nillable="true"/>
+			<xs:element name="OprDateTime" type="xs:string"/>
+			<xs:element name="OprType" type="xs:string"/>
+			<xs:element name="ChargeNumber" type="xs:string"/>
+			<xs:element name="TradeTime" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryByPINRequest">
+		<xs:all>
+			<xs:element name="CardPinNumber" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryByPINResult">
+		<xs:all>
+			<xs:element name="Sequence" type="xs:string"/>
+			<xs:element name="BatchNo" type="xs:string"/>
+			<xs:element name="FaceValue" type="xs:int" nillable="true"/>
+			<xs:element name="Currency" type="xs:string"/>
+			<xs:element name="CardCosID" type="xs:string"/>
+			<xs:element name="CardStartDate" type="xs:string"/>
+			<xs:element name="CardStopDate" type="xs:string"/>
+			<xs:element name="HotCardFlag" type="xs:int" nillable="true"/>
+			<xs:element name="OprDateTime" type="xs:string"/>
+			<xs:element name="OprType" type="xs:string"/>
+			<xs:element name="ChargeNumber" type="xs:string"/>
+			<xs:element name="TradeTime" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyVoucherStateRequest">
+		<xs:sequence>
+			<xs:element name="Sequence" type="xs:string"/>
+			<xs:element name="CardFlag" type="xs:int" minOccurs="0"/>
+			<xs:element name="Reason" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeBySeqRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="xs:string"/>
+			<xs:element name="CardSequence" type="xs:string"/>
+			<xs:element name="AccountType" type="xs:int" minOccurs="0"/>
+			<xs:element name="CustID" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeBySeqResult">
+		<xs:sequence>
+			<xs:element name="FaceValue" type="xs:long" nillable="true"/>
+			<xs:element name="NewBalance" type="xs:long" nillable="true"/>
+			<xs:element name="NewActiveStop" type="xs:string"/>
+			<xs:element name="ValidityPeriod" type="xs:int" nillable="true"/>
+			<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="PrmAcctType" type="xs:int" nillable="true"/>
+						<xs:element name="PrmAmt" type="xs:long" nillable="true"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteRechageBlackRequest">
+		<xs:complexContent>
+			<xs:extension base="recharge:Common">
+				<xs:sequence>
+					<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

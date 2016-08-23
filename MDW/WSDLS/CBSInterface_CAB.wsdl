@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:cabmgr="http://www.huawei.com/bme/cbsinterface/cabmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cab" targetNamespace="http://www.huawei.com/bme/cbsinterface/cabmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cab="http://www.huawei.com/bme/cbsinterface/cab" targetNamespace="http://www.huawei.com/bme/cbsinterface/cabmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cab" schemaLocation="CBSInterface_CAB.xsd"/>
+			<element name="ManageChargeNumRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManageChargeNumRequest" type="cab:ManageChargeNumRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageChargeNumResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryChargeNumRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryChargeNumRequest" type="cab:QueryChargeNumRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryChargeNumResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryChargeNumResult" type="cab:QueryChargeNumResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManageChargeNumRequestMessage">
+		<part name="ManageChargeNumRequestMsg" element="cabmgr:ManageChargeNumRequestMsg"/>
+	</message>
+	<message name="ManageChargeNumResultMessage">
+		<part name="ManageChargeNumResultMsg" element="cabmgr:ManageChargeNumResultMsg"/>
+	</message>
+	<message name="QueryChargeNumRequestMessage">
+		<part name="QueryChargeNumRequestMsg" element="cabmgr:QueryChargeNumRequestMsg"/>
+	</message>
+	<message name="QueryChargeNumResultMessage">
+		<part name="QueryChargeNumResultMsg" element="cabmgr:QueryChargeNumResultMsg"/>
+	</message>
+	<portType name="CABMgr">
+		<operation name="manageChargeNum">
+			<input message="cabmgr:ManageChargeNumRequestMessage"/>
+			<output message="cabmgr:ManageChargeNumResultMessage"/>
+		</operation>
+		<operation name="queryChargeNum">
+			<input message="cabmgr:QueryChargeNumRequestMessage"/>
+			<output message="cabmgr:QueryChargeNumResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CABMgrBinding" type="cabmgr:CABMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="manageChargeNum">
+			<soap:operation soapAction="manageChargeNum" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryChargeNum">
+			<soap:operation soapAction="queryChargeNum" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CABMgrService">
+		<port name="CABMgrServicePort" binding="cabmgr:CABMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/cab/wsdl/CBSInterface_CAB.wsdl"/>
+		</port>
+	</service>
+</definitions>

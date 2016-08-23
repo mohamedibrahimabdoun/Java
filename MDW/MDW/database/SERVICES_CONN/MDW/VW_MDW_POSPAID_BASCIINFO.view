@@ -1,0 +1,594 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+  </ID>
+  <name>VW_MDW_POSPAID_BASCIINFO</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+    </ID>
+    <SQLText>SELECT CUI.subno,
+          CUI.status,
+          CUI.contrno,
+          CUI.prepost_paid,
+          CUI.tariff_profile,
+          CCD.cardno,
+          CCD.icc_number,
+          CCD.imsi_number,
+          CCD.pin_code,
+          CCD.card_type,
+          CCD.puk2_code,
+          CCD.pin2,
+          CCD.puk_code,
+          CUI.FLEX_FLD3
+     FROM    CRM_USER_INFO@TABS CUI
+          INNER JOIN
+             CRM_COMMDEVICE@TABS CCD
+          ON CUI.SUBNO = CCD.SUBNO
+    WHERE CCD.STATUS + 0 = 40</SQLText>
+    <distinct>false</distinct>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">84635e0e-fd74-40ea-a6fe-a43f704e97e9</identifier>
+        </ID>
+        <alias>SUBNO</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3519f109-8e23-4334-ac44-040380da0cd1</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">63c813bb-b824-41dc-b3b7-2eda53157905</identifier>
+        </ID>
+        <alias>STATUS</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">5ceb9cdd-de3f-4477-b558-3b5321e02425</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">164e4a6e-b0fb-46f4-8341-921940ce2f1f</identifier>
+        </ID>
+        <alias>CONTRNO</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f55cc26d-7421-4d86-9403-9a90de4cb5e9</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">005ea396-c3e8-420c-b4ec-6069ab25c627</identifier>
+        </ID>
+        <alias>PREPOST_PAID</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">0b8d6558-0f49-4ddf-9954-00715265f6fd</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0a38b009-877d-40f9-b4c0-f0d6d0ac65de</identifier>
+        </ID>
+        <alias>TARIFF_PROFILE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">59f7c052-d578-4cc5-8e54-84ed9275be91</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d25123c7-0a59-4f18-a1ae-a590d2e7c245</identifier>
+        </ID>
+        <alias>CARDNO</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e265ab4c-5f1b-4f4a-bbaf-2cf097d74777</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">da75c1f8-7b34-4ff3-aef4-b5af6f464167</identifier>
+        </ID>
+        <alias>ICC_NUMBER</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8446f90a-0915-4920-a4c2-3daf613ebf0f</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dbc6c20f-7228-4c60-96a3-65cdbda2c8bd</identifier>
+        </ID>
+        <alias>IMSI_NUMBER</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">df99a029-7119-480b-9aad-63323a731d39</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5f38604d-72c3-44ad-939a-5d6d1657b667</identifier>
+        </ID>
+        <alias>PIN_CODE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e082ff76-5721-48ef-9d2b-3f68c408efbd</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2a8394e3-2d2a-4147-9bf9-7bdc3042a161</identifier>
+        </ID>
+        <alias>CARD_TYPE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8c09dc0f-2c4e-40c9-b280-fc9482454551</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b8f8e63c-f21e-4625-a565-49f2e1081180</identifier>
+        </ID>
+        <alias>PUK2_CODE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e062131f-fe2e-45bf-bfb0-8aa153f69e44</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ed1970f7-b2f6-445a-8cab-b05b4c812ee6</identifier>
+        </ID>
+        <alias>PIN2</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">a55dc780-66e8-4f1e-9753-13ba273268c4</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cd83cb9c-7097-42c0-9132-0c92743898c2</identifier>
+        </ID>
+        <alias>PUK_CODE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c181b8da-0412-40ce-a682-07d4b7de082a</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">32672195-61b1-4c91-a809-a4b828d409c1</identifier>
+        </ID>
+        <alias>FLEX_FLD3</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3803e5eb-8fe0-4ca4-9937-7656e9083b77</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>SELECT CUI.subno,
+          CUI.status,
+          CUI.contrno,
+          CUI.prepost_paid,
+          CUI.tariff_profile,
+          CCD.cardno,
+          CCD.icc_number,
+          CCD.imsi_number,
+          CCD.pin_code,
+          CCD.card_type,
+          CCD.puk2_code,
+          CCD.pin2,
+          CCD.puk_code,
+          CUI.FLEX_FLD3
+     FROM    CRM_USER_INFO@TABS CUI
+          INNER JOIN
+             CRM_COMMDEVICE@TABS CCD
+          ON CUI.SUBNO = CCD.SUBNO
+    WHERE CCD.STATUS + 0 = 40</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4424b91d-fae8-40aa-a625-c38bd538e519</identifier>
+      </ID>
+      <name>SUBNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SUBNO</name>
+        <identifier class="java.lang.String">84635e0e-fd74-40ea-a6fe-a43f704e97e9</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">77bb2a24-4334-4548-9be0-ee95f0971b50</identifier>
+      </ID>
+      <name>STATUS</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>STATUS</name>
+        <identifier class="java.lang.String">63c813bb-b824-41dc-b3b7-2eda53157905</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5028d931-eeb3-4b67-9907-6fa7141ab617</identifier>
+      </ID>
+      <name>CONTRNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CONTRNO</name>
+        <identifier class="java.lang.String">164e4a6e-b0fb-46f4-8341-921940ce2f1f</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">34889d75-ad9f-45e3-be89-ff3bf5d8664d</identifier>
+      </ID>
+      <name>PREPOST_PAID</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PREPOST_PAID</name>
+        <identifier class="java.lang.String">005ea396-c3e8-420c-b4ec-6069ab25c627</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e365d37a-8fa4-423e-806e-036a7ff292ed</identifier>
+      </ID>
+      <name>TARIFF_PROFILE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TARIFF_PROFILE</name>
+        <identifier class="java.lang.String">0a38b009-877d-40f9-b4c0-f0d6d0ac65de</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5ccda68f-1a66-424e-9643-8e7529762ea9</identifier>
+      </ID>
+      <name>CARDNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CARDNO</name>
+        <identifier class="java.lang.String">d25123c7-0a59-4f18-a1ae-a590d2e7c245</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">85e04998-b486-4008-910e-08ad58b6333b</identifier>
+      </ID>
+      <name>ICC_NUMBER</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ICC_NUMBER</name>
+        <identifier class="java.lang.String">da75c1f8-7b34-4ff3-aef4-b5af6f464167</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">520164d2-e940-43cd-af5f-82f0b775efe8</identifier>
+      </ID>
+      <name>IMSI_NUMBER</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>IMSI_NUMBER</name>
+        <identifier class="java.lang.String">dbc6c20f-7228-4c60-96a3-65cdbda2c8bd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a04cb851-4bee-4917-aceb-d83ebb34bf10</identifier>
+      </ID>
+      <name>PIN_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PIN_CODE</name>
+        <identifier class="java.lang.String">5f38604d-72c3-44ad-939a-5d6d1657b667</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">86d654bc-8a5a-43c6-b5cf-f52891dca06b</identifier>
+      </ID>
+      <name>CARD_TYPE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CARD_TYPE</name>
+        <identifier class="java.lang.String">2a8394e3-2d2a-4147-9bf9-7bdc3042a161</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e930401f-9dda-4f68-861e-644c8bb95856</identifier>
+      </ID>
+      <name>PUK2_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PUK2_CODE</name>
+        <identifier class="java.lang.String">b8f8e63c-f21e-4625-a565-49f2e1081180</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">344456a9-6a72-4f6e-95de-332db9fd3c08</identifier>
+      </ID>
+      <name>PIN2</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PIN2</name>
+        <identifier class="java.lang.String">ed1970f7-b2f6-445a-8cab-b05b4c812ee6</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d82c067f-0614-4135-a4ed-0c91ad2a711c</identifier>
+      </ID>
+      <name>PUK_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PUK_CODE</name>
+        <identifier class="java.lang.String">cd83cb9c-7097-42c0-9132-0c92743898c2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fb358c3d-39a8-49ea-8b71-43aa3a4f85b0</identifier>
+      </ID>
+      <name>FLEX_FLD3</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>FLEX_FLD3</name>
+        <identifier class="java.lang.String">32672195-61b1-4c91-a809-a4b828d409c1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81564354-6647-400e-8945-92b9a049e431</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>VW_MDW_POSPAID_BASCIINFO</name>
+            <identifier class="java.lang.String">a746f471-7fef-4ba5-b9c2-814a742a950b</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>VW_MDW_POSPAID_BASCIINFO</name>
+        <identifier class="java.math.BigDecimal">89218</identifier>
+        <schemaName>MDW</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+    </entry>
+  </properties>
+  <schema>
+    <name>MDW</name>
+  </schema>
+</view>

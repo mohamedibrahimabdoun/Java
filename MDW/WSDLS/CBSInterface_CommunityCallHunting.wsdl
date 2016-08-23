@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:communitycallhuntingmgr="http://www.huawei.com/bme/cbsinterface/communitycallhuntingmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/communitycallhunting" targetNamespace="http://www.huawei.com/bme/cbsinterface/communitycallhuntingmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:communitycallhunting="http://www.huawei.com/bme/cbsinterface/communitycallhunting" targetNamespace="http://www.huawei.com/bme/cbsinterface/communitycallhuntingmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/communitycallhunting" schemaLocation="CBSInterface_CommunityCallHunting.xsd"/>
+			<element name="AdjusthuntingPriorityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="AdjusthuntingPriorityRequest" type="communitycallhunting:AdjusthuntingPriorityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AdjusthuntingPriorityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGrpHuntingListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManGrpHuntingListRequest" type="communitycallhunting:ManGrpHuntingListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGrpHuntingListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGrpHuntingNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManGrpHuntingNoRequest" type="communitycallhunting:ManGrpHuntingNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGrpHuntingNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGrpHuntingListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryGrpHuntingListRequest" type="communitycallhunting:QueryGrpHuntingListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGrpHuntingListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryGrpHuntingListResult" type="communitycallhunting:QueryGrpHuntingListResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGrpHuntingNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryGrpHuntingNoRequest" type="communitycallhunting:QueryGrpHuntingNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGrpHuntingNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryGrpHuntingNoResult" type="communitycallhunting:QueryGrpHuntingNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="AdjusthuntingPriorityRequestMessage">
+		<part name="AdjusthuntingPriorityRequestMsg" element="communitycallhuntingmgr:AdjusthuntingPriorityRequestMsg"/>
+	</message>
+	<message name="AdjusthuntingPriorityResultMessage">
+		<part name="AdjusthuntingPriorityResultMsg" element="communitycallhuntingmgr:AdjusthuntingPriorityResultMsg"/>
+	</message>
+	<message name="ManGrpHuntingListRequestMessage">
+		<part name="ManGrpHuntingListRequestMsg" element="communitycallhuntingmgr:ManGrpHuntingListRequestMsg"/>
+	</message>
+	<message name="ManGrpHuntingListResultMessage">
+		<part name="ManGrpHuntingListResultMsg" element="communitycallhuntingmgr:ManGrpHuntingListResultMsg"/>
+	</message>
+	<message name="ManGrpHuntingNoRequestMessage">
+		<part name="ManGrpHuntingNoRequestMsg" element="communitycallhuntingmgr:ManGrpHuntingNoRequestMsg"/>
+	</message>
+	<message name="ManGrpHuntingNoResultMessage">
+		<part name="ManGrpHuntingNoResultMsg" element="communitycallhuntingmgr:ManGrpHuntingNoResultMsg"/>
+	</message>
+	<message name="QueryGrpHuntingListRequestMessage">
+		<part name="QueryGrpHuntingListRequestMsg" element="communitycallhuntingmgr:QueryGrpHuntingListRequestMsg"/>
+	</message>
+	<message name="QueryGrpHuntingListResultMessage">
+		<part name="QueryGrpHuntingListResultMsg" element="communitycallhuntingmgr:QueryGrpHuntingListResultMsg"/>
+	</message>
+	<message name="QueryGrpHuntingNoRequestMessage">
+		<part name="QueryGrpHuntingNoRequestMsg" element="communitycallhuntingmgr:QueryGrpHuntingNoRequestMsg"/>
+	</message>
+	<message name="QueryGrpHuntingNoResultMessage">
+		<part name="QueryGrpHuntingNoResultMsg" element="communitycallhuntingmgr:QueryGrpHuntingNoResultMsg"/>
+	</message>
+	<portType name="CommunityCallHuntingMgr">
+		<operation name="adjusthuntingPriority">
+			<input message="communitycallhuntingmgr:AdjusthuntingPriorityRequestMessage"/>
+			<output message="communitycallhuntingmgr:AdjusthuntingPriorityResultMessage"/>
+		</operation>
+		<operation name="manGrpHuntingList">
+			<input message="communitycallhuntingmgr:ManGrpHuntingListRequestMessage"/>
+			<output message="communitycallhuntingmgr:ManGrpHuntingListResultMessage"/>
+		</operation>
+		<operation name="manGrpHuntingNo">
+			<input message="communitycallhuntingmgr:ManGrpHuntingNoRequestMessage"/>
+			<output message="communitycallhuntingmgr:ManGrpHuntingNoResultMessage"/>
+		</operation>
+		<operation name="queryGrpHuntingList">
+			<input message="communitycallhuntingmgr:QueryGrpHuntingListRequestMessage"/>
+			<output message="communitycallhuntingmgr:QueryGrpHuntingListResultMessage"/>
+		</operation>
+		<operation name="queryGrpHuntingNo">
+			<input message="communitycallhuntingmgr:QueryGrpHuntingNoRequestMessage"/>
+			<output message="communitycallhuntingmgr:QueryGrpHuntingNoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CommunityCallHuntingMgrBinding" type="communitycallhuntingmgr:CommunityCallHuntingMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="adjusthuntingPriority">
+			<soap:operation soapAction="adjusthuntingPriority" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manGrpHuntingList">
+			<soap:operation soapAction="manGrpHuntingList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manGrpHuntingNo">
+			<soap:operation soapAction="manGrpHuntingNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGrpHuntingList">
+			<soap:operation soapAction="queryGrpHuntingList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGrpHuntingNo">
+			<soap:operation soapAction="queryGrpHuntingNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CommunityCallHuntingMgrService">
+		<port name="CommunityCallHuntingMgrServicePort" binding="communitycallhuntingmgr:CommunityCallHuntingMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/communitycallhunting/wsdl/CBSInterface_CommunityCallHunting.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<jdbc-data-source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/jdbc-data-source http://www.bea.com/ns/weblogic/jdbc-data-source/1.0/jdbc-data-source.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/jdbc-data-source">
+    <name>POSScanConn</name>
+    <jdbc-driver-params>
+        <url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=services-scan.mtn.sd)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=services)))</url>
+        <driver-name>oracle.jdbc.OracleDriver</driver-name>
+        <properties>
+            <property>
+                <name>user</name>
+                <value>TRADERS</value>
+            </property>
+        </properties>
+        <password-encrypted>05F3594EE45C07B89080279ACDE0D1018AC62CAE0B55CC0D192F240EC5ABFE87</password-encrypted>
+    </jdbc-driver-params>
+    <jdbc-connection-pool-params>
+        <test-table-name>SQL SELECT 1 FROM DUAL</test-table-name>
+    </jdbc-connection-pool-params>
+    <jdbc-data-source-params>
+        <jndi-name>jdbc/POSScanConnDS</jndi-name>
+        <scope>Application</scope>
+    </jdbc-data-source-params>
+</jdbc-data-source>

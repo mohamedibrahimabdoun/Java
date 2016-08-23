@@ -1,0 +1,423 @@
+<definitions
+     name="GMPPUSSDService"
+     targetNamespace="http://ws.wswrapper.cbos.ggs.gemalto.com/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://ws.wswrapper.cbos.ggs.gemalto.com/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://ws.wswrapper.cbos.ggs.gemalto.com/" schemaLocation="GMPPUSSDService_xsd_1.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="distribute">
+        <part name="parameters" element="tns:distribute"/>
+    </message>
+    <message name="distributeResponse">
+        <part name="parameters" element="tns:distributeResponse"/>
+    </message>
+    <message name="recharge">
+        <part name="parameters" element="tns:recharge"/>
+    </message>
+    <message name="rechargeResponse">
+        <part name="parameters" element="tns:rechargeResponse"/>
+    </message>
+    <message name="registerConsumerAtMerchant">
+        <part name="parameters" element="tns:registerConsumerAtMerchant"/>
+    </message>
+    <message name="registerConsumerAtMerchantResponse">
+        <part name="parameters" element="tns:registerConsumerAtMerchantResponse"/>
+    </message>
+    <message name="completeConsumerRegistration">
+        <part name="parameters" element="tns:completeConsumerRegistration"/>
+    </message>
+    <message name="completeConsumerRegistrationResponse">
+        <part name="parameters" element="tns:completeConsumerRegistrationResponse"/>
+    </message>
+    <message name="selfTopUp">
+        <part name="parameters" element="tns:selfTopUp"/>
+    </message>
+    <message name="selfTopUpResponse">
+        <part name="parameters" element="tns:selfTopUpResponse"/>
+    </message>
+    <message name="payBill">
+        <part name="parameters" element="tns:payBill"/>
+    </message>
+    <message name="payBillResponse">
+        <part name="parameters" element="tns:payBillResponse"/>
+    </message>
+    <message name="transferMoneyP2P">
+        <part name="parameters" element="tns:transferMoneyP2P"/>
+    </message>
+    <message name="transferMoneyP2PResponse">
+        <part name="parameters" element="tns:transferMoneyP2PResponse"/>
+    </message>
+    <message name="cashIn">
+        <part name="parameters" element="tns:cashIn"/>
+    </message>
+    <message name="cashInResponse">
+        <part name="parameters" element="tns:cashInResponse"/>
+    </message>
+    <message name="startCashOut">
+        <part name="parameters" element="tns:startCashOut"/>
+    </message>
+    <message name="startCashOutResponse">
+        <part name="parameters" element="tns:startCashOutResponse"/>
+    </message>
+    <message name="completeCashOutAtMerchant">
+        <part name="parameters" element="tns:completeCashOutAtMerchant"/>
+    </message>
+    <message name="completeCashOutAtMerchantResponse">
+        <part name="parameters" element="tns:completeCashOutAtMerchantResponse"/>
+    </message>
+    <message name="p2sBuy">
+        <part name="parameters" element="tns:p2sBuy"/>
+    </message>
+    <message name="p2sBuyResponse">
+        <part name="parameters" element="tns:p2sBuyResponse"/>
+    </message>
+    <message name="getSVABalance">
+        <part name="parameters" element="tns:getSVABalance"/>
+    </message>
+    <message name="getSVABalanceResponse">
+        <part name="parameters" element="tns:getSVABalanceResponse"/>
+    </message>
+    <message name="getLastTransactions">
+        <part name="parameters" element="tns:getLastTransactions"/>
+    </message>
+    <message name="getLastTransactionsResponse">
+        <part name="parameters" element="tns:getLastTransactionsResponse"/>
+    </message>
+    <message name="svaToCard">
+        <part name="parameters" element="tns:svaToCard"/>
+    </message>
+    <message name="svaToCardResponse">
+        <part name="parameters" element="tns:svaToCardResponse"/>
+    </message>
+    <message name="cardToSVA">
+        <part name="parameters" element="tns:cardToSVA"/>
+    </message>
+    <message name="cardToSVAResponse">
+        <part name="parameters" element="tns:cardToSVAResponse"/>
+    </message>
+    <message name="changePin">
+        <part name="parameters" element="tns:changePin"/>
+    </message>
+    <message name="changePinResponse">
+        <part name="parameters" element="tns:changePinResponse"/>
+    </message>
+    <message name="selfLock">
+        <part name="parameters" element="tns:selfLock"/>
+    </message>
+    <message name="selfLockResponse">
+        <part name="parameters" element="tns:selfLockResponse"/>
+    </message>
+    <message name="selfUnlock">
+        <part name="parameters" element="tns:selfUnlock"/>
+    </message>
+    <message name="selfUnlockResponse">
+        <part name="parameters" element="tns:selfUnlockResponse"/>
+    </message>
+    <message name="updateConsumerInfo">
+        <part name="parameters" element="tns:updateConsumerInfo"/>
+    </message>
+    <message name="updateConsumerInfoResponse">
+        <part name="parameters" element="tns:updateConsumerInfoResponse"/>
+    </message>
+    <message name="getConsumerInfo">
+        <part name="parameters" element="tns:getConsumerInfo"/>
+    </message>
+    <message name="getConsumerInfoResponse">
+        <part name="parameters" element="tns:getConsumerInfoResponse"/>
+    </message>
+    <message name="consumerRegistration">
+        <part name="parameters" element="tns:consumerRegistration"/>
+    </message>
+    <message name="consumerRegistrationResponse">
+        <part name="parameters" element="tns:consumerRegistrationResponse"/>
+    </message>
+    <portType name="GMPPUSSDService">
+        <operation name="distribute">
+            <input message="tns:distribute"/>
+            <output message="tns:distributeResponse"/>
+        </operation>
+        <operation name="recharge">
+            <input message="tns:recharge"/>
+            <output message="tns:rechargeResponse"/>
+        </operation>
+        <operation name="registerConsumerAtMerchant">
+            <input message="tns:registerConsumerAtMerchant"/>
+            <output message="tns:registerConsumerAtMerchantResponse"/>
+        </operation>
+        <operation name="completeConsumerRegistration">
+            <input message="tns:completeConsumerRegistration"/>
+            <output message="tns:completeConsumerRegistrationResponse"/>
+        </operation>
+        <operation name="selfTopUp">
+            <input message="tns:selfTopUp"/>
+            <output message="tns:selfTopUpResponse"/>
+        </operation>
+        <operation name="payBill">
+            <input message="tns:payBill"/>
+            <output message="tns:payBillResponse"/>
+        </operation>
+        <operation name="transferMoneyP2P">
+            <input message="tns:transferMoneyP2P"/>
+            <output message="tns:transferMoneyP2PResponse"/>
+        </operation>
+        <operation name="cashIn">
+            <input message="tns:cashIn"/>
+            <output message="tns:cashInResponse"/>
+        </operation>
+        <operation name="startCashOut">
+            <input message="tns:startCashOut"/>
+            <output message="tns:startCashOutResponse"/>
+        </operation>
+        <operation name="completeCashOutAtMerchant">
+            <input message="tns:completeCashOutAtMerchant"/>
+            <output message="tns:completeCashOutAtMerchantResponse"/>
+        </operation>
+        <operation name="p2sBuy">
+            <input message="tns:p2sBuy"/>
+            <output message="tns:p2sBuyResponse"/>
+        </operation>
+        <operation name="getSVABalance">
+            <input message="tns:getSVABalance"/>
+            <output message="tns:getSVABalanceResponse"/>
+        </operation>
+        <operation name="getLastTransactions">
+            <input message="tns:getLastTransactions"/>
+            <output message="tns:getLastTransactionsResponse"/>
+        </operation>
+        <operation name="svaToCard">
+            <input message="tns:svaToCard"/>
+            <output message="tns:svaToCardResponse"/>
+        </operation>
+        <operation name="cardToSVA">
+            <input message="tns:cardToSVA"/>
+            <output message="tns:cardToSVAResponse"/>
+        </operation>
+        <operation name="changePin">
+            <input message="tns:changePin"/>
+            <output message="tns:changePinResponse"/>
+        </operation>
+        <operation name="selfLock">
+            <input message="tns:selfLock"/>
+            <output message="tns:selfLockResponse"/>
+        </operation>
+        <operation name="selfUnlock">
+            <input message="tns:selfUnlock"/>
+            <output message="tns:selfUnlockResponse"/>
+        </operation>
+        <operation name="updateConsumerInfo">
+            <input message="tns:updateConsumerInfo"/>
+            <output message="tns:updateConsumerInfoResponse"/>
+        </operation>
+        <operation name="getConsumerInfo">
+            <input message="tns:getConsumerInfo"/>
+            <output message="tns:getConsumerInfoResponse"/>
+        </operation>
+        <operation name="consumerRegistration">
+            <input message="tns:consumerRegistration"/>
+            <output message="tns:consumerRegistrationResponse"/>
+        </operation>
+    </portType>
+    <binding name="GMPPUSSDServicePortBinding" type="tns:GMPPUSSDService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="distribute">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="recharge">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="registerConsumerAtMerchant">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="completeConsumerRegistration">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="selfTopUp">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="payBill">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="transferMoneyP2P">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="cashIn">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="startCashOut">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="completeCashOutAtMerchant">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="p2sBuy">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getSVABalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getLastTransactions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="svaToCard">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="cardToSVA">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="changePin">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="selfLock">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="selfUnlock">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="updateConsumerInfo">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getConsumerInfo">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consumerRegistration">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="GMPPUSSDService">
+        <port name="GMPPUSSDServicePort" binding="tns:GMPPUSSDServicePortBinding">
+            <soap:address location="http://172.16.198.10:80/GMPPMediatorUSSDServiceBean/GMPPUSSDService"/>
+        </port>
+    </service>
+</definitions>

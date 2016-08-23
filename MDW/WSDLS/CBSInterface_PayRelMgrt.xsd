@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:payrelmgrt="http://www.huawei.com/bme/cbsinterface/payrelmgrt" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/payrelmgrt" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="PrimaryCond">
+		<xs:sequence>
+			<xs:element name="ParaType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>表明取值来源，1：事件属性；2：客户属性；3：产品属性</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ParaCode" type="xs:string"/>
+			<xs:element name="ParaOper" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>操作符 0：==；1：!= </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ParaValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManPayRelbyAcctRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="Accountcode" type="common:AccountCode">
+					<xs:annotation>
+						<xs:documentation>付费方帐户，与用户号码必填一个，优先使用该属性</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PaymentSubNO" type="common:SubscriberNo">
+					<xs:annotation>
+						<xs:documentation>付费方用户号码，如果没有帐户Code时使用该节点</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="Opertype" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>2：删除全部</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentRelation" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OperType" type="xs:int">
+							<xs:annotation>
+								<xs:documentation>1－Add，2－Delete。新增记录可以下账期或者未来生效，删除记录只能下帐期生效; 3- Modify,只能修改本层级的节点，可以是增加用户节点</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PaymentRelKey" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>每条付费规则的唯一标识符，当删除/修改时必须输入，新增时不可输入。</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+						<xs:element name="Quota" type="common:Balance" minOccurs="0"/>
+						<xs:element name="MeasureID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Permillage" type="xs:int" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="PaymentSubs" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="OperType" type="xs:int">
+										<xs:annotation>
+											<xs:documentation>1－Add; 2－Delete; 3- Modify，上层节点为修改时才有效，否则无效；</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0"/>
+									<xs:element name="RecID" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>属于内部编号，如果进行该层级节点删除或者修改时，需要传入，如果该层级增加节点时不需要传入。</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+									<xs:element name="ServiceScene" type="xs:int" minOccurs="0"/>
+									<xs:element name="Priority" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>优先级，是指用户有多个帐户支付时的优先级，此处可以不传入，默认按顺序排序，其他接口维护用户的优先级</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SimpleCondition" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Para" type="payrelmgrt:PrimaryCond" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+									<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="NotifyRule" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Quota" type="common:Balance"/>
+									<xs:element name="NotifyType" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>0:不提醒
+1:提醒计费方
+2:提醒代付方
+3:提醒计费方+代付费方
+4:给共享该支付规则的所有用户发送提醒（暂不支持）
+5: 给共享该支付规则的所有用户+付费方都提醒（暂不支持）</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SendWorkOrder" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>保留</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManPayRelbySubRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="Opertype" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>2：删除全部</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentRelation" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Accountcode" type="common:AccountCode" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>支付的帐户code，如果该节点有值就不需要关注SubscriberNO节点</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>不传支付帐户Code的时候必须传该节点，该用户的默认帐户设置支付关系</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="OperType" type="xs:int">
+							<xs:annotation>
+								<xs:documentation>1－Add，2－Delete。新增可以下账期或者未来生效，删除是指删除该用户的某个支付关系，记录只能下帐期生效; 3- Modify,只能修改本层级的节点</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PaymentRelKey" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>每条付费规则的唯一标识符，当删除/修改时必须输入，新增时不可输入。</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+						<xs:element name="Quota" type="common:Balance" minOccurs="0"/>
+						<xs:element name="MeasureID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Permillage" type="xs:int" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="PaymentSubs" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="OperType" type="xs:int">
+										<xs:annotation>
+											<xs:documentation>1－Add; 2－Delete; 3- Modify，上层节点为修改时才有效，否则无效；</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="RecID" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>属于内部编号，如果进行该层级节点删除或者修改时，需要传入，如果该层级增加节点时不需要传入。</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+									<xs:element name="ServiceScene" type="xs:int" minOccurs="0"/>
+									<xs:element name="SimpleCondition" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Para" type="payrelmgrt:PrimaryCond" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+									<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Priority" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>优先级，是指用户有多个帐户支付时的优先级，此处可以不传入，默认按顺序排序，其他接口维护用户的优先级</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NotifyRule" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Quota" type="common:Balance"/>
+									<xs:element name="NotifyType" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>0:不提醒
+1:提醒计费方
+2:提醒代付方
+3:提醒计费方+代付费方
+4:给共享该支付规则的所有用户发送提醒（暂不支持）
+5: 给共享该支付规则的所有用户+付费方都提醒（暂不支持）</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SendWorkOrder" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>保留</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryPayRelbyAcctRequest">
+		<xs:annotation>
+			<xs:documentation>该接口只支持个人帐户的查询，集团帐户可能数据量太大。</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="PaymentSubNO" type="common:SubscriberNo">
+					<xs:annotation>
+						<xs:documentation>支付方用户号码</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AcctCode" type="common:AccountCode">
+					<xs:annotation>
+						<xs:documentation>支付方账户</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="PaymentRelKey" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryPayRelbyAcctResult">
+		<xs:sequence>
+			<xs:element name="Accountcode" type="common:AccountCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>支付的帐户code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentRelation" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PaymentRelKey" type="xs:int">
+							<xs:annotation>
+								<xs:documentation>每条付费规则的唯一标识符，当删除/修改时必须输入，新增时不可输入。</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+						<xs:element name="Quota" type="common:Balance" minOccurs="0"/>
+						<xs:element name="MeasureID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Permillage" type="xs:int" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="PaymentSubs" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+									<xs:element name="RecID" type="xs:int">
+										<xs:annotation>
+											<xs:documentation>属于内部编号，如果进行该层级节点删除或者修改时，需要传入，如果该层级增加节点时不需要传入。</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+									<xs:element name="ServiceScene" type="xs:int" minOccurs="0"/>
+									<xs:element name="Priority" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>优先级，是指用户有多个帐户支付时的优先级，此处可以不传入，默认按顺序排序，其他接口维护用户的优先级</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ConditionKey" type="xs:int" minOccurs="0"/>
+									<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+									<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="NotifyRule" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Quota" type="common:Balance"/>
+									<xs:element name="NotifyType" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>0:不提醒
+1:提醒计费方
+2:提醒代付方
+3:提醒计费方+代付费方
+4:给共享该支付规则的所有用户发送提醒（暂不支持）
+5: 给共享该支付规则的所有用户+付费方都提醒（暂不支持）</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SendWorkOrder" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>保留</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryPayRelbySubRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNO" type="common:SubscriberNo"/>
+			<xs:element name="PaymentAcctCode" type="common:AccountCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>支付方帐户</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryPayRelbySubResult">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="PaymentRelation" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Accountcode" type="common:AccountCode">
+							<xs:annotation>
+								<xs:documentation>支付的帐户code，如果该节点有值就不需要关注SubscriberNO节点</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PaymentRelKey" type="xs:int">
+							<xs:annotation>
+								<xs:documentation>每条付费规则的唯一标识符，当删除/修改时必须输入，新增时不可输入。</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+						<xs:element name="RuleType" type="xs:int" minOccurs="0"/>
+						<xs:element name="Quota" type="common:Balance" minOccurs="0"/>
+						<xs:element name="MeasureID" type="xs:int" minOccurs="0"/>
+						<xs:element name="Permillage" type="xs:int" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="PaymentSubs" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="RecID" type="xs:int">
+										<xs:annotation>
+											<xs:documentation>属于内部编号，如果进行该层级节点删除或者修改时，需要传入，如果该层级增加节点时不需要传入。</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="TimeSchemaID" type="xs:int" minOccurs="0"/>
+									<xs:element name="ServiceScene" type="xs:int" minOccurs="0"/>
+									<xs:element name="ConditionKey" type="xs:int" minOccurs="0"/>
+									<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+									<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Priority" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>优先级，是指用户有多个帐户支付时的优先级，此处可以不传入，默认按顺序排序，其他接口维护用户的优先级</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NotifyRule" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Quota" type="common:Balance"/>
+									<xs:element name="NotifyType" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>0:不提醒
+1:提醒计费方
+2:提醒代付方
+3:提醒计费方+代付费方
+4:给共享该支付规则的所有用户发送提醒（暂不支持）
+5: 给共享该支付规则的所有用户+付费方都提醒（暂不支持）</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="SendWorkOrder" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>保留</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

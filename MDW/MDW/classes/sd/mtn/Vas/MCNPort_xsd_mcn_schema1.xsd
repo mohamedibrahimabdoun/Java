@@ -1,0 +1,67 @@
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://web.globitel.com/" version="1.0"
+     xmlns:tns="http://web.globitel.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="addMSISDN" type="tns:addMSISDN"/>
+    <xs:element name="addMSISDNResponse" type="tns:addMSISDNResponse"/>
+    <xs:element name="createCampaign" type="tns:createCampaign"/>
+    <xs:element name="createCampaignResponse" type="tns:createCampaignResponse"/>
+    <xs:element name="deleteCampaign" type="tns:deleteCampaign"/>
+    <xs:element name="deleteCampaignResponse" type="tns:deleteCampaignResponse"/>
+    <xs:element name="disableCampaign" type="tns:disableCampaign"/>
+    <xs:element name="disableCampaignResponse" type="tns:disableCampaignResponse"/>
+    <xs:element name="enableCampaign" type="tns:enableCampaign"/>
+    <xs:element name="enableCampaignResponse" type="tns:enableCampaignResponse"/>
+    <xs:complexType name="deleteCampaign">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteCampaignResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addMSISDN">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:int"/>
+            <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addMSISDNResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="createCampaign">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+            <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+            <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="createCampaignResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="disableCampaign">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="disableCampaignResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="enableCampaign">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="enableCampaignResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

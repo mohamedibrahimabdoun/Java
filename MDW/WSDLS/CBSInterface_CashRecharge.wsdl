@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:cashrechargemgr="http://www.huawei.com/bme/cbsinterface/cashrechargemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cashrecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/cashrechargemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cashrecharge="http://www.huawei.com/bme/cbsinterface/cashrecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/cashrechargemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cashrecharge" schemaLocation="CBSInterface_CashRecharge.xsd"/>
+			<element name="PaymentRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="PaymentRequest" type="cashrecharge:PaymentRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="PaymentResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="PaymentResult" type="cashrecharge:PaymentResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReversePaymentRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ReversePaymentRequest" type="cashrecharge:ReversePaymentRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReversePaymentResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ReversePaymentResult" type="cashrecharge:ReversePaymentResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ActiveFirstRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ActiveFirstRequest" type="cashrecharge:ActiveFirstRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ActiveFirstResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="PaymentEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="PaymentEnquiryRequest" type="cashrecharge:PaymentEnquiryRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="PaymentEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="PaymentEnquiryResult" type="cashrecharge:PaymentEnquiryResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchActiveFirstRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchActiveFirstRequest" type="cashrecharge:BatchActiveFirstRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchActiveFirstResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchCashRechargeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchCashRechargeRequest" type="cashrecharge:BatchCashRechargeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchCashRechargeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="PaymentRequestMessage">
+		<part name="PaymentRequestMsg" element="cashrechargemgr:PaymentRequestMsg"/>
+	</message>
+	<message name="PaymentResultMessage">
+		<part name="PaymentResultMsg" element="cashrechargemgr:PaymentResultMsg"/>
+	</message>
+	<message name="ReversePaymentRequestMessage">
+		<part name="ReversePaymentRequestMsg" element="cashrechargemgr:ReversePaymentRequestMsg"/>
+	</message>
+	<message name="ReversePaymentResultMessage">
+		<part name="ReversePaymentResultMsg" element="cashrechargemgr:ReversePaymentResultMsg"/>
+	</message>
+	<message name="ActiveFirstRequestMessage">
+		<part name="ActiveFirstRequestMsg" element="cashrechargemgr:ActiveFirstRequestMsg"/>
+	</message>
+	<message name="ActiveFirstResultMessage">
+		<part name="ActiveFirstResultMsg" element="cashrechargemgr:ActiveFirstResultMsg"/>
+	</message>
+	<message name="PaymentEnquiryRequestMessage">
+		<part name="PaymentEnquiryRequestMsg" element="cashrechargemgr:PaymentEnquiryRequestMsg"/>
+	</message>
+	<message name="PaymentEnquiryResultMessage">
+		<part name="PaymentEnquiryResultMsg" element="cashrechargemgr:PaymentEnquiryResultMsg"/>
+	</message>
+	<message name="BatchActiveFirstRequestMessage">
+		<part name="BatchActiveFirstRequestMsg" element="cashrechargemgr:BatchActiveFirstRequestMsg"/>
+	</message>
+	<message name="BatchActiveFirstResultMessage">
+		<part name="BatchActiveFirstResultMsg" element="cashrechargemgr:BatchActiveFirstResultMsg"/>
+	</message>
+	<message name="BatchCashRechargeRequestMessage">
+		<part name="BatchCashRechargeRequestMsg" element="cashrechargemgr:BatchCashRechargeRequestMsg"/>
+	</message>
+	<message name="BatchCashRechargeResultMessage">
+		<part name="BatchCashRechargeResultMsg" element="cashrechargemgr:BatchCashRechargeResultMsg"/>
+	</message>
+	<portType name="CashRechargeMgr">
+		<operation name="Payment">
+			<input message="cashrechargemgr:PaymentRequestMessage"/>
+			<output message="cashrechargemgr:PaymentResultMessage"/>
+		</operation>
+		<operation name="ReversePayment">
+			<input message="cashrechargemgr:ReversePaymentRequestMessage"/>
+			<output message="cashrechargemgr:ReversePaymentResultMessage"/>
+		</operation>
+		<operation name="ActiveFirst">
+			<input message="cashrechargemgr:ActiveFirstRequestMessage"/>
+			<output message="cashrechargemgr:ActiveFirstResultMessage"/>
+		</operation>
+		<operation name="PaymentEnquiry">
+			<input message="cashrechargemgr:PaymentEnquiryRequestMessage"/>
+			<output message="cashrechargemgr:PaymentEnquiryResultMessage"/>
+		</operation>
+		<operation name="BatchActiveFirst">
+			<input message="cashrechargemgr:BatchActiveFirstRequestMessage"/>
+			<output message="cashrechargemgr:BatchActiveFirstResultMessage"/>
+		</operation>
+		<operation name="BatchCashRecharge">
+			<input message="cashrechargemgr:BatchCashRechargeRequestMessage"/>
+			<output message="cashrechargemgr:BatchCashRechargeResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CashRechargeMgrBinding" type="cashrechargemgr:CashRechargeMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Payment">
+			<soap:operation soapAction="Payment" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReversePayment">
+			<soap:operation soapAction="ReversePayment" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ActiveFirst">
+			<soap:operation soapAction="ActiveFirst" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PaymentEnquiry">
+			<soap:operation soapAction="PaymentEnquiry" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchActiveFirst">
+			<soap:operation soapAction="BatchActiveFirst" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchCashRecharge">
+			<soap:operation soapAction="BatchCashRecharge" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CashRechargeMgrService">
+		<port name="CashRechargeMgrServicePort" binding="cashrechargemgr:CashRechargeMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/cashrecharge/wsdl/CBSInterface_CashRecharge.wsdl"/>
+		</port>
+	</service>
+</definitions>

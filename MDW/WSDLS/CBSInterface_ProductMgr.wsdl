@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:product="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" xmlns:productmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/productmgrmsg" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/common">
+			<include schemaLocation="CBSInterface_Common.xsd"/>
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:product="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr">
+			<include schemaLocation="CBSInterface_ProductMgr.xsd"/>
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:productmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/productmgrmsg" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgrmsg">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" schemaLocation="CBSInterface_ProductMgr.xsd"/>
+			<element name="QueryBrandsRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryBrandsResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryBrandsResult" type="product:QueryBrandsResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsByNewSubscriberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryProductsByNewSubscriberRequest" type="product:QueryProductsByNewSubscriberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsByNewSubscriberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryProductsByNewSubscriberResult" type="product:QueryProductsByNewSubscriberResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsBySubscribingRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryProductsBySubscribingRequest" type="product:QueryProductsBySubscribingRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsBySubscribingResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryProductsBySubscribingResult" type="product:QueryProductsBySubscribingResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsByReplacingRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryProductsByReplacingRequest" type="product:QueryProductsByReplacingRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductsByReplacingResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryProductsByReplacingResult" type="product:QueryProductsByReplacingResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductInformationRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryProductInformationRequest" type="product:QueryProductInformationRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductInformationResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryProductInformationResult" type="product:QueryProductInformationResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ReleaseProductRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ReleaseProductRequest" type="product:ReleaseProductRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ReleaseProductResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductListInfoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryProductListInfoRequest" type="product:QueryProductListInfoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryProductListInfoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryProductListInfoResult" type="product:QueryProductListInfoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryBrandsRequestMessage">
+		<part name="QueryBrandsRequestMsg" element="productmgrmsg:QueryBrandsRequestMsg"/>
+	</message>
+	<message name="QueryBrandsResultMessage">
+		<part name="QueryBrandsResultMsg" element="productmgrmsg:QueryBrandsResultMsg"/>
+	</message>
+	<message name="QueryProductsByNewSubscriberRequestMessage">
+		<part name="QueryProductsByNewSubscriberRequestMsg" element="productmgrmsg:QueryProductsByNewSubscriberRequestMsg"/>
+	</message>
+	<message name="QueryProductsByNewSubscriberResultMessage">
+		<part name="QueryProductsByNewSubscriberResultMsg" element="productmgrmsg:QueryProductsByNewSubscriberResultMsg"/>
+	</message>
+	<message name="QueryProductsBySubscribingRequestMessage">
+		<part name="QueryProductsBySubscribingRequestMsg" element="productmgrmsg:QueryProductsBySubscribingRequestMsg"/>
+	</message>
+	<message name="QueryProductsBySubscribingResultMessage">
+		<part name="QueryProductsBySubscribingResultMsg" element="productmgrmsg:QueryProductsBySubscribingResultMsg"/>
+	</message>
+	<message name="QueryProductsByReplacingRequestMessage">
+		<part name="QueryProductsByReplacingRequestMsg" element="productmgrmsg:QueryProductsByReplacingRequestMsg"/>
+	</message>
+	<message name="QueryProductsByReplacingResultMessage">
+		<part name="QueryProductsByReplacingResultMsg" element="productmgrmsg:QueryProductsByReplacingResultMsg"/>
+	</message>
+	<message name="QueryProductInformationRequestMessage">
+		<part name="QueryProductInformationRequestMsg" element="productmgrmsg:QueryProductInformationRequestMsg"/>
+	</message>
+	<message name="QueryProductInformationResultMessage">
+		<part name="QueryProductInformationResultMsg" element="productmgrmsg:QueryProductInformationResultMsg"/>
+	</message>
+	<message name="ReleaseProductRequestMessage">
+		<part name="ReleaseProductRequestMsg" element="productmgrmsg:ReleaseProductRequestMsg"/>
+	</message>
+	<message name="ReleaseProductResultMessage">
+		<part name="ReleaseProductResultMsg" element="productmgrmsg:ReleaseProductResultMsg"/>
+	</message>
+	<message name="QueryProductListInfoRequestMessage">
+		<part name="QueryProductListInfoRequestMsg" element="productmgrmsg:QueryProductListInfoRequestMsg"/>
+	</message>
+	<message name="QueryProductListInfoResultMessage">
+		<part name="QueryProductListInfoResultMsg" element="productmgrmsg:QueryProductListInfoResultMsg"/>
+	</message>
+	<portType name="CBSInterfaceProductMgr">
+		<operation name="QueryBrands">
+			<input message="product:QueryBrandsRequestMessage"/>
+			<output message="product:QueryBrandsResultMessage"/>
+		</operation>
+		<operation name="QueryProductsByNewSubscriber">
+			<input message="product:QueryProductsByNewSubscriberRequestMessage"/>
+			<output message="product:QueryProductsByNewSubscriberResultMessage"/>
+		</operation>
+		<operation name="QueryProductsBySubscribing">
+			<input message="product:QueryProductsBySubscribingRequestMessage"/>
+			<output message="product:QueryProductsBySubscribingResultMessage"/>
+		</operation>
+		<operation name="QueryProductsByReplacing">
+			<input message="product:QueryProductsByReplacingRequestMessage"/>
+			<output message="product:QueryProductsByReplacingResultMessage"/>
+		</operation>
+		<operation name="QueryProductInformation">
+			<input message="product:QueryProductInformationRequestMessage"/>
+			<output message="product:QueryProductInformationResultMessage"/>
+		</operation>
+		<operation name="ReleaseProduct">
+			<input message="product:ReleaseProductRequestMessage"/>
+			<output message="product:ReleaseProductResultMessage"/>
+		</operation>
+		<operation name="QueryProductListInfo">
+			<input message="product:QueryProductListInfoRequestMessage"/>
+			<output message="product:QueryProductListInfoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CBSInterfaceProductMgrBinding" type="product:CBSInterfaceProductMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="QueryBrands">
+			<soap:operation soapAction="QueryBrands" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryProductsByNewSubscriber">
+			<soap:operation soapAction="QueryProductsByNewSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryProductsBySubscribing">
+			<soap:operation soapAction="QueryProductsBySubscribing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryProductsByReplacing">
+			<soap:operation soapAction="QueryProductsByReplacing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryProductInformation">
+			<soap:operation soapAction="QueryProductInformation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReleaseProduct">
+			<soap:operation soapAction="ReleaseProduct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryProductListInfo">
+			<soap:operation soapAction="QueryProductListInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CBSInterfaceProductMgrService">
+		<port name="CBSInterfaceProductMgrServicePort" binding="product:CBSInterfaceProductMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/productmgr/wsdl/CBSInterface_ProductMgr.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<jdbc-data-source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/jdbc-data-source http://www.bea.com/ns/weblogic/jdbc-data-source/1.0/jdbc-data-source.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/jdbc-data-source">
+    <name>SERVICES_CONN</name>
+    <jdbc-driver-params>
+        <url>jdbc:oracle:thin:@(DESCRIPTION=(FAILOVER=on)(LOAD_BALANCE=yes)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=services01-vip.mtn.sd)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=services02-vip.mtn.sd)(PORT=1521)))(CONNECT_DATA=(FAILOVER_MODE=(TYPE=select)(METHOD=basic))(SERVER=dedicated)(SERVICE_NAME=services)))</url>
+        <driver-name>oracle.jdbc.OracleDriver</driver-name>
+        <properties>
+            <property>
+                <name>user</name>
+                <value>MDW</value>
+            </property>
+        </properties>
+        <password-encrypted>6A6877941FF12092727F38C576991E9F</password-encrypted>
+    </jdbc-driver-params>
+    <jdbc-connection-pool-params>
+        <test-table-name>SQL SELECT 1 FROM DUAL</test-table-name>
+    </jdbc-connection-pool-params>
+    <jdbc-data-source-params>
+        <jndi-name>jdbc/SERVICES_CONNDS</jndi-name>
+        <scope>Application</scope>
+    </jdbc-data-source-params>
+</jdbc-data-source>

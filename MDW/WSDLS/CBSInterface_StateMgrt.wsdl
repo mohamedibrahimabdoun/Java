@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:statemgrtmgr="http://www.huawei.com/bme/cbsinterface/statemgrtmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/statemgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/statemgrtmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:statemgrt="http://www.huawei.com/bme/cbsinterface/statemgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/statemgrtmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/statemgrt" schemaLocation="CBSInterface_StateMgrt.xsd"/>
+			<element name="SuspendRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="SuspendRequest" type="statemgrt:SuspendRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="SuspendResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReconnectRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ReconnectRequest" type="statemgrt:ReconnectRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReconnectResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ClaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ClaimMissingRequest" type="statemgrt:ClaimMissingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ClaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DisclaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DisclaimMissingRequest" type="statemgrt:DisclaimMissingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DisclaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifySubscriberValidityRequest" type="statemgrt:ModifySubscriberValidityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ModifySubscriberValidityResult" type="statemgrt:ModifySubscriberValidityResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustValidityLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryAdjustValidityLogRequest" type="statemgrt:QueryAdjustValidityLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustValidityLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryAdjustValidityLogResult" type="statemgrt:QueryAdjustValidityLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubChangeLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubChangeLogRequest" type="statemgrt:QuerySubChangeLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubChangeLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubChangeLogResult" type="statemgrt:QuerySubChangeLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageETUFraudStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManageETUFraudStateRequest" type="statemgrt:ManageETUFraudStateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageETUFraudStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BalanceToValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BalanceToValidityRequest" type="statemgrt:BalanceToValidityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BalanceToValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="BalanceToValidityResult" type="statemgrt:BalanceToValidityResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyLastActiveDateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifyLastActiveDateRequest" type="statemgrt:ModifyLastActiveDateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyLastActiveDateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchModLastActDateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchModLastActDateRequest" type="statemgrt:BatchModLastActDateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchModLastActDateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="SuspendRequestMessage">
+		<part name="SuspendRequestMsg" element="statemgrtmgr:SuspendRequestMsg"/>
+	</message>
+	<message name="SuspendResultMessage">
+		<part name="SuspendResultMsg" element="statemgrtmgr:SuspendResultMsg"/>
+	</message>
+	<message name="ReconnectRequestMessage">
+		<part name="ReconnectRequestMsg" element="statemgrtmgr:ReconnectRequestMsg"/>
+	</message>
+	<message name="ReconnectResultMessage">
+		<part name="ReconnectResultMsg" element="statemgrtmgr:ReconnectResultMsg"/>
+	</message>
+	<message name="ClaimMissingRequestMessage">
+		<part name="ClaimMissingRequestMsg" element="statemgrtmgr:ClaimMissingRequestMsg"/>
+	</message>
+	<message name="ClaimMissingResultMessage">
+		<part name="ClaimMissingResultMsg" element="statemgrtmgr:ClaimMissingResultMsg"/>
+	</message>
+	<message name="DisclaimMissingRequestMessage">
+		<part name="DisclaimMissingRequestMsg" element="statemgrtmgr:DisclaimMissingRequestMsg"/>
+	</message>
+	<message name="DisclaimMissingResultMessage">
+		<part name="DisclaimMissingResultMsg" element="statemgrtmgr:DisclaimMissingResultMsg"/>
+	</message>
+	<message name="ModifySubscriberValidityRequestMessage">
+		<part name="ModifySubscriberValidityRequestMsg" element="statemgrtmgr:ModifySubscriberValidityRequestMsg"/>
+	</message>
+	<message name="ModifySubscriberValidityResultMessage">
+		<part name="ModifySubscriberValidityResultMsg" element="statemgrtmgr:ModifySubscriberValidityResultMsg"/>
+	</message>
+	<message name="QueryAdjustValidityLogRequestMessage">
+		<part name="QueryAdjustValidityLogRequestMsg" element="statemgrtmgr:QueryAdjustValidityLogRequestMsg"/>
+	</message>
+	<message name="QueryAdjustValidityLogResultMessage">
+		<part name="QueryAdjustValidityLogResultMsg" element="statemgrtmgr:QueryAdjustValidityLogResultMsg"/>
+	</message>
+	<message name="QuerySubChangeLogRequestMessage">
+		<part name="QuerySubChangeLogRequestMsg" element="statemgrtmgr:QuerySubChangeLogRequestMsg"/>
+	</message>
+	<message name="QuerySubChangeLogResultMessage">
+		<part name="QuerySubChangeLogResultMsg" element="statemgrtmgr:QuerySubChangeLogResultMsg"/>
+	</message>
+	<message name="ManageETUFraudStateRequestMessage">
+		<part name="ManageETUFraudStateRequestMsg" element="statemgrtmgr:ManageETUFraudStateRequestMsg"/>
+	</message>
+	<message name="ManageETUFraudStateResultMessage">
+		<part name="ManageETUFraudStateResultMsg" element="statemgrtmgr:ManageETUFraudStateResultMsg"/>
+	</message>
+	<message name="BalanceToValidityRequestMessage">
+		<part name="BalanceToValidityRequestMsg" element="statemgrtmgr:BalanceToValidityRequestMsg"/>
+	</message>
+	<message name="BalanceToValidityResultMessage">
+		<part name="BalanceToValidityResultMsg" element="statemgrtmgr:BalanceToValidityResultMsg"/>
+	</message>
+	<message name="ModifyLastActiveDateRequestMessage">
+		<part name="ModifyLastActiveDateRequestMsg" element="statemgrtmgr:ModifyLastActiveDateRequestMsg"/>
+	</message>
+	<message name="ModifyLastActiveDateResultMessage">
+		<part name="ModifyLastActiveDateResultMsg" element="statemgrtmgr:ModifyLastActiveDateResultMsg"/>
+	</message>
+	<message name="BatchModLastActDateRequestMessage">
+		<part name="BatchModLastActDateRequestMsg" element="statemgrtmgr:BatchModLastActDateRequestMsg"/>
+	</message>
+	<message name="BatchModLastActDateResultMessage">
+		<part name="BatchModLastActDateResultMsg" element="statemgrtmgr:BatchModLastActDateResultMsg"/>
+	</message>
+	<portType name="Statemgrt">
+		<operation name="suspend">
+			<input message="statemgrtmgr:SuspendRequestMessage"/>
+			<output message="statemgrtmgr:SuspendResultMessage"/>
+		</operation>
+		<operation name="reconnect">
+			<input message="statemgrtmgr:ReconnectRequestMessage"/>
+			<output message="statemgrtmgr:ReconnectResultMessage"/>
+		</operation>
+		<operation name="claimMissing">
+			<input message="statemgrtmgr:ClaimMissingRequestMessage"/>
+			<output message="statemgrtmgr:ClaimMissingResultMessage"/>
+		</operation>
+		<operation name="disclaimMissing">
+			<input message="statemgrtmgr:DisclaimMissingRequestMessage"/>
+			<output message="statemgrtmgr:DisclaimMissingResultMessage"/>
+		</operation>
+		<operation name="modifySubscriberValidity">
+			<input message="statemgrtmgr:ModifySubscriberValidityRequestMessage"/>
+			<output message="statemgrtmgr:ModifySubscriberValidityResultMessage"/>
+		</operation>
+		<operation name="queryAdjustValidityLog">
+			<input message="statemgrtmgr:QueryAdjustValidityLogRequestMessage"/>
+			<output message="statemgrtmgr:QueryAdjustValidityLogResultMessage"/>
+		</operation>
+		<operation name="querySubChangeLog">
+			<input message="statemgrtmgr:QuerySubChangeLogRequestMessage"/>
+			<output message="statemgrtmgr:QuerySubChangeLogResultMessage"/>
+		</operation>
+		<operation name="manageETUFraudState">
+			<input message="statemgrtmgr:ManageETUFraudStateRequestMessage"/>
+			<output message="statemgrtmgr:ManageETUFraudStateResultMessage"/>
+		</operation>
+		<operation name="balanceToValidity">
+			<input message="statemgrtmgr:BalanceToValidityRequestMessage"/>
+			<output message="statemgrtmgr:BalanceToValidityResultMessage"/>
+		</operation>
+		<operation name="modifyLastActiveDate">
+			<input message="statemgrtmgr:ModifyLastActiveDateRequestMessage"/>
+			<output message="statemgrtmgr:ModifyLastActiveDateResultMessage"/>
+		</operation>
+		<operation name="batchModLastActDate">
+			<input message="statemgrtmgr:BatchModLastActDateRequestMessage"/>
+			<output message="statemgrtmgr:BatchModLastActDateResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="StatemgrtBinding" type="statemgrtmgr:Statemgrt">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="suspend">
+			<soap:operation soapAction="suspend" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="reconnect">
+			<soap:operation soapAction="reconnect" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="claimMissing">
+			<soap:operation soapAction="claimMissing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="disclaimMissing">
+			<soap:operation soapAction="disclaimMissing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifySubscriberValidity">
+			<soap:operation soapAction="modifySubscriberValidity" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryAdjustValidityLog">
+			<soap:operation soapAction="queryAdjustValidityLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="querySubChangeLog">
+			<soap:operation soapAction="querySubChangeLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageETUFraudState">
+			<soap:operation soapAction="manageETUFraudState" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="balanceToValidity">
+			<soap:operation soapAction="balanceToValidity" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyLastActiveDate">
+			<soap:operation soapAction="modifyLastActiveDate" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchModLastActDate">
+			<soap:operation soapAction="batchModLastActDate" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="StatemgrtMgrService">
+		<port name="StatemgrtServicePort" binding="statemgrtmgr:StatemgrtBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/statemgrt/wsdl/CBSInterface_StateMgrt.wsdl"/>
+		</port>
+	</service>
+</definitions>

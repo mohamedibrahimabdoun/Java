@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns="http://www.huawei.com/bme/cbsinterface/managecs" xmlns:managecsmgr="http://www.huawei.com/bme/cbsinterface/managecsmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/managecsmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:managecs="http://www.huawei.com/bme/cbsinterface/managecs" targetNamespace="http://www.huawei.com/bme/cbsinterface/managecsmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/managecs" schemaLocation="CBSInterface_CallScreen.xsd"/>
+			<element name="ManSubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubCallScreenNoRequest" type="managecs:ManSubCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubCallScreenNoRequest" type="managecs:QuerySubCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubCallScreenNoResult" type="managecs:QuerySubCallScreenNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubOutGoingCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubOutGoingCallScreenNoRequest" type="managecs:ManSubOutGoingCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubOutGoingCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubOutGoingCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubOutGoingCallScreenNoRequest" type="managecs:QuerySubOutGoingCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubOutGoingCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubOutGoingCallScreenNoResult" type="managecs:QuerySubOutGoingCallScreenNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManSubCallScreenNoRequestMessage">
+		<part name="ManSubCallScreenNoRequestMsg" element="managecsmgr:ManSubCallScreenNoRequestMsg"/>
+	</message>
+	<message name="ManSubCallScreenNoResultMessage">
+		<part name="ManSubCallScreenNoResultMsg" element="managecsmgr:ManSubCallScreenNoResultMsg"/>
+	</message>
+	<message name="QuerySubCallScreenNoRequestMessage">
+		<part name="QuerySubCallScreenNoRequestMsg" element="managecsmgr:QuerySubCallScreenNoRequestMsg"/>
+	</message>
+	<message name="QuerySubCallScreenNoResultMessage">
+		<part name="QuerySubCallScreenNoResultMsg" element="managecsmgr:QuerySubCallScreenNoResultMsg"/>
+	</message>
+	<message name="ManSubOutGoingCallScreenNoRequestMessage">
+		<part name="ManSubOutGoingCallScreenNoRequestMsg" element="managecsmgr:ManSubOutGoingCallScreenNoRequestMsg"/>
+	</message>
+	<message name="ManSubOutGoingCallScreenNoResultMessage">
+		<part name="ManSubOutGoingCallScreenNoResultMsg" element="managecsmgr:ManSubOutGoingCallScreenNoResultMsg"/>
+	</message>
+	<message name="QuerySubOutGoingCallScreenNoRequestMessage">
+		<part name="QuerySubOutGoingCallScreenNoRequestMsg" element="managecsmgr:QuerySubOutGoingCallScreenNoRequestMsg"/>
+	</message>
+	<message name="QuerySubOutGoingCallScreenNoResultMessage">
+		<part name="QuerySubOutGoingCallScreenNoResultMsg" element="managecsmgr:QuerySubOutGoingCallScreenNoResultMsg"/>
+	</message>
+	<portType name="CallScreenMgr">
+		<operation name="ManSubCallScreenNo">
+			<input message="managecsmgr:ManSubCallScreenNoRequestMessage"/>
+			<output message="managecsmgr:ManSubCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="QuerySubCallScreenNo">
+			<input message="managecsmgr:QuerySubCallScreenNoRequestMessage"/>
+			<output message="managecsmgr:QuerySubCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="ManSubOutGoingCallScreenNo">
+			<input message="managecsmgr:ManSubOutGoingCallScreenNoRequestMessage"/>
+			<output message="managecsmgr:ManSubOutGoingCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="QuerySubOutGoingCallScreenNo">
+			<input message="managecsmgr:QuerySubOutGoingCallScreenNoRequestMessage"/>
+			<output message="managecsmgr:QuerySubOutGoingCallScreenNoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CallScreenMgrBinding" type="managecsmgr:CallScreenMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ManSubCallScreenNo">
+			<soap:operation soapAction="ManSubCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubCallScreenNo">
+			<soap:operation soapAction="QuerySubCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManSubOutGoingCallScreenNo">
+			<soap:operation soapAction="ManSubOutGoingCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubOutGoingCallScreenNo">
+			<soap:operation soapAction="QuerySubOutGoingCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CallScreenMgrService">
+		<port name="CallScreenMgrServicePort" binding="managecsmgr:CallScreenMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managecs/wsdl/CBSInterface_CallScreen.wsdl"/>
+		</port>
+	</service>
+</definitions>

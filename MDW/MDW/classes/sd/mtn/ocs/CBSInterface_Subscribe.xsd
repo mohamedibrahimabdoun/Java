@@ -1,0 +1,424 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe"
+     xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/subscribe"
+     elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+    <xs:complexType name="CallScreen">
+        <xs:sequence>
+            <xs:element name="CallScreenType" type="common:CallScreenType" minOccurs="0"/>
+            <xs:element name="CallScreenNoInfoList" type="subscribe:CallScreenNoInfo" minOccurs="0"
+                 maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CallScreenNoInfo">
+        <xs:sequence>
+            <xs:element name="callScreenNo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="weekStart" type="common:Week" minOccurs="0"/>
+            <xs:element name="weekStop" type="common:Week" minOccurs="0"/>
+            <xs:element name="routeNumber" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="IRRouteFlag" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="RoutingMethod" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="ListType" type="xs:int" nillable="true" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FamilyNoInfo">
+        <xs:sequence>
+            <xs:element name="FamilyNo" type="common:SubscriberNo"/>
+            <xs:element name="phoneNoOrder" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="subGroupType" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HomeZone">
+        <xs:sequence>
+            <xs:element name="HomeZoneChange" type="xs:int" minOccurs="0"/>
+            <xs:element name="HomeZonePromptMode" type="xs:int" minOccurs="0"/>
+            <xs:element name="HomeZoneList" type="subscribe:HomeZoneInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HomeZoneInfo">
+        <xs:sequence>
+            <xs:element name="HomeZoneID" type="xs:int"/>
+            <xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OfferOrderInfo">
+        <xs:sequence>
+            <xs:element name="OfferId" type="common:OfferId"/>
+            <xs:element name="OfferOrderKey" type="common:OfferOrderKey"/>
+            <xs:element name="EffectiveDate" type="common:DateTime"/>
+            <xs:element name="ExpireDate" type="common:DateTime"/>
+            <xs:element name="AutoType">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:enumeration value="0" id="PurchasedByCustomer"/>
+                        <xs:enumeration value="1" id="PurchasedBySystem"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="OfferCode" type="common:OfferCode" minOccurs="0"/>
+            <xs:element name="Status" type="xs:string" minOccurs="0"/>
+            <xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ExpireMode">
+        <xs:sequence>
+            <xs:element name="Mode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:enumeration value="4050001"/>
+                        <xs:enumeration value="4050003"/>
+                        <xs:enumeration value="4050000"/>
+                        <xs:enumeration value="4050002"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EffectMode">
+        <xs:sequence>
+            <xs:element name="Mode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:enumeration value="4050000"/>
+                        <xs:enumeration value="4050001"/>
+                        <xs:enumeration value="4050002"/>
+                        <xs:enumeration value="4050003"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="EffectiveDate" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="ExpireDate" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Product">
+        <xs:sequence>
+            <xs:element name="Id" type="common:ProductId" nillable="true"/>
+            <xs:element name="FeeAmt" type="common:Balance" minOccurs="0"/>
+            <xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Service" type="subscribe:Service" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Service">
+        <xs:sequence>
+            <xs:element name="Id" type="common:ServiceId"/>
+            <xs:element name="Property">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="FamilyNo" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="FamilyNoList" type="subscribe:FamilyNoInfo" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="CallScreen" type="subscribe:CallScreen" minOccurs="0"/>
+                        <xs:element name="HomeZone" type="subscribe:HomeZone" minOccurs="0"/>
+                        <xs:element name="SimploProperties" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SimploProperty" type="common:SimpleProperty" minOccurs="0"
+                                         maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BundleSubscriber">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="subscribe:Product"/>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OfferOrder">
+        <xs:sequence>
+            <xs:element name="Id" type="common:OfferId">
+                <xs:annotation>
+                    <xs:documentation>销售品ID</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>销售品订购属性</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OptionalOfferOrder">
+        <xs:sequence>
+            <xs:element name="Id" type="common:OfferId">
+                <xs:annotation>
+                    <xs:documentation>销售品ID</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>销售品订购属性</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BundleSubscriber" type="subscribe:BundleSubscriber" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeOptionalOfferRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="OptionalOffer" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="subscribe:OptionalOfferOrder">
+                            <xs:sequence>
+                                <xs:element name="OperationType" type="xs:int">
+                                    <xs:annotation>
+                                        <xs:documentation>Add/Delete/Modify</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Add/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="Status" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify时有效</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="7"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+            <xs:element name="PrimaryOfferOrderKey" type="common:OfferOrderKey" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>如果输入了基础销售品实例ID，表示用户级订购，指定给这个基础销售品。如果基础销售品实例键值和帐户code都没有输入，那么默认是基础销售品级的订购，取当前输入用户的归属基础销售品实例。</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OneTimeCharge" type="common:OneTimeCharge" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeOptionalOfferResult">
+        <xs:sequence>
+            <xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeAccountOfferRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>保留</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Offering" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="subscribe:OfferOrder">
+                            <xs:sequence>
+                                <xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Add时，输入销售品内构成产品的订购数</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Id" type="common:ProductId"/>
+                                            <xs:element name="SimpleProperty" type="common:SimpleProperty"
+                                                 minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="FeeAmount" type="common:Balance" minOccurs="0"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="OperationType" type="xs:int">
+                                    <xs:annotation>
+                                        <xs:documentation>Add/Delete/Modify</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Add/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="Status" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify时有效</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="7"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Reserved</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeAccountOfferResult">
+        <xs:sequence>
+            <xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BindProductSubscriberNoRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="BindSubNumber" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+                        <xs:element name="SubscriberNoType" type="xs:int" minOccurs="0"/>
+                        <xs:element name="IMSI" type="common:IMSI" minOccurs="0"/>
+                        <xs:element name="OperationType" type="xs:int"/>
+                        <xs:element name="ProductID" type="common:ProductId"/>
+                        <xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+                        <xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeOptionalOfferExtRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="OptionalOffer" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="subscribe:OfferOrder">
+                            <xs:sequence>
+                                <xs:element name="OperationType" type="xs:int">
+                                    <xs:annotation>
+                                        <xs:documentation>Add/Delete/Modify</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Add/Delete时有效</xs:documentation>
+                                    </xs:annotation>
+                                </xs:element>
+                                <xs:element name="Status" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>当OperationType=Modify时有效</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="7"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:complexContent>
+                                            <xs:extension base="subscribe:Product">
+                                                <xs:sequence>
+                                                    <xs:element name="BindSubscriberNo" type="common:BindSubscriberNo"
+                                                         minOccurs="0" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:extension>
+                                        </xs:complexContent>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeOptionalOfferExtResult">
+        <xs:sequence>
+            <xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BatchSubscribeRequest">
+        <xs:sequence>
+            <xs:element name="OptionalOffer" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="subscribe:OfferOrder">
+                            <xs:sequence>
+                                <xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Id" type="common:ProductId"/>
+                                            <xs:element name="SimpleProperty" type="common:SimpleProperty"
+                                                 minOccurs="0" maxOccurs="unbounded"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+            <xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+            <xs:element name="FileName" type="common:FileName"/>
+            <xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BatchUnSubscribeRequest">
+        <xs:sequence>
+            <xs:element name="OptionalOffer" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Id" type="common:OfferId"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+            <xs:element name="FileName" type="common:FileName"/>
+            <xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

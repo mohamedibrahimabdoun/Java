@@ -1,0 +1,404 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+  </ID>
+  <name>CCM_GET_DATA</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+    </ID>
+    <SQLText>SELECT &quot;SUBNO&quot;,&quot;CC_LIMIT&quot;,&quot;INVDATE&quot;,&quot;DUE_AMT&quot;,&quot;UNBILLED&quot;,&quot;TOT_DUE&quot;,&quot;DUE_AMT_AR&quot;,&quot;UNBILLED_AR&quot;,&quot;TOT_DUE_AR&quot;,&quot;DATE1&quot; FROM CCM_GET_DATA@TABS</SQLText>
+    <distinct>false</distinct>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4f2ac79d-141d-4043-8105-68d6ca9f02d2</identifier>
+        </ID>
+        <alias>&quot;SUBNO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">4dbee2be-6ac9-4a53-9677-74d93fb4ee24</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1c83f8ae-f38b-486b-a8a2-92e66fa01c99</identifier>
+        </ID>
+        <alias>&quot;CC_LIMIT&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">adc73b51-c78e-461a-8c28-74b52d5b6842</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5f5a098c-6a5a-4565-a361-56c5b6ffa02a</identifier>
+        </ID>
+        <alias>&quot;INVDATE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">2b870695-d588-47e0-bdd1-43f05be96e29</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2572d320-bd9a-4e0e-8696-b344077fd481</identifier>
+        </ID>
+        <alias>&quot;DUE_AMT&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3961c13d-e57d-4d34-83b1-d309a0c061fd</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b05e2a94-5a05-4814-a56f-90741a663d73</identifier>
+        </ID>
+        <alias>&quot;UNBILLED&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">affa81ac-00bf-4d7e-aac4-26eecfeec10e</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1edfe2d6-7660-4871-a71a-343e72a70699</identifier>
+        </ID>
+        <alias>&quot;TOT_DUE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">0195f4e2-b54a-4f78-8881-34d46dd0dc39</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e689e2c0-107d-4b05-b409-389ac07dac48</identifier>
+        </ID>
+        <alias>&quot;DUE_AMT_AR&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">902ec3a8-db73-4941-ad19-a216700daa95</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">927ea633-88c6-4cd9-8de8-ee1fedcfe755</identifier>
+        </ID>
+        <alias>&quot;UNBILLED_AR&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">68bcf427-50c8-4287-80bd-7a2eb5528968</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">eefe0d3e-a877-4563-86f0-fc38ec2576e3</identifier>
+        </ID>
+        <alias>&quot;TOT_DUE_AR&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f8a2b774-1f17-4c1c-b032-ef5171e49610</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">23247a05-c39e-462b-8ff2-64d719f9b4bc</identifier>
+        </ID>
+        <alias>&quot;DATE1&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b13c3b18-67d9-48c0-ad10-4984b307f1c7</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>SELECT &quot;SUBNO&quot;,&quot;CC_LIMIT&quot;,&quot;INVDATE&quot;,&quot;DUE_AMT&quot;,&quot;UNBILLED&quot;,&quot;TOT_DUE&quot;,&quot;DUE_AMT_AR&quot;,&quot;UNBILLED_AR&quot;,&quot;TOT_DUE_AR&quot;,&quot;DATE1&quot; FROM CCM_GET_DATA@TABS</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">da8c2514-211a-47ad-b1d1-a428e101b082</identifier>
+      </ID>
+      <name>SUBNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;SUBNO&quot;</name>
+        <identifier class="java.lang.String">4f2ac79d-141d-4043-8105-68d6ca9f02d2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a68ea06d-222b-498f-b13f-a0d8be4fe0d8</identifier>
+      </ID>
+      <name>CC_LIMIT</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;CC_LIMIT&quot;</name>
+        <identifier class="java.lang.String">1c83f8ae-f38b-486b-a8a2-92e66fa01c99</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1ef890c3-a0c1-4184-a916-11ad3d2f8c5b</identifier>
+      </ID>
+      <name>INVDATE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;INVDATE&quot;</name>
+        <identifier class="java.lang.String">5f5a098c-6a5a-4565-a361-56c5b6ffa02a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">33a2d2c0-5973-4568-83d8-6bae87d0afdc</identifier>
+      </ID>
+      <name>DUE_AMT</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;DUE_AMT&quot;</name>
+        <identifier class="java.lang.String">2572d320-bd9a-4e0e-8696-b344077fd481</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">354c2417-857a-430a-aa83-690c52bd4c35</identifier>
+      </ID>
+      <name>UNBILLED</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;UNBILLED&quot;</name>
+        <identifier class="java.lang.String">b05e2a94-5a05-4814-a56f-90741a663d73</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3b2411de-40ae-4227-92c3-e49fbf24d93a</identifier>
+      </ID>
+      <name>TOT_DUE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;TOT_DUE&quot;</name>
+        <identifier class="java.lang.String">1edfe2d6-7660-4871-a71a-343e72a70699</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">035f2387-63de-409e-aa83-c3ebfc35f9a0</identifier>
+      </ID>
+      <name>DUE_AMT_AR</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;DUE_AMT_AR&quot;</name>
+        <identifier class="java.lang.String">e689e2c0-107d-4b05-b409-389ac07dac48</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">77447e56-0aac-4ece-ad05-277fe21d32f7</identifier>
+      </ID>
+      <name>UNBILLED_AR</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;UNBILLED_AR&quot;</name>
+        <identifier class="java.lang.String">927ea633-88c6-4cd9-8de8-ee1fedcfe755</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">37c2f32d-c359-4da7-b47e-e9700afdd227</identifier>
+      </ID>
+      <name>TOT_DUE_AR</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;TOT_DUE_AR&quot;</name>
+        <identifier class="java.lang.String">eefe0d3e-a877-4563-86f0-fc38ec2576e3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9426fdbb-b786-47eb-a933-d32abf64d0eb</identifier>
+      </ID>
+      <name>DATE1</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;DATE1&quot;</name>
+        <identifier class="java.lang.String">23247a05-c39e-462b-8ff2-64d719f9b4bc</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7a5807c-6064-49ef-a912-e8de0f37d267</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CCM_GET_DATA</name>
+            <identifier class="java.lang.String">db86f50e-6e0c-4b89-b252-b6965bd963dc</identifier>
+            <schemaName>MDW</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>MDW</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>MDW</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CCM_GET_DATA</name>
+        <identifier class="java.math.BigDecimal">89216</identifier>
+        <schemaName>MDW</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>MDW</name>
+  </schema>
+</view>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:bamgrtmgr="http://www.huawei.com/bme/cbsinterface/bamgrtmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/bamgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/bamgrtmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bamgrt="http://www.huawei.com/bme/cbsinterface/bamgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/bamgrtmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/bamgrt" schemaLocation="CBSInterface_BAMgrt.xsd"/>
+			<element name="AddBARequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="AddBARequest" type="bamgrt:AddBARequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AddBAResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteBARequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteBARequest" type="bamgrt:DeleteBARequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteBAResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBARequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryBARequest" type="bamgrt:QueryBARequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBAResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryBAResult" type="bamgrt:QueryBAResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyBARequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifyBARequest" type="bamgrt:ModifyBARequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyBAResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="AddBARequestMessage">
+		<part name="AddBARequestMsg" element="bamgrtmgr:AddBARequestMsg"/>
+	</message>
+	<message name="AddBAResultMessage">
+		<part name="AddBAResultMsg" element="bamgrtmgr:AddBAResultMsg"/>
+	</message>
+	<message name="DeleteBARequestMessage">
+		<part name="DeleteBARequestMsg" element="bamgrtmgr:DeleteBARequestMsg"/>
+	</message>
+	<message name="DeleteBAResultMessage">
+		<part name="DeleteBAResultMsg" element="bamgrtmgr:DeleteBAResultMsg"/>
+	</message>
+	<message name="QueryBARequestMessage">
+		<part name="QueryBARequestMsg" element="bamgrtmgr:QueryBARequestMsg"/>
+	</message>
+	<message name="QueryBAResultMessage">
+		<part name="QueryBAResultMsg" element="bamgrtmgr:QueryBAResultMsg"/>
+	</message>
+	<message name="ModifyBARequestMessage">
+		<part name="ModifyBARequestMsg" element="bamgrtmgr:ModifyBARequestMsg"/>
+	</message>
+	<message name="ModifyBAResultMessage">
+		<part name="ModifyBAResultMsg" element="bamgrtmgr:ModifyBAResultMsg"/>
+	</message>
+	<portType name="BAmgrt">
+		<operation name="addBA">
+			<input message="bamgrtmgr:AddBARequestMessage"/>
+			<output message="bamgrtmgr:AddBAResultMessage"/>
+		</operation>
+		<operation name="deleteBA">
+			<input message="bamgrtmgr:DeleteBARequestMessage"/>
+			<output message="bamgrtmgr:DeleteBAResultMessage"/>
+		</operation>
+		<operation name="queryBA">
+			<input message="bamgrtmgr:QueryBARequestMessage"/>
+			<output message="bamgrtmgr:QueryBAResultMessage"/>
+		</operation>
+		<operation name="modifyBA">
+			<input message="bamgrtmgr:ModifyBARequestMessage"/>
+			<output message="bamgrtmgr:ModifyBAResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="BAmgrtBinding" type="bamgrtmgr:BAmgrt">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="addBA">
+			<soap:operation soapAction="addBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="deleteBA">
+			<soap:operation soapAction="deleteBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryBA">
+			<soap:operation soapAction="queryBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyBA">
+			<soap:operation soapAction="modifyBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="BAmgrtMgrService">
+		<port name="BAmgrtServicePort" binding="bamgrtmgr:BAmgrtBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/bamgrt/wsdl/CBSInterface_BAMgt.wsdl"/>
+		</port>
+	</service>
+</definitions>

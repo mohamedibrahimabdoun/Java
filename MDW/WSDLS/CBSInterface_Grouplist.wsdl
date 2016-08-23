@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:grouplistmgr="http://www.huawei.com/bme/cbsinterface/grouplistmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/grouplist" targetNamespace="http://www.huawei.com/bme/cbsinterface/grouplistmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:grouplist="http://www.huawei.com/bme/cbsinterface/grouplist" targetNamespace="http://www.huawei.com/bme/cbsinterface/grouplistmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/grouplist" schemaLocation="CBSInterface_Grouplist.xsd"/>
+			<element name="ManageGroupListRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageGroupListRequest" type="grouplist:ManageGroupListRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageGroupListResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupListRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupListRequest" type="grouplist:QueryGroupListRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupListResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupListResult" type="grouplist:QueryGroupListResult"/>
+					</sequence>
+				</complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManageGroupListRequestMessage">
+		<part name="ManageGroupListRequestMsg" element="grouplistmgr:ManageGroupListRequestMsg"/>
+	</message>
+	<message name="ManageGroupListResultMessage">
+		<part name="ManageGroupListResultMsg" element="grouplistmgr:ManageGroupListResultMsg"/>
+	</message>
+	<message name="QueryGroupListRequestMessage">
+		<part name="QueryGroupListRequestMsg" element="grouplistmgr:QueryGroupListRequestMsg"/>
+	</message>
+	<message name="QueryGroupListResultMessage">
+		<part name="QueryGroupListResultMsg" element="grouplistmgr:QueryGroupListResultMsg"/>
+	</message>
+	<portType name="GroupListMgr">
+		<operation name="ManageGroupList">
+			<input message="grouplistmgr:ManageGroupListRequestMessage"/>
+			<output message="grouplistmgr:ManageGroupListResultMessage"/>
+		</operation>
+		<operation name="QueryGroupList">
+			<input message="grouplistmgr:QueryGroupListRequestMessage"/>
+			<output message="grouplistmgr:QueryGroupListResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="GroupListMgrBinding" type="grouplistmgr:GroupListMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ManageGroupList">
+			<soap:operation soapAction="ManageGroupList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryGroupList">
+			<soap:operation soapAction="QueryGroupList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="GroupListMgrService">
+		<port name="GroupListMgrServicePort" binding="grouplistmgr:GroupListMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/grouplistmgr/wsdl/CBSInterface_Grouplist.wsdl"/>
+		</port>
+	</service>
+</definitions>

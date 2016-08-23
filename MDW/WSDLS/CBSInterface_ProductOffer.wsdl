@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:productoffermgr="http://www.huawei.com/bme/cbsinterface/productoffermgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/productoffer" targetNamespace="http://www.huawei.com/bme/cbsinterface/productoffermgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:productoffer="http://www.huawei.com/bme/cbsinterface/productoffer" targetNamespace="http://www.huawei.com/bme/cbsinterface/productoffermgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/productoffer" schemaLocation="CBSInterface_ProductOffer.xsd"/>
+			<element name="QueryBrandsRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBrandsResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryBrandsResult" type="productoffer:QueryBrandsResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOfferByNewSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryOfferByNewSubscriberRequest" type="productoffer:QueryOfferByNewSubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOfferByNewSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryOfferByNewSubscriberResult" type="productoffer:QueryOfferByNewSubscriberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOffersBySubscribingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryOffersBySubscribingRequest" type="productoffer:QueryOffersBySubscribingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOffersBySubscribingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryOffersBySubscribingResult" type="productoffer:QueryOffersBySubscribingResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOffersByReplacingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryOffersByReplacingRequest" type="productoffer:QueryOffersByReplacingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOffersByReplacingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryOffersByReplacingResult" type="productoffer:QueryOffersByReplacingResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOfferInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryOfferInfoRequest" type="productoffer:QueryOfferInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOfferInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryOfferInfoResult" type="productoffer:QueryOfferInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryBrandsRequestMessage">
+		<part name="QueryBrandsRequestMsg" element="productoffermgr:QueryBrandsRequestMsg"/>
+	</message>
+	<message name="QueryBrandsResultMessage">
+		<part name="QueryBrandsResultMsg" element="productoffermgr:QueryBrandsResultMsg"/>
+	</message>
+	<message name="QueryOfferByNewSubscriberRequestMessage">
+		<part name="QueryOfferByNewSubscriberRequestMsg" element="productoffermgr:QueryOfferByNewSubscriberRequestMsg"/>
+	</message>
+	<message name="QueryOfferByNewSubscriberResultMessage">
+		<part name="QueryOfferByNewSubscriberResultMsg" element="productoffermgr:QueryOfferByNewSubscriberResultMsg"/>
+	</message>
+	<message name="QueryOffersBySubscribingRequestMessage">
+		<part name="QueryOffersBySubscribingRequestMsg" element="productoffermgr:QueryOffersBySubscribingRequestMsg"/>
+	</message>
+	<message name="QueryOffersBySubscribingResultMessage">
+		<part name="QueryOffersBySubscribingResultMsg" element="productoffermgr:QueryOffersBySubscribingResultMsg"/>
+	</message>
+	<message name="QueryOffersByReplacingRequestMessage">
+		<part name="QueryOffersByReplacingRequestMsg" element="productoffermgr:QueryOffersByReplacingRequestMsg"/>
+	</message>
+	<message name="QueryOffersByReplacingResultMessage">
+		<part name="QueryOffersByReplacingResultMsg" element="productoffermgr:QueryOffersByReplacingResultMsg"/>
+	</message>
+	<message name="QueryOfferInfoRequestMessage">
+		<part name="QueryOfferInfoRequestMsg" element="productoffermgr:QueryOfferInfoRequestMsg"/>
+	</message>
+	<message name="QueryOfferInfoResultMessage">
+		<part name="QueryOfferInfoResultMsg" element="productoffermgr:QueryOfferInfoResultMsg"/>
+	</message>
+	<portType name="ProductOfferMgr">
+		<operation name="queryBrands">
+			<input message="productoffermgr:QueryBrandsRequestMessage"/>
+			<output message="productoffermgr:QueryBrandsResultMessage"/>
+		</operation>
+		<operation name="queryOfferByNewSubscriber">
+			<input message="productoffermgr:QueryOfferByNewSubscriberRequestMessage"/>
+			<output message="productoffermgr:QueryOfferByNewSubscriberResultMessage"/>
+		</operation>
+		<operation name="queryOffersBySubscribing">
+			<input message="productoffermgr:QueryOffersBySubscribingRequestMessage"/>
+			<output message="productoffermgr:QueryOffersBySubscribingResultMessage"/>
+		</operation>
+		<operation name="queryOffersByReplacing">
+			<input message="productoffermgr:QueryOffersByReplacingRequestMessage"/>
+			<output message="productoffermgr:QueryOffersByReplacingResultMessage"/>
+		</operation>
+		<operation name="queryOfferInfo">
+			<input message="productoffermgr:QueryOfferInfoRequestMessage"/>
+			<output message="productoffermgr:QueryOfferInfoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ProductOfferMgrBinding" type="productoffermgr:ProductOfferMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="queryBrands">
+			<soap:operation soapAction="queryBrands" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryOfferByNewSubscriber">
+			<soap:operation soapAction="queryOfferByNewSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryOffersBySubscribing">
+			<soap:operation soapAction="queryOffersBySubscribing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryOffersByReplacing">
+			<soap:operation soapAction="queryOffersByReplacing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryOfferInfo">
+			<soap:operation soapAction="queryOfferInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ProductOfferMgrService">
+		<port name="ProductOfferMgrServicePort" binding="productoffermgr:ProductOfferMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/subscribe/wsdl/CBSInterface_ProductOffer.wsdl"/>
+		</port>
+	</service>
+</definitions>

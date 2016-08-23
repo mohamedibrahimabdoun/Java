@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:scpgmgr="http://www.huawei.com/bme/cbsinterface/scpgmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/scpg" targetNamespace="http://www.huawei.com/bme/cbsinterface/scpgmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:scpg="http://www.huawei.com/bme/cbsinterface/scpg" targetNamespace="http://www.huawei.com/bme/cbsinterface/scpgmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/scpg" schemaLocation="CBSInterface_SCPG.xsd"/>
+			<element name="QuerySCPGMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySCPGMemberRequest" type="scpg:QuerySCPGMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySCPGMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySCPGMemberResult" type="scpg:QuerySCPGMemberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QuerySCPGMemberRequestMessage">
+		<part name="QuerySCPGMemberRequestMsg" element="scpgmgr:QuerySCPGMemberRequestMsg"/>
+	</message>
+	<message name="QuerySCPGMemberResultMessage">
+		<part name="QuerySCPGMemberResultMsg" element="scpgmgr:QuerySCPGMemberResultMsg"/>
+	</message>
+	<portType name="scpg">
+		<operation name="querySCPGMember">
+			<input message="scpgmgr:QuerySCPGMemberRequestMessage"/>
+			<output message="scpgmgr:QuerySCPGMemberResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="scpgBinding" type="scpgmgr:scpg">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="querySCPGMember">
+			<soap:operation soapAction="querySCPGMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="SCPGMgrService">
+		<port name="scpgServicePort" binding="scpgmgr:scpgBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/scpg/wsdl/CBSInterface_SCPG.wsdl"/>
+		</port>
+	</service>
+</definitions>

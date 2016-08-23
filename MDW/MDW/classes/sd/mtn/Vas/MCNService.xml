@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="MCNService"
+                     namespaceURI="http://web.globitel.com/"/>
+      <port-info>
+         <wsdl-port localpart="MCNPort"
+                    namespaceURI="http://web.globitel.com/"/>
+         <runtime/>
+         <operations>
+            <operation name="deleteCampaign"/>
+            <operation name="addMSISDN"/>
+            <operation name="createCampaign"/>
+            <operation name="disableCampaign"/>
+            <operation name="enableCampaign"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

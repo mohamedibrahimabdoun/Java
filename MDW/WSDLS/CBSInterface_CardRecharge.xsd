@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cardrecharge="http://www.huawei.com/bme/cbsinterface/cardrecharge" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/cardrecharge" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="VoucherRechargeRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="CardPinNumber">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="24"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RechargeType" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AccountType" type="common:AccountType" minOccurs="0"/>
+			<xs:element name="Location" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeResult">
+		<xs:sequence>
+			<xs:element name="FaceValue" type="common:Balance" nillable="true"/>
+			<xs:element name="NewBalance" type="common:Balance" nillable="true"/>
+			<xs:element name="NewActiveStop" type="common:Date"/>
+			<xs:element name="ValidityPeriod" type="xs:int" nillable="true"/>
+			<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="PrmAcctType" type="common:AccountType" nillable="true"/>
+						<xs:element name="PrmAmt" type="common:Balance" nillable="true"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoanAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanPoundage" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="BalanceValidity" type="common:Date" minOccurs="0"/>
+			<xs:element name="BalanceValidityPeriod" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="BalanceActiveDate" type="common:Date" minOccurs="0"/>
+			<xs:element name="UserDays" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeEnquiryRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="RechargeType" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StartTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="EndTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="RechargeResult" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeEnquiryResult">
+		<xs:sequence>
+			<xs:element name="RechargeLog" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="SubCosID" type="xs:int" nillable="true"/>
+						<xs:element name="TradeTime" type="common:DateTime"/>
+						<xs:element name="ErrorType" type="xs:int"/>
+						<xs:element name="RechargeType">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="10"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="Batch">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="20"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="Sequence">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="CardCosID" type="xs:int" nillable="true"/>
+						<xs:element name="OldActiveStop" type="common:Date"/>
+						<xs:element name="NewActiveStop" type="common:Date"/>
+						<xs:element name="OldSuspendStop" type="common:Date"/>
+						<xs:element name="NewSuspendStop" type="common:Date"/>
+						<xs:element name="OldDisableStop" type="common:Date"/>
+						<xs:element name="NewDisableStop" type="common:Date"/>
+						<xs:element name="OldBalance" type="common:Balance" nillable="true"/>
+						<xs:element name="NewBalance" type="common:Balance" nillable="true"/>
+						<xs:element name="RechargeAmt" type="common:Balance" nillable="true"/>
+						<xs:element name="Currency" type="xs:int" minOccurs="0"/>
+						<xs:element name="Validity" type="xs:int" nillable="true"/>
+						<xs:element name="PrmValidity" type="xs:int"/>
+						<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="PrmAcctType" type="common:AccountType" nillable="true"/>
+									<xs:element name="PrmAmt" type="common:Balance" nillable="true"/>
+									<xs:element name="CurrPrmAcctBalance" type="common:Balance" nillable="true" minOccurs="0"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OperatorID" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="24"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RechargeTax" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="RechargePenalty" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="CallingPartyNo" type="common:SubscriberNo" minOccurs="0"/>
+						<xs:element name="CardSPID" type="xs:int" minOccurs="0"/>
+						<xs:element name="OldPOSBalance" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="NewPOSBalance" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="LoanAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="LoanPoundage" type="common:Balance" nillable="true" minOccurs="0"/>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BalanceValidity" type="common:Date" minOccurs="0"/>
+						<xs:element name="BalanceValidityPeriod" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="BalanceActiveDate" type="common:Date" minOccurs="0"/>
+						<xs:element name="UserDays" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="CardPinNumber" nillable="true" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="24"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ResultFileName" type="common:FileName" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryBySeqRequest">
+		<xs:all>
+			<xs:element name="Sequence">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryBySeqResult">
+		<xs:all>
+			<xs:element name="Sequence">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BatchNo">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FaceValue" type="common:Balance" nillable="true"/>
+			<xs:element name="Currency">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CardCosID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CardStartDate" type="common:Date"/>
+			<xs:element name="CardStopDate" type="common:Date"/>
+			<xs:element name="HotCardFlag" type="xs:int" nillable="true"/>
+			<xs:element name="OprDateTime" type="common:DateTime"/>
+			<xs:element name="OprType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ChargeNumber" type="common:SubscriberNo"/>
+			<xs:element name="TradeTime" type="common:DateTime"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="QueryRechgBlackInfoRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="QueryRechgBlackInfoResult">
+		<xs:all>
+			<xs:element name="FraudState" type="xs:int" nillable="true"/>
+			<xs:element name="FraudTimes" type="xs:int" nillable="true"/>
+			<xs:element name="FraudTimesDay" type="xs:int" nillable="true"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryByPINRequest">
+		<xs:all>
+			<xs:element name="CardPinNumber">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="24"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherEnquiryByPINResult">
+		<xs:all>
+			<xs:element name="Sequence">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BatchNo">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FaceValue" type="common:Balance" nillable="true"/>
+			<xs:element name="Currency">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CardCosID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CardStartDate" type="common:Date"/>
+			<xs:element name="CardStopDate" type="common:Date"/>
+			<xs:element name="HotCardFlag" type="xs:int" nillable="true"/>
+			<xs:element name="OprDateTime" type="common:DateTime"/>
+			<xs:element name="OprType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ChargeNumber" type="common:SubscriberNo"/>
+			<xs:element name="TradeTime" type="common:DateTime"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyVoucherStateRequest">
+		<xs:sequence>
+			<xs:element name="Sequence">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CardFlag" type="xs:int" minOccurs="0"/>
+			<xs:element name="Reason" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeBySeqRequest">
+		<xs:all>
+			<xs:element name="LogID" type="xs:string" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="CardSequence">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AccountType" type="common:AccountType" minOccurs="0"/>
+			<xs:element name="Location" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="VoucherRechargeBySeqResult">
+		<xs:sequence>
+			<xs:element name="FaceValue" type="common:Balance" nillable="true"/>
+			<xs:element name="NewBalance" type="common:Balance" nillable="true"/>
+			<xs:element name="NewActiveStop" type="common:Date"/>
+			<xs:element name="ValidityPeriod" type="xs:int" nillable="true"/>
+			<xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="PrmAcctType" type="common:AccountType" nillable="true"/>
+						<xs:element name="PrmAmt" type="common:Balance" nillable="true"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteRechageBlackRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchDeleteRechageBlackRequest">
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddRechageBlackRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

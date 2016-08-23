@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:communitymgr="http://www.huawei.com/bme/cbsinterface/communitymgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/community" xmlns:ns1="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/communitymgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:community="http://www.huawei.com/bme/cbsinterface/community" targetNamespace="http://www.huawei.com/bme/cbsinterface/communitymgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/community" schemaLocation="CBSInterface_CommunityMgr.xsd"/>
+			<element name="ChangeGroupOfferRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ChangeGroupOfferRequest" type="community:ChangeGroupOfferRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberCountOfGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryMemberCountOfGroupRequest" type="community:QueryMemberCountOfGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberCountOfGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryMemberCountOfGroupResult" type="community:QueryMemberCountOfGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ChangeGroupOfferResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="ChangeGroupOfferResult" type="community:ChangeGroupOfferResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="NewGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="NewGroupRequest" type="community:NewGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="NewGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="NewGroupResult" type="community:NewGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManGrpCallScreenNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManGrpCallScreenNoRequest" type="community:ManGrpCallScreenNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManGrpCallScreenNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGrpCallScreenNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGrpCallScreenNoRequest" type="community:QueryGrpCallScreenNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGrpCallScreenNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGrpCallScreenNoResult" type="community:QueryGrpCallScreenNoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupStatusRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGroupStatusRequest" type="community:ModifyGroupStatusRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupStatusResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ApplyDeletingGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ApplyDeletingGroupRequest" type="community:ApplyDeletingGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ApplyDeletingGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="SetDeleteGroupTaskRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="SetDeleteGroupTaskRequest" type="community:SetDeleteGroupTaskRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="SetDeleteGroupTaskResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="SetDeleteGroupTaskResult" type="community:SetDeleteGroupTaskResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ChangeOrgRelationRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ChangeOrgRelationRequest" type="community:ChangeOrgRelationRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ChangeOrgRelationResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyAllocatedQuotaRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyAllocatedQuotaRequest" type="community:ModifyAllocatedQuotaRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyAllocatedQuotaResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyTopGroupQuotaRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyTopGroupQuotaRequest" type="community:ModifyTopGroupQuotaRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyTopGroupQuotaResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageShareRelationRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageShareRelationRequest" type="community:ManageShareRelationRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageShareRelationResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryShareRelationRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryShareRelationRequest" type="community:QueryShareRelationRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryShareRelationResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryShareRelationResult" type="community:QueryShareRelationResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageSuperGrpShortNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageSuperGrpShortNoRequest" type="community:ManageSuperGrpShortNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageSuperGrpShortNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="JoinSuperGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="JoinSuperGroupRequest" type="community:JoinSuperGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="JoinSuperGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageCrossGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageCrossGroupRequest" type="community:ManageCrossGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageCrossGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageGroupOutNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageGroupOutNoRequest" type="community:ManageGroupOutNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageGroupOutNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupOutNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupOutNoRequest" type="community:QueryGroupOutNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupOutNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupOutNoResult" type="community:QueryGroupOutNoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageMemberOutNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageMemberOutNoRequest" type="community:ManageMemberOutNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageMemberOutNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOutNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryMemberOutNoRequest" type="community:QueryMemberOutNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOutNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryMemberOutNoResult" type="community:QueryMemberOutNoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="AddGrpMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="AddGrpMemberRequest" type="community:AddGrpMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="AddGrpMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="AddGrpMemberResult" type="community:AddGrpMemberResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DeleteGroupMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="DeleteGroupMemberRequest" type="community:DeleteGroupMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DeleteGroupMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGrpMemberStatusRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGrpMemberStatusRequest" type="community:ModifyGrpMemberStatusRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGrpMemberStatusResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageGrpAttendantRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageGrpAttendantRequest" type="community:ManageGrpAttendantRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageGrpAttendantResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGrpAttendantRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGrpAttendantRequest" type="community:QueryGrpAttendantRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGrpAttendantResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGrpAttendantResult" type="community:QueryGrpAttendantResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupInfoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupInfoRequest" type="community:QueryGroupInfoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupInfoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupInfoResult" type="community:QueryGroupInfoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QuerySubGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QuerySubGroupRequest" type="community:QuerySubGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QuerySubGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QuerySubGroupResult" type="community:QuerySubGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOfGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryMemberOfGroupRequest" type="community:QueryMemberOfGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOfGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryMemberOfGroupResult" type="community:QueryMemberOfGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupAdminRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupAdminRequest" type="community:QueryGroupAdminRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupAdminResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupAdminResult" type="community:QueryGroupAdminResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupMemberInfoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupMemberInfoRequest" type="community:QueryGroupMemberInfoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupMemberInfoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupMemberInfoResult" type="community:QueryGroupMemberInfoResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupMemberBasicInfoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGroupMemberBasicInfoRequest" type="community:ModifyGroupMemberBasicInfoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupMemberBasicInfoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupMemberNoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGroupMemberNoRequest" type="community:ModifyGroupMemberNoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupMemberNoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryCugOfGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryCugOfGroupRequest" type="community:QueryCugOfGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryCugOfGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryCugOfGroupResult" type="community:QueryCugOfGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageCugOfGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageCugOfGroupRequest" type="community:ManageCugOfGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageCugOfGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOfGroupCugRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryMemberOfGroupCugRequest" type="community:QueryMemberOfGroupCugRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryMemberOfGroupCugResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryMemberOfGroupCugResult" type="community:QueryMemberOfGroupCugResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageMemberOfGroupCugRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ManageMemberOfGroupCugRequest" type="community:ManageMemberOfGroupCugRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ManageMemberOfGroupCugResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupCugOfGroupMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupCugOfGroupMemberRequest" type="community:QueryGroupCugOfGroupMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupCugOfGroupMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupCugOfGroupMemberResult" type="community:QueryGroupCugOfGroupMemberResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupOfGroupMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupOfGroupMemberRequest" type="community:QueryGroupOfGroupMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupOfGroupMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupOfGroupMemberResult" type="community:QueryGroupOfGroupMemberResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupBasicInfoRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGroupBasicInfoRequest" type="community:ModifyGroupBasicInfoRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupBasicInfoResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchModGrpMemberStatusRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="BatchModGrpMemberStatusRequest" type="community:BatchModGrpMemberStatusRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchModGrpMemberStatusResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchModGrpMemberNumberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="BatchModGrpMemberNumberRequest" type="community:BatchModGrpMemberNumberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchModGrpMemberNumberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchDeleteGrpMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="BatchDeleteGrpMemberRequest" type="community:BatchDeleteGrpMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchDeleteGrpMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchAddGroupMemberRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="BatchAddGroupMemberRequest" type="community:BatchAddGroupMemberRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="BatchAddGroupMemberResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="AddGroupBARequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="AddGroupBARequest" type="community:AddGroupBARequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="AddGroupBAResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupBARequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="ModifyGroupBARequest" type="community:ModifyGroupBARequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="ModifyGroupBAResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DeleteGroupBARequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="DeleteGroupBARequest" type="community:DeleteGroupBARequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DeleteGroupBAResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupBARequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="QueryGroupBARequest" type="community:QueryGroupBARequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="QueryGroupBAResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="QueryGroupBAResult" type="community:QueryGroupBAResult"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="NewSubscriberAddGroupRequestMsg">
+				<complexType>
+					<sequence>
+						<element name="RequestHeader" type="common:RequestHeader"/>
+						<element name="NewSubscriberAddGroupRequest" type="community:NewSubscriberAddGroupRequest"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="NewSubscriberAddGroupResultMsg">
+				<complexType>
+					<sequence>
+						<element name="ResultHeader" type="common:ResultHeader"/>
+						<element name="NewSubscriberAddGroupResult" type="community:NewSubscriberAddGroupResult"/>
+					</sequence>
+				</complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryMemberCountOfGroupRequestMessage">
+		<part name="QueryMemberCountOfGroupRequestMsg" element="communitymgr:QueryMemberCountOfGroupRequestMsg"/>
+	</message>
+	<message name="QueryMemberCountOfGroupResultMessage">
+		<part name="QueryMemberCountOfGroupResultMsg" element="communitymgr:QueryMemberCountOfGroupResultMsg"/>
+	</message>
+	<message name="ChangeGroupOfferRequestMessage">
+		<part name="ChangeGroupOfferRequestMsg" element="communitymgr:ChangeGroupOfferRequestMsg"/>
+	</message>
+	<message name="ChangeGroupOfferResultMessage">
+		<part name="ChangeGroupOfferResultMsg" element="communitymgr:ChangeGroupOfferResultMsg"/>
+	</message>
+	<message name="ModifyGroupBasicInfoRequestMessage">
+		<part name="ModifyGroupBasicInfoRequestMsg" element="communitymgr:ModifyGroupBasicInfoRequestMsg"/>
+	</message>
+	<message name="ModifyGroupBasicInfoResultMessage">
+		<part name="ModifyGroupBasicInfoResultMsg" element="communitymgr:ModifyGroupBasicInfoResultMsg"/>
+	</message>
+	<message name="NewGroupRequestMessage">
+		<part name="NewGroupRequestMsg" element="communitymgr:NewGroupRequestMsg"/>
+	</message>
+	<message name="NewGroupResultMessage">
+		<part name="NewGroupResultMsg" element="communitymgr:NewGroupResultMsg"/>
+	</message>
+	<message name="ManGrpCallScreenNoRequestMessage">
+		<part name="ManGrpCallScreenNoRequestMsg" element="communitymgr:ManGrpCallScreenNoRequestMsg"/>
+	</message>
+	<message name="ManGrpCallScreenNoResultMessage">
+		<part name="ManGrpCallScreenNoResultMsg" element="communitymgr:ManGrpCallScreenNoResultMsg"/>
+	</message>
+	<message name="QueryGrpCallScreenNoRequestMessage">
+		<part name="QueryGrpCallScreenNoRequestMsg" element="communitymgr:QueryGrpCallScreenNoRequestMsg"/>
+	</message>
+	<message name="QueryGrpCallScreenNoResultMessage">
+		<part name="QueryGrpCallScreenNoResultMsg" element="communitymgr:QueryGrpCallScreenNoResultMsg"/>
+	</message>
+	<message name="ModifyGroupStatusRequestMessage">
+		<part name="ModifyGroupStatusRequestMsg" element="communitymgr:ModifyGroupStatusRequestMsg"/>
+	</message>
+	<message name="ModifyGroupStatusResultMessage">
+		<part name="ModifyGroupStatusResultMsg" element="communitymgr:ModifyGroupStatusResultMsg"/>
+	</message>
+	<message name="ApplyDeletingGroupRequestMessage">
+		<part name="ApplyDeletingGroupRequestMsg" element="communitymgr:ApplyDeletingGroupRequestMsg"/>
+	</message>
+	<message name="ApplyDeletingGroupResultMessage">
+		<part name="ApplyDeletingGroupResultMsg" element="communitymgr:ApplyDeletingGroupResultMsg"/>
+	</message>
+	<message name="SetDeleteGroupTaskRequestMessage">
+		<part name="SetDeleteGroupTaskRequestMsg" element="communitymgr:SetDeleteGroupTaskRequestMsg"/>
+	</message>
+	<message name="SetDeleteGroupTaskResultMessage">
+		<part name="SetDeleteGroupTaskResultMsg" element="communitymgr:SetDeleteGroupTaskResultMsg"/>
+	</message>
+	<message name="ChangeOrgRelationRequestMessage">
+		<part name="ChangeOrgRelationRequestMsg" element="communitymgr:ChangeOrgRelationRequestMsg"/>
+	</message>
+	<message name="ChangeOrgRelationResultMessage">
+		<part name="ChangeOrgRelationResultMsg" element="communitymgr:ChangeOrgRelationResultMsg"/>
+	</message>
+	<message name="ModifyAllocatedQuotaRequestMessage">
+		<part name="ModifyAllocatedQuotaRequestMsg" element="communitymgr:ModifyAllocatedQuotaRequestMsg"/>
+	</message>
+	<message name="ModifyAllocatedQuotaResultMessage">
+		<part name="ModifyAllocatedQuotaResultMsg" element="communitymgr:ModifyAllocatedQuotaResultMsg"/>
+	</message>
+	<message name="ModifyTopGroupQuotaRequestMessage">
+		<part name="ModifyTopGroupQuotaRequestMsg" element="communitymgr:ModifyTopGroupQuotaRequestMsg"/>
+	</message>
+	<message name="ModifyTopGroupQuotaResultMessage">
+		<part name="ModifyTopGroupQuotaResultMsg" element="communitymgr:ModifyTopGroupQuotaResultMsg"/>
+	</message>
+	<message name="ManageShareRelationRequestMessage">
+		<part name="ManageShareRelationRequestMsg" element="communitymgr:ManageShareRelationRequestMsg"/>
+	</message>
+	<message name="ManageShareRelationResultMessage">
+		<part name="ManageShareRelationResultMsg" element="communitymgr:ManageShareRelationResultMsg"/>
+	</message>
+	<message name="QueryShareRelationRequestMessage">
+		<part name="QueryShareRelationRequestMsg" element="communitymgr:QueryShareRelationRequestMsg"/>
+	</message>
+	<message name="QueryShareRelationResultMessage">
+		<part name="QueryShareRelationResultMsg" element="communitymgr:QueryShareRelationResultMsg"/>
+	</message>
+	<message name="ManageSuperGrpShortNoRequestMessage">
+		<part name="ManageSuperGrpShortNoRequestMsg" element="communitymgr:ManageSuperGrpShortNoRequestMsg"/>
+	</message>
+	<message name="ManageSuperGrpShortNoResultMessage">
+		<part name="ManageSuperGrpShortNoResultMsg" element="communitymgr:ManageSuperGrpShortNoResultMsg"/>
+	</message>
+	<message name="JoinSuperGroupRequestMessage">
+		<part name="JoinSuperGroupRequestMsg" element="communitymgr:JoinSuperGroupRequestMsg"/>
+	</message>
+	<message name="JoinSuperGroupResultMessage">
+		<part name="JoinSuperGroupResultMsg" element="communitymgr:JoinSuperGroupResultMsg"/>
+	</message>
+	<message name="ManageCrossGroupRequestMessage">
+		<part name="ManageCrossGroupRequestMsg" element="communitymgr:ManageCrossGroupRequestMsg"/>
+	</message>
+	<message name="ManageCrossGroupResultMessage">
+		<part name="ManageCrossGroupResultMsg" element="communitymgr:ManageCrossGroupResultMsg"/>
+	</message>
+	<message name="ManageGroupOutNoRequestMessage">
+		<part name="ManageGroupOutNoRequestMsg" element="communitymgr:ManageGroupOutNoRequestMsg"/>
+	</message>
+	<message name="ManageGroupOutNoResultMessage">
+		<part name="ManageGroupOutNoResultMsg" element="communitymgr:ManageGroupOutNoResultMsg"/>
+	</message>
+	<message name="QueryGroupOutNoRequestMessage">
+		<part name="QueryGroupOutNoRequestMsg" element="communitymgr:QueryGroupOutNoRequestMsg"/>
+	</message>
+	<message name="QueryGroupOutNoResultMessage">
+		<part name="QueryGroupOutNoResultMsg" element="communitymgr:QueryGroupOutNoResultMsg"/>
+	</message>
+	<message name="ManageMemberOutNoRequestMessage">
+		<part name="ManageMemberOutNoRequestMsg" element="communitymgr:ManageMemberOutNoRequestMsg"/>
+	</message>
+	<message name="ManageMemberOutNoResultMessage">
+		<part name="ManageMemberOutNoResultMsg" element="communitymgr:ManageMemberOutNoResultMsg"/>
+	</message>
+	<message name="QueryMemberOutNoRequestMessage">
+		<part name="QueryMemberOutNoRequestMsg" element="communitymgr:QueryMemberOutNoRequestMsg"/>
+	</message>
+	<message name="QueryMemberOutNoResultMessage">
+		<part name="QueryMemberOutNoResultMsg" element="communitymgr:QueryMemberOutNoResultMsg"/>
+	</message>
+	<message name="AddGrpMemberRequestMessage">
+		<part name="AddGrpMemberRequestMsg" element="communitymgr:AddGrpMemberRequestMsg"/>
+	</message>
+	<message name="AddGrpMemberResultMessage">
+		<part name="AddGrpMemberResultMsg" element="communitymgr:AddGrpMemberResultMsg"/>
+	</message>
+	<message name="DeleteGroupMemberRequestMessage">
+		<part name="DeleteGroupMemberRequestMsg" element="communitymgr:DeleteGroupMemberRequestMsg"/>
+	</message>
+	<message name="DeleteGroupMemberResultMessage">
+		<part name="DeleteGroupMemberResultMsg" element="communitymgr:DeleteGroupMemberResultMsg"/>
+	</message>
+	<message name="ModifyGrpMemberStatusRequestMessage">
+		<part name="ModifyGrpMemberStatusRequestMsg" element="communitymgr:ModifyGrpMemberStatusRequestMsg"/>
+	</message>
+	<message name="ModifyGrpMemberStatusResultMessage">
+		<part name="ModifyGrpMemberStatusResultMsg" element="communitymgr:ModifyGrpMemberStatusResultMsg"/>
+	</message>
+	<message name="ManageGrpAttendantRequestMessage">
+		<part name="ManageGrpAttendantRequestMsg" element="communitymgr:ManageGrpAttendantRequestMsg"/>
+	</message>
+	<message name="ManageGrpAttendantResultMessage">
+		<part name="ManageGrpAttendantResultMsg" element="communitymgr:ManageGrpAttendantResultMsg"/>
+	</message>
+	<message name="QueryGrpAttendantRequestMessage">
+		<part name="QueryGrpAttendantRequestMsg" element="communitymgr:QueryGrpAttendantRequestMsg"/>
+	</message>
+	<message name="QueryGrpAttendantResultMessage">
+		<part name="QueryGrpAttendantResultMsg" element="communitymgr:QueryGrpAttendantResultMsg"/>
+	</message>
+	<message name="QueryGroupInfoRequestMessage">
+		<part name="QueryGroupInfoRequestMsg" element="communitymgr:QueryGroupInfoRequestMsg"/>
+	</message>
+	<message name="QueryGroupInfoResultMessage">
+		<part name="QueryGroupInfoResultMsg" element="communitymgr:QueryGroupInfoResultMsg"/>
+	</message>
+	<message name="QuerySubGroupRequestMessage">
+		<part name="QuerySubGroupRequestMsg" element="communitymgr:QuerySubGroupRequestMsg"/>
+	</message>
+	<message name="QuerySubGroupResultMessage">
+		<part name="QuerySubGroupResultMsg" element="communitymgr:QuerySubGroupResultMsg"/>
+	</message>
+	<message name="QueryMemberOfGroupRequestMessage">
+		<part name="QueryMemberOfGroupRequestMsg" element="communitymgr:QueryMemberOfGroupRequestMsg"/>
+	</message>
+	<message name="QueryMemberOfGroupResultMessage">
+		<part name="QueryMemberOfGroupResultMsg" element="communitymgr:QueryMemberOfGroupResultMsg"/>
+	</message>
+	<message name="QueryGroupAdminRequestMessage">
+		<part name="QueryGroupAdminRequestMsg" element="communitymgr:QueryGroupAdminRequestMsg"/>
+	</message>
+	<message name="QueryGroupAdminResultMessage">
+		<part name="QueryGroupAdminResultMsg" element="communitymgr:QueryGroupAdminResultMsg"/>
+	</message>
+	<message name="QueryGroupMemberInfoRequestMessage">
+		<part name="QueryGroupMemberInfoRequestMsg" element="communitymgr:QueryGroupMemberInfoRequestMsg"/>
+	</message>
+	<message name="QueryGroupMemberInfoResultMessage">
+		<part name="QueryGroupMemberInfoResultMsg" element="communitymgr:QueryGroupMemberInfoResultMsg"/>
+	</message>
+	<message name="ModifyGroupMemberBasicInfoRequestMessage">
+		<part name="ModifyGroupMemberBasicInfoRequestMsg" element="communitymgr:ModifyGroupMemberBasicInfoRequestMsg"/>
+	</message>
+	<message name="ModifyGroupMemberBasicInfoResultMessage">
+		<part name="ModifyGroupMemberBasicInfoResultMsg" element="communitymgr:ModifyGroupMemberBasicInfoResultMsg"/>
+	</message>
+	<message name="ModifyGroupMemberNoRequestMessage">
+		<part name="ModifyGroupMemberNoRequestMsg" element="communitymgr:ModifyGroupMemberNoRequestMsg"/>
+	</message>
+	<message name="ModifyGroupMemberNoResultMessage">
+		<part name="ModifyGroupMemberNoResultMsg" element="communitymgr:ModifyGroupMemberNoResultMsg"/>
+	</message>
+	<message name="QueryCugOfGroupRequestMessage">
+		<part name="QueryCugOfGroupRequestMsg" element="communitymgr:QueryCugOfGroupRequestMsg"/>
+	</message>
+	<message name="QueryCugOfGroupResultMessage">
+		<part name="QueryCugOfGroupResultMsg" element="communitymgr:QueryCugOfGroupResultMsg"/>
+	</message>
+	<message name="ManageCugOfGroupRequestMessage">
+		<part name="ManageCugOfGroupRequestMsg" element="communitymgr:ManageCugOfGroupRequestMsg"/>
+	</message>
+	<message name="ManageCugOfGroupResultMessage">
+		<part name="ManageCugOfGroupResultMsg" element="communitymgr:ManageCugOfGroupResultMsg"/>
+	</message>
+	<message name="QueryMemberOfGroupCugRequestMessage">
+		<part name="QueryMemberOfGroupCugRequestMsg" element="communitymgr:QueryMemberOfGroupCugRequestMsg"/>
+	</message>
+	<message name="QueryMemberOfGroupCugResultMessage">
+		<part name="QueryMemberOfGroupCugResultMsg" element="communitymgr:QueryMemberOfGroupCugResultMsg"/>
+	</message>
+	<message name="ManageMemberOfGroupCugRequestMessage">
+		<part name="ManageMemberOfGroupCugRequestMsg" element="communitymgr:ManageMemberOfGroupCugRequestMsg"/>
+	</message>
+	<message name="ManageMemberOfGroupCugResultMessage">
+		<part name="ManageMemberOfGroupCugResultMsg" element="communitymgr:ManageMemberOfGroupCugResultMsg"/>
+	</message>
+	<message name="QueryGroupCugOfGroupMemberRequestMessage">
+		<part name="QueryGroupCugOfGroupMemberRequestMsg" element="communitymgr:QueryGroupCugOfGroupMemberRequestMsg"/>
+	</message>
+	<message name="QueryGroupCugOfGroupMemberResultMessage">
+		<part name="QueryGroupCugOfGroupMemberResultMsg" element="communitymgr:QueryGroupCugOfGroupMemberResultMsg"/>
+	</message>
+	<message name="QueryGroupOfGroupMemberRequestMessage">
+		<part name="QueryGroupOfGroupMemberRequestMsg" element="communitymgr:QueryGroupOfGroupMemberRequestMsg"/>
+	</message>
+	<message name="QueryGroupOfGroupMemberResultMessage">
+		<part name="QueryGroupOfGroupMemberResultMsg" element="communitymgr:QueryGroupOfGroupMemberResultMsg"/>
+	</message>
+	<message name="BatchModGrpMemberStatusRequestMessage">
+		<part name="BatchModGrpMemberStatusRequestMsg" element="communitymgr:BatchModGrpMemberStatusRequestMsg"/>
+	</message>
+	<message name="BatchModGrpMemberNumberRequestMessage">
+		<part name="BatchModGrpMemberNumberRequestMsg" element="communitymgr:BatchModGrpMemberNumberRequestMsg"/>
+	</message>
+	<message name="BatchDeleteGrpMemberRequestMessage">
+		<part name="BatchDeleteGrpMemberRequestMsg" element="communitymgr:BatchDeleteGrpMemberRequestMsg"/>
+	</message>
+	<message name="BatchAddGroupMemberRequestMessage">
+		<part name="BatchAddGroupMemberRequestMsg" element="communitymgr:BatchAddGroupMemberRequestMsg"/>
+	</message>
+	<message name="BatchModGrpMemberStatusResultMessage">
+		<part name="BatchModGrpMemberStatusResultMsg" element="communitymgr:BatchModGrpMemberStatusResultMsg"/>
+	</message>
+	<message name="BatchModGrpMemberNumberResultMessage">
+		<part name="BatchModGrpMemberNumberResultMsg" element="communitymgr:BatchModGrpMemberNumberResultMsg"/>
+	</message>
+	<message name="BatchDeleteGrpMemberResultMessage">
+		<part name="BatchDeleteGrpMemberResultMsg" element="communitymgr:BatchDeleteGrpMemberResultMsg"/>
+	</message>
+	<message name="BatchAddGroupMemberResultMessage">
+		<part name="BatchAddGroupMemberResultMsg" element="communitymgr:BatchAddGroupMemberResultMsg"/>
+	</message>
+	<message name="AddGroupBARequestMessage">
+		<part name="AddGroupBARequestMsg" element="communitymgr:AddGroupBARequestMsg"/>
+	</message>
+	<message name="AddGroupBAResultMessage">
+		<part name="AddGroupBAResultMsg" element="communitymgr:AddGroupBAResultMsg"/>
+	</message>
+	<message name="ModifyGroupBARequestMessage">
+		<part name="ModifyGroupBARequestMsg" element="communitymgr:ModifyGroupBARequestMsg"/>
+	</message>
+	<message name="ModifyGroupBAResultMessage">
+		<part name="ModifyGroupBAResultMsg" element="communitymgr:ModifyGroupBAResultMsg"/>
+	</message>
+	<message name="DeleteGroupBARequestMessage">
+		<part name="DeleteGroupBARequestMsg" element="communitymgr:DeleteGroupBARequestMsg"/>
+	</message>
+	<message name="DeleteGroupBAResultMessage">
+		<part name="DeleteGroupBAResultMsg" element="communitymgr:DeleteGroupBAResultMsg"/>
+	</message>
+	<message name="QueryGroupBARequestMessage">
+		<part name="QueryGroupBARequestMsg" element="communitymgr:QueryGroupBARequestMsg"/>
+	</message>
+	<message name="QueryGroupBAResultMessage">
+		<part name="QueryGroupBAResultMsg" element="communitymgr:QueryGroupBAResultMsg"/>
+	</message>
+	<message name="NewSubscriberAddGroupRequestMessage">
+		<part name="NewSubscriberAddGroupRequestMsg" element="communitymgr:NewSubscriberAddGroupRequestMsg"/>
+	</message>
+	<message name="NewSubscriberAddGroupResultMessage">
+		<part name="NewSubscriberAddGroupResultMsg" element="communitymgr:NewSubscriberAddGroupResultMsg"/>
+	</message>
+	<portType name="CommunityMgr">
+		<operation name="changeGroupOffer">
+			<input message="communitymgr:ChangeGroupOfferRequestMessage"/>
+			<output message="communitymgr:ChangeGroupOfferResultMessage"/>
+		</operation>
+		<operation name="queryMemberCountOfGroup">
+			<input message="communitymgr:QueryMemberCountOfGroupRequestMessage"/>
+			<output message="communitymgr:QueryMemberCountOfGroupResultMessage"/>
+		</operation>
+		<operation name="modifyGroupBasicInfo">
+			<input message="communitymgr:ModifyGroupBasicInfoRequestMessage"/>
+			<output message="communitymgr:ModifyGroupBasicInfoResultMessage"/>
+		</operation>
+		<operation name="newGroup">
+			<input message="communitymgr:NewGroupRequestMessage"/>
+			<output message="communitymgr:NewGroupResultMessage"/>
+		</operation>
+		<operation name="manGrpCallScreenNo">
+			<input message="communitymgr:ManGrpCallScreenNoRequestMessage"/>
+			<output message="communitymgr:ManGrpCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="queryGrpCallScreenNo">
+			<input message="communitymgr:QueryGrpCallScreenNoRequestMessage"/>
+			<output message="communitymgr:QueryGrpCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="modifyGroupStatus">
+			<input message="communitymgr:ModifyGroupStatusRequestMessage"/>
+			<output message="communitymgr:ModifyGroupStatusResultMessage"/>
+		</operation>
+		<operation name="applyDeletingGroup">
+			<input message="communitymgr:ApplyDeletingGroupRequestMessage"/>
+			<output message="communitymgr:ApplyDeletingGroupResultMessage"/>
+		</operation>
+		<operation name="setDeleteGroupTask">
+			<input message="communitymgr:SetDeleteGroupTaskRequestMessage"/>
+			<output message="communitymgr:SetDeleteGroupTaskResultMessage"/>
+		</operation>
+		<operation name="changeOrgRelation">
+			<input message="communitymgr:ChangeOrgRelationRequestMessage"/>
+			<output message="communitymgr:ChangeOrgRelationResultMessage"/>
+		</operation>
+		<operation name="modifyAllocatedQuota">
+			<input message="communitymgr:ModifyAllocatedQuotaRequestMessage"/>
+			<output message="communitymgr:ModifyAllocatedQuotaResultMessage"/>
+		</operation>
+		<operation name="modifyTopGroupQuota">
+			<input message="communitymgr:ModifyTopGroupQuotaRequestMessage"/>
+			<output message="communitymgr:ModifyTopGroupQuotaResultMessage"/>
+		</operation>
+		<operation name="manageShareRelation">
+			<input message="communitymgr:ManageShareRelationRequestMessage"/>
+			<output message="communitymgr:ManageShareRelationResultMessage"/>
+		</operation>
+		<operation name="queryShareRelation">
+			<input message="communitymgr:QueryShareRelationRequestMessage"/>
+			<output message="communitymgr:QueryShareRelationResultMessage"/>
+		</operation>
+		<operation name="manageSuperGrpShortNo">
+			<input message="communitymgr:ManageSuperGrpShortNoRequestMessage"/>
+			<output message="communitymgr:ManageSuperGrpShortNoResultMessage"/>
+		</operation>
+		<operation name="joinSuperGroup">
+			<input message="communitymgr:JoinSuperGroupRequestMessage"/>
+			<output message="communitymgr:JoinSuperGroupResultMessage"/>
+		</operation>
+		<operation name="manageCrossGroup">
+			<input message="communitymgr:ManageCrossGroupRequestMessage"/>
+			<output message="communitymgr:ManageCrossGroupResultMessage"/>
+		</operation>
+		<operation name="manageGroupOutNo">
+			<input message="communitymgr:ManageGroupOutNoRequestMessage"/>
+			<output message="communitymgr:ManageGroupOutNoResultMessage"/>
+		</operation>
+		<operation name="queryGroupOutNo">
+			<input message="communitymgr:QueryGroupOutNoRequestMessage"/>
+			<output message="communitymgr:QueryGroupOutNoResultMessage"/>
+		</operation>
+		<operation name="manageMemberOutNo">
+			<input message="communitymgr:ManageMemberOutNoRequestMessage"/>
+			<output message="communitymgr:ManageMemberOutNoResultMessage"/>
+		</operation>
+		<operation name="queryMemberOutNo">
+			<input message="communitymgr:QueryMemberOutNoRequestMessage"/>
+			<output message="communitymgr:QueryMemberOutNoResultMessage"/>
+		</operation>
+		<operation name="addGrpMember">
+			<input message="communitymgr:AddGrpMemberRequestMessage"/>
+			<output message="communitymgr:AddGrpMemberResultMessage"/>
+		</operation>
+		<operation name="deleteGroupMember">
+			<input message="communitymgr:DeleteGroupMemberRequestMessage"/>
+			<output message="communitymgr:DeleteGroupMemberResultMessage"/>
+		</operation>
+		<operation name="modifyGrpMemberStatus">
+			<input message="communitymgr:ModifyGrpMemberStatusRequestMessage"/>
+			<output message="communitymgr:ModifyGrpMemberStatusResultMessage"/>
+		</operation>
+		<operation name="manageGrpAttendant">
+			<input message="communitymgr:ManageGrpAttendantRequestMessage"/>
+			<output message="communitymgr:ManageGrpAttendantResultMessage"/>
+		</operation>
+		<operation name="queryGrpAttendant">
+			<input message="communitymgr:QueryGrpAttendantRequestMessage"/>
+			<output message="communitymgr:QueryGrpAttendantResultMessage"/>
+		</operation>
+		<operation name="queryGroupInfo">
+			<input message="communitymgr:QueryGroupInfoRequestMessage"/>
+			<output message="communitymgr:QueryGroupInfoResultMessage"/>
+		</operation>
+		<operation name="querySubGroup">
+			<input message="communitymgr:QuerySubGroupRequestMessage"/>
+			<output message="communitymgr:QuerySubGroupResultMessage"/>
+		</operation>
+		<operation name="queryMemberOfGroup">
+			<input message="communitymgr:QueryMemberOfGroupRequestMessage"/>
+			<output message="communitymgr:QueryMemberOfGroupResultMessage"/>
+		</operation>
+		<operation name="queryGroupAdmin">
+			<input message="communitymgr:QueryGroupAdminRequestMessage"/>
+			<output message="communitymgr:QueryGroupAdminResultMessage"/>
+		</operation>
+		<operation name="queryGroupMemberInfo">
+			<input message="communitymgr:QueryGroupMemberInfoRequestMessage"/>
+			<output message="communitymgr:QueryGroupMemberInfoResultMessage"/>
+		</operation>
+		<operation name="modifyGroupMemberBasicInfo">
+			<input message="communitymgr:ModifyGroupMemberBasicInfoRequestMessage"/>
+			<output message="communitymgr:ModifyGroupMemberBasicInfoResultMessage"/>
+		</operation>
+		<operation name="modifyGroupMemberNo">
+			<input message="communitymgr:ModifyGroupMemberNoRequestMessage"/>
+			<output message="communitymgr:ModifyGroupMemberNoResultMessage"/>
+		</operation>
+		<operation name="queryCugOfGroup">
+			<input message="communitymgr:QueryCugOfGroupRequestMessage"/>
+			<output message="communitymgr:QueryCugOfGroupResultMessage"/>
+		</operation>
+		<operation name="manageCugOfGroup">
+			<input message="communitymgr:ManageCugOfGroupRequestMessage"/>
+			<output message="communitymgr:ManageCugOfGroupResultMessage"/>
+		</operation>
+		<operation name="queryMemberOfGroupCug">
+			<input message="communitymgr:QueryMemberOfGroupCugRequestMessage"/>
+			<output message="communitymgr:QueryMemberOfGroupCugResultMessage"/>
+		</operation>
+		<operation name="manageMemberOfGroupCug">
+			<input message="communitymgr:ManageMemberOfGroupCugRequestMessage"/>
+			<output message="communitymgr:ManageMemberOfGroupCugResultMessage"/>
+		</operation>
+		<operation name="queryGroupCugOfGroupMember">
+			<input message="communitymgr:QueryGroupCugOfGroupMemberRequestMessage"/>
+			<output message="communitymgr:QueryGroupCugOfGroupMemberResultMessage"/>
+		</operation>
+		<operation name="queryGroupOfGroupMember">
+			<input message="communitymgr:QueryGroupOfGroupMemberRequestMessage"/>
+			<output message="communitymgr:QueryGroupOfGroupMemberResultMessage"/>
+		</operation>
+		<operation name="batchModGrpMemberStatus">
+			<input message="communitymgr:BatchModGrpMemberStatusRequestMessage"/>
+			<output message="communitymgr:BatchModGrpMemberStatusResultMessage"/>
+		</operation>
+		<operation name="batchModGrpMemberNumber">
+			<input message="communitymgr:BatchModGrpMemberNumberRequestMessage"/>
+			<output message="communitymgr:BatchModGrpMemberNumberResultMessage"/>
+		</operation>
+		<operation name="batchDeleteGrpMember">
+			<input message="communitymgr:BatchDeleteGrpMemberRequestMessage"/>
+			<output message="communitymgr:BatchDeleteGrpMemberResultMessage"/>
+		</operation>
+		<operation name="batchAddGroupMember">
+			<input message="communitymgr:BatchAddGroupMemberRequestMessage"/>
+			<output message="communitymgr:BatchAddGroupMemberResultMessage"/>
+		</operation>
+		<operation name="addGroupBA">
+			<input message="communitymgr:AddGroupBARequestMessage"/>
+			<output message="communitymgr:AddGroupBAResultMessage"/>
+		</operation>
+		<operation name="modifyGroupBA">
+			<input message="communitymgr:ModifyGroupBARequestMessage"/>
+			<output message="communitymgr:ModifyGroupBAResultMessage"/>
+		</operation>
+		<operation name="deleteGroupBA">
+			<input message="communitymgr:DeleteGroupBARequestMessage"/>
+			<output message="communitymgr:DeleteGroupBAResultMessage"/>
+		</operation>
+		<operation name="queryGroupBA">
+			<input message="communitymgr:QueryGroupBARequestMessage"/>
+			<output message="communitymgr:QueryGroupBAResultMessage"/>
+		</operation>
+		<operation name="NewSubscriberAddGroup">
+			<input message="communitymgr:NewSubscriberAddGroupRequestMessage"/>
+			<output message="communitymgr:NewSubscriberAddGroupResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CommunityMgrBinding" type="communitymgr:CommunityMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="changeGroupOffer">
+			<soap:operation soapAction="ChangeGroupOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryMemberCountOfGroup">
+			<soap:operation soapAction="QueryMemberCountOfGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGroupBasicInfo">
+			<soap:operation soapAction="ModifyGroupBasicInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="newGroup">
+			<soap:operation soapAction="NewGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manGrpCallScreenNo">
+			<soap:operation soapAction="ManGrpCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGrpCallScreenNo">
+			<soap:operation soapAction="QueryGrpCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGroupStatus">
+			<soap:operation soapAction="ModifyGroupStatus" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="applyDeletingGroup">
+			<soap:operation soapAction="ApplyDeletingGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setDeleteGroupTask">
+			<soap:operation soapAction="SetDeleteGroupTask" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="changeOrgRelation">
+			<soap:operation soapAction="ChangeOrgRelation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyAllocatedQuota">
+			<soap:operation soapAction="ModifyAllocatedQuota" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyTopGroupQuota">
+			<soap:operation soapAction="ModifyTopGroupQuota" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageShareRelation">
+			<soap:operation soapAction="ManageShareRelation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryShareRelation">
+			<soap:operation soapAction="QueryShareRelation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageSuperGrpShortNo">
+			<soap:operation soapAction="ManageSuperGrpShortNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="joinSuperGroup">
+			<soap:operation soapAction="JoinSuperGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageCrossGroup">
+			<soap:operation soapAction="ManageCrossGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageGroupOutNo">
+			<soap:operation soapAction="ManageGroupOutNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupOutNo">
+			<soap:operation soapAction="QueryGroupOutNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageMemberOutNo">
+			<soap:operation soapAction="ManageMemberOutNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryMemberOutNo">
+			<soap:operation soapAction="QueryMemberOutNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addGrpMember">
+			<soap:operation soapAction="AddGrpMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="deleteGroupMember">
+			<soap:operation soapAction="DeleteGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGrpMemberStatus">
+			<soap:operation soapAction="ModifyGrpMemberStatus" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageGrpAttendant">
+			<soap:operation soapAction="ManageGrpAttendant" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGrpAttendant">
+			<soap:operation soapAction="QueryGrpAttendant" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupInfo">
+			<soap:operation soapAction="QueryGroupInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="querySubGroup">
+			<soap:operation soapAction="QuerySubGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryMemberOfGroup">
+			<soap:operation soapAction="QueryMemberOfGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupAdmin">
+			<soap:operation soapAction="QueryGroupAdmin" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupMemberInfo">
+			<soap:operation soapAction="QueryGroupMemberInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGroupMemberBasicInfo">
+			<soap:operation soapAction="ModifyGroupMemberBasicInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGroupMemberNo">
+			<soap:operation soapAction="ModifyGroupMemberNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryCugOfGroup">
+			<soap:operation soapAction="QueryCugOfGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageCugOfGroup">
+			<soap:operation soapAction="ManageCugOfGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryMemberOfGroupCug">
+			<soap:operation soapAction="QueryMemberOfGroupCug" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageMemberOfGroupCug">
+			<soap:operation soapAction="ManageMemberOfGroupCug" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupCugOfGroupMember">
+			<soap:operation soapAction="QueryGroupCugOfGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupOfGroupMember">
+			<soap:operation soapAction="QueryGroupOfGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchModGrpMemberStatus">
+			<soap:operation soapAction="BatchModGrpMemberStatus" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchModGrpMemberNumber">
+			<soap:operation soapAction="BatchModGrpMemberNumber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchDeleteGrpMember">
+			<soap:operation soapAction="BatchDeleteGrpMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchAddGroupMember">
+			<soap:operation soapAction="BatchAddGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addGroupBA">
+			<soap:operation soapAction="AddGroupBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="modifyGroupBA">
+			<soap:operation soapAction="ModifyGroupBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="deleteGroupBA">
+			<soap:operation soapAction="DeleteGroupBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryGroupBA">
+			<soap:operation soapAction="QueryGroupBA" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="NewSubscriberAddGroup">
+			<soap:operation soapAction="NewSubscriberAddGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CommunityMgrService">
+		<port name="CommunityMgrServicePort" binding="communitymgr:CommunityMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/communitymgr/wsdl/CBSInterface_communityMgr.wsdl"/>
+		</port>
+	</service>
+</definitions>

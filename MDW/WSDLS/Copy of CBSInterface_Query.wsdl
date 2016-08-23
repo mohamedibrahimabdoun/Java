@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:querymgr="http://www.huawei.com/bme/cbsinterface/querymgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/query" xmlns:ns1="http://www.huawei.com/bme/cbsinterface/newsubscriber" xmlns:ns2="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns3="http://www.huawei.com/bme/cbsinterface/acctcredit" targetNamespace="http://www.huawei.com/bme/cbsinterface/querymgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:query="http://www.huawei.com/bme/cbsinterface/query" targetNamespace="http://www.huawei.com/bme/cbsinterface/querymgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/query" schemaLocation="CBSInterface_Query.xsd"/>
+			<element name="QueryCustomerRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCustomerRequest" type="query:QueryCustomerRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCustomerResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCustomerResult" type="query:QueryCustomerResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryBalanceRequest" type="query:QueryBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryBalanceResult" type="query:QueryBalanceResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryProductOrderRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryProductOrderRequest" type="query:QueryProductOrderRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryProductOrderResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryProductOrderResult" type="query:QueryProductOrderResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryLastTranInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryLastTranInfoRequest" type="query:QueryLastTranInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryLastTranInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryLastTranInfoResult" type="query:QueryLastTranInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBalanceTransferInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryBalanceTransferInfoRequest" type="query:QueryBalanceTransferInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBalanceTransferInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryBalanceTransferInfoResult" type="query:QueryBalanceTransferInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCosIDRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubCosIDRequest" type="query:QuerySubCosIDRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCosIDResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubCosIDResult" type="query:QuerySubCosIDResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryCustomerRequestMessage">
+		<part name="QueryCustomerRequestMsg" element="querymgr:QueryCustomerRequestMsg"/>
+	</message>
+	<message name="QueryCustomerResultMessage">
+		<part name="QueryCustomerResultMsg" element="querymgr:QueryCustomerResultMsg"/>
+	</message>
+	<message name="QueryBalanceRequestMessage">
+		<part name="QueryBalanceRequestMsg" element="querymgr:QueryBalanceRequestMsg"/>
+	</message>
+	<message name="QueryBalanceResultMessage">
+		<part name="QueryBalanceResultMsg" element="querymgr:QueryBalanceResultMsg"/>
+	</message>
+	<message name="QueryProductOrderRequestMessage">
+		<part name="QueryProductOrderRequestMsg" element="querymgr:QueryProductOrderRequestMsg"/>
+	</message>
+	<message name="QueryProductOrderResultMessage">
+		<part name="QueryProductOrderResultMsg" element="querymgr:QueryProductOrderResultMsg"/>
+	</message>
+	<message name="QueryLastTranInfoRequestMessage">
+		<part name="QueryLastTranInfoRequestMsg" element="querymgr:QueryLastTranInfoRequestMsg"/>
+	</message>
+	<message name="QueryLastTranInfoResultMessage">
+		<part name="QueryLastTranInfoResultMsg" element="querymgr:QueryLastTranInfoResultMsg"/>
+	</message>
+	<message name="QueryBalanceTransferInfoRequestMessage">
+		<part name="QueryBalanceTransferInfoRequestMsg" element="querymgr:QueryBalanceTransferInfoRequestMsg"/>
+	</message>
+	<message name="QueryBalanceTransferInfoResultMessage">
+		<part name="QueryBalanceTransferInfoResultMsg" element="querymgr:QueryBalanceTransferInfoResultMsg"/>
+	</message>
+	<message name="QuerySubCosIDRequestMessage">
+		<part name="QuerySubCosIDRequestMsg" element="querymgr:QuerySubCosIDRequestMsg"/>
+	</message>
+	<message name="QuerySubCosIDResultMessage">
+		<part name="QuerySubCosIDResultMsg" element="querymgr:QuerySubCosIDResultMsg"/>
+	</message>
+	<portType name="QueryMgr">
+		<operation name="queryCustomer">
+			<input message="querymgr:QueryCustomerRequestMessage"/>
+			<output message="querymgr:QueryCustomerResultMessage"/>
+		</operation>
+		<operation name="queryBalance">
+			<input message="querymgr:QueryBalanceRequestMessage"/>
+			<output message="querymgr:QueryBalanceResultMessage"/>
+		</operation>
+		<operation name="queryProductOrder">
+			<input message="querymgr:QueryProductOrderRequestMessage"/>
+			<output message="querymgr:QueryProductOrderResultMessage"/>
+		</operation>
+		<operation name="queryLastTranInfo">
+			<input message="querymgr:QueryLastTranInfoRequestMessage"/>
+			<output message="querymgr:QueryLastTranInfoResultMessage"/>
+		</operation>
+		<operation name="queryBalanceTransferInfo">
+			<input message="querymgr:QueryBalanceTransferInfoRequestMessage"/>
+			<output message="querymgr:QueryBalanceTransferInfoResultMessage"/>
+		</operation>
+		<operation name="querySubCosID">
+			<input message="querymgr:QuerySubCosIDRequestMessage"/>
+			<output message="querymgr:QuerySubCosIDResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="QueryMgrBinding" type="querymgr:QueryMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="queryCustomer">
+			<soap:operation soapAction="queryCustomer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryBalance">
+			<soap:operation soapAction="queryBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryProductOrder">
+			<soap:operation soapAction="queryProductOrder" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryLastTranInfo">
+			<soap:operation soapAction="queryLastTranInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryBalanceTransferInfo">
+			<soap:operation soapAction="queryBalanceTransferInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="querySubCosID">
+			<soap:operation soapAction="querySubCosID" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="QueryMgrService">
+		<port name="QueryMgrServicePort" binding="querymgr:QueryMgrBinding">
+			<soap:address location="http://172.21.24.100:8680/services/QueryMgrService"/>
+		</port>
+	</service>
+</definitions>

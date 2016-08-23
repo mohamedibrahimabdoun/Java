@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:onetimecharge="http://www.huawei.com/bme/cbsinterface/onetimecharge" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/onetimecharge" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="OneOffDeductionRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationID" type="xs:int" minOccurs="0"/>
+			<xs:element name="DeductAmt" type="common:Balance"/>
+			<xs:element name="AdditionalInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+			<xs:element name="DeductFromParent" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="OneOffDeductionResult">
+		<xs:sequence>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceHandleFeeRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="RequestAction" type="xs:int"/>
+			<xs:element name="OperationID" type="xs:int"/>
+			<xs:element name="OperationType" type="xs:int"/>
+			<xs:element name="OperationFeeAmt" type="common:Balance" minOccurs="0"/>
+			<xs:element name="ParamList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Param" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="name" type="xs:string"/>
+									<xs:element name="value" type="xs:string"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationCount" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ServiceHandleFeeResult">
+		<xs:sequence>
+			<xs:element name="DeductionAmt" type="common:Balance" nillable="true"/>
+			<xs:element name="ResidualFreeTimes" type="xs:int" nillable="true"/>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="WaiveFlag" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="ToWhich" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BonusInfoType">
+		<xs:all>
+			<xs:element name="AccountType" type="xs:int"/>
+			<xs:element name="BonusAmount" type="xs:long"/>
+			<xs:element name="ValidType" type="xs:int"/>
+			<xs:element name="ValidityDays" type="xs:int" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BonusValidityRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="BonusList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BonusInfo" type="onetimecharge:BonusInfoType" maxOccurs="10"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BonusValidityResult">
+		<xs:sequence>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

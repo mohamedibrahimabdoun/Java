@@ -1,0 +1,2201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:business="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr" xmlns:businessmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/businessmgrmsg" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/common">
+			<include schemaLocation="CBSInterface_Common.xsd"/>
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:business="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr">
+			<include schemaLocation="CBSInterface_BusinessMgr.xsd"/>
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:businessmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/businessmgrmsg" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgrmsg">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr" schemaLocation="CBSInterface_BusinessMgr.xsd"/>
+			<element name="QueryBasicInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryBasicInfoRequest" type="business:QueryBasicInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryBasicInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryBasicInfoResult" type="business:QueryBasicInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMembersRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCUGMembersRequest" type="business:QueryCUGMembersRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMembersResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCUGMembersResult" minOccurs="0" type="business:QueryCUGMembersResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGTypeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCUGTypeRequest" type="business:QueryCUGTypeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGTypeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCUGTypeResult" minOccurs="0" type="business:QueryCUGTypeResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManCUGInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManCUGInfoRequest" type="business:ManCUGInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManCUGInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManCUGInfoResult" minOccurs="0" type="business:ManCUGInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CheckPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="CheckPasswordRequest" type="business:CheckPasswordRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CheckPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="NewSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="NewSubscriberRequest" type="business:NewSubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="NewSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="NewSubscriberResult" type="business:NewSubscriberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReNewSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ReNewSubscriberRequest" type="business:ReNewSubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReNewSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ReNewSubscriberResult" type="business:ReNewSubscriberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteSubscriberRequest" type="business:DeleteSubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeMainProdRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeMainProdRequest" type="business:ChangeMainProdRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeMainProdResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangeMainProdResult" type="business:ChangeMainProdResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="SubscribeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="SubscribeAppendantProductRequest" type="business:SubscribeAppendantProductRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="SubscribeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="SubscribeAppendantProductResult" type="business:SubscribeAppendantProductResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeAppendantProductRequest" type="business:ChangeAppendantProductRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangeAppendantProductResult" type="business:ChangeAppendantProductResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="UnSubscribeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="UnSubscribeAppendantProductRequest" type="business:UnSubscribeAppendantProductRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="UnSubscribeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeCustBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeCustBasicInforRequest" type="business:ChangeCustBasicInforRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeCustBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubscriberBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeSubscriberBasicInforRequest" type="business:ChangeSubscriberBasicInforRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubscriberBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAccountBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeAccountBasicInforRequest" type="business:ChangeAccountBasicInforRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAccountBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangePasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangePasswordRequest" type="business:ChangePasswordRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangePasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ResetPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ResetPasswordRequest" type="business:ResetPasswordRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ResetPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeMSISDNRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeMSISDNRequest" type="business:ChangeMSISDNRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeMSISDNResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSIMRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeSIMRequest" type="business:ChangeSIMRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSIMResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeServicesRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeServicesRequest" type="business:ChangeServicesRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeServicesResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteRechageBlackRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteRechageBlackRequest" type="business:DeleteRechageBlackRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteRechageBlackResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="SuspendRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="SuspendRequest" type="business:SuspendRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="SuspendResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReconnectRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ReconnectRequest" type="business:ReconnectRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReconnectResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ClaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ClaimMissingRequest" type="business:ClaimMissingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ClaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DisclaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DisclaimMissingRequest" type="business:DisclaimMissingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DisclaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchOperationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchOperationRequest" type="business:BatchOperationRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchOperationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeOwnerRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeOwnerRequest" type="business:ChangeOwnerRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeOwnerResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryUserGroupRequest" type="business:QueryUserGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryUserGroupResult" type="business:QueryUserGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManGroupMemberRequest" type="business:ManGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscribedGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubscribedGroupRequest" type="business:QuerySubscribedGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscribedGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubscribedGroupResult" type="business:QuerySubscribedGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifySubscriberValidityRequest" type="business:ModifySubscriberValidityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ModifySubscriberValidityResult" type="business:ModifySubscriberValidityResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifySubscriberStateRequest" type="business:ModifySubscriberStateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifySubscriberStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="IntegrationEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="IntegrationEnquiryRequest" type="business:IntegrationEnquiryRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="IntegrationEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="IntegrationEnquiryResult" type="business:IntegrationEnquiryResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscriberProductInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubscriberProductInfoRequest" type="business:QuerySubscriberProductInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscriberProductInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubscriberProductInfoResult" type="business:QuerySubscriberProductInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscriberServiceInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubscriberServiceInfoRequest" type="business:QuerySubscriberServiceInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscriberServiceInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubscriberServiceInfoResult" type="business:QuerySubscriberServiceInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubCallScreenNoRequest" type="business:ManSubCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubFamilyNoRequest" type="business:ManSubFamilyNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeSubLowBalPrtRequest" type="business:ChangeSubLowBalPrtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubLowBalPrtRequest" type="business:QuerySubLowBalPrtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubLowBalPrtResult" type="business:QuerySubLowBalPrtResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubHomeZoneRequest" type="business:ManSubHomeZoneRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyPosUserStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifyPosUserStateRequest" type="business:ModifyPosUserStateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyPosUserStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubCallScreenNoRequest" type="business:QuerySubCallScreenNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubCallScreenNoResult" type="business:QuerySubCallScreenNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubFamilyNoRequest" type="business:QuerySubFamilyNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubFamilyNoResult" type="business:QuerySubFamilyNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubHomeZoneRequest" type="business:QuerySubHomeZoneRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubHomeZoneResult" type="business:QuerySubHomeZoneResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustValidityLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryAdjustValidityLogRequest" type="business:QueryAdjustValidityLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustValidityLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryAdjustValidityLogResult" type="business:QueryAdjustValidityLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryGroupMemberRequest" type="business:QueryGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryGroupMemberResult" type="business:QueryGroupMemberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubChangeLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubChangeLogRequest" type="business:QuerySubChangeLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubChangeLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubChangeLogResult" type="business:QuerySubChangeLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManParentChildRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManParentChildRequest" type="business:ManParentChildRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManParentChildResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManParentChildResult" type="business:ManParentChildResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryChildLimitRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryChildLimitRequest" type="business:QueryChildLimitRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryChildLimitResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryChildLimitResult" type="business:QueryChildLimitResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyCFNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifyCFNoRequest" type="business:ModifyCFNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyCFNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BlockSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BlockSubscriberRequest" type="business:BlockSubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BlockSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="BlockSubscriberResult" type="business:BlockSubscriberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="NewSubscriberExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="NewSubscriberExtRequest" type="business:NewSubscriberExtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="NewSubscriberExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="NewSubscriberExtResult" type="business:NewSubscriberExtResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BindProductSubscriberNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BindProductSubscriberNoRequest" type="business:BindProductSubscriberNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BindProductSubscriberNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteSubscriberExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteSubscriberExtRequest" type="business:DeleteSubscriberExtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteSubscriberExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="DeleteSubscriberExtResult" type="business:DeleteSubscriberExtResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="UnSubscribeAppendantProductExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="UnSubscribeAppendantProductExtRequest" type="business:UnSubscribeAppendantProductExtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="UnSubscribeAppendantProductExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="UnSubscribeAppendantProductExtResult" type="business:UnSubscribeAppendantProductExtResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryDefinedZonesInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryDefinedZonesInfoRequest" type="business:QueryDefinedZonesInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryDefinedZonesInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryDefinedZonesInfoResult" type="business:QueryDefinedZonesInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CheckOperatorPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="CheckOperatorPasswordRequest" type="business:CheckOperatorPasswordRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CheckOperatorPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeCreditLevelRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeCreditLevelRequest" type="business:ChangeCreditLevelRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeCreditLevelResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManPersonHuntingListRequest" type="business:ManPersonHuntingListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManPersonHuntingNoRequest" type="business:ManPersonHuntingNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingNoPriorityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManPersonHuntingNoPriorityRequest" type="business:ManPersonHuntingNoPriorityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPersonHuntingNoPriorityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPersonHuntingListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryPersonHuntingListRequest" type="business:QueryPersonHuntingListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPersonHuntingListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryPersonHuntingListResult" type="business:QueryPersonHuntingListResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPersonHuntingNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryPersonHuntingNoRequest" type="business:QueryPersonHuntingNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPersonHuntingNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryPersonHuntingNoResult" type="business:QueryPersonHuntingNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryBasicInfoRequestMessage">
+		<part name="QueryBasicInfoRequestMsg" element="businessmgrmsg:QueryBasicInfoRequestMsg"/>
+	</message>
+	<message name="QueryBasicInfoResultMessage">
+		<part name="QueryBasicInfoResultMsg" element="businessmgrmsg:QueryBasicInfoResultMsg"/>
+	</message>
+	<message name="QueryCUGMembersRequestMessage">
+		<part name="QueryCUGMembersRequestMsg" element="businessmgrmsg:QueryCUGMembersRequestMsg"/>
+	</message>
+	<message name="QueryCUGMembersResultMessage">
+		<part name="QueryCUGMembersResultMsg" element="businessmgrmsg:QueryCUGMembersResultMsg"/>
+	</message>
+	<message name="QueryCUGTypeRequestMessage">
+		<part name="QueryCUGTypeRequestMsg" element="businessmgrmsg:QueryCUGTypeRequestMsg"/>
+	</message>
+	<message name="QueryCUGTypeResultMessage">
+		<part name="QueryCUGTypeResultMsg" element="businessmgrmsg:QueryCUGTypeResultMsg"/>
+	</message>
+	<message name="ManCUGInfoRequestMessage">
+		<part name="ManCUGInfoRequestMsg" element="businessmgrmsg:ManCUGInfoRequestMsg"/>
+	</message>
+	<message name="ManCUGInfoResultMessage">
+		<part name="ManCUGInfoResultMsg" element="businessmgrmsg:ManCUGInfoResultMsg"/>
+	</message>
+	<message name="CheckPasswordRequestMessage">
+		<part name="CheckPasswordRequestMsg" element="businessmgrmsg:CheckPasswordRequestMsg"/>
+	</message>
+	<message name="CheckPasswordResultMessage">
+		<part name="CheckPasswordResultMsg" element="businessmgrmsg:CheckPasswordResultMsg"/>
+	</message>
+	<message name="NewSubscriberRequestMessage">
+		<part name="NewSubscriberRequestMsg" element="businessmgrmsg:NewSubscriberRequestMsg"/>
+	</message>
+	<message name="NewSubscriberResultMessage">
+		<part name="NewSubscriberResultMsg" element="businessmgrmsg:NewSubscriberResultMsg"/>
+	</message>
+	<message name="ReNewSubscriberRequestMessage">
+		<part name="ReNewSubscriberRequestMsg" element="businessmgrmsg:ReNewSubscriberRequestMsg"/>
+	</message>
+	<message name="ReNewSubscriberResultMessage">
+		<part name="ReNewSubscriberResultMsg" element="businessmgrmsg:ReNewSubscriberResultMsg"/>
+	</message>
+	<message name="DeleteSubscriberRequestMessage">
+		<part name="DeleteSubscriberRequestMsg" element="businessmgrmsg:DeleteSubscriberRequestMsg"/>
+	</message>
+	<message name="DeleteSubscriberResultMessage">
+		<part name="DeleteSubscriberResultMsg" element="businessmgrmsg:DeleteSubscriberResultMsg"/>
+	</message>
+	<message name="ChangeMainProdRequestMessage">
+		<part name="ChangeMainProdRequestMsg" element="businessmgrmsg:ChangeMainProdRequestMsg"/>
+	</message>
+	<message name="ChangeMainProdResultMessage">
+		<part name="ChangeMainProdResultMsg" element="businessmgrmsg:ChangeMainProdResultMsg"/>
+	</message>
+	<message name="SubscribeAppendantProductRequestMessage">
+		<part name="SubscribeAppendantProductRequestMsg" element="businessmgrmsg:SubscribeAppendantProductRequestMsg"/>
+	</message>
+	<message name="SubscribeAppendantProductResultMessage">
+		<part name="SubscribeAppendantProductResultMsg" element="businessmgrmsg:SubscribeAppendantProductResultMsg"/>
+	</message>
+	<message name="ChangeAppendantProductRequestMessage">
+		<part name="ChangeAppendantProductRequestMsg" element="businessmgrmsg:ChangeAppendantProductRequestMsg"/>
+	</message>
+	<message name="ChangeAppendantProductResultMessage">
+		<part name="ChangeAppendantProductResultMsg" element="businessmgrmsg:ChangeAppendantProductResultMsg"/>
+	</message>
+	<message name="UnSubscribeAppendantProductRequestMessage">
+		<part name="UnSubscribeAppendantProductRequestMsg" element="businessmgrmsg:UnSubscribeAppendantProductRequestMsg"/>
+	</message>
+	<message name="UnSubscribeAppendantProductResultMessage">
+		<part name="UnSubscribeAppendantProductResultMsg" element="businessmgrmsg:UnSubscribeAppendantProductResultMsg"/>
+	</message>
+	<message name="ChangeCustBasicInforRequestMessage">
+		<part name="ChangeCustBasicInforRequestMsg" element="businessmgrmsg:ChangeCustBasicInforRequestMsg"/>
+	</message>
+	<message name="ChangeCustBasicInforResultMessage">
+		<part name="ChangeCustBasicInforResultMsg" element="businessmgrmsg:ChangeCustBasicInforResultMsg"/>
+	</message>
+	<message name="ChangeSubscriberBasicInforRequestMessage">
+		<part name="ChangeSubscriberBasicInforRequestMsg" element="businessmgrmsg:ChangeSubscriberBasicInforRequestMsg"/>
+	</message>
+	<message name="ChangeSubscriberBasicInforResultMessage">
+		<part name="ChangeSubscriberBasicInforResultMsg" element="businessmgrmsg:ChangeSubscriberBasicInforResultMsg"/>
+	</message>
+	<message name="ChangeAccountBasicInforRequestMessage">
+		<part name="ChangeAccountBasicInforRequestMsg" element="businessmgrmsg:ChangeAccountBasicInforRequestMsg"/>
+	</message>
+	<message name="ChangeAccountBasicInforResultMessage">
+		<part name="ChangeAccountBasicInforResultMsg" element="businessmgrmsg:ChangeAccountBasicInforResultMsg"/>
+	</message>
+	<message name="ChangePasswordRequestMessage">
+		<part name="ChangePasswordRequestMsg" element="businessmgrmsg:ChangePasswordRequestMsg"/>
+	</message>
+	<message name="ChangePasswordResultMessage">
+		<part name="ChangePasswordResultMsg" element="businessmgrmsg:ChangePasswordResultMsg"/>
+	</message>
+	<message name="ResetPasswordRequestMessage">
+		<part name="ResetPasswordRequestMsg" element="businessmgrmsg:ResetPasswordRequestMsg"/>
+	</message>
+	<message name="ResetPasswordResultMessage">
+		<part name="ResetPasswordResultMsg" element="businessmgrmsg:ResetPasswordResultMsg"/>
+	</message>
+	<message name="ChangeMSISDNRequestMessage">
+		<part name="ChangeMSISDNRequestMsg" element="businessmgrmsg:ChangeMSISDNRequestMsg"/>
+	</message>
+	<message name="ChangeMSISDNResultMessage">
+		<part name="ChangeMSISDNResultMsg" element="businessmgrmsg:ChangeMSISDNResultMsg"/>
+	</message>
+	<message name="ChangeSIMRequestMessage">
+		<part name="ChangeSIMRequestMsg" element="businessmgrmsg:ChangeSIMRequestMsg"/>
+	</message>
+	<message name="ChangeSIMResultMessage">
+		<part name="ChangeSIMResultMsg" element="businessmgrmsg:ChangeSIMResultMsg"/>
+	</message>
+	<message name="ChangeServicesRequestMessage">
+		<part name="ChangeServicesRequestMsg" element="businessmgrmsg:ChangeServicesRequestMsg"/>
+	</message>
+	<message name="ChangeServicesResultMessage">
+		<part name="ChangeServicesResultMsg" element="businessmgrmsg:ChangeServicesResultMsg"/>
+	</message>
+	<message name="DeleteRechageBlackRequestMessage">
+		<part name="DeleteRechageBlackRequestMsg" element="businessmgrmsg:DeleteRechageBlackRequestMsg"/>
+	</message>
+	<message name="DeleteRechageBlackResultMessage">
+		<part name="DeleteRechageBlackResultMsg" element="businessmgrmsg:DeleteRechageBlackResultMsg"/>
+	</message>
+	<message name="SuspendRequestMessage">
+		<part name="SuspendRequestMsg" element="businessmgrmsg:SuspendRequestMsg"/>
+	</message>
+	<message name="SuspendResultMessage">
+		<part name="SuspendResultMsg" element="businessmgrmsg:SuspendResultMsg"/>
+	</message>
+	<message name="ReconnectRequestMessage">
+		<part name="ReconnectRequestMsg" element="businessmgrmsg:ReconnectRequestMsg"/>
+	</message>
+	<message name="ReconnectResultMessage">
+		<part name="ReconnectResultMsg" element="businessmgrmsg:ReconnectResultMsg"/>
+	</message>
+	<message name="ClaimMissingRequestMessage">
+		<part name="ClaimMissingRequestMsg" element="businessmgrmsg:ClaimMissingRequestMsg"/>
+	</message>
+	<message name="ClaimMissingResultMessage">
+		<part name="ClaimMissingResultMsg" element="businessmgrmsg:ClaimMissingResultMsg"/>
+	</message>
+	<message name="DisclaimMissingRequestMessage">
+		<part name="DisclaimMissingRequestMsg" element="businessmgrmsg:DisclaimMissingRequestMsg"/>
+	</message>
+	<message name="DisclaimMissingResultMessage">
+		<part name="DisclaimMissingResultMsg" element="businessmgrmsg:DisclaimMissingResultMsg"/>
+	</message>
+	<message name="BatchOperationRequestMessage">
+		<part name="BatchOperationRequestMsg" element="businessmgrmsg:BatchOperationRequestMsg"/>
+	</message>
+	<message name="BatchOperationResultMessage">
+		<part name="BatchOperationResultMsg" element="businessmgrmsg:BatchOperationResultMsg"/>
+	</message>
+	<message name="ChangeOwnerRequestMessage">
+		<part name="ChangeOwnerRequestMsg" element="businessmgrmsg:ChangeOwnerRequestMsg"/>
+	</message>
+	<message name="ChangeOwnerResultMessage">
+		<part name="ChangeOwnerResultMsg" element="businessmgrmsg:ChangeOwnerResultMsg"/>
+	</message>
+	<message name="QueryUserGroupRequestMessage">
+		<part name="QueryUserGroupRequestMsg" element="businessmgrmsg:QueryUserGroupRequestMsg"/>
+	</message>
+	<message name="QueryUserGroupResultMessage">
+		<part name="QueryUserGroupResultMsg" element="businessmgrmsg:QueryUserGroupResultMsg"/>
+	</message>
+	<message name="ManGroupMemberRequestMessage">
+		<part name="ManGroupMemberRequestMsg" element="businessmgrmsg:ManGroupMemberRequestMsg"/>
+	</message>
+	<message name="ManGroupMemberResultMessage">
+		<part name="ManGroupMemberResultMsg" element="businessmgrmsg:ManGroupMemberResultMsg"/>
+	</message>
+	<message name="QuerySubscribedGroupRequestMessage">
+		<part name="QuerySubscribedGroupRequestMsg" element="businessmgrmsg:QuerySubscribedGroupRequestMsg"/>
+	</message>
+	<message name="QuerySubscribedGroupResultMessage">
+		<part name="QuerySubscribedGroupResultMsg" element="businessmgrmsg:QuerySubscribedGroupResultMsg"/>
+	</message>
+	<message name="ModifySubscriberValidityRequestMessage">
+		<part name="ModifySubscriberValidityRequestMsg" element="businessmgrmsg:ModifySubscriberValidityRequestMsg"/>
+	</message>
+	<message name="ModifySubscriberValidityResultMessage">
+		<part name="ModifySubscriberValidityResultMsg" element="businessmgrmsg:ModifySubscriberValidityResultMsg"/>
+	</message>
+	<message name="IntegrationEnquiryRequestMessage">
+		<part name="IntegrationEnquiryRequestMsg" element="businessmgrmsg:IntegrationEnquiryRequestMsg"/>
+	</message>
+	<message name="IntegrationEnquiryResultMessage">
+		<part name="IntegrationEnquiryResultMsg" element="businessmgrmsg:IntegrationEnquiryResultMsg"/>
+	</message>
+	<message name="ModifySubscriberStateRequestMessage">
+		<part name="ModifySubscriberStateRequestMsg" element="businessmgrmsg:ModifySubscriberStateRequestMsg"/>
+	</message>
+	<message name="ModifySubscriberStateResultMessage">
+		<part name="ModifySubscriberStateResultMsg" element="businessmgrmsg:ModifySubscriberStateResultMsg"/>
+	</message>
+	<message name="QuerySubscriberProductInfoRequestMessage">
+		<part name="QuerySubscriberProductInfoRequestMsg" element="businessmgrmsg:QuerySubscriberProductInfoRequestMsg"/>
+	</message>
+	<message name="QuerySubscriberProductInfoResultMessage">
+		<part name="QuerySubscriberProductInfoResultMsg" element="businessmgrmsg:QuerySubscriberProductInfoResultMsg"/>
+	</message>
+	<message name="QuerySubscriberServiceInfoRequestMessage">
+		<part name="QuerySubscriberServiceInfoRequestMsg" element="businessmgrmsg:QuerySubscriberServiceInfoRequestMsg"/>
+	</message>
+	<message name="QuerySubscriberServiceInfoResultMessage">
+		<part name="QuerySubscriberServiceInfoResultMsg" element="businessmgrmsg:QuerySubscriberServiceInfoResultMsg"/>
+	</message>
+	<message name="ManSubCallScreenNoRequestMessage">
+		<part name="ManSubCallScreenNoRequestMsg" element="businessmgrmsg:ManSubCallScreenNoRequestMsg"/>
+	</message>
+	<message name="ManSubCallScreenNoResultMessage">
+		<part name="ManSubCallScreenNoResultMsg" element="businessmgrmsg:ManSubCallScreenNoResultMsg"/>
+	</message>
+	<message name="ManSubFamilyNoRequestMessage">
+		<part name="ManSubFamilyNoRequestMsg" element="businessmgrmsg:ManSubFamilyNoRequestMsg"/>
+	</message>
+	<message name="ManSubFamilyNoResultMessage">
+		<part name="ManSubFamilyNoResultMsg" element="businessmgrmsg:ManSubFamilyNoResultMsg"/>
+	</message>
+	<message name="ChangeSubLowBalPrtRequestMessage">
+		<part name="ChangeSubLowBalPrtRequestMsg" element="businessmgrmsg:ChangeSubLowBalPrtRequestMsg"/>
+	</message>
+	<message name="ChangeSubLowBalPrtResultMessage">
+		<part name="ChangeSubLowBalPrtResultMsg" element="businessmgrmsg:ChangeSubLowBalPrtResultMsg"/>
+	</message>
+	<message name="QuerySubLowBalPrtRequestMessage">
+		<part name="QuerySubLowBalPrtRequestMsg" element="businessmgrmsg:QuerySubLowBalPrtRequestMsg"/>
+	</message>
+	<message name="QuerySubLowBalPrtResultMessage">
+		<part name="QuerySubLowBalPrtResultMsg" element="businessmgrmsg:QuerySubLowBalPrtResultMsg"/>
+	</message>
+	<message name="ManSubHomeZoneRequestMessage">
+		<part name="ManSubHomeZoneRequestMsg" element="businessmgrmsg:ManSubHomeZoneRequestMsg"/>
+	</message>
+	<message name="ManSubHomeZoneResultMessage">
+		<part name="ManSubHomeZoneResultMsg" element="businessmgrmsg:ManSubHomeZoneResultMsg"/>
+	</message>
+	<message name="ModifyPosUserStateRequestMessage">
+		<part name="ModifyPosUserStateRequestMsg" element="businessmgrmsg:ModifyPosUserStateRequestMsg"/>
+	</message>
+	<message name="ModifyPosUserStateResultMessage">
+		<part name="ModifyPosUserStateResultMsg" element="businessmgrmsg:ModifyPosUserStateResultMsg"/>
+	</message>
+	<message name="QueryAdjustValidityLogRequestMessage">
+		<part name="QueryAdjustValidityLogRequestMsg" element="businessmgrmsg:QueryAdjustValidityLogRequestMsg"/>
+	</message>
+	<message name="QueryAdjustValidityLogResultMessage">
+		<part name="QueryAdjustValidityLogResultMsg" element="businessmgrmsg:QueryAdjustValidityLogResultMsg"/>
+	</message>
+	<message name="QuerySubFamilyNoRequestMessage">
+		<part name="QuerySubFamilyNoRequestMsg" element="businessmgrmsg:QuerySubFamilyNoRequestMsg"/>
+	</message>
+	<message name="QuerySubFamilyNoResultMessage">
+		<part name="QuerySubFamilyNoResultMsg" element="businessmgrmsg:QuerySubFamilyNoResultMsg"/>
+	</message>
+	<message name="QuerySubHomeZoneRequestMessage">
+		<part name="QuerySubHomeZoneRequestMsg" element="businessmgrmsg:QuerySubHomeZoneRequestMsg"/>
+	</message>
+	<message name="QuerySubHomeZoneResultMessage">
+		<part name="QuerySubHomeZoneResultMsg" element="businessmgrmsg:QuerySubHomeZoneResultMsg"/>
+	</message>
+	<message name="QuerySubCallScreenNoRequestMessage">
+		<part name="QuerySubCallScreenNoRequestMsg" element="businessmgrmsg:QuerySubCallScreenNoRequestMsg"/>
+	</message>
+	<message name="QuerySubCallScreenNoResultMessage">
+		<part name="QuerySubCallScreenNoResultMsg" element="businessmgrmsg:QuerySubCallScreenNoResultMsg"/>
+	</message>
+	<message name="QueryGroupMemberRequestMessage">
+		<part name="QueryGroupMemberRequestMsg" element="businessmgrmsg:QueryGroupMemberRequestMsg"/>
+	</message>
+	<message name="QueryGroupMemberResultMessage">
+		<part name="QueryGroupMemberResultMsg" element="businessmgrmsg:QueryGroupMemberResultMsg"/>
+	</message>
+	<message name="QuerySubChangeLogRequestMessage">
+		<part name="QuerySubChangeLogRequestMsg" element="businessmgrmsg:QuerySubChangeLogRequestMsg"/>
+	</message>
+	<message name="QuerySubChangeLogResultMessage">
+		<part name="QuerySubChangeLogResultMsg" element="businessmgrmsg:QuerySubChangeLogResultMsg"/>
+	</message>
+	<message name="ManParentChildRequestMessage">
+		<part name="ManParentChildRequestMsg" element="businessmgrmsg:ManParentChildRequestMsg"/>
+	</message>
+	<message name="ManParentChildResultMessage">
+		<part name="ManParentChildResultMsg" element="businessmgrmsg:ManParentChildResultMsg"/>
+	</message>
+	<message name="QueryChildLimitRequestMessage">
+		<part name="QueryChildLimitRequestMsg" element="businessmgrmsg:QueryChildLimitRequestMsg"/>
+	</message>
+	<message name="QueryChildLimitResultMessage">
+		<part name="QueryChildLimitResultMsg" element="businessmgrmsg:QueryChildLimitResultMsg"/>
+	</message>
+	<message name="ModifyCFNoRequestMessage">
+		<part name="ModifyCFNoRequestMsg" element="businessmgrmsg:ModifyCFNoRequestMsg"/>
+	</message>
+	<message name="ModifyCFNoResultMessage">
+		<part name="ModifyCFNoResultMsg" element="businessmgrmsg:ModifyCFNoResultMsg"/>
+	</message>
+	<message name="BlockSubscriberRequestMessage">
+		<part name="BlockSubscriberRequestMsg" element="businessmgrmsg:BlockSubscriberRequestMsg"/>
+	</message>
+	<message name="BlockSubscriberResultMessage">
+		<part name="BlockSubscriberResultMsg" element="businessmgrmsg:BlockSubscriberResultMsg"/>
+	</message>
+	<message name="NewSubscriberExtRequestMessage">
+		<part name="NewSubscriberExtRequestMsg" element="businessmgrmsg:NewSubscriberExtRequestMsg"/>
+	</message>
+	<message name="NewSubscriberExtResultMessage">
+		<part name="NewSubscriberExtResultMsg" element="businessmgrmsg:NewSubscriberExtResultMsg"/>
+	</message>
+	<message name="BindProductSubscriberNoRequestMessage">
+		<part name="BindProductSubscriberNoRequestMsg" element="businessmgrmsg:BindProductSubscriberNoRequestMsg"/>
+	</message>
+	<message name="BindProductSubscriberNoResultMessage">
+		<part name="BindProductSubscriberNoResultMsg" element="businessmgrmsg:BindProductSubscriberNoResultMsg"/>
+	</message>
+	<message name="DeleteSubscriberExtRequestMessage">
+		<part name="DeleteSubscriberExtRequestMsg" element="businessmgrmsg:DeleteSubscriberExtRequestMsg"/>
+	</message>
+	<message name="DeleteSubscriberExtResultMessage">
+		<part name="DeleteSubscriberExtResultMsg" element="businessmgrmsg:DeleteSubscriberExtResultMsg"/>
+	</message>
+	<message name="UnSubscribeAppendantProductExtRequestMessage">
+		<part name="UnSubscribeAppendantProductExtRequestMsg" element="businessmgrmsg:UnSubscribeAppendantProductExtRequestMsg"/>
+	</message>
+	<message name="UnSubscribeAppendantProductExtResultMessage">
+		<part name="UnSubscribeAppendantProductExtResultMsg" element="businessmgrmsg:UnSubscribeAppendantProductExtResultMsg"/>
+	</message>
+	<message name="CheckOperatorPasswordRequestMessage">
+		<part name="CheckOperatorPasswordRequestMsg" element="businessmgrmsg:CheckOperatorPasswordRequestMsg"/>
+	</message>
+	<message name="CheckOperatorPasswordResultMessage">
+		<part name="CheckOperatorPasswordResultMsg" element="businessmgrmsg:CheckOperatorPasswordResultMsg"/>
+	</message>
+	<message name="QueryDefinedZonesInfoRequestMessage">
+		<part name="QueryDefinedZonesInfoRequestMsg" element="businessmgrmsg:QueryDefinedZonesInfoRequestMsg"/>
+	</message>
+	<message name="QueryDefinedZonesInfoResultMessage">
+		<part name="QueryDefinedZonesInfoResultMsg" element="businessmgrmsg:QueryDefinedZonesInfoResultMsg"/>
+	</message>
+	<message name="ChangeCreditLevelRequestMessage">
+		<part name="ChangeCreditLevelRequestMsg" element="businessmgrmsg:ChangeCreditLevelRequestMsg"/>
+	</message>
+	<message name="ChangeCreditLevelResultMessage">
+		<part name="ChangeCreditLevelResultMsg" element="businessmgrmsg:ChangeCreditLevelResultMsg"/>
+	</message>
+	<message name="ManPersonHuntingListRequestMessage">
+		<part name="ManPersonHuntingListRequestMsg" element="businessmgrmsg:ManPersonHuntingListRequestMsg"/>
+	</message>
+	<message name="ManPersonHuntingListResultMessage">
+		<part name="ManPersonHuntingListResultMsg" element="businessmgrmsg:ManPersonHuntingListResultMsg"/>
+	</message>
+	<message name="ManPersonHuntingNoRequestMessage">
+		<part name="ManPersonHuntingNoRequestMsg" element="businessmgrmsg:ManPersonHuntingNoRequestMsg"/>
+	</message>
+	<message name="ManPersonHuntingNoResultMessage">
+		<part name="ManPersonHuntingNoResultMsg" element="businessmgrmsg:ManPersonHuntingNoResultMsg"/>
+	</message>
+	<message name="ManPersonHuntingNoPriorityRequestMessage">
+		<part name="ManPersonHuntingNoPriorityRequestMsg" element="businessmgrmsg:ManPersonHuntingNoPriorityRequestMsg"/>
+	</message>
+	<message name="ManPersonHuntingNoPriorityResultMessage">
+		<part name="ManPersonHuntingNoPriorityResultMsg" element="businessmgrmsg:ManPersonHuntingNoPriorityResultMsg"/>
+	</message>
+	<message name="QueryPersonHuntingListRequestMessage">
+		<part name="QueryPersonHuntingListRequestMsg" element="businessmgrmsg:QueryPersonHuntingListRequestMsg"/>
+	</message>
+	<message name="QueryPersonHuntingListResultMessage">
+		<part name="QueryPersonHuntingListResultMsg" element="businessmgrmsg:QueryPersonHuntingListResultMsg"/>
+	</message>
+	<message name="QueryPersonHuntingNoRequestMessage">
+		<part name="QueryPersonHuntingNoRequestMsg" element="businessmgrmsg:QueryPersonHuntingNoRequestMsg"/>
+	</message>
+	<message name="QueryPersonHuntingNoResultMessage">
+		<part name="QueryPersonHuntingNoResultMsg" element="businessmgrmsg:QueryPersonHuntingNoResultMsg"/>
+	</message>
+	<portType name="CBSInterfaceBusinessMgr">
+		<operation name="QueryBasicInfo">
+			<input message="business:QueryBasicInfoRequestMessage"/>
+			<output message="business:QueryBasicInfoResultMessage"/>
+		</operation>
+		<operation name="QueryCUGMembers">
+			<input message="business:QueryCUGMembersRequestMessage"/>
+			<output message="business:QueryCUGMembersResultMessage"/>
+		</operation>
+		<operation name="QueryCUGType">
+			<input message="business:QueryCUGTypeRequestMessage"/>
+			<output message="business:QueryCUGTypeResultMessage"/>
+		</operation>
+		<operation name="ManCUGInfo">
+			<input message="business:ManCUGInfoRequestMessage"/>
+			<output message="business:ManCUGInfoResultMessage"/>
+		</operation>
+		<operation name="CheckPassword">
+			<input message="business:CheckPasswordRequestMessage"/>
+			<output message="business:CheckPasswordResultMessage"/>
+		</operation>
+		<operation name="NewSubscriber">
+			<input message="business:NewSubscriberRequestMessage"/>
+			<output message="business:NewSubscriberResultMessage"/>
+		</operation>
+		<operation name="ReNewSubscriber">
+			<input message="business:ReNewSubscriberRequestMessage"/>
+			<output message="business:ReNewSubscriberResultMessage"/>
+		</operation>
+		<operation name="DeleteSubscriber">
+			<input message="business:DeleteSubscriberRequestMessage"/>
+			<output message="business:DeleteSubscriberResultMessage"/>
+		</operation>
+		<operation name="ChangeMainProd">
+			<input message="business:ChangeMainProdRequestMessage"/>
+			<output message="business:ChangeMainProdResultMessage"/>
+		</operation>
+		<operation name="SubscribeAppendantProduct">
+			<input message="business:SubscribeAppendantProductRequestMessage"/>
+			<output message="business:SubscribeAppendantProductResultMessage"/>
+		</operation>
+		<operation name="ChangeAppendantProduct">
+			<input message="business:ChangeAppendantProductRequestMessage"/>
+			<output message="business:ChangeAppendantProductResultMessage"/>
+		</operation>
+		<operation name="UnSubscribeAppendantProduct">
+			<input message="business:UnSubscribeAppendantProductRequestMessage"/>
+			<output message="business:UnSubscribeAppendantProductResultMessage"/>
+		</operation>
+		<operation name="ChangeCustBasicInfor">
+			<input message="business:ChangeCustBasicInforRequestMessage"/>
+			<output message="business:ChangeCustBasicInforResultMessage"/>
+		</operation>
+		<operation name="ChangeSubscriberBasicInfor">
+			<input message="business:ChangeSubscriberBasicInforRequestMessage"/>
+			<output message="business:ChangeSubscriberBasicInforResultMessage"/>
+		</operation>
+		<operation name="ChangeAccountBasicInfor">
+			<input message="business:ChangeAccountBasicInforRequestMessage"/>
+			<output message="business:ChangeAccountBasicInforResultMessage"/>
+		</operation>
+		<operation name="ChangePassword">
+			<input message="business:ChangePasswordRequestMessage"/>
+			<output message="business:ChangePasswordResultMessage"/>
+		</operation>
+		<operation name="ResetPassword">
+			<input message="business:ResetPasswordRequestMessage"/>
+			<output message="business:ResetPasswordResultMessage"/>
+		</operation>
+		<operation name="ChangeMSISDN">
+			<input message="business:ChangeMSISDNRequestMessage"/>
+			<output message="business:ChangeMSISDNResultMessage"/>
+		</operation>
+		<operation name="ChangeSIM">
+			<input message="business:ChangeSIMRequestMessage"/>
+			<output message="business:ChangeSIMResultMessage"/>
+		</operation>
+		<operation name="ChangeServices">
+			<input message="business:ChangeServicesRequestMessage"/>
+			<output message="business:ChangeServicesResultMessage"/>
+		</operation>
+		<operation name="DeleteRechageBlack">
+			<input message="business:DeleteRechageBlackRequestMessage"/>
+			<output message="business:DeleteRechageBlackResultMessage"/>
+		</operation>
+		<operation name="Suspend">
+			<input message="business:SuspendRequestMessage"/>
+			<output message="business:SuspendResultMessage"/>
+		</operation>
+		<operation name="Reconnect">
+			<input message="business:ReconnectRequestMessage"/>
+			<output message="business:ReconnectResultMessage"/>
+		</operation>
+		<operation name="ClaimMissing">
+			<input message="business:ClaimMissingRequestMessage"/>
+			<output message="business:ClaimMissingResultMessage"/>
+		</operation>
+		<operation name="DisclaimMissing">
+			<input message="business:DisclaimMissingRequestMessage"/>
+			<output message="business:DisclaimMissingResultMessage"/>
+		</operation>
+		<operation name="BatchOperation">
+			<input message="business:BatchOperationRequestMessage"/>
+			<output message="business:BatchOperationResultMessage"/>
+		</operation>
+		<operation name="ChangeOwner">
+			<input message="business:ChangeOwnerRequestMessage"/>
+			<output message="business:ChangeOwnerResultMessage"/>
+		</operation>
+		<operation name="QueryUserGroup">
+			<input message="business:QueryUserGroupRequestMessage"/>
+			<output message="business:QueryUserGroupResultMessage"/>
+		</operation>
+		<operation name="ManGroupMember">
+			<input message="business:ManGroupMemberRequestMessage"/>
+			<output message="business:ManGroupMemberResultMessage"/>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<input message="business:QuerySubscribedGroupRequestMessage"/>
+			<output message="business:QuerySubscribedGroupResultMessage"/>
+		</operation>
+		<operation name="ModifySubscriberValidity">
+			<input message="business:ModifySubscriberValidityRequestMessage"/>
+			<output message="business:ModifySubscriberValidityResultMessage"/>
+		</operation>
+		<operation name="IntegrationEnquiry">
+			<input message="business:IntegrationEnquiryRequestMessage"/>
+			<output message="business:IntegrationEnquiryResultMessage"/>
+		</operation>
+		<operation name="QuerySubscriberProductInfo">
+			<input message="business:QuerySubscriberProductInfoRequestMessage"/>
+			<output message="business:QuerySubscriberProductInfoResultMessage"/>
+		</operation>
+		<operation name="QuerySubscriberServiceInfo">
+			<input message="business:QuerySubscriberServiceInfoRequestMessage"/>
+			<output message="business:QuerySubscriberServiceInfoResultMessage"/>
+		</operation>
+		<operation name="ModifySubscriberState">
+			<input message="business:ModifySubscriberStateRequestMessage"/>
+			<output message="business:ModifySubscriberStateResultMessage"/>
+		</operation>
+		<operation name="ManSubCallScreenNo">
+			<input message="business:ManSubCallScreenNoRequestMessage"/>
+			<output message="business:ManSubCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="ManSubFamilyNo">
+			<input message="business:ManSubFamilyNoRequestMessage"/>
+			<output message="business:ManSubFamilyNoResultMessage"/>
+		</operation>
+		<operation name="ChangeSubLowBalPrt">
+			<input message="business:ChangeSubLowBalPrtRequestMessage"/>
+			<output message="business:ChangeSubLowBalPrtResultMessage"/>
+		</operation>
+		<operation name="QuerySubLowBalPrt">
+			<input message="business:QuerySubLowBalPrtRequestMessage"/>
+			<output message="business:QuerySubLowBalPrtResultMessage"/>
+		</operation>
+		<operation name="ManSubHomeZone">
+			<input message="business:ManSubHomeZoneRequestMessage"/>
+			<output message="business:ManSubHomeZoneResultMessage"/>
+		</operation>
+		<operation name="ModifyPosUserState">
+			<input message="business:ModifyPosUserStateRequestMessage"/>
+			<output message="business:ModifyPosUserStateResultMessage"/>
+		</operation>
+		<operation name="QueryAdjustValidityLog">
+			<input message="business:QueryAdjustValidityLogRequestMessage"/>
+			<output message="business:QueryAdjustValidityLogResultMessage"/>
+		</operation>
+		<operation name="QuerySubFamilyNo">
+			<input message="business:QuerySubFamilyNoRequestMessage"/>
+			<output message="business:QuerySubFamilyNoResultMessage"/>
+		</operation>
+		<operation name="QuerySubHomeZone">
+			<input message="business:QuerySubHomeZoneRequestMessage"/>
+			<output message="business:QuerySubHomeZoneResultMessage"/>
+		</operation>
+		<operation name="QuerySubCallScreenNo">
+			<input message="business:QuerySubCallScreenNoRequestMessage"/>
+			<output message="business:QuerySubCallScreenNoResultMessage"/>
+		</operation>
+		<operation name="QueryGroupMember">
+			<input message="business:QueryGroupMemberRequestMessage"/>
+			<output message="business:QueryGroupMemberResultMessage"/>
+		</operation>
+		<operation name="QuerySubChangeLog">
+			<input message="business:QuerySubChangeLogRequestMessage"/>
+			<output message="business:QuerySubChangeLogResultMessage"/>
+		</operation>
+		<operation name="ManParentChild">
+			<input message="business:ManParentChildRequestMessage"/>
+			<output message="business:ManParentChildResultMessage"/>
+		</operation>
+		<operation name="QueryChildLimit">
+			<input message="business:QueryChildLimitRequestMessage"/>
+			<output message="business:QueryChildLimitResultMessage"/>
+		</operation>
+		<operation name="ModifyCFNo">
+			<input message="business:ModifyCFNoRequestMessage"/>
+			<output message="business:ModifyCFNoResultMessage"/>
+		</operation>
+		<operation name="BlockSubscriber">
+			<input message="business:BlockSubscriberRequestMessage"/>
+			<output message="business:BlockSubscriberResultMessage"/>
+		</operation>
+		<operation name="NewSubscriberExt">
+			<input message="business:NewSubscriberExtRequestMessage"/>
+			<output message="business:NewSubscriberExtResultMessage"/>
+		</operation>
+		<operation name="BindProductSubscriberNo">
+			<input message="business:BindProductSubscriberNoRequestMessage"/>
+			<output message="business:BindProductSubscriberNoResultMessage"/>
+		</operation>
+		<operation name="DeleteSubscriberExt">
+			<input message="business:DeleteSubscriberExtRequestMessage"/>
+			<output message="business:DeleteSubscriberExtResultMessage"/>
+		</operation>
+		<operation name="UnSubscribeAppendantProductExt">
+			<input message="business:UnSubscribeAppendantProductExtRequestMessage"/>
+			<output message="business:UnSubscribeAppendantProductExtResultMessage"/>
+		</operation>
+		<operation name="QueryDefinedZonesInfo">
+			<input message="business:QueryDefinedZonesInfoRequestMessage"/>
+			<output message="business:QueryDefinedZonesInfoResultMessage"/>
+		</operation>
+		<operation name="CheckOperatorPassword">
+			<input message="business:CheckOperatorPasswordRequestMessage"/>
+			<output message="business:CheckOperatorPasswordResultMessage"/>
+		</operation>
+		<operation name="ChangeCreditLevel">
+			<input message="business:ChangeCreditLevelRequestMessage"/>
+			<output message="business:ChangeCreditLevelResultMessage"/>
+		</operation>
+		<operation name="ManPersonHuntingList">
+			<input message="business:ManPersonHuntingListRequestMessage"/>
+			<output message="business:ManPersonHuntingListResultMessage"/>
+		</operation>
+		<operation name="ManPersonHuntingNo">
+			<input message="business:ManPersonHuntingNoRequestMessage"/>
+			<output message="business:ManPersonHuntingNoResultMessage"/>
+		</operation>
+		<operation name="ManPersonHuntingNoPriority">
+			<input message="business:ManPersonHuntingNoPriorityRequestMessage"/>
+			<output message="business:ManPersonHuntingNoPriorityResultMessage"/>
+		</operation>
+		<operation name="QueryPersonHuntingList">
+			<input message="business:QueryPersonHuntingListRequestMessage"/>
+			<output message="business:QueryPersonHuntingListResultMessage"/>
+		</operation>
+		<operation name="QueryPersonHuntingNo">
+			<input message="business:QueryPersonHuntingNoRequestMessage"/>
+			<output message="business:QueryPersonHuntingNoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CBSInterfaceBusinessMgrBinding" type="business:CBSInterfaceBusinessMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="QueryBasicInfo">
+			<soap:operation soapAction="QueryBasicInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryCUGMembers">
+			<soap:operation soapAction="QueryCUGMembers" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryCUGType">
+			<soap:operation soapAction="QueryCUGType" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManCUGInfo">
+			<soap:operation soapAction="ManCUGInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CheckPassword">
+			<soap:operation soapAction="CheckPassword" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="NewSubscriber">
+			<soap:operation soapAction="NewSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ReNewSubscriber">
+			<soap:operation soapAction="ReNewSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeleteSubscriber">
+			<soap:operation soapAction="DeleteSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeMainProd">
+			<soap:operation soapAction="ChangeMainProd" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SubscribeAppendantProduct">
+			<soap:operation soapAction="SubscribeAppendantProduct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeAppendantProduct">
+			<soap:operation soapAction="ChangeAppendantProduct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UnSubscribeAppendantProduct">
+			<soap:operation soapAction="UnSubscribeAppendantProduct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeCustBasicInfor">
+			<soap:operation soapAction="ChangeCustBasicInfor" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeSubscriberBasicInfor">
+			<soap:operation soapAction="ChangeSubscriberBasicInfor" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeAccountBasicInfor">
+			<soap:operation soapAction="ChangeAccountBasicInfor" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangePassword">
+			<soap:operation soapAction="ChangePassword" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ResetPassword">
+			<soap:operation soapAction="ResetPassword" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeMSISDN">
+			<soap:operation soapAction="ChangeMSISDN" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeSIM">
+			<soap:operation soapAction="ChangeSIM" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeServices">
+			<soap:operation soapAction="ChangeServices" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeleteRechageBlack">
+			<soap:operation soapAction="DeleteRechageBlack" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="Suspend">
+			<soap:operation soapAction="Suspend" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="Reconnect">
+			<soap:operation soapAction="Reconnect" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ClaimMissing">
+			<soap:operation soapAction="ClaimMissing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DisclaimMissing">
+			<soap:operation soapAction="DisclaimMissing" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchOperation">
+			<soap:operation soapAction="BatchOperation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeOwner">
+			<soap:operation soapAction="ChangeOwner" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryUserGroup">
+			<soap:operation soapAction="QueryUserGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManGroupMember">
+			<soap:operation soapAction="ManGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<soap:operation soapAction="QuerySubscribedGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ModifySubscriberValidity">
+			<soap:operation soapAction="ModifySubscriberValidity" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="IntegrationEnquiry">
+			<soap:operation soapAction="IntegrationEnquiry" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubscriberProductInfo">
+			<soap:operation soapAction="QuerySubscriberProductInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubscriberServiceInfo">
+			<soap:operation soapAction="QuerySubscriberServiceInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ModifySubscriberState">
+			<soap:operation soapAction="ModifySubscriberState" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManSubCallScreenNo">
+			<soap:operation soapAction="ManSubCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManSubFamilyNo">
+			<soap:operation soapAction="ManSubFamilyNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeSubLowBalPrt">
+			<soap:operation soapAction="ChangeSubLowBalPrt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubLowBalPrt">
+			<soap:operation soapAction="QuerySubLowBalPrt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManSubHomeZone">
+			<soap:operation soapAction="ManSubHomeZone" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ModifyPosUserState">
+			<soap:operation soapAction="ModifyPosUserState" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryAdjustValidityLog">
+			<soap:operation soapAction="QueryAdjustValidityLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubFamilyNo">
+			<soap:operation soapAction="QuerySubFamilyNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubHomeZone">
+			<soap:operation soapAction="QuerySubHomeZone" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubCallScreenNo">
+			<soap:operation soapAction="QuerySubCallScreenNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryGroupMember">
+			<soap:operation soapAction="QueryGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubChangeLog">
+			<soap:operation soapAction="QuerySubChangeLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManParentChild">
+			<soap:operation soapAction="ManParentChild" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryChildLimit">
+			<soap:operation soapAction="QueryChildLimit" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ModifyCFNo">
+			<soap:operation soapAction="ModifyCFNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BlockSubscriber">
+			<soap:operation soapAction="BlockSubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="NewSubscriberExt">
+			<soap:operation soapAction="NewSubscriberExt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BindProductSubscriberNo">
+			<soap:operation soapAction="BindProductSubscriberNo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeleteSubscriberExt">
+			<soap:operation soapAction="DeleteSubscriberExt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="UnSubscribeAppendantProductExt">
+			<soap:operation soapAction="UnSubscribeAppendantProductExt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryDefinedZonesInfo">
+			<soap:operation soapAction="QueryDefinedZonesInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CheckOperatorPassword">
+			<soap:operation soapAction="CheckOperatorPassword" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeCreditLevel">
+			<soap:operation soapAction="ChangeCreditLevel" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManPersonHuntingList">
+			<soap:operation soapAction="ManPersonHuntingList"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManPersonHuntingNo">
+			<soap:operation soapAction="ManPersonHuntingNo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManPersonHuntingNoPriority">
+			<soap:operation soapAction="ManPersonHuntingNoPriority"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryPersonHuntingList">
+			<soap:operation soapAction="urn:#QueryPersonHuntingList"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryPersonHuntingNo">
+			<soap:operation soapAction="urn:#QueryPersonHuntingNo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CBSInterfaceBusinessMgrService">
+		<port name="CBSInterfaceBusinessMgrServicePort" binding="business:CBSInterfaceBusinessMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/businessmgr/wsdl/CBSInterface_BusinessMgr.wsdl"/>
+		</port>
+	</service>
+</definitions>

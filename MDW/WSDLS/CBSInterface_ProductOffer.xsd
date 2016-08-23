@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:productoffer="http://www.huawei.com/bme/cbsinterface/productoffer" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/productoffer" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ProductBasicInfo">
+		<xs:sequence>
+			<xs:element name="Id" type="common:ProductId"/>
+			<xs:element name="Name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" type="common:DateTime"/>
+			<xs:element name="ExpireDate" type="common:DateTime"/>
+			<xs:element name="ProductType" type="common:ProductType"/>
+			<xs:element name="NetworkType" type="common:NetWorkType"/>
+			<xs:element name="BrandId" type="common:BrandId" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>当ProductType为主体产品时有效</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrandName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>当ProductType为主体产品时有效</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PaidMode" type="common:PaidMode" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>当ProductType为主体产品时有效</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Remark">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2048"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Version" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OfferBasicInfo">
+		<xs:sequence>
+			<xs:element name="Id" type="common:OfferId"/>
+			<xs:element name="Name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EffectiveDate" type="common:DateTime"/>
+			<xs:element name="ExpireDate" type="common:DateTime"/>
+			<xs:element name="ReleasedBeginTime" type="common:DateTime"/>
+			<xs:element name="ReleasedEndTime" type="common:DateTime"/>
+			<xs:element name="Remark">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2048"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Version" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="31"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OfferType" type="common:OfferType"/>
+			<xs:element name="OfferLevel" type="common:OfferLevel"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentInfo">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:int"/>
+			<xs:element name="Product" type="productoffer:ProductBasicInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryBrandsResult">
+		<xs:sequence>
+			<xs:element name="BrandInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:BrandId"/>
+						<xs:element name="Name">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="63"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOfferByNewSubscriberRequest">
+		<xs:sequence>
+			<xs:element name="TypeDetail" type="common:OfferType">
+				<xs:annotation>
+					<xs:documentation>Individual or Group type</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BrandId" type="common:BrandId" minOccurs="0"/>
+			<xs:element name="PaidMode" type="common:PaidMode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOfferByNewSubscriberResult">
+		<xs:sequence>
+			<xs:element name="OfferInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="productoffer:OfferBasicInfo">
+							<xs:sequence>
+								<xs:element name="Component" type="productoffer:ComponentInfo" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOffersBySubscribingRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OfferLevel" type="common:OfferLevel" default="0" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOffersBySubscribingResult">
+		<xs:sequence>
+			<xs:element name="OfferInfo" type="productoffer:OfferBasicInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOffersByReplacingRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOffersByReplacingResult">
+		<xs:sequence>
+			<xs:element name="ReplacingPolicy" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DestOffer" type="productoffer:OfferBasicInfo" maxOccurs="unbounded"/>
+						<xs:element name="SrcOffer" type="productoffer:OfferBasicInfo" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOfferInfoRequest">
+		<xs:sequence>
+			<xs:element name="Id" type="common:OfferId"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOfferInfoResult">
+		<xs:sequence>
+			<xs:element name="OfferInfo" type="productoffer:OfferBasicInfo" minOccurs="0"/>
+			<xs:element name="OptionalOfferInfo" type="productoffer:OfferBasicInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SyncOfferRequest">
+		<xs:sequence>
+			<xs:element name="OfferCode" type="common:OfferCode">
+				<xs:annotation>
+					<xs:documentation>CRM上的BundlePackage ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EffectiveTime" type="common:DateTime"/>
+			<xs:element name="ExpireTime" type="common:DateTime"/>
+			<xs:element name="OfferType" type="common:OfferType"/>
+			<xs:element name="Group" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Offer的组成</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupId" type="xs:int"/>
+						<xs:element name="ProductId" type="common:ProductId" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>CBS的ProductID</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SyncOfferResult">
+		<xs:sequence>
+			<xs:element name="OfferCode" type="common:OfferCode"/>
+			<xs:element name="CBSOfferId" type="common:OfferId"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

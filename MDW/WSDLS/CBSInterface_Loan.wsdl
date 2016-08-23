@@ -1,0 +1,122 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:manageloanmgr="http://www.huawei.com/bme/cbsinterface/manageloanmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/loan" targetNamespace="http://www.huawei.com/bme/cbsinterface/manageloanmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:loan="http://www.huawei.com/bme/cbsinterface/loan" targetNamespace="http://www.huawei.com/bme/cbsinterface/manageloanmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/loan" schemaLocation="CBSInterface_Loan.xsd"/>
+			<element name="LoanManageRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="LoanManageRequest" type="loan:LoanManageRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="LoanManageResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="LoanManageResult" type="loan:LoanManageResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryLoanInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryLoanInfoRequest" type="loan:QueryLoanInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryLoanInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryLoanInfoResult" type="loan:QueryLoanInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>			
+			<element name="MakeLoanRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="MakeLoanRequest" type="loan:MakeLoanRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="MakeLoanResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="MakeLoanResult" type="loan:MakeLoanResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>	
+		</xs:schema>
+	</types>
+	<message name="LoanManageRequestMessage">
+		<part name="LoanManageRequestMsg" element="manageloanmgr:LoanManageRequestMsg"/>
+	</message>
+	<message name="LoanManageResultMessage">
+		<part name="LoanManageResultMsg" element="manageloanmgr:LoanManageResultMsg"/>
+	</message>
+	<message name="QueryLoanInfoRequestMessage">
+		<part name="QueryLoanInfoRequestMsg" element="manageloanmgr:QueryLoanInfoRequestMsg"/>
+	</message>
+	<message name="QueryLoanInfoResultMessage">
+		<part name="QueryLoanInfoResultMsg" element="manageloanmgr:QueryLoanInfoResultMsg"/>
+	</message>	
+	<message name="MakeLoanRequestMessage">
+		<part name="MakeLoanRequestMsg" element="manageloanmgr:MakeLoanRequestMsg"/>
+	</message>
+	<message name="MakeLoanResultMessage">
+		<part name="MakeLoanResultMsg" element="manageloanmgr:MakeLoanResultMsg"/>
+	</message>		
+	<portType name="LoanMgr">
+		<operation name="makeLoan">	
+			<input message="manageloanmgr:MakeLoanRequestMessage"/>
+			<output message="manageloanmgr:MakeLoanResultMessage"/>
+		</operation>	
+		<operation name="queryLoanInfo">
+			<input message="manageloanmgr:QueryLoanInfoRequestMessage"/>
+			<output message="manageloanmgr:QueryLoanInfoResultMessage"/>
+		</operation>
+		<operation name="loanManage">
+			<input message="manageloanmgr:LoanManageRequestMessage"/>
+			<output message="manageloanmgr:LoanManageResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="LoanMgrBinding" type="manageloanmgr:LoanMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="makeLoan">
+		    <soap:operation soapAction="makeLoan" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>				
+		</operation>
+		<operation name="queryLoanInfo">
+			<soap:operation soapAction="queryLoanInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="loanManage">
+			<soap:operation soapAction="loanManage" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="LoanMgrService">
+		<port name="LoanMgrServicePort" binding="manageloanmgr:LoanMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managehz/wsdl/CBSInterface_Loan.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:usergroupmgrt="http://www.huawei.com/bme/cbsinterface/usergroupmgrt" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/usergroupmgrt" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="CreateUserGroupRequest">
+		<xs:sequence>
+			<xs:element name="GroupInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="15"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupName" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="127"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupType" type="xs:int"/>
+						<xs:element name="Remark" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="254"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Reserved</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:OfferId"/>
+						<xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="common:ProductId"/>
+									<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OwnerSubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="EffectiveDate" type="common:Date" minOccurs="0"/>
+			<xs:element name="ExpireDate" type="common:Date" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreateUserGroupResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteUserGroupRequest">
+		<xs:sequence>
+			<xs:element name="GroupInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="15"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupType" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OwnerSubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="ExpireDate" type="common:Date" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeUserGroupOfferRequest">
+		<xs:sequence>
+			<xs:element name="GroupInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="15"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupType" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OwnerSubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OptionalOffer" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:OfferId"/>
+						<xs:element name="OperationType" type="xs:int"/>
+						<xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+						<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="common:ProductId"/>
+									<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeUserGroupOfferResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageUserGroupMemberRequest">
+		<xs:sequence>
+			<xs:element name="GroupInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="15"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupType" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OwnerSubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="MemberInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="MemberType" type="xs:int" minOccurs="0"/>
+						<xs:element name="ChildSubLimitAmt" type="common:Balance" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="common:Date" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="common:Date" minOccurs="0"/>
+						<xs:element name="ScreenType" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Reserved</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageUserGroupMemberResult">
+		<xs:sequence>
+			<xs:element name="GroupInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupNo">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="15"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GroupType" type="xs:int"/>
+						<xs:element name="OwnerSubscriberNo" type="common:SubscriberNo" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MemberInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="MemberType" type="xs:int"/>
+						<xs:element name="ChildSubLimitAmt" type="common:Balance" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="common:Date"/>
+						<xs:element name="ExpireDate" type="common:Date"/>
+						<xs:element name="ScreenType" type="xs:int" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Reserved</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryUserGroupRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="GroupNo">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="15"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryUserGroupResult">
+		<xs:sequence>
+			<xs:element name="GroupInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GroupBasicInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GroupNo">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="15"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="GroupName">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="127"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="GroupType" type="xs:int"/>
+									<xs:element name="Remark">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="254"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="EffectiveTime" type="common:DateTime"/>
+									<xs:element name="ExpireTime" type="common:DateTime"/>
+									<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Reserved</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="MemberInfo" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+									<xs:element name="MemberType" type="xs:int"/>
+									<xs:element name="ChildSubLimitAmt" type="common:Balance" nillable="true" minOccurs="0"/>
+									<xs:element name="EffectiveTime" type="common:DateTime"/>
+									<xs:element name="ExpireTime" type="common:DateTime"/>
+									<xs:element name="ScreenType" type="xs:int" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reserved</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

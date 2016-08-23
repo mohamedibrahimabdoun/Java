@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:changeprimaryoffer="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeprimaryoffer" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:complexType name="ChangePrimaryOfferRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="Account" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-增加，3-修改。缺省为1</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="NewBillCycleType" type="common:BillCycleType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewPrimaryOffer" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reserved</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="Subscriber" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+											<xs:element name="MainProductId" type="common:ProductId"/>
+											<xs:element name="Product" type="subscribe:Product" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="ComponentID" type="xs:int" nillable="true" minOccurs="0"/>
+											<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+											<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="NewOptionalOffer" type="subscribe:OptionalOfferOrder" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OldPrimaryOffer" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:OfferId"/>
+						<xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0"/>
+						<xs:element name="DeletedOptionalOffer" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="common:OfferId"/>
+									<xs:element name="OfferOrderKey" type="common:OfferOrderKey" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+			<xs:element name="NewBillCycleType" type="common:BillCycleType" minOccurs="0"/>
+			<xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+			<xs:element name="ResetSwitchCOSCounter" type="xs:int" minOccurs="0"/>
+			<xs:element name="ResetBalance" type="xs:int" minOccurs="0"/>
+			<xs:element name="NewCustID" type="common:CustomerCode" minOccurs="0"/>
+			<xs:element name="NewAcctID" type="common:AccountCode" minOccurs="0"/>
+			<xs:element name="NewSubID" type="common:SubscriberCode" minOccurs="0"/>
+			<xs:element name="LocalID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IMSI" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="24"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangePrimaryOfferResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchChangePrimaryOfferRequest">
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="Account" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PPSAcctInitBal" type="common:Balance" minOccurs="0"/>
+						<xs:element name="PPSAcctCredit" type="common:Balance" minOccurs="0"/>
+						<xs:element name="POSAcctInitBal" type="common:Balance" minOccurs="0"/>
+						<xs:element name="POSAcctCredit" type="common:Balance" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewPrimaryOffer">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Product" type="subscribe:Product" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Product" type="subscribe:Product" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeletedOptionalOffer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="common:OfferId"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidMode" type="subscribe:EffectMode" minOccurs="0"/>
+			<xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

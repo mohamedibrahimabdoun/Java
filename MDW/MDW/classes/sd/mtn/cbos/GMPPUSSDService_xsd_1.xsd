@@ -1,0 +1,360 @@
+<xs:schema xmlns:tns="http://ws.wswrapper.cbos.ggs.gemalto.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     version="1.0" targetNamespace="http://ws.wswrapper.cbos.ggs.gemalto.com/">
+    <xs:element name="cardToSVA" type="tns:cardToSVA"/>
+    <xs:element name="cardToSVAResponse" type="tns:cardToSVAResponse"/>
+    <xs:element name="cashIn" type="tns:cashIn"/>
+    <xs:element name="cashInResponse" type="tns:cashInResponse"/>
+    <xs:element name="changePin" type="tns:changePin"/>
+    <xs:element name="changePinResponse" type="tns:changePinResponse"/>
+    <xs:element name="completeCashOutAtMerchant" type="tns:completeCashOutAtMerchant"/>
+    <xs:element name="completeCashOutAtMerchantResponse" type="tns:completeCashOutAtMerchantResponse"/>
+    <xs:element name="completeConsumerRegistration" type="tns:completeConsumerRegistration"/>
+    <xs:element name="completeConsumerRegistrationResponse" type="tns:completeConsumerRegistrationResponse"/>
+    <xs:element name="consumerRegistration" type="tns:consumerRegistration"/>
+    <xs:element name="consumerRegistrationResponse" type="tns:consumerRegistrationResponse"/>
+    <xs:element name="distribute" type="tns:distribute"/>
+    <xs:element name="distributeResponse" type="tns:distributeResponse"/>
+    <xs:element name="getConsumerInfo" type="tns:getConsumerInfo"/>
+    <xs:element name="getConsumerInfoResponse" type="tns:getConsumerInfoResponse"/>
+    <xs:element name="getLastTransactions" type="tns:getLastTransactions"/>
+    <xs:element name="getLastTransactionsResponse" type="tns:getLastTransactionsResponse"/>
+    <xs:element name="getSVABalance" type="tns:getSVABalance"/>
+    <xs:element name="getSVABalanceResponse" type="tns:getSVABalanceResponse"/>
+    <xs:element name="p2sBuy" type="tns:p2sBuy"/>
+    <xs:element name="p2sBuyResponse" type="tns:p2sBuyResponse"/>
+    <xs:element name="payBill" type="tns:payBill"/>
+    <xs:element name="payBillResponse" type="tns:payBillResponse"/>
+    <xs:element name="recharge" type="tns:recharge"/>
+    <xs:element name="rechargeResponse" type="tns:rechargeResponse"/>
+    <xs:element name="registerConsumerAtMerchant" type="tns:registerConsumerAtMerchant"/>
+    <xs:element name="registerConsumerAtMerchantResponse" type="tns:registerConsumerAtMerchantResponse"/>
+    <xs:element name="selfLock" type="tns:selfLock"/>
+    <xs:element name="selfLockResponse" type="tns:selfLockResponse"/>
+    <xs:element name="selfTopUp" type="tns:selfTopUp"/>
+    <xs:element name="selfTopUpResponse" type="tns:selfTopUpResponse"/>
+    <xs:element name="selfUnlock" type="tns:selfUnlock"/>
+    <xs:element name="selfUnlockResponse" type="tns:selfUnlockResponse"/>
+    <xs:element name="startCashOut" type="tns:startCashOut"/>
+    <xs:element name="startCashOutResponse" type="tns:startCashOutResponse"/>
+    <xs:element name="svaToCard" type="tns:svaToCard"/>
+    <xs:element name="svaToCardResponse" type="tns:svaToCardResponse"/>
+    <xs:element name="transferMoneyP2P" type="tns:transferMoneyP2P"/>
+    <xs:element name="transferMoneyP2PResponse" type="tns:transferMoneyP2PResponse"/>
+    <xs:element name="updateConsumerInfo" type="tns:updateConsumerInfo"/>
+    <xs:element name="updateConsumerInfoResponse" type="tns:updateConsumerInfoResponse"/>
+    <xs:complexType name="changePin">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="newPin" type="xs:string" minOccurs="0"/>
+            <xs:element name="oldPIN" type="xs:string" minOccurs="0"/>
+            <xs:element name="isConsumer" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="changePinResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="gmppResponse">
+        <xs:sequence>
+            <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+            <xs:element name="returnCode" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="p2sBuy">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="destinationIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="transactionName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="p2sBuyResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="completeConsumerRegistration">
+        <xs:sequence>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="serviceProviderId" type="xs:string" minOccurs="0"/>
+            <xs:element name="tan" type="xs:string" minOccurs="0"/>
+            <xs:element name="kycType" type="xs:string" minOccurs="0"/>
+            <xs:element name="kycValue" type="xs:string" minOccurs="0"/>
+            <xs:element name="flowId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="completeConsumerRegistrationResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateConsumerInfo">
+        <xs:sequence>
+            <xs:element name="consumerInformation" type="tns:consumerInformation" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="consumerInformation">
+        <xs:sequence>
+            <xs:element name="bankAccountNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="bankAccountType" type="xs:string" minOccurs="0"/>
+            <xs:element name="bankBranchId" type="xs:string" minOccurs="0"/>
+            <xs:element name="bankId" type="xs:string" minOccurs="0"/>
+            <xs:element name="city" type="xs:string" minOccurs="0"/>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="dateOfBirth" type="xs:string" minOccurs="0"/>
+            <xs:element name="fullName" type="xs:string" minOccurs="0"/>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="nationality" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="primaryAccountNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="state" type="xs:string" minOccurs="0"/>
+            <xs:element name="street" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateConsumerInfoResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="svaToCard">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="svaToCardResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getLastTransactions">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="isConsumer" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getLastTransactionsResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="transferMoneyP2P">
+        <xs:sequence>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="destinationIdentifier" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="transferMoneyP2PResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfLock">
+        <xs:sequence>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfLockResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="startCashOut">
+        <xs:sequence>
+            <xs:element name="sourceIdetifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="cashOutAt" type="xs:string" minOccurs="0"/>
+            <xs:element name="cashoutAll" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="startCashOutResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="recharge">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="payeeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="customerPayeeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="transactionName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="rechargeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="distribute">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="destinationIdentifier" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="distributeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="payBill">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="payeeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="customerPayeeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="transactionName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="payBillResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getConsumerInfo">
+        <xs:sequence>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getConsumerInfoResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:consumerInfoResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="consumerInfoResponse">
+        <xs:complexContent>
+            <xs:extension base="tns:gmppResponse">
+                <xs:sequence>
+                    <xs:element name="city" type="xs:string" minOccurs="0"/>
+                    <xs:element name="classOfServiceName" type="xs:string" minOccurs="0"/>
+                    <xs:element name="email" type="xs:string" minOccurs="0"/>
+                    <xs:element name="fullName" type="xs:string" minOccurs="0"/>
+                    <xs:element name="locks" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="nationality" type="xs:string" minOccurs="0"/>
+                    <xs:element name="state" type="xs:string" minOccurs="0"/>
+                    <xs:element name="status" type="xs:string" minOccurs="0"/>
+                    <xs:element name="street" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="registerConsumerAtMerchant">
+        <xs:sequence>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="registerConsumerAtMerchantResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfUnlock">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfUnlockResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="completeCashOutAtMerchant">
+        <xs:sequence>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+            <xs:element name="tan" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="completeCashOutAtMerchantResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSVABalance">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="isConsumer" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSVABalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cardToSVA">
+        <xs:sequence>
+            <xs:element name="sourceIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="ipin" type="xs:string" minOccurs="0"/>
+            <xs:element name="expDate" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cardToSVAResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="consumerRegistration">
+        <xs:sequence>
+            <xs:element name="serviceProviderId" type="xs:string" minOccurs="0"/>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="kycType" type="xs:string" minOccurs="0"/>
+            <xs:element name="kycValue" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="consumerRegistrationResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashIn">
+        <xs:sequence>
+            <xs:element name="managerMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="destinationConsumerIdentifier" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashInResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfTopUp">
+        <xs:sequence>
+            <xs:element name="payeeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:string" minOccurs="0"/>
+            <xs:element name="consumerIdentifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="pin" type="xs:string" minOccurs="0"/>
+            <xs:element name="transactionName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="selfTopUpResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:gmppResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

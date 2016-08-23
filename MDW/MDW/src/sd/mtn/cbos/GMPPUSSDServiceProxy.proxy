@@ -1,0 +1,534 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="GMPPUSSDService_Service.xml"/>
+      <url path="GMPPUSSDService.wsdl"/>
+      <url path="GMPPUSSDService_xsd_1.xsd"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/RegisterConsumerAtMerchantResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ConsumerRegistrationResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ConsumerInfoResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ConsumerRegistration.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CardToSVAResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/TransferMoneyP2P.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetConsumerInfo.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/DistributeResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/RechargeResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ObjectFactory.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ChangePin.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/PayBill.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/P2SBuyResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfLock.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CompleteCashOutAtMerchantResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/Distribute.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/P2SBuy.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetConsumerInfoResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/Recharge.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfLockResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetSVABalanceResponse.java"/>
+      <url path="GMPPUSSDService.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CashIn.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetSVABalance.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetLastTransactions.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CardToSVA.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CompleteConsumerRegistration.java"/>
+      <url path="GMPPUSSDServicePortClient.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/StartCashOut.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/StartCashOutResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/UpdateConsumerInfo.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CompleteCashOutAtMerchant.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SvaToCardResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CompleteConsumerRegistrationResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/UpdateConsumerInfoResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfUnlockResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ConsumerInformation.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfUnlock.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/TransferMoneyP2PResponse.java"/>
+      <url path="GMPPUSSDService_Service.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/PayBillResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GetLastTransactionsResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfTopUp.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SvaToCard.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/package-info.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/SelfTopUpResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/RegisterConsumerAtMerchant.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/GmppResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/ChangePinResponse.java"/>
+      <url path="../../../com/gemalto/ggs/cbos/wswrapper/ws/CashInResponse.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <value n="FIXED_WSDL" v="false"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="GMPPUSSDService_Service.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.cbos"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="GMPPUSSDServicePortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="172.16.198.10" path="/GMPPMediatorUSSDServiceBean/GMPPUSSDService" query="wsdl"/>
+      <hash n="PROXY_PORTS">
+         <hash n="GMPPUSSDServicePort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="sd.mtn.cbos.GMPPUSSDService"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="GMPPUSSDServicePort"/>
+            <hash n="OPERATIONS">
+               <hash n="cardToSVA">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="cashIn">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changePin">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="completeCashOutAtMerchant">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="completeConsumerRegistration">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="consumerRegistration">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="distribute">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="getConsumerInfo">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="getLastTransactions">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="getSVABalance">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="p2SBuy">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="payBill">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="recharge">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="registerConsumerAtMerchant">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="selfLock">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="selfTopUp">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="selfUnlock">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="startCashOut">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="svaToCard">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="transferMoneyP2P">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="updateConsumerInfo">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="172.16.198.10" port="80" path="/GMPPMediatorUSSDServiceBean/GMPPUSSDService"/>
+            <url n="PROXY_PORT_ENDPOINT" protocol="http" host="172.16.198.10" port="80" path="/GMPPMediatorUSSDServiceBean/GMPPUSSDService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="GMPPUSSDService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://ws.wswrapper.cbos.ggs.gemalto.com/"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../MDW.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="GMPPUSSDService_xsd_1.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="GMPPUSSDService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://ws.wswrapper.cbos.ggs.gemalto.com/}GMPPUSSDService"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://ws.wswrapper.cbos.ggs.gemalto.com/}GMPPUSSDServicePortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.distribute.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.recharge.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.registerConsumerAtMerchant.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.completeConsumerRegistration.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfTopUp.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.payBill.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.transferMoneyP2P.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.cashIn.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.startCashOut.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.completeCashOutAtMerchant.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.p2SBuy.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.getSVABalance.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.getLastTransactions.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.svaToCard.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.cardToSVA.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.changePin.java.lang.String.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfLock.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfUnlock.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.updateConsumerInfo.com.gemalto.ggs.cbos.wswrapper.ws.ConsumerInformation"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.ConsumerInfoResponse.getConsumerInfo.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v=""/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.consumerRegistration.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="cf61075a-0147-1000-800f-ac110a488236"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="GMPPUSSDServicePort"/>
+               <value n="PORT_BINDING_NAME" v="{http://ws.wswrapper.cbos.ggs.gemalto.com/}GMPPUSSDServicePortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.distribute.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.recharge.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.registerConsumerAtMerchant.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.completeConsumerRegistration.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfTopUp.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.payBill.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.transferMoneyP2P.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.cashIn.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.startCashOut.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.completeCashOutAtMerchant.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.p2SBuy.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.getSVABalance.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.getLastTransactions.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.svaToCard.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.cardToSVA.java.lang.String.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.changePin.java.lang.String.java.lang.String.java.lang.String.java.lang.Boolean"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfLock.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.selfUnlock.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.updateConsumerInfo.com.gemalto.ggs.cbos.wswrapper.ws.ConsumerInformation"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.ConsumerInfoResponse.getConsumerInfo.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.gemalto.ggs.cbos.wswrapper.ws.GmppResponse.consumerRegistration.java.lang.String.java.lang.String.java.lang.String.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="172.16.198.10" port="80" path="/GMPPMediatorUSSDServiceBean/GMPPUSSDService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.cbos"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://ws.wswrapper.cbos.ggs.gemalto.com/}GMPPUSSDService"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="sd.mtn.cbos.GMPPUSSDServiceImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="sd.mtn.cbos.GMPPUSSDService"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../MDW.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://ws.wswrapper.cbos.ggs.gemalto.com/"/>
+         <value n="WS_URI" v="GMPPUSSDService"/>
+         <url n="WS_WSDL_FILE" protocol="http" host="172.16.198.10" path="/GMPPMediatorUSSDServiceBean/GMPPUSSDService" query="wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

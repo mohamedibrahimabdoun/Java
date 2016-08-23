@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:adjustaccountmgr="http://www.huawei.com/bme/cbsinterface/adjustaccountmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/adjustaccount" targetNamespace="http://www.huawei.com/bme/cbsinterface/adjustaccountmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:adjustaccount="http://www.huawei.com/bme/cbsinterface/adjustaccount" targetNamespace="http://www.huawei.com/bme/cbsinterface/adjustaccountmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/adjustaccount" schemaLocation="CBSInterface_AdjustAccount.xsd"/>
+			<element name="AdjustAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="AdjustAccountRequest" type="adjustaccount:AdjustAccountRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AdjustAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="AdjustAccountResult" type="adjustaccount:AdjustAccountResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustmentLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryAdjustmentLogRequest" type="adjustaccount:QueryAdjustmentLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAdjustmentLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryAdjustmentLogResult" type="adjustaccount:QueryAdjustmentLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ExchangeAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ExchangeAccountRequest" type="adjustaccount:ExchangeAccountRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ExchangeAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ExchangeAccountResult" type="adjustaccount:ExchangeAccountResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchAdjustAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchAdjustAccountRequest" type="adjustaccount:BatchAdjustAccountRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchAdjustAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchChgMainBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchChgMainBalanceRequest" type="adjustaccount:BatchChgMainBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchChgMainBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="AdjustAccountRequestMessage">
+		<part name="AdjustAccountRequestMsg" element="adjustaccountmgr:AdjustAccountRequestMsg"/>
+	</message>
+	<message name="AdjustAccountResultMessage">
+		<part name="AdjustAccountResultMsg" element="adjustaccountmgr:AdjustAccountResultMsg"/>
+	</message>
+	<message name="QueryAdjustmentLogRequestMessage">
+		<part name="QueryAdjustmentLogRequestMsg" element="adjustaccountmgr:QueryAdjustmentLogRequestMsg"/>
+	</message>
+	<message name="QueryAdjustmentLogResultMessage">
+		<part name="QueryAdjustmentLogResultMsg" element="adjustaccountmgr:QueryAdjustmentLogResultMsg"/>
+	</message>
+	<message name="ExchangeAccountRequestMessage">
+		<part name="ExchangeAccountRequestMsg" element="adjustaccountmgr:ExchangeAccountRequestMsg"/>
+	</message>
+	<message name="ExchangeAccountResultMessage">
+		<part name="ExchangeAccountResultMsg" element="adjustaccountmgr:ExchangeAccountResultMsg"/>
+	</message>
+	<message name="BatchAdjustAccountRequestMessage">
+		<part name="BatchAdjustAccountRequestMsg" element="adjustaccountmgr:BatchAdjustAccountRequestMsg"/>
+	</message>
+	<message name="BatchAdjustAccountResultMessage">
+		<part name="BatchAdjustAccountResultMsg" element="adjustaccountmgr:BatchAdjustAccountResultMsg"/>
+	</message>
+	<message name="BatchChgMainBalanceRequestMessage">
+		<part name="BatchChgMainBalanceRequestMsg" element="adjustaccountmgr:BatchChgMainBalanceRequestMsg"/>
+	</message>
+	<message name="BatchChgMainBalanceResultMessage">
+		<part name="BatchChgMainBalanceResultMsg" element="adjustaccountmgr:BatchChgMainBalanceResultMsg"/>
+	</message>
+	<portType name="AdjustAccountMgr">
+		<operation name="AdjustAccount">
+			<input message="adjustaccountmgr:AdjustAccountRequestMessage"/>
+			<output message="adjustaccountmgr:AdjustAccountResultMessage"/>
+		</operation>
+		<operation name="QueryAdjustmentLog">
+			<input message="adjustaccountmgr:QueryAdjustmentLogRequestMessage"/>
+			<output message="adjustaccountmgr:QueryAdjustmentLogResultMessage"/>
+		</operation>
+		<operation name="ExchangeAccount">
+			<input message="adjustaccountmgr:ExchangeAccountRequestMessage"/>
+			<output message="adjustaccountmgr:ExchangeAccountResultMessage"/>
+		</operation>
+		<operation name="batchAdjustAccount">
+			<input message="adjustaccountmgr:BatchAdjustAccountRequestMessage"/>
+			<output message="adjustaccountmgr:BatchAdjustAccountResultMessage"/>
+		</operation>
+		<operation name="BatchChgMainBalance">
+			<input message="adjustaccountmgr:BatchChgMainBalanceRequestMessage"/>
+			<output message="adjustaccountmgr:BatchChgMainBalanceResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="AdjustAccountMgrBinding" type="adjustaccountmgr:AdjustAccountMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="AdjustAccount">
+			<soap:operation soapAction="AdjustAccount" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryAdjustmentLog">
+			<soap:operation soapAction="QueryAdjustmentLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ExchangeAccount">
+			<soap:operation soapAction="ExchangeAccount" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchAdjustAccount">
+			<soap:operation soapAction="batchAdjustAccount" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchChgMainBalance">
+			<soap:operation soapAction="BatchChgMainBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="AdjustAccountMgrService">
+		<port name="AdjustAccountMgrServicePort" binding="adjustaccountmgr:AdjustAccountMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/adjustaccount/wsdl/CBSInterface_AdjustAccount.wsdl"/>
+		</port>
+	</service>
+</definitions>

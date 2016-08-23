@@ -1,0 +1,1282 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">204f65d0-f06d-4ed4-98b2-e01b444f6c03</identifier>
+  </ID>
+  <name>MAP_DETAILS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ba3c6348-44e3-458b-b88a-72e99afedb75</identifier>
+      </ID>
+      <name>ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b91e924c-0951-466e-8a14-19f058523bd2</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5548a1ca-9b7f-42bf-8c70-28dbca79cb04</identifier>
+      </ID>
+      <name>TRANSDATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4c02c7d9-fd92-45e7-a173-df040f75a5a6</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TRANSDATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">SYSDATE</default>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TRANSDATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">388b9201-af95-4393-9a32-cce8e0e4b326</identifier>
+      </ID>
+      <name>MSISDN</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">de3e745f-e4a6-43dd-b6d3-e76e4aa9d1d4</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MSISDN</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MSISDN</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ecb1ec1b-c034-4dfd-9ae2-d75024ac985b</identifier>
+      </ID>
+      <name>IMEI</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c4aa275b-27f4-4dbe-9b5e-8658cc21b1a0</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>IMEI</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMEI</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a94a73a8-5983-4cd9-b0db-a6f05fd8b4d3</identifier>
+      </ID>
+      <name>LATITUDE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">70b18b28-891b-4bf0-b413-99cea066b195</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LATITUDE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LATITUDE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1c4bd8e8-9539-43b9-a97b-d8e1b24a4c23</identifier>
+      </ID>
+      <name>LONGITUDE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f953f551-a0df-410c-bb91-7dd6ee9210e6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LONGITUDE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LONGITUDE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a0d4f7dd-99de-4bd6-914a-4d1b8f0d23e5</identifier>
+      </ID>
+      <name>POS_TYPE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">28f4d402-fb68-4184-a9cb-8e0b2e830b5a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>POS_TYPE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>POS_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f4a07280-bf09-40cc-b870-ea2ec7a24748</identifier>
+      </ID>
+      <name>POS_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d32d0d37-75b9-43ab-89b6-3d59a0ee169a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">255</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>POS_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>POS_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">451bf741-5a14-4f55-b543-e544ee542380</identifier>
+      </ID>
+      <name>OWNER_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0b2c2c79-ac38-46a2-9d45-fac8177f4ca6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">255</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OWNER_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OWNER_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1204c257-f212-42c0-a0aa-2c8c5b6bef59</identifier>
+      </ID>
+      <name>CLASSIFICATION</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fb3a18e3-0c6a-4b53-9411-383beab4b30b</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">100</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CLASSIFICATION</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CLASSIFICATION</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1357aae6-d803-476c-a7cc-e88801382b25</identifier>
+      </ID>
+      <name>ADDRESS</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fba2f403-a1ef-4708-b4fd-f81807093891</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">500</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ADDRESS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2aa94e92-6490-41ba-b644-2474cb7b6d58</identifier>
+      </ID>
+      <name>SIM_SELLING</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">892ef748-632e-4251-aa11-56aeeb21dc81</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SIM_SELLING</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIM_SELLING</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">51ce64a7-b61a-4655-ad54-cf656c8cd94c</identifier>
+      </ID>
+      <name>REQUESTDATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0867379b-02ae-427d-b597-f100bad27f5c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>REQUESTDATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>MAP_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">84790</identifier>
+                  <schemaName>TRADERS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REQUESTDATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4ec4f5c2-d928-424e-9d75-de7c1598296b</identifier>
+      </ID>
+      <name>PK_MAP_DETAILS_ID</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ID</name>
+          <identifier class="java.lang.String">ba3c6348-44e3-458b-b88a-72e99afedb75</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>MAP_DETAILS</name>
+            <identifier class="java.lang.String">204f65d0-f06d-4ed4-98b2-e01b444f6c03</identifier>
+            <schemaName>TRADERS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TRADERS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_MAP_DETAILS_ID</name>
+            <childObjectNames>
+              <childObjectName>ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e91c0a44-5968-4ac9-b162-2eb54d95b8e2</identifier>
+      </ID>
+      <name>IDX_MD_IMEI</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">72308141-6dd2-4eed-ba0d-b6b18868a12d</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">6e980dd8-d6e2-4c93-be2a-9fa55eb92680</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>IMEI</name>
+              <identifier class="java.lang.String">ecb1ec1b-c034-4dfd-9ae2-d75024ac985b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MAP_DETAILS</name>
+                <identifier class="java.lang.String">204f65d0-f06d-4ed4-98b2-e01b444f6c03</identifier>
+                <schemaName>TRADERS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>TRADERS</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IDX_MD_IMEI</name>
+                      <identifier class="java.lang.Integer">84794</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>MAP_DETAILS</name>
+                        <identifier class="java.math.BigDecimal">84790</identifier>
+                        <schemaName>TRADERS</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>TRADERS</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IDX_MD_IMEI</name>
+                  <identifier class="java.lang.Integer">84794</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>MAP_DETAILS</name>
+                    <identifier class="java.math.BigDecimal">84790</identifier>
+                    <schemaName>TRADERS</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>TRADERS</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IDX_MD_IMEI</name>
+            <identifier class="java.lang.Integer">84794</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>TRADERS</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">d8897e1a-c9ff-4104-a4e2-f2630a01c6bf</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>720896</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>1048576</nextExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IDX_MD_IMEI</name>
+                    <identifier class="java.lang.Integer">84794</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>MAP_DETAILS</name>
+                      <identifier class="java.math.BigDecimal">84790</identifier>
+                      <schemaName>TRADERS</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>TRADERS</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+        <entry>
+          <key>Timestamp</key>
+        </entry>
+      </properties>
+      <schema>
+        <name>TRADERS</name>
+      </schema>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d8aaadc9-a98d-476c-8197-ba4ee0a890e8</identifier>
+      </ID>
+      <name>IDX_MD_MSISDN</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">244e58a4-8232-415d-abb4-66eb1943a08d</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">9ecc15ea-db0a-453a-ba6f-05ce4a0eec7f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>MSISDN</name>
+              <identifier class="java.lang.String">388b9201-af95-4393-9a32-cce8e0e4b326</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MAP_DETAILS</name>
+                <identifier class="java.lang.String">204f65d0-f06d-4ed4-98b2-e01b444f6c03</identifier>
+                <schemaName>TRADERS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>TRADERS</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IDX_MD_MSISDN</name>
+                      <identifier class="java.lang.Integer">84793</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>MAP_DETAILS</name>
+                        <identifier class="java.math.BigDecimal">84790</identifier>
+                        <schemaName>TRADERS</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>TRADERS</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IDX_MD_MSISDN</name>
+                  <identifier class="java.lang.Integer">84793</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>MAP_DETAILS</name>
+                    <identifier class="java.math.BigDecimal">84790</identifier>
+                    <schemaName>TRADERS</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>TRADERS</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IDX_MD_MSISDN</name>
+            <identifier class="java.lang.Integer">84793</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>TRADERS</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">5bc7bf45-7d27-42d8-ac19-c9bf244edb17</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>589824</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>1048576</nextExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IDX_MD_MSISDN</name>
+                    <identifier class="java.lang.Integer">84793</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>MAP_DETAILS</name>
+                      <identifier class="java.math.BigDecimal">84790</identifier>
+                      <schemaName>TRADERS</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>TRADERS</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+        <entry>
+          <key>Timestamp</key>
+        </entry>
+      </properties>
+      <schema>
+        <name>TRADERS</name>
+      </schema>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2e685acb-0075-431e-b9d3-9dc50e657921</identifier>
+      </ID>
+      <name>IDX_MD_TRANSDATE</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">eba10713-b456-49a5-8f8e-908b3c9dd496</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">c3a7acb4-0eb7-40f0-b451-03778db13a64</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>TRANSDATE</name>
+              <identifier class="java.lang.String">5548a1ca-9b7f-42bf-8c70-28dbca79cb04</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>MAP_DETAILS</name>
+                <identifier class="java.lang.String">204f65d0-f06d-4ed4-98b2-e01b444f6c03</identifier>
+                <schemaName>TRADERS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>TRADERS</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IDX_MD_TRANSDATE</name>
+                      <identifier class="java.lang.Integer">84792</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>MAP_DETAILS</name>
+                        <identifier class="java.math.BigDecimal">84790</identifier>
+                        <schemaName>TRADERS</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>TRADERS</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IDX_MD_TRANSDATE</name>
+                  <identifier class="java.lang.Integer">84792</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>MAP_DETAILS</name>
+                    <identifier class="java.math.BigDecimal">84790</identifier>
+                    <schemaName>TRADERS</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>TRADERS</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IDX_MD_TRANSDATE</name>
+            <identifier class="java.lang.Integer">84792</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>MAP_DETAILS</name>
+              <identifier class="java.math.BigDecimal">84790</identifier>
+              <schemaName>TRADERS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>TRADERS</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">bb90cba3-361f-4eec-b647-9ef5895deaf2</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>655360</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>1048576</nextExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IDX_MD_TRANSDATE</name>
+                    <identifier class="java.lang.Integer">84792</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>MAP_DETAILS</name>
+                      <identifier class="java.math.BigDecimal">84790</identifier>
+                      <schemaName>TRADERS</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>TRADERS</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+        <entry>
+          <key>Timestamp</key>
+        </entry>
+      </properties>
+      <schema>
+        <name>TRADERS</name>
+      </schema>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>MAP_DETAILS</name>
+        <identifier class="java.math.BigDecimal">84790</identifier>
+        <schemaName>TRADERS</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">aca2651d-4e5e-4b17-9b8b-2d190cf386ca</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>4194304</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>1048576</nextExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MAP_DETAILS</name>
+                <identifier class="java.math.BigDecimal">84790</identifier>
+                <schemaName>TRADERS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>DATA</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+    </entry>
+  </properties>
+  <schema>
+    <name>TRADERS</name>
+  </schema>
+</table>

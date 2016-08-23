@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:business="http://www.huawei.com/bme/cbsinterface/masterslavemgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/masterslavemgrt" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ManMasterSlaveRequest">
+		<xs:sequence>
+			<xs:element name="MasterSlave">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MasterNumber" type="common:SubscriberNo"/>
+						<xs:element name="SlaveNumber" type="common:SubscriberNo" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int" nillable="true">
+				<xs:annotation>
+					<xs:documentation>操作类型。1：新增；2：修改；3：删除</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMasterSlaveRequest">
+		<xs:sequence>
+			<xs:element name="MasterSlave">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MasterNumber" type="common:SubscriberNo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryMasterSlaveResult">
+		<xs:sequence>
+			<xs:element name="MasterSlave">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MasterNumber" type="common:SubscriberNo"/>
+						<xs:element name="SlaveNumber" type="common:SubscriberNo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

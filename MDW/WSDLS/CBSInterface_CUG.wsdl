@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cug" xmlns:cugmgr="http://www.huawei.com/bme/cbsinterface/cugmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/cugmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cug="http://www.huawei.com/bme/cbsinterface/cug" targetNamespace="http://www.huawei.com/bme/cbsinterface/cugmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cug" schemaLocation="CBSInterface_CUG.xsd"/>
+			<element name="QueryGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryGroupMemberRequest" type="cug:QueryGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryGroupMemberResult" type="cug:QueryGroupMemberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManGroupMemberRequest" type="cug:ManGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryUserGroupRequest" type="cug:QueryUserGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryUserGroupResult" type="cug:QueryUserGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscribedGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubscribedGroupRequest" type="cug:QuerySubscribedGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubscribedGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubscribedGroupResult" type="cug:QuerySubscribedGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManCUGInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManCUGInfoRequest" type="cug:ManCUGInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManCUGInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManCUGInfoResult" type="cug:ManCUGInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMembersRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCUGMembersRequest" type="cug:QueryCUGMembersRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMembersResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCUGMembersResult" type="cug:QueryCUGMembersResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGTypeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCUGTypeRequest" type="cug:QueryCUGTypeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGTypeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCUGTypeResult" type="cug:QueryCUGTypeResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchManCUGMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchManCUGMemberRequest" type="cug:BatchManCUGMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchManCUGMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchManageCUGMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchManageCUGMemberRequest" type="cug:BatchManageCUGMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchManageCUGMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QueryGroupMemberRequestMessage">
+		<part name="QueryGroupMemberRequestMsg" element="cugmgr:QueryGroupMemberRequestMsg"/>
+	</message>
+	<message name="QueryGroupMemberResultMessage">
+		<part name="QueryGroupMemberResultMsg" element="cugmgr:QueryGroupMemberResultMsg"/>
+	</message>
+	<message name="ManGroupMemberRequestMessage">
+		<part name="ManGroupMemberRequestMsg" element="cugmgr:ManGroupMemberRequestMsg"/>
+	</message>
+	<message name="ManGroupMemberResultMessage">
+		<part name="ManGroupMemberResultMsg" element="cugmgr:ManGroupMemberResultMsg"/>
+	</message>
+	<message name="QueryUserGroupRequestMessage">
+		<part name="QueryUserGroupRequestMsg" element="cugmgr:QueryUserGroupRequestMsg"/>
+	</message>
+	<message name="QueryUserGroupResultMessage">
+		<part name="QueryUserGroupResultMsg" element="cugmgr:QueryUserGroupResultMsg"/>
+	</message>
+	<message name="QuerySubscribedGroupRequestMessage">
+		<part name="QuerySubscribedGroupRequestMsg" element="cugmgr:QuerySubscribedGroupRequestMsg"/>
+	</message>
+	<message name="QuerySubscribedGroupResultMessage">
+		<part name="QuerySubscribedGroupResultMsg" element="cugmgr:QuerySubscribedGroupResultMsg"/>
+	</message>
+	<message name="ManCUGInfoRequestMessage">
+		<part name="ManCUGInfoRequestMsg" element="cugmgr:ManCUGInfoRequestMsg"/>
+	</message>
+	<message name="ManCUGInfoResultMessage">
+		<part name="ManCUGInfoResultMsg" element="cugmgr:ManCUGInfoResultMsg"/>
+	</message>
+	<message name="QueryCUGMembersRequestMessage">
+		<part name="QueryCUGMembersRequestMsg" element="cugmgr:QueryCUGMembersRequestMsg"/>
+	</message>
+	<message name="QueryCUGMembersResultMessage">
+		<part name="QueryCUGMembersResultMsg" element="cugmgr:QueryCUGMembersResultMsg"/>
+	</message>
+	<message name="QueryCUGTypeRequestMessage">
+		<part name="QueryCUGTypeRequestMsg" element="cugmgr:QueryCUGTypeRequestMsg"/>
+	</message>
+	<message name="QueryCUGTypeResultMessage">
+		<part name="QueryCUGTypeResultMsg" element="cugmgr:QueryCUGTypeResultMsg"/>
+	</message>
+	<message name="BatchManCUGMemberRequestMessage">
+		<part name="BatchManCUGMemberRequestMsg" element="cugmgr:BatchManCUGMemberRequestMsg"/>
+	</message>
+	<message name="BatchManCUGMemberResultMessage">
+		<part name="BatchManCUGMemberResultMsg" element="cugmgr:BatchManCUGMemberResultMsg"/>
+	</message>
+	<message name="BatchManageCUGMemberRequestMessage">
+		<part name="BatchManageCUGMemberRequestMsg" element="cugmgr:BatchManageCUGMemberRequestMsg"/>
+	</message>
+	<message name="BatchManageCUGMemberResultMessage">
+		<part name="BatchManageCUGMemberResultMsg" element="cugmgr:BatchManageCUGMemberResultMsg"/>
+	</message>
+		<portType name="CUG">
+		<operation name="QueryGroupMember">
+			<input message="cugmgr:QueryGroupMemberRequestMessage"/>
+			<output message="cugmgr:QueryGroupMemberResultMessage"/>
+		</operation>
+		<operation name="ManGroupMember">
+			<input message="cugmgr:ManGroupMemberRequestMessage"/>
+			<output message="cugmgr:ManGroupMemberResultMessage"/>
+		</operation>
+		<operation name="QueryUserGroup">
+			<input message="cugmgr:QueryUserGroupRequestMessage"/>
+			<output message="cugmgr:QueryUserGroupResultMessage"/>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<input message="cugmgr:QuerySubscribedGroupRequestMessage"/>
+			<output message="cugmgr:QuerySubscribedGroupResultMessage"/>
+		</operation>
+		<operation name="ManCUGInfo">
+			<input message="cugmgr:ManCUGInfoRequestMessage"/>
+			<output message="cugmgr:ManCUGInfoResultMessage"/>
+		</operation>
+		<operation name="QueryCUGMembers">
+			<input message="cugmgr:QueryCUGMembersRequestMessage"/>
+			<output message="cugmgr:QueryCUGMembersResultMessage"/>
+		</operation>
+		<operation name="QueryCUGType">
+			<input message="cugmgr:QueryCUGTypeRequestMessage"/>
+			<output message="cugmgr:QueryCUGTypeResultMessage"/>
+		</operation>
+		<operation name="BatchManCUGMember">
+			<input message="cugmgr:BatchManCUGMemberRequestMessage"/>
+			<output message="cugmgr:BatchManCUGMemberResultMessage"/>
+		</operation>
+		<operation name="BatchManageCUGMember">
+			<input message="cugmgr:BatchManageCUGMemberRequestMessage"/>
+			<output message="cugmgr:BatchManageCUGMemberResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CUGBinding" type="cugmgr:CUG">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="QueryGroupMember">
+			<soap:operation soapAction="QueryGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryCUGType">
+			<soap:operation soapAction="QueryCUGType" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryCUGMembers">
+			<soap:operation soapAction="QueryCUGMembers" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManGroupMember">
+			<soap:operation soapAction="ManGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryUserGroup">
+			<soap:operation soapAction="QueryUserGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<soap:operation soapAction="QuerySubscribedGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManCUGInfo">
+			<soap:operation soapAction="ManCUGInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchManCUGMember">
+			<soap:operation soapAction="BatchManCUGMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchManageCUGMember">
+			<soap:operation soapAction="BatchManageCUGMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+			</binding>
+	<service name="CUGMgrService">
+		<port name="CUGServicePort" binding="cugmgr:CUGBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/cug/wsdl/CBSInterface_CUG.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:negbalancemgr="http://www.huawei.com/bme/cbsinterface/negbalancemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/negbalance" targetNamespace="http://www.huawei.com/bme/cbsinterface/negbalancemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:negbalance="http://www.huawei.com/bme/cbsinterface/negbalance" targetNamespace="http://www.huawei.com/bme/cbsinterface/negbalancemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/negbalance" schemaLocation="CBSInterface_NegBalance.xsd"/>
+			
+			<element name="QueryNegBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryNegBalanceRequest" type="negbalance:QueryNegBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryNegBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryNegBalanceResult" type="negbalance:QueryNegBalanceResult" nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AdjustNegBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="AdjustNegBalanceRequest" type="negbalance:AdjustNegBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AdjustNegBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>	
+	<message name="QueryNegBalanceRequestMessage">
+		<part name="QueryNegBalanceRequestMsg" element="negbalancemgr:QueryNegBalanceRequestMsg"/>
+	</message>
+	<message name="QueryNegBalanceResultMessage">
+		<part name="QueryNegBalanceResultMsg" element="negbalancemgr:QueryNegBalanceResultMsg"/>
+	</message>
+	<message name="AdjustNegBalanceRequestMessage">
+		<part name="AdjustNegBalanceRequestMsg" element="negbalancemgr:AdjustNegBalanceRequestMsg"/>
+	</message>
+	<message name="AdjustNegBalanceResultMessage">
+		<part name="AdjustNegBalanceResultMsg" element="negbalancemgr:AdjustNegBalanceResultMsg"/>
+	</message>
+	<portType name="NegBalanceMgr">		
+		<operation name="queryNegBalance">
+			<input message="negbalancemgr:QueryNegBalanceRequestMessage"/>
+			<output message="negbalancemgr:QueryNegBalanceResultMessage"/>
+		</operation>
+		<operation name="adjustNegBalance">
+			<input message="negbalancemgr:AdjustNegBalanceRequestMessage"/>
+			<output message="negbalancemgr:AdjustNegBalanceResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="NegBalanceMgrBinding" type="negbalancemgr:NegBalanceMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="queryNegBalance">
+			<soap:operation soapAction="queryNegBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="adjustNegBalance">
+			<soap:operation soapAction="adjustNegBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="NegBalanceMgrService">
+		<port name="NegBalanceMgrServicePort" binding="negbalancemgr:NegBalanceMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/negbalance/wsdl/CBSInterface_NegBalance.wsdl"/>
+		</port>
+	</service>
+</definitions>

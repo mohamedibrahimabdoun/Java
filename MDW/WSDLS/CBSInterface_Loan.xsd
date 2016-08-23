@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:loan="http://www.huawei.com/bme/cbsinterface/loan" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/loan" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="LoanManageRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+			<xs:element name="LoanGrade" type="xs:int"/>
+			<xs:element name="AdditionalInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LoanAmount" type="common:Balance" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="LoanManageResult">
+		<xs:sequence>
+			<xs:element name="LoanGrade" type="xs:int"/>
+			<xs:element name="LoanAmount" type="common:Balance"/>
+			<xs:element name="RepayAmount" type="common:Balance"/>
+			<xs:element name="ETUGracePeriod" type="common:DateTime"/>
+			<xs:element name="GracePeriod" type="common:DateTime"/>
+			<xs:element name="LoanAcctType" type="common:AccountType"/>
+			<xs:element name="LoanBalance" type="common:Balance"/>
+			<xs:element name="LoanAcctExpTime" type="common:DateTime"/>
+			<xs:element name="AcctChgRecList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AcctChgRec" type="common:AcctChgRecType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewActiveStop" type="common:Date" minOccurs="0"/>
+			<xs:element name="LoanPoundage" type="common:Balance" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryLoanInfoRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="QueryLoanInfoResult">
+		<xs:all>
+			<xs:element name="ServiceStatus" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="PayBackTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="LastPayBackTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="DepositAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="MakeDepositTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="LoanPoundage" type="common:Balance" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="MakeLoanRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>1-借贷,2-还贷,3-缴押金,4-修改借贷金额,5-开通借贷小余额提醒,6-关闭借贷小余额提醒,7-申请返还押金</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepositAmount" type="common:Balance" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>当OperationType=3有效但可选</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoanLimit" type="common:Balance" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>当OperationType=4时必选</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="MakeLoanResult">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0"/>
+			<xs:element name="DepositAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="LoanAmount" type="common:Balance" nillable="true" minOccurs="0"/>
+			<xs:element name="PayBackTime" type="common:DateTime" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

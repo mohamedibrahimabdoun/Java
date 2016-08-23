@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aw="http://bus.huawei.com/cacherefresh" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bus.huawei.com/cacherefresh">
+<xs:simpleType name="CacheType">
+<xs:annotation>
+<xs:documentation>Product/Service/Common/Route/DBField</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Product"/>
+<xs:enumeration value="Service"/>
+<xs:enumeration value="Common"/>
+<xs:enumeration value="Route"/>
+<xs:enumeration value="DBField"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="OperateResult">
+<xs:annotation>
+<xs:documentation>Successful/Failed</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Successful"/>
+<xs:enumeration value="Failed"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="CacheRefreshRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="CacheType" type="aw:CacheType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="RefreshCacheResultElement">
+<xs:sequence>
+<xs:element name="CacheType" type="aw:CacheType"/>
+<xs:element name="OperateResult" type="aw:OperateResult"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CacheRefreshResult">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="RefreshCacheElement" type="aw:RefreshCacheResultElement"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

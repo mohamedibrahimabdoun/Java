@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<jdbc-data-source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/jdbc-data-source http://www.bea.com/ns/weblogic/jdbc-data-source/1.0/jdbc-data-source.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/jdbc-data-source">
+    <name>DataRegistration_Conn</name>
+    <jdbc-driver-params>
+        <url>jdbc:oracle:thin:@172.17.10.11 :1521:STAGING  </url>
+        <driver-name>oracle.jdbc.OracleDriver</driver-name>
+        <properties>
+            <property>
+                <name>user</name>
+                <value>DATA_REG</value>
+            </property>
+        </properties>
+        <password-encrypted>61CCBC5D081ABD5A2DF5AC1BA9655733B8E06DC9D2EC456D82F87B29FC87D885</password-encrypted>
+    </jdbc-driver-params>
+    <jdbc-connection-pool-params>
+        <test-table-name>SQL SELECT 1 FROM DUAL</test-table-name>
+    </jdbc-connection-pool-params>
+    <jdbc-data-source-params>
+        <jndi-name>jdbc/DataRegistration_ConnDS</jndi-name>
+        <scope>Application</scope>
+    </jdbc-data-source-params>
+</jdbc-data-source>

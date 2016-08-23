@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:negbalance="http://www.huawei.com/bme/cbsinterface/negbalance" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/negbalance" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="QueryNegBalanceRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OpCode" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="StartTime" type="common:DateTime" nillable="true" minOccurs="0"/>
+			<xs:element name="EndTime" type="common:DateTime" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryNegBalanceResult">
+		<xs:sequence>
+			<xs:element name="NegBalanceResultInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="NegativeBalance" type="xs:int"/>
+						<xs:element name="OpCode" type="xs:int"/>
+						<xs:element name="ApplyTime" type="common:DateTime"/>
+						<xs:element name="ExpireTime" type="common:DateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdjustNegBalanceRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="AdjustNegBalance" type="negbalance:AdjustNegBalance" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdjustNegBalance">
+		<xs:sequence>
+			<xs:element name="OpCode" type="xs:int"/>
+			<xs:element name="ApplyTime" type="common:DateTime"/>
+			<xs:element name="AdjustValue" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

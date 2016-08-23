@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bamgrt="http://www.huawei.com/bme/cbsinterface/bamgrt" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/bamgrt" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="AddBARequest">
+		<xs:sequence>
+			<xs:element name="Customer">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="AccountCode" type="common:AccountCode"/>
+						<xs:element name="CustomerCode" type="common:CustomerCode"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" type="common:BAAddrInfo" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="BAScenario" type="common:BAScenario" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="common:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifyBARequest">
+		<xs:sequence>
+			<xs:element name="Customer">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="AccountCode" type="common:AccountCode"/>
+						<xs:element name="CustomerCode" type="common:CustomerCode"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" type="common:BAAddrInfo" minOccurs="0"/>
+						<xs:element name="BAScenario" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="common:BAScenario">
+										<xs:sequence>
+											<xs:element name="OperType" type="xs:int">
+												<xs:annotation>
+													<xs:documentation>1-Add,2-Delete,Modify</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="BADelivery" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="common:BADelivery">
+										<xs:sequence>
+											<xs:element name="OperType" type="xs:int">
+												<xs:annotation>
+													<xs:documentation>1-Add,2-Delete,Modify</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteBARequest">
+		<xs:sequence>
+			<xs:element name="Customer">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="AccountCode" type="common:AccountCode"/>
+						<xs:element name="CustomerCode" type="common:CustomerCode"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BA" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryBARequest">
+		<xs:sequence>
+			<xs:element name="Customer">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="AccountCode" type="common:AccountCode"/>
+						<xs:element name="CustomerCode" type="common:CustomerCode"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BACode" type="common:BACode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryBAResult">
+		<xs:sequence>
+			<xs:element name="BA" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BillAddr" type="common:BAAddrInfo"/>
+						<xs:element name="ApplyTime" type="common:DateTime"/>
+						<xs:element name="ExpireTime" type="common:DateTime"/>
+						<xs:element name="BAScenario" type="common:BAScenario" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="common:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

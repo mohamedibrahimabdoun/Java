@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="GMPPUSSDService"
+                     namespaceURI="http://ws.wswrapper.cbos.ggs.gemalto.com/"/>
+      <port-info>
+         <wsdl-port localpart="GMPPUSSDServicePort"
+                    namespaceURI="http://ws.wswrapper.cbos.ggs.gemalto.com/"/>
+         <runtime/>
+         <operations>
+            <operation name="distribute"/>
+            <operation name="recharge"/>
+            <operation name="consumerRegistration"/>
+            <operation name="registerConsumerAtMerchant"/>
+            <operation name="completeConsumerRegistration"/>
+            <operation name="selfTopUp"/>
+            <operation name="payBill"/>
+            <operation name="transferMoneyP2P"/>
+            <operation name="cashIn"/>
+            <operation name="startCashOut"/>
+            <operation name="completeCashOutAtMerchant"/>
+            <operation name="p2SBuy"/>
+            <operation name="getSVABalance"/>
+            <operation name="getLastTransactions"/>
+            <operation name="svaToCard"/>
+            <operation name="cardToSVA"/>
+            <operation name="changePin"/>
+            <operation name="selfLock"/>
+            <operation name="selfUnlock"/>
+            <operation name="updateConsumerInfo"/>
+            <operation name="getConsumerInfo"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:transferaccountmgr="http://www.huawei.com/bme/cbsinterface/transferaccountmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/transferaccount" targetNamespace="http://www.huawei.com/bme/cbsinterface/transferaccountmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:transferaccount="http://www.huawei.com/bme/cbsinterface/transferaccount" targetNamespace="http://www.huawei.com/bme/cbsinterface/transferaccountmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/transferaccount" schemaLocation="CBSInterface_TransferAccount.xsd"/>
+			<element name="TransferAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="TransferAccountRequest" type="transferaccount:TransferAccountRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="TransferAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="TransferAccountResult" type="transferaccount:TransferAccountResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryTransferLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryTransferLogRequest" type="transferaccount:QueryTransferLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryTransferLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryTransferLogResult" type="transferaccount:QueryTransferLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CancelTransferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="CancelTransferRequest" type="transferaccount:CancelTransferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CancelTransferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="CancelTransferResult" type="transferaccount:CancelTransferResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="TransferAccountRequestMessage">
+		<part name="TransferAccountRequestMsg" element="transferaccountmgr:TransferAccountRequestMsg"/>
+	</message>
+	<message name="TransferAccountResultMessage">
+		<part name="TransferAccountResultMsg" element="transferaccountmgr:TransferAccountResultMsg"/>
+	</message>
+	<message name="QueryTransferLogRequestMessage">
+		<part name="QueryTransferLogRequestMsg" element="transferaccountmgr:QueryTransferLogRequestMsg"/>
+	</message>
+	<message name="QueryTransferLogResultMessage">
+		<part name="QueryTransferLogResultMsg" element="transferaccountmgr:QueryTransferLogResultMsg"/>
+	</message>
+	<message name="CancelTransferRequestMessage">
+		<part name="CancelTransferRequestMsg" element="transferaccountmgr:CancelTransferRequestMsg"/>
+	</message>
+	<message name="CancelTransferResultMessage">
+		<part name="CancelTransferResultMsg" element="transferaccountmgr:CancelTransferResultMsg"/>
+	</message>
+	<portType name="TransferAccountMgr">
+		<operation name="TransferAccount">
+			<input message="transferaccountmgr:TransferAccountRequestMessage"/>
+			<output message="transferaccountmgr:TransferAccountResultMessage"/>
+		</operation>
+		<operation name="CancelTransfer">
+		    <input message="transferaccountmgr:CancelTransferRequestMessage"/>
+			<output message="transferaccountmgr:CancelTransferResultMessage"/>
+		</operation>
+		<operation name="QueryTransferLog">
+			<input message="transferaccountmgr:QueryTransferLogRequestMessage"/>
+			<output message="transferaccountmgr:QueryTransferLogResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="TransferAccountMgrBinding" type="transferaccountmgr:TransferAccountMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="TransferAccount">
+			<soap:operation soapAction="TransferAccount" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CancelTransfer">
+		    <soap:operation soapAction="CancelTransfer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryTransferLog">
+			<soap:operation soapAction="QueryTransferLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="TransferAccountMgrService">
+		<port name="TransferAccountMgrServicePort" binding="transferaccountmgr:TransferAccountMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/transferaccount/wsdl/CBSInterface_TransferAccount.wsdl"/>
+		</port>
+	</service>
+</definitions>

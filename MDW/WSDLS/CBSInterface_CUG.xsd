@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:cug="http://www.huawei.com/bme/cbsinterface/cug" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/cug" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="QueryGroupMemberRequest">
+		<xs:sequence>
+			<xs:element name="UserGroupID" type="xs:int" minOccurs="0"/>
+			<xs:element name="UserGroupName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupMemberResult">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0" maxOccurs="100"/>
+			<xs:element name="ResultFileName" type="common:FileName" minOccurs="0"/>
+			<xs:element name="TotalCount" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManGroupMemberRequest">
+		<xs:sequence>
+			<xs:element name="UserGroupID" type="xs:int"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryUserGroupRequest">
+		<xs:choice>
+			<xs:element name="UserGroupID" type="xs:int"/>
+			<xs:element name="UserGroupName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="QueryUserGroupResult">
+		<xs:sequence>
+			<xs:element name="UserGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="GroupID" type="xs:int"/>
+						<xs:element name="GroupName">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="63"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubscribedGroupRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubscribedGroupResult">
+		<xs:sequence>
+			<xs:element name="UserGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="GroupID" type="xs:int" nillable="true"/>
+						<xs:element name="GroupName">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="63"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="Status">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="7"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManCUGInfoRequest">
+		<xs:sequence>
+			<xs:element name="OperationType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>1-Add,2-Modify,3-Delete</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUGID" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="CUGName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="CUGType" type="xs:int" minOccurs="0"/>
+			<xs:element name="MinCUGMonthCUM" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>保留</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MAXDaysBacktoCUG" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>保留</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUGAddress" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ActiveTimeSchemaID" type="xs:int" minOccurs="0"/>
+			<xs:element name="CellSetID" type="xs:int" minOccurs="0"/>
+			<xs:element name="ServiceCtrl" type="cug:ServiceCtrl" minOccurs="0"/>
+			<xs:element name="CallCtrl" type="cug:CallCtrl" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManCUGInfoResult">
+		<xs:sequence>
+			<xs:element name="CUGID" type="xs:int" minOccurs="0"/>
+			<xs:element name="CUGName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="CUGType" type="xs:int" minOccurs="0"/>
+			<xs:element name="CUGMemberAmt" type="xs:int" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGMembersRequest">
+		<xs:sequence>
+			<xs:element name="OperationType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>0-查询CUG成员信息</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUGID" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGMembersResult">
+		<xs:sequence>
+			<xs:element name="CUGID" type="xs:int" minOccurs="0"/>
+			<xs:element name="CUGName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="CUGType" type="xs:int" minOccurs="0"/>
+			<xs:element name="CUGMemberAmt" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="ReturnedMemberAmt" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="CUGMemberList" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGTypeRequest">
+		<xs:sequence>
+			<xs:element name="OperationType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>0-查询CUG类型</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUGType" type="xs:int" minOccurs="0"/>
+			<xs:element name="CUGTypeName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGTypeResult">
+		<xs:sequence>
+			<xs:element name="CUGTypeList" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CUGType" type="xs:int"/>
+						<xs:element name="CUGTypeName">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="63"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="MaxMemberCount" type="xs:int" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchManCUGMemberRequest">
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchManageCUGMemberRequest">
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="CUGID" type="xs:int"/>
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceCtrl">
+		<xs:sequence>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CallCtrl">
+		<xs:sequence>
+			<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

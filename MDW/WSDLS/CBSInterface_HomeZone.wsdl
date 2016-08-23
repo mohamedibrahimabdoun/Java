@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns="http://www.huawei.com/bme/cbsinterface/managehz" xmlns:managehzmgr="http://www.huawei.com/bme/cbsinterface/managehzmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/managehzmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:managehz="http://www.huawei.com/bme/cbsinterface/managehz" targetNamespace="http://www.huawei.com/bme/cbsinterface/managehzmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/managehz" schemaLocation="CBSInterface_HomeZone.xsd"/>
+			<element name="QuerySubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubHomeZoneRequest" type="managehz:QuerySubHomeZoneRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubHomeZoneResult" type="managehz:QuerySubHomeZoneResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubHomeZoneRequest" type="managehz:ManSubHomeZoneRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryDefinedZonesInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryDefinedZonesInfoRequest" type="managehz:QueryDefinedZonesInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryDefinedZonesInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryDefinedZonesInfoResult" type="managehz:QueryDefinedZonesInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QuerySubHomeZoneRequestMessage">
+		<part name="QuerySubHomeZoneRequestMsg" element="managehzmgr:QuerySubHomeZoneRequestMsg"/>
+	</message>
+	<message name="QuerySubHomeZoneResultMessage">
+		<part name="QuerySubHomeZoneResultMsg" element="managehzmgr:QuerySubHomeZoneResultMsg"/>
+	</message>
+	<message name="ManSubHomeZoneRequestMessage">
+		<part name="ManSubHomeZoneRequestMsg" element="managehzmgr:ManSubHomeZoneRequestMsg"/>
+	</message>
+	<message name="ManSubHomeZoneResultMessage">
+		<part name="ManSubHomeZoneResultMsg" element="managehzmgr:ManSubHomeZoneResultMsg"/>
+	</message>
+	<message name="QueryDefinedZonesInfoRequestMessage">
+		<part name="QueryDefinedZonesInfoRequestMsg" element="managehzmgr:QueryDefinedZonesInfoRequestMsg"/>
+	</message>
+	<message name="QueryDefinedZonesInfoResultMessage">
+		<part name="QueryDefinedZonesInfoResultMsg" element="managehzmgr:QueryDefinedZonesInfoResultMsg"/>
+	</message>
+	<portType name="HomeZoneMgr">
+		<operation name="querySubHomeZone">
+			<input message="managehzmgr:QuerySubHomeZoneRequestMessage"/>
+			<output message="managehzmgr:QuerySubHomeZoneResultMessage"/>
+		</operation>
+		<operation name="manSubHomeZone">
+			<input message="managehzmgr:ManSubHomeZoneRequestMessage"/>
+			<output message="managehzmgr:ManSubHomeZoneResultMessage"/>
+		</operation>
+		<operation name="queryDefinedZonesInfo">
+			<input message="managehzmgr:QueryDefinedZonesInfoRequestMessage"/>
+			<output message="managehzmgr:QueryDefinedZonesInfoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="HomeZoneMgrBinding" type="managehzmgr:HomeZoneMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="querySubHomeZone">
+			<soap:operation soapAction="querySubHomeZone" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manSubHomeZone">
+			<soap:operation soapAction="manSubHomeZone" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryDefinedZonesInfo">
+			<soap:operation soapAction="queryDefinedZones" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="HomeZoneMgrService">
+		<port name="HomeZoneMgrServicePort" binding="managehzmgr:HomeZoneMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managehz/wsdl/CBSInterface_HomeZone.wsdl"/>
+		</port>
+	</service>
+</definitions>

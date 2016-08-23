@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:changeowner="http://www.huawei.com/bme/cbsinterface/changeowner" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeowner" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ChangeOwnerRequest">
+		<xs:sequence>
+			<xs:element name="Customer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Customer">
+							<xs:sequence>
+								<xs:element name="OperType" type="xs:int">
+									<xs:annotation>
+										<xs:documentation>如果输入OperType，则取值只能是1，表示新增</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Account" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+								<xs:element name="OperType" type="xs:int">
+									<xs:annotation>
+										<xs:documentation>1-新增,3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Subscriber">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+						<xs:element name="CustomerCode" type="common:CustomerCode" minOccurs="0"/>
+						<xs:element name="SubscriberCode" type="common:SubscriberCode" minOccurs="0"/>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="Password" type="common:Password" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BA" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" type="common:BAAddrInfo" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="BAScenario" type="common:BAScenario" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="common:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="DefaultFlag" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

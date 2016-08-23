@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:newsubscriber="http://www.huawei.com/bme/cbsinterface/newsubscriber" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:bamgrt="http://www.huawei.com/bme/cbsinterface/bamgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/newsubscriber" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="NewSubscriberRequest">
+		<xs:sequence>
+			<xs:element name="Customer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Customer">
+							<xs:sequence>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-新增，3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Account" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+								<xs:element name="IsCustShareAcct" type="xs:boolean" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>是否客户级共享帐户，缺省值为false</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-增加，3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PrimaryOffer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Subscriber" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="common:Subscriber">
+												<xs:sequence>
+													<xs:element name="Product" type="subscribe:Product" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="ComponentID" type="xs:int" nillable="true" minOccurs="0"/>
+													<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+												</xs:sequence>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reserved</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" type="subscribe:OptionalOfferOrder" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OneTimeCharge" type="common:OneTimeCharge" minOccurs="0"/>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>如果是老客户开户，可以输入用户号码来标识老客户</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BA" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AccountCode" type="common:AccountCode" minOccurs="0"/>
+						<xs:element name="BACode" type="common:BACode"/>
+						<xs:element name="BillAddr" type="common:BAAddrInfo" minOccurs="0"/>
+						<xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="BAScenario" type="common:BAScenario" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="BillDelivery" type="common:BADelivery" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="DefaultFlag" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Sponsor" type="common:SubscriberNo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>推荐人用户号码</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewSubscriberResult">
+		<xs:sequence>
+			<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewSubscriberExtRequest">
+		<xs:sequence>
+			<xs:element name="Customer" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Customer">
+							<xs:sequence>
+								<xs:element name="OperType" type="xs:int" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>1-新增，3-修改</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Account" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+								<xs:element name="IsCustShareAcct" type="xs:boolean" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>是否客户级共享帐户，缺省值为false</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="OperType" type="xs:int" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PrimaryOffer">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Subscriber">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="MainProductId" type="common:ProductId"/>
+											<xs:element name="SubscriberCode" type="common:SubscriberCode" minOccurs="0"/>
+											<xs:element name="BelToAreaID" minOccurs="0">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:maxLength value="10"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="Password" type="common:Password" minOccurs="0"/>
+											<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+											<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="subscribe:Product">
+															<xs:sequence>
+																<xs:element name="BindSubscriberNo" type="common:BindSubscriberNo" minOccurs="0" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:extension>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Product">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="subscribe:Product">
+												<xs:sequence>
+													<xs:element name="BindSubscriberNo" type="common:BindSubscriberNo" minOccurs="0" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NewSubscriberExtResult">
+		<xs:sequence>
+			<xs:element name="SubscriberKey" type="xs:int" minOccurs="0"/>
+			<xs:element name="OfferOrderInfo" type="subscribe:OfferOrderInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchNewSubscriberRequest">
+		<xs:sequence>
+			<xs:element name="Customer" type="common:Customer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>批量开户时不能输入CustomerID和CustomerCode</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Account" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>批量开户时不能输入AccountID和AccountCode</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="common:Account">
+							<xs:sequence>
+								<xs:element name="BillCycleType" type="common:BillCycleType"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PrimaryOffer">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Subscriber" minOccurs="0">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="Id" type="common:ProductId"/>
+														<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="Password" type="common:Password" minOccurs="0"/>
+											<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OptionalOffer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="subscribe:OfferOrder">
+							<xs:sequence>
+								<xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Id" type="common:ProductId"/>
+											<xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

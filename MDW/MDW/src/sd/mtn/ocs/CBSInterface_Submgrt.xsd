@@ -1,0 +1,178 @@
+<xs:schema xmlns:submgrt="http://www.huawei.com/bme/cbsinterface/submgrt" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/submgrt"
+     elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+    <xs:simpleType name="ValidMode">
+        <xs:annotation>
+            <xs:documentation>Immediately/Next bill cycle</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="4050000" id="Immediately"/>
+            <xs:enumeration value="4050001" id="NextBillCycle"/>
+            <xs:enumeration value="4050002" id="NextDay"/>
+            <xs:enumeration value="4050003" id="FutureDay"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="ChangeCustBasicInforRequest">
+        <xs:sequence>
+            <xs:element name="Customer" type="common:Customer" minOccurs="0"/>
+            <xs:choice>
+                <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+                <xs:element name="CustomerCode" type="common:CustomerCode"/>
+                <xs:element name="AccountCode" type="common:AccountCode"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeSubscriberBasicInforRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="SimpleProperty" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeAccountBasicInforRequest">
+        <xs:sequence>
+            <xs:element name="Account" type="common:Account"/>
+            <xs:choice>
+                <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+                <xs:element name="AccountCode" type="common:AccountCode"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeSIMRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="OldIMSI" type="common:IMSI" minOccurs="0"/>
+            <xs:element name="NewIMSI" type="common:IMSI"/>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeMSISDNRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="NewSubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="SCPID" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Reserved</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CBPID" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Reserved</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AIP" type="xs:int" minOccurs="0"/>
+            <xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeCreditLevelRequest">
+        <xs:sequence>
+            <xs:element name="subscriberID" type="common:SubscriberCode" minOccurs="0"/>
+            <xs:element name="subscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="PayModeType" type="common:PaidMode">
+                <xs:annotation>
+                    <xs:documentation>目前固定取值1，表示后付费</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CreditLevel" type="xs:int" minOccurs="0"/>
+            <xs:element name="OperationType" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>目前固定取值为0，表示修改</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Credit" type="common:Balance" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ChangeAcctBillCycleRequest">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+                <xs:element name="AccountCode" type="common:AccountCode"/>
+            </xs:choice>
+            <xs:element name="NewBillCycleType" type="common:BillCycleType"/>
+            <xs:element name="ValidMode" type="submgrt:ValidMode" minOccurs="0"/>
+            <xs:element name="Parameters" type="common:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ManagePaymentRelationRequest">
+        <xs:sequence>
+            <xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+            <xs:element name="OperationType" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>1－Add，2－Delete。新增、删除记录只能下帐期生效; 3- Modify,只能修改Quota/优先级/提醒规则键值，4- Query，查询该用户所有支付关系信息</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PaymentRelation" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="AccountCode" type="common:AccountCode" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>每个帐户可以有多条付费规则</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Priority" type="xs:int" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>优先级</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Quota" type="common:Balance" minOccurs="0"/>
+                        <xs:element name="ServiceType" type="xs:int" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>不输入表示不按业务类型限制</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TimeSchema" type="xs:int" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>不输入表示没有时间限制</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PaymentRelKey" type="xs:string" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>每条付费规则的唯一标识符，当删除/修改时必须输入，新增时不可输入。</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+                        <xs:element name="QuotaNotifyID" type="xs:int" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ManagePaymentRelationResult">
+        <xs:sequence>
+            <xs:element name="PaymentRule" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="AccountCode" type="common:AccountCode"/>
+                        <xs:element name="Quota" type="common:Balance"/>
+                        <xs:element name="Priority" type="xs:int"/>
+                        <xs:element name="ServiceType" type="xs:int" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>不输入表示不按业务类型限制</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TimeSchema" type="xs:int" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>不输入表示没有时间限制</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PaymentRelKey" type="xs:string" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>CBS内部生成的每条代付规则的标识符</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ApplyTime" type="common:DateTime"/>
+                        <xs:element name="ExpireTime" type="common:DateTime"/>
+                        <xs:element name="ShareSourceType" type="xs:int" minOccurs="0"/>
+                        <xs:element name="QuotaNotifyID" type="xs:int" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BatchModifyInitBalanceRequest">
+        <xs:sequence>
+            <xs:element name="FileName" type="common:FileName"/>
+            <xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

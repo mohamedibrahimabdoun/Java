@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:manwarningthresholdmgr="http://www.huawei.com/bme/cbsinterface/manwarningthresholdmgr" xmlns:manwarningthreshold="http://www.huawei.com/bme/cbsinterface/manwarningthreshold" targetNamespace="http://www.huawei.com/bme/cbsinterface/manwarningthresholdmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:manwarningthreshold="http://www.huawei.com/bme/cbsinterface/manwarningthreshold" targetNamespace="http://www.huawei.com/bme/cbsinterface/manwarningthresholdmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/manwarningthreshold" schemaLocation="CBSInterface_WarningThreshold.xsd"/>
+			<element name="ManWarningThresholdRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManWarningThresholdRequest" type="manwarningthreshold:ManWarningThresholdRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManWarningThresholdResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManWarningThresholdRequestMessage">
+		<part name="ManWarningThresholdRequestMsg" element="manwarningthresholdmgr:ManWarningThresholdRequestMsg"/>
+	</message>
+	<message name="ManWarningThresholdResultMessage">
+		<part name="ManWarningThresholdResultMsg" element="manwarningthresholdmgr:ManWarningThresholdResultMsg"/>
+	</message>
+	<portType name="ManWarningThreshold">
+		<operation name="Manmanwarningthresholdmgr">
+			<input message="manwarningthresholdmgr:ManWarningThresholdRequestMessage"/>
+			<output message="manwarningthresholdmgr:ManWarningThresholdResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ManWarningThresholdBinding" type="manwarningthresholdmgr:ManWarningThreshold">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Manmanwarningthresholdmgr">
+			<soap:operation soapAction="ManWarningThreshold"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ManwarningthresholdmgrService">
+		<port name="ManwarningthresholdmgrServicePort" binding="manwarningthresholdmgr:ManWarningThresholdBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/warningthreshold/wsdl/CBSInterface_WarningThreshold.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,121 @@
+<wsdl:definitions
+     name="MCNService"
+     targetNamespace="http://web.globitel.com/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://web.globitel.com/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://web.globitel.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://web.globitel.com/" schemaLocation="MCNPort_xsd_mcn_schema1.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="deleteCampaign">
+        <wsdl:part name="parameters" element="tns:deleteCampaign"/>
+    </wsdl:message>
+    <wsdl:message name="deleteCampaignResponse">
+        <wsdl:part name="parameters" element="tns:deleteCampaignResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addMSISDN">
+        <wsdl:part name="parameters" element="tns:addMSISDN"/>
+    </wsdl:message>
+    <wsdl:message name="addMSISDNResponse">
+        <wsdl:part name="parameters" element="tns:addMSISDNResponse"/>
+    </wsdl:message>
+    <wsdl:message name="createCampaign">
+        <wsdl:part name="parameters" element="tns:createCampaign"/>
+    </wsdl:message>
+    <wsdl:message name="createCampaignResponse">
+        <wsdl:part name="parameters" element="tns:createCampaignResponse"/>
+    </wsdl:message>
+    <wsdl:message name="disableCampaign">
+        <wsdl:part name="parameters" element="tns:disableCampaign"/>
+    </wsdl:message>
+    <wsdl:message name="disableCampaignResponse">
+        <wsdl:part name="parameters" element="tns:disableCampaignResponse"/>
+    </wsdl:message>
+    <wsdl:message name="enableCampaign">
+        <wsdl:part name="parameters" element="tns:enableCampaign"/>
+    </wsdl:message>
+    <wsdl:message name="enableCampaignResponse">
+        <wsdl:part name="parameters" element="tns:enableCampaignResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="MCN">
+        <wsdl:operation name="deleteCampaign">
+            <wsdl:input name="deleteCampaign" message="tns:deleteCampaign"/>
+            <wsdl:output name="deleteCampaignResponse" message="tns:deleteCampaignResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addMSISDN">
+            <wsdl:input name="addMSISDN" message="tns:addMSISDN"/>
+            <wsdl:output name="addMSISDNResponse" message="tns:addMSISDNResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="createCampaign">
+            <wsdl:input name="createCampaign" message="tns:createCampaign"/>
+            <wsdl:output name="createCampaignResponse" message="tns:createCampaignResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="disableCampaign">
+            <wsdl:input name="disableCampaign" message="tns:disableCampaign"/>
+            <wsdl:output name="disableCampaignResponse" message="tns:disableCampaignResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="enableCampaign">
+            <wsdl:input name="enableCampaign" message="tns:enableCampaign"/>
+            <wsdl:output name="enableCampaignResponse" message="tns:enableCampaignResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MCNServiceSoapBinding" type="tns:MCN">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="deleteCampaign">
+            <soap:operation style="document" soapAction="urn:DeleteCampaign"/>
+            <wsdl:input name="deleteCampaign">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addMSISDN">
+            <soap:operation style="document" soapAction="urn:AddMSISDN"/>
+            <wsdl:input name="addMSISDN">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addMSISDNResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createCampaign">
+            <soap:operation style="document" soapAction="urn:CreateCampaign"/>
+            <wsdl:input name="createCampaign">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="disableCampaign">
+            <soap:operation style="document" soapAction="urn:DisableCampaign"/>
+            <wsdl:input name="disableCampaign">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="disableCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="enableCampaign">
+            <soap:operation style="document" soapAction="urn:EnableCampaign"/>
+            <wsdl:input name="enableCampaign">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="enableCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MCNService">
+        <wsdl:port name="MCNPort" binding="tns:MCNServiceSoapBinding">
+            <soap:address location="http://172.20.9.22:8080/MissedCallNotification_WS_1.0/services/MCNPort"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

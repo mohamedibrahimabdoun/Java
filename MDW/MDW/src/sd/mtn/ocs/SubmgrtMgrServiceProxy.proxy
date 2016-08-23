@@ -1,0 +1,286 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="SubmgrtMgrService.xml"/>
+      <url path="SubmgrtMgrService.wsdl"/>
+      <url path="CBSInterface_Submgrt.xsd"/>
+      <url path="CBSInterface_Common.xsd"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/ResultHeader.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeAccountBasicInforRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeCreditLevelRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ManagePaymentRelationRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/BatchModifyInitBalanceRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Subscriber.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeSubscriberBasicInforRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/AcctChgRecType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BAScenario.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeCreditLevelRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeSIMRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/SessionEntityType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ManagePaymentRelationRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeSubscriberBasicInforRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeCustBasicInforResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/OneTimeCharge.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Customer.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeSIMRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeCustBasicInforRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/BatchModifyInitBalanceRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeCustBasicInforRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Account.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeAcctBillCycleRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeMSISDNResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/SimpleProperty.java"/>
+      <url path="SubmgrtMgrService.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeMSISDNRequestMsg.java"/>
+      <url path="Submgrt.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BindSubscriberNo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/BatchModifyInitBalanceResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeCreditLevelResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BAAddrInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ManagePaymentRelationResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeAcctBillCycleRequestMsg.java"/>
+      <url path="SubmgrtServicePortClient.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeAccountBasicInforRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeSIMResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeSubscriberBasicInforResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeAccountBasicInforResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ManagePaymentRelationResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrt/ChangeMSISDNRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BADelivery.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/submgrtmgr/ChangeAcctBillCycleResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/RequestHeader.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="SubmgrtMgrService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.ocs"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="SubmgrtServicePortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" path="../../../../../WSDLS/CBSInterface_SubMgrt.wsdl"/>
+      <hash n="PROXY_PORTS">
+         <hash n="SubmgrtServicePort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="sd.mtn.ocs.Submgrt"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="SubmgrtServicePort"/>
+            <hash n="OPERATIONS">
+               <hash n="batchModifyInitBalance">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeAccountBasicInfor">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeAcctBillCycle">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeCreditLevel">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeCustBasicInfor">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeMSISDN">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeSIM">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="changeSubscriberBasicInfor">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="managePaymentRelation">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="172.21.24.100" port="8680" path="/services/SubmgrtMgrService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="SubmgrtMgrService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.huawei.com/bme/cbsinterface/submgrtmgr"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../MDW.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="CBSInterface_Submgrt.xsd"/>
+         <url path="CBSInterface_Common.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="SubmgrtMgrService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://www.huawei.com/bme/cbsinterface/submgrtmgr}Submgrt"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.huawei.com/bme/cbsinterface/submgrtmgr}SubmgrtBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeCustBasicInforResultMsg.changeCustBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeCustBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeAccountBasicInforResultMsg.changeAccountBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeAccountBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeSubscriberBasicInforResultMsg.changeSubscriberBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeSubscriberBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeMSISDNResultMsg.changeMSISDN.com.huawei.bme.cbsinterface.submgrtmgr.ChangeMSISDNRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeSIMResultMsg.changeSIM.com.huawei.bme.cbsinterface.submgrtmgr.ChangeSIMRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeCreditLevelResultMsg.changeCreditLevel.com.huawei.bme.cbsinterface.submgrtmgr.ChangeCreditLevelRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeAcctBillCycleResultMsg.changeAcctBillCycle.com.huawei.bme.cbsinterface.submgrtmgr.ChangeAcctBillCycleRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ManagePaymentRelationResultMsg.managePaymentRelation.com.huawei.bme.cbsinterface.submgrtmgr.ManagePaymentRelationRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.BatchModifyInitBalanceResultMsg.batchModifyInitBalance.com.huawei.bme.cbsinterface.submgrtmgr.BatchModifyInitBalanceRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="ca9b2af5-013c-1000-82f8-ac1a0149b26f"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="SubmgrtServicePort"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.huawei.com/bme/cbsinterface/submgrtmgr}SubmgrtBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeCustBasicInforResultMsg.changeCustBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeCustBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeAccountBasicInforResultMsg.changeAccountBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeAccountBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeSubscriberBasicInforResultMsg.changeSubscriberBasicInfor.com.huawei.bme.cbsinterface.submgrtmgr.ChangeSubscriberBasicInforRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeMSISDNResultMsg.changeMSISDN.com.huawei.bme.cbsinterface.submgrtmgr.ChangeMSISDNRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeSIMResultMsg.changeSIM.com.huawei.bme.cbsinterface.submgrtmgr.ChangeSIMRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeCreditLevelResultMsg.changeCreditLevel.com.huawei.bme.cbsinterface.submgrtmgr.ChangeCreditLevelRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ChangeAcctBillCycleResultMsg.changeAcctBillCycle.com.huawei.bme.cbsinterface.submgrtmgr.ChangeAcctBillCycleRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.ManagePaymentRelationResultMsg.managePaymentRelation.com.huawei.bme.cbsinterface.submgrtmgr.ManagePaymentRelationRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.submgrtmgr.BatchModifyInitBalanceResultMsg.batchModifyInitBalance.com.huawei.bme.cbsinterface.submgrtmgr.BatchModifyInitBalanceRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="172.21.24.100" port="8680" path="/services/SubmgrtMgrService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.ocs"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.huawei.com/bme/cbsinterface/submgrtmgr}Submgrt"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="sd.mtn.ocs.SubmgrtImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="sd.mtn.ocs.Submgrt"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../MDW.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.huawei.com/bme/cbsinterface/submgrtmgr"/>
+         <value n="WS_URI" v="SubmgrtMgrService"/>
+         <url n="WS_WSDL_FILE" path="../../../../../WSDLS/CBSInterface_SubMgrt.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:grouplist="http://www.huawei.com/bme/cbsinterface/grouplist" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:community="http://www.huawei.com/bme/cbsinterface/community" targetNamespace="http://www.huawei.com/bme/cbsinterface/grouplist" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/community" schemaLocation="CBSInterface_CommunityMgr.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ManageGroupListRequest">
+		<xs:annotation>
+			<xs:documentation>集团grouplist管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="GroupListInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ShortNo" type="community:MemberShortNoType"/>
+						<xs:element name="DestNumber" type="common:SubscriberNo" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>删除操作不需要输入长号</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupListRequest">
+		<xs:annotation>
+			<xs:documentation>查询GroupList</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="ShortNo" type="community:MemberShortNoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGroupListResult">
+		<xs:sequence>
+			<xs:element name="GroupListInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ShortNo" type="community:MemberShortNoType"/>
+						<xs:element name="DestNumber" type="common:SubscriberNo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

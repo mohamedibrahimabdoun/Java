@@ -1,0 +1,1224 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+  </ID>
+  <name>CRM_COMMDEVICE</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+    </ID>
+    <SQLText>SELECT &quot;CARDNO&quot;,&quot;ICC_NUMBER&quot;,&quot;IMSI_NUMBER&quot;,&quot;PIN_CODE&quot;,&quot;STATUS&quot;,&quot;SUBSCR_TYPE&quot;,&quot;AREA&quot;,&quot;SUBNO&quot;,&quot;APPLIED&quot;,&quot;DISCON&quot;,&quot;INFO&quot;,&quot;CARD_TYPE&quot;,&quot;WORKSHOP&quot;,&quot;RETAILER&quot;,&quot;EXC&quot;,&quot;RETUPD_DATE&quot;,&quot;PUK2_CODE&quot;,&quot;A4KI&quot;,&quot;PIN2&quot;,&quot;PUK_CODE&quot;,&quot;PREPOST_PAID&quot;,&quot;SEQNO&quot;,&quot;SIM_VENDOR&quot;,&quot;PARENT_CARDNO&quot;,&quot;EQN_CODE&quot;,&quot;EQN_ID&quot;,&quot;FLEX_FLD1&quot;,&quot;FLEX_FLD2&quot;,&quot;FLEX_FLD3&quot;,&quot;FLEX_FLD4&quot;,&quot;FLEX_FLD5&quot;,&quot;COMM_STARTDATE&quot; FROM  CRM_COMMDEVICE@TABS</SQLText>
+    <distinct>false</distinct>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">21f5e056-9737-4106-a04c-7ba56e417375</identifier>
+        </ID>
+        <alias>&quot;CARDNO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">bcc1d36d-b2c8-4065-9bfa-292d7a25c811</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">bb061197-9448-426d-b106-774893bfa52b</identifier>
+        </ID>
+        <alias>&quot;ICC_NUMBER&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">10fe3bb0-93f7-47ad-aa1b-7d204768d44d</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c477a675-52b9-4419-9ff0-7637c2758e58</identifier>
+        </ID>
+        <alias>&quot;IMSI_NUMBER&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7ffa13e9-dda5-4d9d-a8a2-363660c70358</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c556f86a-18eb-41d0-9ba0-1f5d7ad4ffc3</identifier>
+        </ID>
+        <alias>&quot;PIN_CODE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">51fa136f-ebbd-4ae4-b8dd-ff34b403501c</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f67007f5-e347-4b8b-a1c6-0af4a952d38d</identifier>
+        </ID>
+        <alias>&quot;STATUS&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7bd9421e-af43-417a-ba50-c31511916d57</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dffc94e7-da1b-4bb3-a6a5-e34c33ec18ae</identifier>
+        </ID>
+        <alias>&quot;SUBSCR_TYPE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7e485d20-6ed7-45b0-81f1-4aba94771fa5</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f4ae96f4-b8b1-4dfa-b0bb-a0ac22cdf4b3</identifier>
+        </ID>
+        <alias>&quot;AREA&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">dd57eb04-8fc3-4559-8c29-8e770cdd958c</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">036b563d-f8ff-4260-98aa-a601af1e4f2e</identifier>
+        </ID>
+        <alias>&quot;SUBNO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9fae078c-0ada-4b2c-a38d-ca44af404dbb</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3b5376f6-11bb-4c44-ab71-1d9ee4c0c785</identifier>
+        </ID>
+        <alias>&quot;APPLIED&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">346c5629-0586-4ca3-ab19-92fe4608bd6f</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">075129bb-6ac4-45ce-ae45-1345b582c23b</identifier>
+        </ID>
+        <alias>&quot;DISCON&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">a32b6f60-035d-4d61-89ca-6e07a2291cab</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">439649e3-5dbd-4808-ae37-43c961e22052</identifier>
+        </ID>
+        <alias>&quot;INFO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">0a997862-1618-4436-81a1-3cabfb78f194</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81bdd2a0-9691-4b8c-96a0-8ce925c808f5</identifier>
+        </ID>
+        <alias>&quot;CARD_TYPE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b71874ac-de5a-48cc-a6b8-900d59946b9f</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9c9fd1cb-df32-4f45-a215-6fce93c99dcb</identifier>
+        </ID>
+        <alias>&quot;WORKSHOP&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">384db3c7-4d5a-4c06-a3ad-986a0c531548</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">447d0a81-06e0-4275-9cb9-1809e3f468b1</identifier>
+        </ID>
+        <alias>&quot;RETAILER&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e4ace802-bacb-4597-b8a1-225c59304620</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">40b9a196-a58e-443b-bcb0-a258c022949d</identifier>
+        </ID>
+        <alias>&quot;EXC&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f8292792-a8c2-47b4-ba54-52d5fae1c283</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">69571925-ce54-4090-8a4f-5141d0bd66b8</identifier>
+        </ID>
+        <alias>&quot;RETUPD_DATE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3a1ee88d-c6ed-4c65-9450-f1967fb2bfca</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f07324f0-e70a-4a6e-9a9b-974d163ac911</identifier>
+        </ID>
+        <alias>&quot;PUK2_CODE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">0a5085ff-291f-478e-8dbe-0aedeebb9b0d</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c7bbfaa7-53ba-4c75-bdde-8267d9ee6824</identifier>
+        </ID>
+        <alias>&quot;A4KI&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">84d24fe6-c547-4f83-abb6-571bf20c9116</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">03d580f8-bb16-4b95-90fa-03e5150bcaec</identifier>
+        </ID>
+        <alias>&quot;PIN2&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">54af1c2b-e70b-4a00-ad6e-bb8da25d997a</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b48f91b3-d9a0-4ce1-9cd1-eb49ff77f31b</identifier>
+        </ID>
+        <alias>&quot;PUK_CODE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">2c958106-4051-4f95-b0d7-6dbcf5e217ff</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a2ed7dc4-18cf-4586-9a5a-be04b24b37cd</identifier>
+        </ID>
+        <alias>&quot;PREPOST_PAID&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b347dc47-4f52-454f-865b-f77791949378</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">040c0064-26a5-4d8a-bce3-ff7a9976ab32</identifier>
+        </ID>
+        <alias>&quot;SEQNO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">1d8e1944-58bb-4414-bb73-b463c5ecc9e9</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f5e20721-c019-47c5-a06f-6ff5b16c775b</identifier>
+        </ID>
+        <alias>&quot;SIM_VENDOR&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c74202db-42ca-4dba-9347-e4b509e3f4e3</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e970c687-932c-4235-9f7f-1621223e4cd4</identifier>
+        </ID>
+        <alias>&quot;PARENT_CARDNO&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b7bae065-0b9a-4099-abff-221eec7151b8</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0e2cca7c-3555-4c4a-ad95-9e69183b7555</identifier>
+        </ID>
+        <alias>&quot;EQN_CODE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">64eaaf41-28ec-4e0d-8019-52fef6f5d5f6</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">185d7f88-3e2e-4113-9966-85f5616ff120</identifier>
+        </ID>
+        <alias>&quot;EQN_ID&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fbd78716-d838-4385-be07-16c5daa75722</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0cf29edd-9ac8-4370-99bf-feb319686dac</identifier>
+        </ID>
+        <alias>&quot;FLEX_FLD1&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3d0f7d4c-60d3-4267-b384-79e30990633e</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e8ec6d93-a23d-4af7-931f-ac596840415f</identifier>
+        </ID>
+        <alias>&quot;FLEX_FLD2&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7add0419-ce11-47b9-9627-18e452f170a1</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b6bd679e-e42a-410d-b464-e398e421f8c0</identifier>
+        </ID>
+        <alias>&quot;FLEX_FLD3&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8c08a8fa-fe24-4768-b833-c7b0821a2295</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6225a6db-0b83-474d-9177-c8935f4108d4</identifier>
+        </ID>
+        <alias>&quot;FLEX_FLD4&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e2fe5f7c-fc19-41a4-b451-83d022311170</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">16d6fe82-2cb8-4de7-b0e8-652c096a61ae</identifier>
+        </ID>
+        <alias>&quot;FLEX_FLD5&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">2ded871a-237c-4277-b246-e2e693ab2835</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d5b166c0-f636-46bb-9236-0336710b6c2b</identifier>
+        </ID>
+        <alias>&quot;COMM_STARTDATE&quot;</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">cc3c1629-50fe-419d-8fb6-11964c1ac02d</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>SELECT &quot;CARDNO&quot;,&quot;ICC_NUMBER&quot;,&quot;IMSI_NUMBER&quot;,&quot;PIN_CODE&quot;,&quot;STATUS&quot;,&quot;SUBSCR_TYPE&quot;,&quot;AREA&quot;,&quot;SUBNO&quot;,&quot;APPLIED&quot;,&quot;DISCON&quot;,&quot;INFO&quot;,&quot;CARD_TYPE&quot;,&quot;WORKSHOP&quot;,&quot;RETAILER&quot;,&quot;EXC&quot;,&quot;RETUPD_DATE&quot;,&quot;PUK2_CODE&quot;,&quot;A4KI&quot;,&quot;PIN2&quot;,&quot;PUK_CODE&quot;,&quot;PREPOST_PAID&quot;,&quot;SEQNO&quot;,&quot;SIM_VENDOR&quot;,&quot;PARENT_CARDNO&quot;,&quot;EQN_CODE&quot;,&quot;EQN_ID&quot;,&quot;FLEX_FLD1&quot;,&quot;FLEX_FLD2&quot;,&quot;FLEX_FLD3&quot;,&quot;FLEX_FLD4&quot;,&quot;FLEX_FLD5&quot;,&quot;COMM_STARTDATE&quot; FROM  CRM_COMMDEVICE@TABS</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c08a081b-d8e0-448f-9d54-b02c4ca810d1</identifier>
+      </ID>
+      <name>CARDNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;CARDNO&quot;</name>
+        <identifier class="java.lang.String">21f5e056-9737-4106-a04c-7ba56e417375</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c28bffcb-10a1-4e1e-b07a-d72bf40b938e</identifier>
+      </ID>
+      <name>ICC_NUMBER</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;ICC_NUMBER&quot;</name>
+        <identifier class="java.lang.String">bb061197-9448-426d-b106-774893bfa52b</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bca58cd6-41d9-4f2a-b403-70fe320f469b</identifier>
+      </ID>
+      <name>IMSI_NUMBER</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;IMSI_NUMBER&quot;</name>
+        <identifier class="java.lang.String">c477a675-52b9-4419-9ff0-7637c2758e58</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">de1a90ca-ebf8-4633-9ee4-20e5997be23c</identifier>
+      </ID>
+      <name>PIN_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PIN_CODE&quot;</name>
+        <identifier class="java.lang.String">c556f86a-18eb-41d0-9ba0-1f5d7ad4ffc3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9b8096db-f56c-40c2-a3d7-86d7676ccef6</identifier>
+      </ID>
+      <name>STATUS</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;STATUS&quot;</name>
+        <identifier class="java.lang.String">f67007f5-e347-4b8b-a1c6-0af4a952d38d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">cba64556-ff5d-4c90-8645-caa0d00ac3e1</identifier>
+      </ID>
+      <name>SUBSCR_TYPE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;SUBSCR_TYPE&quot;</name>
+        <identifier class="java.lang.String">dffc94e7-da1b-4bb3-a6a5-e34c33ec18ae</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">23b257f5-1da8-45e2-86f1-d48d0ec732a7</identifier>
+      </ID>
+      <name>AREA</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;AREA&quot;</name>
+        <identifier class="java.lang.String">f4ae96f4-b8b1-4dfa-b0bb-a0ac22cdf4b3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">556b748d-a42c-4b53-824b-f32029bc01f2</identifier>
+      </ID>
+      <name>SUBNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;SUBNO&quot;</name>
+        <identifier class="java.lang.String">036b563d-f8ff-4260-98aa-a601af1e4f2e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7f39a85e-8773-45da-a8ec-64349669c379</identifier>
+      </ID>
+      <name>APPLIED</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;APPLIED&quot;</name>
+        <identifier class="java.lang.String">3b5376f6-11bb-4c44-ab71-1d9ee4c0c785</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">42d92f5a-07bd-4aa9-bb78-1342a3e7d127</identifier>
+      </ID>
+      <name>DISCON</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;DISCON&quot;</name>
+        <identifier class="java.lang.String">075129bb-6ac4-45ce-ae45-1345b582c23b</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c8347ca9-0642-4bb7-9f53-7a96a4f69fb5</identifier>
+      </ID>
+      <name>INFO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;INFO&quot;</name>
+        <identifier class="java.lang.String">439649e3-5dbd-4808-ae37-43c961e22052</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c173aaa5-5b36-4271-ac03-7f95aad498a0</identifier>
+      </ID>
+      <name>CARD_TYPE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;CARD_TYPE&quot;</name>
+        <identifier class="java.lang.String">81bdd2a0-9691-4b8c-96a0-8ce925c808f5</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d5e03cbf-ece4-49fa-a466-6833e40033ab</identifier>
+      </ID>
+      <name>WORKSHOP</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;WORKSHOP&quot;</name>
+        <identifier class="java.lang.String">9c9fd1cb-df32-4f45-a215-6fce93c99dcb</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5c31e74c-8fa2-4f11-9981-1922731a1a93</identifier>
+      </ID>
+      <name>RETAILER</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;RETAILER&quot;</name>
+        <identifier class="java.lang.String">447d0a81-06e0-4275-9cb9-1809e3f468b1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7b81ee55-4dde-4d79-a19f-5451e8eecf6c</identifier>
+      </ID>
+      <name>EXC</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;EXC&quot;</name>
+        <identifier class="java.lang.String">40b9a196-a58e-443b-bcb0-a258c022949d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b991d029-acf5-4bd3-9f7b-e397594cd704</identifier>
+      </ID>
+      <name>RETUPD_DATE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;RETUPD_DATE&quot;</name>
+        <identifier class="java.lang.String">69571925-ce54-4090-8a4f-5141d0bd66b8</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1f01674a-14f3-4199-9206-7b990f6fab0a</identifier>
+      </ID>
+      <name>PUK2_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PUK2_CODE&quot;</name>
+        <identifier class="java.lang.String">f07324f0-e70a-4a6e-9a9b-974d163ac911</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b2e5e70a-40d5-408d-8635-0e0ce981bf26</identifier>
+      </ID>
+      <name>A4KI</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;A4KI&quot;</name>
+        <identifier class="java.lang.String">c7bbfaa7-53ba-4c75-bdde-8267d9ee6824</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f1395882-e147-41f2-87f7-f305ef057982</identifier>
+      </ID>
+      <name>PIN2</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PIN2&quot;</name>
+        <identifier class="java.lang.String">03d580f8-bb16-4b95-90fa-03e5150bcaec</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">48ca17b6-c5aa-4cc4-b5f4-d0da6ae8976b</identifier>
+      </ID>
+      <name>PUK_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PUK_CODE&quot;</name>
+        <identifier class="java.lang.String">b48f91b3-d9a0-4ce1-9cd1-eb49ff77f31b</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b33cbd15-729a-46dc-bd5f-5319e722a09f</identifier>
+      </ID>
+      <name>PREPOST_PAID</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PREPOST_PAID&quot;</name>
+        <identifier class="java.lang.String">a2ed7dc4-18cf-4586-9a5a-be04b24b37cd</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b43e5c47-a035-41ab-b464-2b0737d37d74</identifier>
+      </ID>
+      <name>SEQNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;SEQNO&quot;</name>
+        <identifier class="java.lang.String">040c0064-26a5-4d8a-bce3-ff7a9976ab32</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3d5067b1-0986-44d8-86b9-abe93838552a</identifier>
+      </ID>
+      <name>SIM_VENDOR</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;SIM_VENDOR&quot;</name>
+        <identifier class="java.lang.String">f5e20721-c019-47c5-a06f-6ff5b16c775b</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c258acc5-d253-4514-a1d5-529d2006c3ea</identifier>
+      </ID>
+      <name>PARENT_CARDNO</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;PARENT_CARDNO&quot;</name>
+        <identifier class="java.lang.String">e970c687-932c-4235-9f7f-1621223e4cd4</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">073bc73b-cb83-4f8c-bda8-754a494b4a7d</identifier>
+      </ID>
+      <name>EQN_CODE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;EQN_CODE&quot;</name>
+        <identifier class="java.lang.String">0e2cca7c-3555-4c4a-ad95-9e69183b7555</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5c460d88-147e-4c3b-aa73-51f1e85ea6b9</identifier>
+      </ID>
+      <name>EQN_ID</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;EQN_ID&quot;</name>
+        <identifier class="java.lang.String">185d7f88-3e2e-4113-9966-85f5616ff120</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3f0ed54e-3f6b-4b68-8a34-3ae4ae1ecd94</identifier>
+      </ID>
+      <name>FLEX_FLD1</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;FLEX_FLD1&quot;</name>
+        <identifier class="java.lang.String">0cf29edd-9ac8-4370-99bf-feb319686dac</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c7ba42ea-eedc-4a24-8690-0d4e01d753eb</identifier>
+      </ID>
+      <name>FLEX_FLD2</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;FLEX_FLD2&quot;</name>
+        <identifier class="java.lang.String">e8ec6d93-a23d-4af7-931f-ac596840415f</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">71a588d1-dd55-4013-ab8d-e7e2261c0170</identifier>
+      </ID>
+      <name>FLEX_FLD3</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;FLEX_FLD3&quot;</name>
+        <identifier class="java.lang.String">b6bd679e-e42a-410d-b464-e398e421f8c0</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0d4cedbd-41e2-46d9-8c88-b88db96e0abc</identifier>
+      </ID>
+      <name>FLEX_FLD4</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;FLEX_FLD4&quot;</name>
+        <identifier class="java.lang.String">6225a6db-0b83-474d-9177-c8935f4108d4</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">53519589-05bf-44bb-bf3c-15416836d63a</identifier>
+      </ID>
+      <name>FLEX_FLD5</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;FLEX_FLD5&quot;</name>
+        <identifier class="java.lang.String">16d6fe82-2cb8-4de7-b0e8-652c096a61ae</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2daef6cd-e6b1-49a5-a291-1555d1f689a1</identifier>
+      </ID>
+      <name>COMM_STARTDATE</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>&quot;COMM_STARTDATE&quot;</name>
+        <identifier class="java.lang.String">d5b166c0-f636-46bb-9236-0336710b6c2b</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">956f1878-c0cd-4cab-9b60-3ae114eb93df</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CRM_COMMDEVICE</name>
+            <identifier class="java.lang.String">48b9361d-c68e-46ab-8c79-71faff37bceb</identifier>
+            <schemaName>ACTIVATION</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>ACTIVATION</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>ACTIVATION</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CRM_COMMDEVICE</name>
+        <identifier class="java.math.BigDecimal">163123</identifier>
+        <schemaName>ACTIVATION</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+    </entry>
+  </properties>
+  <schema>
+    <name>ACTIVATION</name>
+  </schema>
+</view>

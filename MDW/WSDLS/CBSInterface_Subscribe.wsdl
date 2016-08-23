@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribemgr="http://www.huawei.com/bme/cbsinterface/subscribemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/subscribemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" targetNamespace="http://www.huawei.com/bme/cbsinterface/subscribemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+			<element name="ChangeOptionalOfferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeOptionalOfferRequest" type="subscribe:ChangeOptionalOfferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeOptionalOfferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangeOptionalOfferResult" type="subscribe:ChangeOptionalOfferResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAccountOfferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeAccountOfferRequest" type="subscribe:ChangeAccountOfferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeAccountOfferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangeAccountOfferResult" type="subscribe:ChangeAccountOfferResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchSubscribeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchSubscribeRequest" type="subscribe:BatchSubscribeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchSubscribeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchUnSubscribeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchUnSubscribeRequest" type="subscribe:BatchUnSubscribeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchUnSubscribeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ChangeOptionalOfferRequestMessage">
+		<part name="ChangeOptionalOfferRequestMsg" element="subscribemgr:ChangeOptionalOfferRequestMsg"/>
+	</message>
+	<message name="ChangeOptionalOfferResultMessage">
+		<part name="ChangeOptionalOfferResultMsg" element="subscribemgr:ChangeOptionalOfferResultMsg"/>
+	</message>
+	<message name="ChangeAccountOfferRequestMessage">
+		<part name="ChangeAccountOfferRequestMsg" element="subscribemgr:ChangeAccountOfferRequestMsg"/>
+	</message>
+	<message name="ChangeAccountOfferResultMessage">
+		<part name="ChangeAccountOfferResultMsg" element="subscribemgr:ChangeAccountOfferResultMsg"/>
+	</message>
+	<message name="BatchSubscribeRequestMessage">
+		<part name="BatchSubscribeRequestMsg" element="subscribemgr:BatchSubscribeRequestMsg"/>
+	</message>
+	<message name="BatchSubscribeResultMessage">
+		<part name="BatchSubscribeResultMsg" element="subscribemgr:BatchSubscribeResultMsg"/>
+	</message>
+	<message name="BatchUnSubscribeRequestMessage">
+		<part name="BatchUnSubscribeRequestMsg" element="subscribemgr:BatchUnSubscribeRequestMsg"/>
+	</message>
+	<message name="BatchUnSubscribeResultMessage">
+		<part name="BatchUnSubscribeResultMsg" element="subscribemgr:BatchUnSubscribeResultMsg"/>
+	</message>
+	<portType name="SubscribeMgr">
+		<operation name="changeOptionalOffer">
+			<input message="subscribemgr:ChangeOptionalOfferRequestMessage"/>
+			<output message="subscribemgr:ChangeOptionalOfferResultMessage"/>
+		</operation>
+		<operation name="changeAccountOffer">
+			<input message="subscribemgr:ChangeAccountOfferRequestMessage"/>
+			<output message="subscribemgr:ChangeAccountOfferResultMessage"/>
+		</operation>
+		<operation name="batchSubscribe">
+			<input message="subscribemgr:BatchSubscribeRequestMessage"/>
+			<output message="subscribemgr:BatchSubscribeResultMessage"/>
+		</operation>
+		<operation name="batchUnSubscribe">
+			<input message="subscribemgr:BatchUnSubscribeRequestMessage"/>
+			<output message="subscribemgr:BatchUnSubscribeResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="SubscribeMgrBinding" type="subscribemgr:SubscribeMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="changeOptionalOffer">
+			<soap:operation soapAction="changeOptionalOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="changeAccountOffer">
+			<soap:operation soapAction="changeAccountOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchSubscribe">
+			<soap:operation soapAction="batchSubscribe" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="batchUnSubscribe">
+			<soap:operation soapAction="batchUnSubscribe" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="SubscribeMgrService">
+		<port name="SubscribeMgrServicePort" binding="subscribemgr:SubscribeMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/subscribe/wsdl/CBSInterface_Subscribe.wsdl"/>
+		</port>
+	</service>
+</definitions>

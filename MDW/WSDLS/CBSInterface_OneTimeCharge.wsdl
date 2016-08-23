@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:onetimechargemgr="http://www.huawei.com/bme/cbsinterface/onetimechargemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/onetimecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/onetimechargemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:onetimecharge="http://www.huawei.com/bme/cbsinterface/onetimecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/onetimechargemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/onetimecharge" schemaLocation="CBSInterface_OneTimeCharge.xsd"/>
+			<element name="OneOffDeductionRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="OneOffDeductionRequest" type="onetimecharge:OneOffDeductionRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="OneOffDeductionResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="OneOffDeductionResult" type="onetimecharge:OneOffDeductionResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ServiceHandleFeeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ServiceHandleFeeRequest" type="onetimecharge:ServiceHandleFeeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ServiceHandleFeeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ServiceHandleFeeResult" type="onetimecharge:ServiceHandleFeeResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+				<element name="BonusValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BonusValidityRequest" type="onetimecharge:BonusValidityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BonusValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="BonusValidityResult" type="onetimecharge:BonusValidityResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="OneOffDeductionRequestMessage">
+		<part name="OneOffDeductionRequestMsg" element="onetimechargemgr:OneOffDeductionRequestMsg"/>
+	</message>
+	<message name="OneOffDeductionResultMessage">
+		<part name="OneOffDeductionResultMsg" element="onetimechargemgr:OneOffDeductionResultMsg"/>
+	</message>
+	<message name="ServiceHandleFeeRequestMessage">
+		<part name="ServiceHandleFeeRequestMsg" element="onetimechargemgr:ServiceHandleFeeRequestMsg"/>
+	</message>
+	<message name="ServiceHandleFeeResultMessage">
+		<part name="ServiceHandleFeeResultMsg" element="onetimechargemgr:ServiceHandleFeeResultMsg"/>
+	</message>
+	<message name="BonusValidityRequestMessage">
+		<part name="BonusValidityRequestMsg" element="onetimechargemgr:BonusValidityRequestMsg"/>
+	</message>
+	<message name="BonusValidityResultMessage">
+		<part name="BonusValidityResultMsg" element="onetimechargemgr:BonusValidityResultMsg"/>
+	</message>
+	<portType name="OneTimeChargeMgr">
+		<operation name="oneOffDeduction">
+			<input message="onetimechargemgr:OneOffDeductionRequestMessage"/>
+			<output message="onetimechargemgr:OneOffDeductionResultMessage"/>
+		</operation>
+		<operation name="serviceHandleFee">
+			<input message="onetimechargemgr:ServiceHandleFeeRequestMessage"/>
+			<output message="onetimechargemgr:ServiceHandleFeeResultMessage"/>
+		</operation>
+		<operation name="bonusValidity">
+			<input message="onetimechargemgr:BonusValidityRequestMessage"/>
+			<output message="onetimechargemgr:BonusValidityResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="OneTimeChargeMgrBinding" type="onetimechargemgr:OneTimeChargeMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="oneOffDeduction">
+			<soap:operation soapAction="oneOffDeduction" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="serviceHandleFee">
+			<soap:operation soapAction="serviceHandleFee" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="bonusValidity">
+			<soap:operation soapAction="bonusValidity" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OneTimeChargeMgrService">
+		<port name="OneTimeChargeMgrServicePort" binding="onetimechargemgr:OneTimeChargeMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/subscribe/wsdl/CBSInterface_OneTimeCharge.wsdl"/>
+		</port>
+	</service>
+</definitions>

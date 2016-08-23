@@ -1,0 +1,50 @@
+<definitions xmlns:tns="http://bus.huawei.com/cacherefresh" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://bus.huawei.com/cacherefresh">
+	<types>
+		<xs:schema xmlns:ns0="http://bus.huawei.com/cacherefresh" xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bus.huawei.com/cacherefresh">
+			<xs:include schemaLocation="CBSInterface_CacheRefresh.xsd"/>
+			<xs:element name="CacheRefresh">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ns0:CacheRefreshRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CacheRefreshResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ns0:CacheRefreshResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="CacheRefreshRequest">
+		<part name="part1" element="tns:CacheRefresh"/>
+	</message>
+	<message name="CacheRefreshResult">
+		<part name="part1" element="tns:CacheRefreshResponse"/>
+	</message>
+	<portType name="CacheRefreshPortType">
+		<operation name="CacheRefresh">
+			<input message="tns:CacheRefreshRequest" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="CacheRefresh"/>
+			<output message="tns:CacheRefreshResult" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://bus.huawei.com/cacherefresh/UVSInterface/result"/>
+		</operation>
+	</portType>
+	<binding name="CacheRefreshSOAPBinding" type="tns:CacheRefreshPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CacheRefresh">
+			<soap:operation soapAction="CacheRefresh" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CacheRefreshMgrService">
+		<port name="CacheRefreshSOAPport" binding="tns:CacheRefreshSOAPBinding">
+			<soap:address location="http://bus.huawei.com/billing/wsdl/CacheRefresh.wsdl"/>
+		</port>
+	</service>
+</definitions>

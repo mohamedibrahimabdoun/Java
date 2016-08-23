@@ -1,0 +1,12 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://172.21.24.100:8680/services/QueryMgrService/#%7Bhttp%3A%2F%2Fwww.huawei.com%2Fbme%2Fcbsinterface%2Fquerymgr%7DQueryMgrService?wsdl"
+          uri="../sd/mtn/ocs/QueryMgrService.wsdl"/>
+  <system systemId="http://172.21.24.100:8680/services/SubmgrtMgrService/#%7Bhttp%3A%2F%2Fwww.huawei.com%2Fbme%2Fcbsinterface%2Fsubmgrtmgr%7DSubmgrtMgrService?wsdl"
+          uri="../sd/mtn/ocs/SubmgrtMgrService.wsdl"/>
+  <system systemId="http://172.16.198.10/GMPPMediatorUSSDServiceBean/GMPPUSSDService?wsdl"
+          uri="../sd/mtn/cbos/GMPPUSSDService.wsdl"/>
+  <system systemId="http://172.21.24.100:8680/services/CardRechargeMgrService?wsdl"
+          uri="../sd/mtn/ocs/CardRechargeMgrService.wsdl"/>
+  <system systemId="http://172.20.9.22:8080/MissedCallNotification_WS_1.0/services/MCNPort?wsdl"
+          uri="../sd/mtn/Vas/MCNService.wsdl"/>
+</catalog>

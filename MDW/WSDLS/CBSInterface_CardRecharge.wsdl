@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:cardrechargemgr="http://www.huawei.com/bme/cbsinterface/cardrechargemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cardrecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/cardrechargemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cardrecharge="http://www.huawei.com/bme/cbsinterface/cardrecharge" targetNamespace="http://www.huawei.com/bme/cbsinterface/cardrechargemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cardrecharge" schemaLocation="CBSInterface_CardRecharge.xsd"/>
+			<element name="VoucherRechargeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="VoucherRechargeRequest" type="cardrecharge:VoucherRechargeRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherRechargeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="VoucherRechargeResult" type="cardrecharge:VoucherRechargeResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherRechargeEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="VoucherRechargeEnquiryRequest" type="cardrecharge:VoucherRechargeEnquiryRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherRechargeEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="VoucherRechargeEnquiryResult" type="cardrecharge:VoucherRechargeEnquiryResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherEnquiryBySeqRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="VoucherEnquiryBySeqRequest" type="cardrecharge:VoucherEnquiryBySeqRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherEnquiryBySeqResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="VoucherEnquiryBySeqResult" type="cardrecharge:VoucherEnquiryBySeqResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryRechgBlackInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryRechgBlackInfoRequest" type="cardrecharge:QueryRechgBlackInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryRechgBlackInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryRechgBlackInfoResult" type="cardrecharge:QueryRechgBlackInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>			
+			<element name="VoucherEnquiryByPINRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="VoucherEnquiryByPINRequest" type="cardrecharge:VoucherEnquiryByPINRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherEnquiryByPINResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="VoucherEnquiryByPINResult" type="cardrecharge:VoucherEnquiryByPINResult" nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyVoucherStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ModifyVoucherStateRequest" type="cardrecharge:ModifyVoucherStateRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ModifyVoucherStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherRechargeBySeqRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="VoucherRechargeBySeqRequest" type="cardrecharge:VoucherRechargeBySeqRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="VoucherRechargeBySeqResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="VoucherRechargeBySeqResult" type="cardrecharge:VoucherRechargeBySeqResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteRechageBlackRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteRechageBlackRequest" type="cardrecharge:DeleteRechageBlackRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteRechageBlackResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchDeleteRechageBlackRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BatchDeleteRechageBlackRequest" type="cardrecharge:BatchDeleteRechageBlackRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BatchDeleteRechageBlackResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="VoucherRechargeRequestMessage">
+		<part name="VoucherRechargeRequestMsg" element="cardrechargemgr:VoucherRechargeRequestMsg"/>
+	</message>
+	<message name="VoucherRechargeResultMessage">
+		<part name="VoucherRechargeResultMsg" element="cardrechargemgr:VoucherRechargeResultMsg"/>
+	</message>
+	<message name="QueryRechgBlackInfoRequestMessage">
+		<part name="QueryRechgBlackInfoRequestMsg" element="cardrechargemgr:QueryRechgBlackInfoRequestMsg"/>
+	</message>
+	<message name="QueryRechgBlackInfoResultMessage">
+		<part name="QueryRechgBlackInfoResultMsg" element="cardrechargemgr:QueryRechgBlackInfoResultMsg"/>
+	</message>	
+	<message name="VoucherRechargeEnquiryRequestMessage">
+		<part name="VoucherRechargeEnquiryRequestMsg" element="cardrechargemgr:VoucherRechargeEnquiryRequestMsg"/>
+	</message>
+	<message name="VoucherRechargeEnquiryResultMessage">
+		<part name="VoucherRechargeEnquiryResultMsg" element="cardrechargemgr:VoucherRechargeEnquiryResultMsg"/>
+	</message>
+	<message name="VoucherEnquiryBySeqRequestMessage">
+		<part name="VoucherEnquiryBySeqRequestMsg" element="cardrechargemgr:VoucherEnquiryBySeqRequestMsg"/>
+	</message>
+	<message name="VoucherEnquiryBySeqResultMessage">
+		<part name="VoucherEnquiryBySeqResultMsg" element="cardrechargemgr:VoucherEnquiryBySeqResultMsg"/>
+	</message>
+	<message name="VoucherEnquiryByPINRequestMessage">
+		<part name="VoucherEnquiryByPINRequestMsg" element="cardrechargemgr:VoucherEnquiryByPINRequestMsg"/>
+	</message>
+	<message name="VoucherEnquiryByPINResultMessage">
+		<part name="VoucherEnquiryByPINResultMsg" element="cardrechargemgr:VoucherEnquiryByPINResultMsg"/>
+	</message>
+	<message name="ModifyVoucherStateRequestMessage">
+		<part name="ModifyVoucherStateRequestMsg" element="cardrechargemgr:ModifyVoucherStateRequestMsg"/>
+	</message>
+	<message name="ModifyVoucherStateResultMessage">
+		<part name="ModifyVoucherStateResultMsg" element="cardrechargemgr:ModifyVoucherStateResultMsg"/>
+	</message>
+	<message name="VoucherRechargeBySeqRequestMessage">
+		<part name="VoucherRechargeBySeqRequestMsg" element="cardrechargemgr:VoucherRechargeBySeqRequestMsg"/>
+	</message>
+	<message name="VoucherRechargeBySeqResultMessage">
+		<part name="VoucherRechargeBySeqResultMsg" element="cardrechargemgr:VoucherRechargeBySeqResultMsg"/>
+	</message>
+	<message name="DeleteRechageBlackRequestMessage">
+		<part name="DeleteRechageBlackRequestMsg" element="cardrechargemgr:DeleteRechageBlackRequestMsg"/>
+	</message>
+	<message name="DeleteRechageBlackResultMessage">
+		<part name="DeleteRechageBlackResultMsg" element="cardrechargemgr:DeleteRechageBlackResultMsg"/>
+	</message>
+	<message name="BatchDeleteRechageBlackRequestMessage">
+		<part name="BatchDeleteRechageBlackRequestMsg" element="cardrechargemgr:BatchDeleteRechageBlackRequestMsg"/>
+	</message>
+	<message name="BatchDeleteRechageBlackResultMessage">
+		<part name="BatchDeleteRechageBlackResultMsg" element="cardrechargemgr:BatchDeleteRechageBlackResultMsg"/>
+	</message>
+	<portType name="CardRechargeMgr">
+		<operation name="QueryRechgBlackInfo">
+			<input message="cardrechargemgr:QueryRechgBlackInfoRequestMessage"/>
+			<output message="cardrechargemgr:QueryRechgBlackInfoResultMessage"/>
+		</operation>		
+		<operation name="VoucherRecharge">
+			<input message="cardrechargemgr:VoucherRechargeRequestMessage"/>
+			<output message="cardrechargemgr:VoucherRechargeResultMessage"/>
+		</operation>
+		<operation name="VoucherRechargeEnquiry">
+			<input message="cardrechargemgr:VoucherRechargeEnquiryRequestMessage"/>
+			<output message="cardrechargemgr:VoucherRechargeEnquiryResultMessage"/>
+		</operation>
+		<operation name="VoucherEnquiryBySeq">
+			<input message="cardrechargemgr:VoucherEnquiryBySeqRequestMessage"/>
+			<output message="cardrechargemgr:VoucherEnquiryBySeqResultMessage"/>
+		</operation>
+		<operation name="VoucherEnquiryByPIN">
+			<input message="cardrechargemgr:VoucherEnquiryByPINRequestMessage"/>
+			<output message="cardrechargemgr:VoucherEnquiryByPINResultMessage"/>
+		</operation>
+		<operation name="ModifyVoucherState">
+			<input message="cardrechargemgr:ModifyVoucherStateRequestMessage"/>
+			<output message="cardrechargemgr:ModifyVoucherStateResultMessage"/>
+		</operation>
+		<operation name="VoucherRechargeBySeq">
+			<input message="cardrechargemgr:VoucherRechargeBySeqRequestMessage"/>
+			<output message="cardrechargemgr:VoucherRechargeBySeqResultMessage"/>
+		</operation>
+		<operation name="DeleteRechageBlack">
+			<input message="cardrechargemgr:DeleteRechageBlackRequestMessage"/>
+			<output message="cardrechargemgr:DeleteRechageBlackResultMessage"/>
+		</operation>
+		<operation name="BatchDeleteRechageBlack">
+			<input message="cardrechargemgr:BatchDeleteRechageBlackRequestMessage"/>
+			<output message="cardrechargemgr:BatchDeleteRechageBlackResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CardRechargeMgrBinding" type="cardrechargemgr:CardRechargeMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="QueryRechgBlackInfo">
+			<soap:operation soapAction="QueryRechgBlackInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="VoucherRecharge">
+			<soap:operation soapAction="VoucherRecharge" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>		
+		<operation name="VoucherRechargeEnquiry">
+			<soap:operation soapAction="VoucherRechargeEnquiry" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="VoucherEnquiryBySeq">
+			<soap:operation soapAction="VoucherEnquiryBySeq" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="VoucherEnquiryByPIN">
+			<soap:operation soapAction="VoucherEnquiryByPIN" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ModifyVoucherState">
+			<soap:operation soapAction="ModifyVoucherState" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="VoucherRechargeBySeq">
+			<soap:operation soapAction="VoucherRechargeBySeq" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="DeleteRechageBlack">
+			<soap:operation soapAction="DeleteRechageBlack" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="BatchDeleteRechageBlack">
+			<soap:operation soapAction="BatchDeleteRechageBlack" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CardRechargeMgrService">
+		<port name="CardRechargeMgrServicePort" binding="cardrechargemgr:CardRechargeMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/cardrecharge/wsdl/CBSInterface_CardRecharge.wsdl"/>
+		</port>
+	</service>
+</definitions>

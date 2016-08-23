@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns="http://www.huawei.com/bme/cbsinterface/usergroupmgrt" xmlns:usergroupmgrtmgr="http://www.huawei.com/bme/cbsinterface/usergroupmgrtmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/usergroupmgrtmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:usergroupmgrt="http://www.huawei.com/bme/cbsinterface/usergroupmgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/usergroupmgrtmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/usergroupmgrt" schemaLocation="CBSInterface_UserGroupMgrt.xsd"/>
+			<element name="CreateUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="CreateUserGroupRequest" type="usergroupmgrt:CreateUserGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CreateUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="CreateUserGroupResult" type="usergroupmgrt:CreateUserGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="DeleteUserGroupRequest" type="usergroupmgrt:DeleteUserGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DeleteUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeUserGroupOfferRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeUserGroupOfferRequest" type="usergroupmgrt:ChangeUserGroupOfferRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeUserGroupOfferResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ChangeUserGroupOfferResult" type="usergroupmgrt:ChangeUserGroupOfferResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageUserGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManageUserGroupMemberRequest" type="usergroupmgrt:ManageUserGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageUserGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManageUserGroupMemberResult" type="usergroupmgrt:ManageUserGroupMemberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryUserGroupRequest" type="usergroupmgrt:QueryUserGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryUserGroupResult" type="usergroupmgrt:QueryUserGroupResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="CreateUserGroupRequestMessage">
+		<part name="CreateUserGroupRequestMsg" element="usergroupmgrtmgr:CreateUserGroupRequestMsg"/>
+	</message>
+	<message name="CreateUserGroupResultMessage">
+		<part name="CreateUserGroupResultMsg" element="usergroupmgrtmgr:CreateUserGroupResultMsg"/>
+	</message>
+	<message name="DeleteUserGroupRequestMessage">
+		<part name="DeleteUserGroupRequestMsg" element="usergroupmgrtmgr:DeleteUserGroupRequestMsg"/>
+	</message>
+	<message name="DeleteUserGroupResultMessage">
+		<part name="DeleteUserGroupResultMsg" element="usergroupmgrtmgr:DeleteUserGroupResultMsg"/>
+	</message>
+	<message name="ChangeUserGroupOfferRequestMessage">
+		<part name="ChangeUserGroupOfferRequestMsg" element="usergroupmgrtmgr:ChangeUserGroupOfferRequestMsg"/>
+	</message>
+	<message name="ChangeUserGroupOfferResultMessage">
+		<part name="ChangeUserGroupOfferResultMsg" element="usergroupmgrtmgr:ChangeUserGroupOfferResultMsg"/>
+	</message>
+	<message name="ManageUserGroupMemberRequestMessage">
+		<part name="ManageUserGroupMemberRequestMsg" element="usergroupmgrtmgr:ManageUserGroupMemberRequestMsg"/>
+	</message>
+	<message name="ManageUserGroupMemberResultMessage">
+		<part name="ManageUserGroupMemberResultMsg" element="usergroupmgrtmgr:ManageUserGroupMemberResultMsg"/>
+	</message>
+	<message name="QueryUserGroupRequestMessage">
+		<part name="QueryUserGroupRequestMsg" element="usergroupmgrtmgr:QueryUserGroupRequestMsg"/>
+	</message>
+	<message name="QueryUserGroupResultMessage">
+		<part name="QueryUserGroupResultMsg" element="usergroupmgrtmgr:QueryUserGroupResultMsg"/>
+	</message>
+	<portType name="UserGroupMgrt">
+		<operation name="createUserGroup">
+			<input message="usergroupmgrtmgr:CreateUserGroupRequestMessage"/>
+			<output message="usergroupmgrtmgr:CreateUserGroupResultMessage"/>
+		</operation>
+		<operation name="deleteUserGroup">
+			<input message="usergroupmgrtmgr:DeleteUserGroupRequestMessage"/>
+			<output message="usergroupmgrtmgr:DeleteUserGroupResultMessage"/>
+		</operation>
+		<operation name="changeUserGroupOffer">
+			<input message="usergroupmgrtmgr:ChangeUserGroupOfferRequestMessage"/>
+			<output message="usergroupmgrtmgr:ChangeUserGroupOfferResultMessage"/>
+		</operation>
+		<operation name="manageUserGroupMember">
+			<input message="usergroupmgrtmgr:ManageUserGroupMemberRequestMessage"/>
+			<output message="usergroupmgrtmgr:ManageUserGroupMemberResultMessage"/>
+		</operation>
+		<operation name="queryUserGroup">
+			<input message="usergroupmgrtmgr:QueryUserGroupRequestMessage"/>
+			<output message="usergroupmgrtmgr:QueryUserGroupResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="UserGroupMgrtBinding" type="usergroupmgrtmgr:UserGroupMgrt">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="createUserGroup">
+			<soap:operation soapAction="createUserGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="deleteUserGroup">
+			<soap:operation soapAction="deleteUserGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="changeUserGroupOffer">
+			<soap:operation soapAction="changeUserGroupOffer" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageUserGroupMember">
+			<soap:operation soapAction="manageUserGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryUserGroup">
+			<soap:operation soapAction="queryUserGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="UserGroupMgrService">
+		<port name="UserGroupMgrServicePort" binding="usergroupmgrtmgr:UserGroupMgrtBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managehz/wsdl/CBSInterface_UserGroupMgrt.wsdl"/>
+		</port>
+	</service>
+</definitions>

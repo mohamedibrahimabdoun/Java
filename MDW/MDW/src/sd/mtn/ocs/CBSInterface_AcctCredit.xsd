@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:acctcredit="http://www.huawei.com/bme/cbsinterface/acctcredit"
+     xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/acctcredit"
+     elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+    <xs:complexType name="CreditType">
+        <xs:sequence>
+            <xs:element name="Amount" type="common:Balance"/>
+            <xs:element name="ApplyTime" type="common:DateTime"/>
+            <xs:element name="ExpireTime" type="common:DateTime"/>
+            <xs:element name="CreditKey" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ManAcctCreditRequest">
+        <xs:sequence>
+            <xs:element name="AcctId" type="common:AccountID" minOccurs="0"/>
+            <xs:element name="AcctCode" type="common:AccountCode" minOccurs="0"/>
+            <xs:element name="SubId" type="common:SubscriberCode" minOccurs="0"/>
+            <xs:element name="Msisdn" type="common:SubscriberNo" minOccurs="0"/>
+            <xs:element name="ObjectType" type="xs:int"/>
+            <xs:element name="OperType" type="xs:int"/>
+            <xs:element name="Amount" type="common:Balance" minOccurs="0"/>
+            <xs:element name="ApplyTime" type="common:DateTime" minOccurs="0"/>
+            <xs:element name="ExpireTime" type="common:DateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryAcctCreditRequest">
+        <xs:sequence>
+            <xs:element name="AcctId" type="common:AccountID" minOccurs="0"/>
+            <xs:element name="AcctCode" type="common:AccountCode" minOccurs="0"/>
+            <xs:element name="SubId" type="common:SubscriberCode" minOccurs="0"/>
+            <xs:element name="Msisdn" type="common:SubscriberNo" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QueryAcctCreditResult">
+        <xs:sequence>
+            <xs:element name="InitialCredit" type="acctcredit:CreditType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="BillCycleCredit" type="acctcredit:CreditType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="TempCreditList" type="acctcredit:CreditType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

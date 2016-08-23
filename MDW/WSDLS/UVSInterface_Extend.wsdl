@@ -1,0 +1,1197 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Williams (501) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bme.huawei.com/winuvsinterface" targetNamespace="http://bme.huawei.com/winuvsinterface">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://bme.huawei.com/winuvsinterface" elementFormDefault="qualified">
+			<include schemaLocation="./UVSInterface_Extend.xsd"/>
+		</xs:schema>
+	</types>
+	<message name="ActiveFirstRequest">
+		<part name="ActiveFirstRequestMessage" element="tns:ActiveFirstRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ActiveFirstResult">
+		<part name="ActiveFirstResultMessage" element="tns:ActiveFirstResult"/>
+	</message>
+	<message name="ModCommitmentBalRequest">
+		<part name="ModCommitmentBalRequestMessage" element="tns:ModCommitmentBalRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ModCommitmentBalResult">
+		<part name="ModCommitmentBalResultMessage" element="tns:ModCommitmentBalResult"/>
+	</message>
+	<message name="IntegrationQueryRequest">
+		<part name="IntegrationQueryRequestMessage" element="tns:IntegrationQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="IntegrationQueryResult">
+		<part name="IntegrationQueryResultMessage" element="tns:IntegrationQueryResult"/>
+	</message>
+	<message name="RechargeRequest">
+		<part name="RechargeRequestMessage" element="tns:RechargeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="RechargeResult">
+		<part name="RechargeResultMessage" element="tns:RechargeResult"/>
+	</message>
+	<message name="ManualRechargeRequest">
+		<part name="ManualRechargeRequestMessage" element="tns:ManualRechargeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManualRechargeResult">
+		<part name="ManualRechargeResultMessage" element="tns:ManualRechargeResult"/>
+	</message>
+	<message name="BatchPSIntegrationQueryRequest">
+		<part name="BatchPSIntegrationQueryRequestMessage" element="tns:BatchPSIntegrationQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="BatchPSIntegrationQueryResult">
+		<part name="BatchPSIntegrationQueryResultMessage" element="tns:BatchPSIntegrationQueryResult"/>
+	</message>
+	<message name="BatchModInitalBalanceRequest">
+		<part name="BatchModInitalBalanceRequestMessage" element="tns:BatchModInitalBalanceRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="BatchModInitalBalanceResult">
+		<part name="BatchModInitalBalanceResultMessage" element="tns:BatchModInitalBalanceResult"/>
+	</message>
+	<message name="BatchModLastActvieDateRequest">
+		<part name="BatchModLastActiveDateRequestMessage" element="tns:BatchModLastActiveDateRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="BatchModLastActvieDateResult">
+		<part name="BatchModLastActvieDateResultMessage" element="tns:BatchModLastActiveDateResult"/>
+	</message>
+	<message name="BatchAdjustAccountRequest">
+		<part name="BatchAdjustAccountRequestMessage" element="tns:BatchAdjustAccountRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="BatchAdjustAccountResult">
+		<part name="BatchAdjustAccountResultMessage" element="tns:BatchAdjustAccountResult"/>
+	</message>
+	<message name="BlockRechargeCardRequest">
+		<part name="BlockRechargeCardRequestMessage" element="tns:BlockRechargeCardRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="BlockRechargeCardResult">
+		<part name="BlockRechargeCardResultMessage" element="tns:BlockRechargeCardResult"/>
+	</message>
+	<message name="QryRechargeCardRequest">
+		<part name="QryRechargeCardRequestMessage" element="tns:QryRechargeCardRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QryRechargeCardResult">
+		<part name="QryRechargeCardResultMessage" element="tns:QryRechargeCardResult"/>
+	</message>
+	<message name="HotBillingRequest">
+		<part name="HotBillingRequestMessage" element="tns:HotBillingRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="HotBillingResult">
+		<part name="HotBillingResultMessage" element="tns:HotBillingResult"/>
+	</message>
+	<message name="StateChangeLogQueryRequest">
+		<part name="StateChangeLogQueryRequestMessage" element="tns:StateChangeLogQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="StateChangeLogQueryResult">
+		<part name="StateChangeLogQueryResultMessage" element="tns:StateChangeLogQueryResult"/>
+	</message>
+	<message name="RechargeLogQueryRequest">
+		<part name="RechargeLogQueryRequestMessage" element="tns:RechargeLogQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="RechargeLogQueryResult">
+		<part name="RechargeLogQueryResultMessage" element="tns:RechargeLogQueryResult"/>
+	</message>
+	<message name="AccountQueryRequest">
+		<part name="AccountQueryRequestMessage" element="tns:AccountQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="AccountQueryResult">
+		<part name="AccountQueryResultMessage" element="tns:AccountQueryResult"/>
+	</message>
+	<message name="RebateQueryRequest">
+		<part name="RebateQueryRequestMessage" element="tns:RebateQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="RebateQueryResult">
+		<part name="RebateQueryResultMessage" element="tns:RebateQueryResult"/>
+	</message>
+	<message name="VerifyRechargeCardRequest">
+		<part name="VerifyRechargeCardRequestMessage" element="tns:VerifyRechargeCardRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="VerifyRechargeCardResult">
+		<part name="VerifyRechargeCardResultMessage" element="tns:VerifyRechargeCardResult"/>
+	</message>
+	<message name="QueryTimeOfInitCreditRequest">
+		<part name="QueryTimeOfInitCreditRequestMessage" element="tns:QueryTimeOfInitCreditRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryTimeOfInitCreditResult">
+		<part name="QueryTimeOfInitCreditResultMessage" element="tns:QueryTimeOfInitCreditResult"/>
+	</message>
+	<message name="QueryPointRequest">
+		<part name="QueryPointRequestMessage" element="tns:QueryPointRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryPointResult">
+		<part name="QueryPointResultMessage" element="tns:QueryPointResult"/>
+	</message>
+	<message name="ExchangePointToBonusRequest">
+		<part name="ExchangePointToBonusRequestMessage" element="tns:ExchangePointToBonusRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ExchangePointToBonusResult">
+		<part name="ExchangePointToBonusResultMessage" element="tns:ExchangePointToBonusResult"/>
+	</message>
+	<message name="ChangePointRequest">
+		<part name="ChangePointRequestMessage" element="tns:ChangePointRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ChangePointResult">
+		<part name="ChangePointResultMessage" element="tns:ChangePointResult"/>
+	</message>
+	<message name="QueryTimeSchemaRequest">
+		<part name="QueryTimeSchemaRequestMessage" element="tns:QueryTimeSchemaRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryTimeSchemaResult">
+		<part name="QueryTimeSchemaResultMessage" element="tns:QueryTimeSchemaResult"/>
+	</message>
+	<message name="QueryBonusTypeRequest">
+		<part name="QueryBonusTypeRequestMessage" element="tns:QueryBonusTypeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryBonusTypeResult">
+		<part name="QueryBonusTypeResultMessage" element="tns:QueryBonusTypeResult"/>
+	</message>
+	<message name="ApplyForAdvanceCreditRequest">
+		<part name="ApplyForAdvanceCreditRequestMessage" element="tns:ApplyForAdvanceCreditRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ApplyForAdvanceCreditResult">
+		<part name="ApplyForAdvanceCreditResultMessage" element="tns:ApplyForAdvanceCreditResult"/>
+	</message>
+	<message name="UniDebitFeeRequest">
+		<part name="UniDebitFeeRequestMessage" element="tns:UniDebitFeeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="UniDebitFeeResult">
+		<part name="UniDebitFeeResultMessage" element="tns:UniDebitFeeResult"/>
+	</message>
+	<message name="QryBorrowInfoRequest">
+		<part name="QryBorrowInfoRequestMessage" element="tns:QryBorrowInfoRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QryBorrowInfoResult">
+		<part name="QryBorrowInfoResultMessage" element="tns:QryBorrowInfoResult"/>
+	</message>
+	<message name="TransferLogQueryRequest">
+		<part name="TransferLogQueryRequestMessage" element="tns:TransferLogQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="TransferLogQueryResult">
+		<part name="TransferLogQueryResultMessage" element="tns:TransferLogQueryResult"/>
+	</message>
+	<message name="TransferAccountRequest">
+		<part name="TransferAccountRequestMessage" element="tns:TransferAccountRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="TransferAccountResult">
+		<part name="TransferAccountResultMessage" element="tns:TransferAccountResult"/>
+	</message>
+	<message name="QryUnBilledBonusRequest">
+		<part name="QryUnBilledBonusRequestMessage" element="tns:QryUnBilledBonusRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QryUnBilledBonusResult">
+		<part name="QryUnBilledBonusResultMessage" element="tns:QryUnBilledBonusResult"/>
+	</message>
+	<message name="HybridIntegrationQueryRequest">
+		<part name="HybridIntegrationQueryMessage" element="tns:HybridIntegrationQueryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="HybridIntegrationQueryResult">
+		<part name="HybridIntegrationQueryResultMessage" element="tns:HybridIntegrationQueryResult"/>
+	</message>
+	<message name="QueryUserGroupRequestMessage">
+		<part name="QueryUserGroupRequestMsg" element="tns:QueryUserGroupRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryUserGroupResultMessage">
+		<part name="QueryUserGroupResultMsg" element="tns:QueryUserGroupResult"/>
+	</message>
+	<message name="ManGroupMemberRequestMessage">
+		<part name="ManGroupMemberRequestMsg" element="tns:ManGroupMemberRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManGroupMemberResultMessage">
+		<part name="ManGroupMemberResultMsg" element="tns:ManGroupMemberResult"/>
+	</message>
+	<message name="QuerySubscribedGroupRequestMessage">
+		<part name="QuerySubscribedGroupRequestMsg" element="tns:QuerySubscribedGroupRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QuerySubscribedGroupResultMessage">
+		<part name="QuerySubscribedGroupResultMsg" element="tns:QuerySubscribedGroupResult"/>
+	</message>
+	<message name="PrepaidProRequestMessage">
+		<part name="PrepaidProRequestMsg" element="tns:PrepaidProRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="PrepaidProResultMessage">
+		<part name="PrepaidProResultMsg" element="tns:PrepaidProResult"/>
+	</message>
+	<message name="MultiSubscriberBandRequestMessage">
+		<part name="MultiSubscriberBandRequestMsg" element="tns:MultiSubscriberBandRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="MultiSubscriberBandResultMessage">
+		<part name="MultiSubscriberBandResultMsg" element="tns:MultiSubscriberBandResult"/>
+	</message>
+	<message name="SyncItemRequestMessage">
+		<part name="SyncItemRequestMsg" element="tns:SyncItemRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SyncItemResultMessage">
+		<part name="SyncItemResultMsg" element="tns:SyncItemResult"/>
+	</message>
+	<message name="SyncCodeDictRequestMessage">
+		<part name="SyncCodeDictRequestMsg" element="tns:SyncCodeDictRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SyncCodeDictResultMessage">
+		<part name="SyncCodeDictResultMsg" element="tns:SyncCodeDictResult"/>
+	</message>
+	<message name="QueryBillMediumRequestMessage">
+		<part name="QueryBillMediumRequestMsg" element="tns:QueryBillMediumRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryBillMediumResultMessage">
+		<part name="QueryBillMediumResultMsg" element="tns:QueryBillMediumResult"/>
+	</message>
+	<message name="OrderBillMediumRequestMessage">
+		<part name="OrderBillMediumRequestMsg" element="tns:OrderBillMediumRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="OrderBillMediumResultMessage">
+		<part name="OrderBillMediumResultMsg" element="tns:OrderBillMediumResult"/>
+	</message>
+	<message name="SyncOperatorRequestMessage">
+		<part name="SyncOperatorRequestMsg" element="tns:SyncOperatorRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SyncOperatorResultMessage">
+		<part name="SyncOperatorResultMsg" element="tns:SyncOperatorResult"/>
+	</message>
+	<message name="QueryPenaltyAmountRequestMessage">
+		<part name="QueryPenaltyAmountRequestMsg" element="tns:QueryPenaltyAmountRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryPenaltyAmountResultMessage">
+		<part name="QueryPenaltyAmountResultMsg" element="tns:QueryPenaltyAmountResult"/>
+	</message>
+	<message name="QueryPaymentTypeRequestMessage">
+		<part name="QueryPaymentTypeRequestMsg" element="tns:QueryPaymentTypeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryPaymentTypeResultMessage">
+		<part name="QueryPaymentTypeResultMsg" element="tns:QueryPaymentTypeResult"/>
+	</message>
+	<message name="ManageSalesProd2VASProdRequestMessage">
+		<part name="ManageSalesProd2VASProdRequestMsg" element="tns:ManageSalesProd2VASProdRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManageSalesProd2VASProdResultMessage">
+		<part name="ManageSalesProd2VASProdResultMsg" element="tns:ManageSalesProd2VASProdResult"/>
+	</message>
+	<message name="SplitBillingSetupRequestMessage">
+		<part name="SplitBillingSetupRequestMsg" element="tns:SplitBillingSetupRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SplitBillingSetupResultMessage">
+		<part name="SplitBillingSetupResultMsg" element="tns:SplitBillingSetupResult"/>
+	</message>
+	<message name="QueryFNAllInfoRequestMessage">
+		<part name="QueryFNAllInfoRequestMsg" element="tns:QueryFNAllInfoRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryFNAllInfoResultMessage">
+		<part name="QueryFNAllInfoResultMsg" element="tns:QueryFNAllInfoResult"/>
+	</message>
+	<message name="QueryRechargeBlackListInfoRequestMessage">
+		<part name="QueryRechargeBlackListInfoRequestMsg" element="tns:QueryRechargeBlackListInfoRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryRechargeBlackListInfoResultMessage">
+		<part name="QueryRechargeBlackListInfoResultMsg" element="tns:QueryRechargeBlackListInfoResult"/>
+	</message>
+	<message name="AdjustNextBillingDateRequestMessage">
+		<part name="AdjustNextBillingDateRequestMsg" element="tns:AdjustNextBillingDateRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="AdjustNextBillingDateResultMessage">
+		<part name="AdjustNextBillingDateResultMsg" element="tns:AdjustNextBillingDateResult"/>
+	</message>
+	<message name="ManageMasterRequestMessage">
+		<part name="ManageMasterRequestMsg" element="tns:ManageMasterRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManageMasterResultMessage">
+		<part name="ManageMasterResultMsg" element="tns:ManageMasterResult"/>
+	</message>
+	<message name="ManageSlaveRequestMessage">
+		<part name="ManageSlaveRequestMsg" element="tns:ManageSlaveRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManageSlaveResultMessage">
+		<part name="ManageSlaveResultMsg" element="tns:ManageSlaveResult"/>
+	</message>
+	<message name="ManageTransferForSlaveRequestMessage">
+		<part name="ManageTransferForSlaveRequestMsg" element="tns:ManageTransferForSlaveRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManageTransferForSlaveResultMessage">
+		<part name="ManageTransferForSlaveResultMsg" element="tns:ManageTransferForSlaveResult"/>
+	</message>
+	<message name="ModifySubscriberValidityRequestMessage">
+		<part name="ModifySubscriberValidityRequestMsg" element="tns:ModifySubscriberValidityRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ModifySubscriberValidityResultMessage">
+		<part name="ModifySubscriberValidityResultMsg" element="tns:ModifySubscriberValidityResult"/>
+	</message>
+	<message name="QueryUnbilledFUBalRequestMessage">
+		<part name="QueryUnbilledFUBalRequestMsg" element="tns:QueryUnbilledFUBalRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryUnbilledFUBalResultMessage">
+		<part name="QueryUnbilledFUBalResultMsg" element="tns:QueryUnbilledFUBalResult"/>
+	</message>
+	<message name="ProcessRequestMessage">
+		<part name="ProcessRequestMsg" element="tns:SDF_Data"/>
+	</message>
+	<message name="ProcessResultMessage">
+		<part name="ProcessResultMsg" element="tns:SDF_Data"/>
+	</message>
+	<message name="SyncContractRequestMessage">
+		<part name="SyncContractRequestMsg" element="tns:SyncContractRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SyncContractResultMessage">
+		<part name="SyncContractResultMsg" element="tns:SyncContractResult"/>
+	</message>
+	<message name="ManCBSServiceRequestMessage">
+		<part name="ManCBSServiceRequestMsg" element="tns:ManCBSServiceRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="ManCBSServiceResultMessage">
+		<part name="ManCBSServiceResultMsg" element="tns:ManCBSServiceResult"/>
+	</message>
+	<message name="QueryCycleEndTimeRequestMessage">
+		<part name="QueryCycleEndTimeRequestMsg" element="tns:QueryCycleEndTimeRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QueryCycleEndTimeResultMessage">
+		<part name="QueryCycleEndTimeResultMsg" element="tns:QueryCycleEndTimeResult"/>
+	</message>
+	<message name="SyncTalkGroupMemberInfoRequestMessage">
+		<part name="SyncTalkGroupMemberInfoRequestMsg" element="tns:SyncTalkGroupMemberInfoRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="SyncTalkGroupMemberInfoResultMessage">
+		<part name="SyncTalkGroupMemberInfoResultMsg" element="tns:SyncTalkGroupMemberInfoResult"/>
+	</message>
+	<message name="AdjustCreditRequestMessage">
+		<part name="AdjustCreditRequestMsg" element="tns:AdjustCreditRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="AdjustCreditResultMessage">
+		<part name="AdjustCreditResultResultMsg" element="tns:AdjustCreditResult"/>
+	</message>
+	<message name="QuerySMSNoticeHistoryRequestMessage">
+		<part name="QuerySMSNoticeHistoryRequestMsg" element="tns:QuerySMSNoticeHistoryRequest"/>
+		<part name="SessionMessage" element="tns:SessionEntity"/>
+	</message>
+	<message name="QuerySMSNoticeHistoryResultMessage">
+		<part name="QuerySMSNoticeHistoryResultMsg" element="tns:QuerySMSNoticeHistoryResult"/>
+	</message>
+	<portType name="UVSInterface">
+		<operation name="ActiveFirst">
+			<input name="request" message="tns:ActiveFirstRequest"/>
+			<output name="result" message="tns:ActiveFirstResult"/>
+		</operation>
+		<operation name="ModCommitmentBal">
+			<input name="request" message="tns:ModCommitmentBalRequest"/>
+			<output name="result" message="tns:ModCommitmentBalResult"/>
+		</operation>
+		<operation name="IntegrationQuery">
+			<input name="request" message="tns:IntegrationQueryRequest"/>
+			<output name="result" message="tns:IntegrationQueryResult"/>
+		</operation>
+		<operation name="Recharge">
+			<input name="request" message="tns:RechargeRequest"/>
+			<output name="result" message="tns:RechargeResult"/>
+		</operation>
+		<operation name="ManualRecharge">
+			<input name="request" message="tns:ManualRechargeRequest"/>
+			<output name="result" message="tns:ManualRechargeResult"/>
+		</operation>
+		<operation name="BatchPSIntegrationQuery">
+			<input name="request" message="tns:BatchPSIntegrationQueryRequest"/>
+			<output name="result" message="tns:BatchPSIntegrationQueryResult"/>
+		</operation>
+		<operation name="BatchModInitalBalance">
+			<input name="request" message="tns:BatchModInitalBalanceRequest"/>
+			<output name="result" message="tns:BatchModInitalBalanceResult"/>
+		</operation>
+		<operation name="BatchModLastActiveDate">
+			<input name="request" message="tns:BatchModLastActvieDateRequest"/>
+			<output name="result" message="tns:BatchModLastActvieDateResult"/>
+		</operation>
+		<operation name="BatchAdjustAccount">
+			<input name="request" message="tns:BatchAdjustAccountRequest"/>
+			<output name="result" message="tns:BatchAdjustAccountResult"/>
+		</operation>
+		<operation name="BlockRechargeCard">
+			<input name="request" message="tns:BlockRechargeCardRequest"/>
+			<output name="result" message="tns:BlockRechargeCardResult"/>
+		</operation>
+		<operation name="QryRechargeCard">
+			<input name="request" message="tns:QryRechargeCardRequest"/>
+			<output name="result" message="tns:QryRechargeCardResult"/>
+		</operation>
+		<operation name="HotBilling">
+			<input name="request" message="tns:HotBillingRequest"/>
+			<output name="result" message="tns:HotBillingResult"/>
+		</operation>
+		<operation name="StateChangeLogQuery">
+			<input name="request" message="tns:StateChangeLogQueryRequest"/>
+			<output name="result" message="tns:StateChangeLogQueryResult"/>
+		</operation>
+		<operation name="RechargeLogQuery">
+			<input name="request" message="tns:RechargeLogQueryRequest"/>
+			<output name="result" message="tns:RechargeLogQueryResult"/>
+		</operation>
+		<operation name="AccountQuery">
+			<input name="Request" message="tns:AccountQueryRequest"/>
+			<output name="Result" message="tns:AccountQueryResult"/>
+		</operation>
+		<operation name="RebateQuery">
+			<input name="Request" message="tns:RebateQueryRequest"/>
+			<output name="Result" message="tns:RebateQueryResult"/>
+		</operation>
+		<operation name="VerifyRechargeCard">
+			<input name="request" message="tns:VerifyRechargeCardRequest"/>
+			<output name="result" message="tns:VerifyRechargeCardResult"/>
+		</operation>
+		<operation name="QueryTimeOfInitCredit">
+			<input name="request" message="tns:QueryTimeOfInitCreditRequest"/>
+			<output name="result" message="tns:QueryTimeOfInitCreditResult"/>
+		</operation>
+		<operation name="QueryPoint">
+			<input name="request" message="tns:QueryPointRequest"/>
+			<output name="result" message="tns:QueryPointResult"/>
+		</operation>
+		<operation name="ExchangePointToBonus">
+			<input name="request" message="tns:ExchangePointToBonusRequest"/>
+			<output name="result" message="tns:ExchangePointToBonusResult"/>
+		</operation>
+		<operation name="ChangePoint">
+			<input name="request" message="tns:ChangePointRequest"/>
+			<output name="result" message="tns:ChangePointResult"/>
+		</operation>
+		<operation name="QueryTimeSchema">
+			<input name="request" message="tns:QueryTimeSchemaRequest"/>
+			<output name="result" message="tns:QueryTimeSchemaResult"/>
+		</operation>
+		<operation name="QueryBonusType">
+			<input name="request" message="tns:QueryBonusTypeRequest"/>
+			<output name="result" message="tns:QueryBonusTypeResult"/>
+		</operation>
+		<operation name="ApplyForAdvanceCredit">
+			<input name="request" message="tns:ApplyForAdvanceCreditRequest"/>
+			<output name="result" message="tns:ApplyForAdvanceCreditResult"/>
+		</operation>
+		<operation name="UniDebitFee">
+			<input name="request" message="tns:UniDebitFeeRequest"/>
+			<output name="result" message="tns:UniDebitFeeResult"/>
+		</operation>
+		<operation name="QryBorrowInfo">
+			<input name="request" message="tns:QryBorrowInfoRequest"/>
+			<output name="result" message="tns:QryBorrowInfoResult"/>
+		</operation>
+		<operation name="TransferLogQuery">
+			<input name="request" message="tns:TransferLogQueryRequest"/>
+			<output name="result" message="tns:TransferLogQueryResult"/>
+		</operation>
+		<operation name="TransferAccount">
+			<input name="request" message="tns:TransferAccountRequest"/>
+			<output name="result" message="tns:TransferAccountResult"/>
+		</operation>
+		<operation name="QryUnBilledBonus">
+			<input name="request" message="tns:QryUnBilledBonusRequest"/>
+			<output name="result" message="tns:QryUnBilledBonusResult"/>
+		</operation>
+		<operation name="HybridIntegrationQuery">
+			<input name="request" message="tns:HybridIntegrationQueryRequest"/>
+			<output name="result" message="tns:HybridIntegrationQueryResult"/>
+		</operation>
+		<operation name="QueryUserGroup">
+			<input message="tns:QueryUserGroupRequestMessage"/>
+			<output message="tns:QueryUserGroupResultMessage"/>
+		</operation>
+		<operation name="ManGroupMember">
+			<input message="tns:ManGroupMemberRequestMessage"/>
+			<output message="tns:ManGroupMemberResultMessage"/>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<input message="tns:QuerySubscribedGroupRequestMessage"/>
+			<output message="tns:QuerySubscribedGroupResultMessage"/>
+		</operation>
+		<operation name="PrepaidPro">
+			<input message="tns:PrepaidProRequestMessage"/>
+			<output message="tns:PrepaidProResultMessage"/>
+		</operation>
+		<operation name="MultiSubscriberBand">
+			<input message="tns:MultiSubscriberBandRequestMessage"/>
+			<output message="tns:MultiSubscriberBandResultMessage"/>
+		</operation>
+		<operation name="SyncItem">
+			<input message="tns:SyncItemRequestMessage"/>
+			<output message="tns:SyncItemResultMessage"/>
+		</operation>
+		<operation name="SyncCodeDict">
+			<input message="tns:SyncCodeDictRequestMessage"/>
+			<output message="tns:SyncCodeDictResultMessage"/>
+		</operation>
+		<operation name="QueryBillMedium">
+			<input message="tns:QueryBillMediumRequestMessage"/>
+			<output message="tns:QueryBillMediumResultMessage"/>
+		</operation>
+		<operation name="OrderBillMedium">
+			<input message="tns:OrderBillMediumRequestMessage"/>
+			<output message="tns:OrderBillMediumResultMessage"/>
+		</operation>
+		<operation name="SyncOperator">
+			<input message="tns:SyncOperatorRequestMessage"/>
+			<output message="tns:SyncOperatorResultMessage"/>
+		</operation>
+		<operation name="QueryPenaltyAmount">
+			<input message="tns:QueryPenaltyAmountRequestMessage"/>
+			<output message="tns:QueryPenaltyAmountResultMessage"/>
+		</operation>
+		<operation name="QueryPaymentType">
+			<input message="tns:QueryPaymentTypeRequestMessage"/>
+			<output message="tns:QueryPaymentTypeResultMessage"/>
+		</operation>
+		<operation name="ManageSalesProd2VASProd">
+			<input message="tns:ManageSalesProd2VASProdRequestMessage"/>
+			<output message="tns:ManageSalesProd2VASProdResultMessage"/>
+		</operation>
+		<operation name="SplitBillingSetup">
+			<input message="tns:SplitBillingSetupRequestMessage"/>
+			<output message="tns:SplitBillingSetupResultMessage"/>
+		</operation>
+		<operation name="QueryFNAllInfo">
+			<input message="tns:QueryFNAllInfoRequestMessage"/>
+			<output message="tns:QueryFNAllInfoResultMessage"/>
+		</operation>
+		<operation name="QueryRechargeBlackListInfo">
+			<input message="tns:QueryRechargeBlackListInfoRequestMessage"/>
+			<output message="tns:QueryRechargeBlackListInfoResultMessage"/>
+		</operation>
+		<operation name="AdjustNextBillingDate">
+			<input message="tns:AdjustNextBillingDateRequestMessage"/>
+			<output message="tns:AdjustNextBillingDateResultMessage"/>
+		</operation>
+		<operation name="ManageMaster">
+			<input message="tns:ManageMasterRequestMessage"/>
+			<output message="tns:ManageMasterResultMessage"/>
+		</operation>
+		<operation name="ManageSlave">
+			<input message="tns:ManageSlaveRequestMessage"/>
+			<output message="tns:ManageSlaveResultMessage"/>
+		</operation>
+		<operation name="ManageTransferForSlave">
+			<input message="tns:ManageTransferForSlaveRequestMessage"/>
+			<output message="tns:ManageTransferForSlaveResultMessage"/>
+		</operation>
+		<operation name="ModifySubscriberValidity">
+			<input message="tns:ModifySubscriberValidityRequestMessage"/>
+			<output message="tns:ModifySubscriberValidityResultMessage"/>
+		</operation>
+		<operation name="QueryUnbilledFUBal">
+			<input message="tns:QueryUnbilledFUBalRequestMessage"/>
+			<output message="tns:QueryUnbilledFUBalResultMessage"/>
+		</operation>
+		<operation name="Process">
+			<input message="tns:ProcessRequestMessage"/>
+			<output message="tns:ProcessResultMessage"/>
+		</operation>
+		<operation name="SyncContract">
+			<input message="tns:SyncContractRequestMessage"/>
+			<output message="tns:SyncContractResultMessage"/>
+		</operation>
+		<operation name="ManCBSService">
+			<input message="tns:ManCBSServiceRequestMessage"/>
+			<output message="tns:ManCBSServiceResultMessage"/>
+		</operation>
+		<operation name="QueryCycleEndTime">
+			<input message="tns:QueryCycleEndTimeRequestMessage"/>
+			<output message="tns:QueryCycleEndTimeResultMessage"/>
+		</operation>
+		<operation name="SyncTalkGroupMemberInfo">
+			<input message="tns:SyncTalkGroupMemberInfoRequestMessage"/>
+			<output message="tns:SyncTalkGroupMemberInfoResultMessage"/>
+		</operation>
+		<operation name="AdjustCredit">
+			<input message="tns:AdjustCreditRequestMessage"/>
+			<output message="tns:AdjustCreditResultMessage"/>
+		</operation>
+		<operation name="QuerySMSNoticeHistory">
+			<input message="tns:QuerySMSNoticeHistoryRequestMessage"/>
+			<output message="tns:QuerySMSNoticeHistoryResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="UVSInterfaceBinding" type="tns:UVSInterface">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ActiveFirst">
+			<soap:operation soapAction="ActiveFirst" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ModCommitmentBal">
+			<soap:operation soapAction="ModCommitmentBal" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="IntegrationQuery">
+			<soap:operation soapAction="IntegrationQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="Recharge">
+			<soap:operation soapAction="Recharge" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManualRecharge">
+			<soap:operation soapAction="ManualRecharge" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="BatchPSIntegrationQuery">
+			<soap:operation soapAction="BatchPSIntegrationQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="BatchModInitalBalance">
+			<soap:operation soapAction="BatchModInitalBalance" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="BatchModLastActiveDate">
+			<soap:operation soapAction="BatchModLastActvieDate" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="BatchAdjustAccount">
+			<soap:operation soapAction="BatchAdjustAccount" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="BlockRechargeCard">
+			<soap:operation soapAction="BlockRechargeCard" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QryRechargeCard">
+			<soap:operation soapAction="QryRechargeCard" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="HotBilling">
+			<soap:operation soapAction="HotBilling" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="StateChangeLogQuery">
+			<soap:operation soapAction="StateChangeLogQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="RechargeLogQuery">
+			<soap:operation soapAction="RechargeLogQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="AccountQuery">
+			<soap:operation soapAction="AccountQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="RebateQuery">
+			<soap:operation soapAction="RebateQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="VerifyRechargeCard">
+			<soap:operation soapAction="VerifyRechargeCard" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryTimeOfInitCredit">
+			<soap:operation soapAction="QueryTimeOfInitCredit" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryPoint">
+			<soap:operation soapAction="QueryPoint" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ExchangePointToBonus">
+			<soap:operation soapAction="ExchangePointToBonus" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ChangePoint">
+			<soap:operation soapAction="ChangePoint" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryTimeSchema">
+			<soap:operation soapAction="QueryTimeSchema" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryBonusType">
+			<soap:operation soapAction="QueryBonusType" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ApplyForAdvanceCredit">
+			<soap:operation soapAction="ApplyForAdvanceCredit" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="UniDebitFee">
+			<soap:operation soapAction="UniDebitFee" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QryBorrowInfo">
+			<soap:operation soapAction="QryBorrowInfo" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="TransferLogQuery">
+			<soap:operation soapAction="TransferLogQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="TransferAccount">
+			<soap:operation soapAction="TransferAccount" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QryUnBilledBonus">
+			<soap:operation soapAction="QryUnBilledBonus" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="HybridIntegrationQuery">
+			<soap:operation soapAction="HybridIntegrationQuery" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryUserGroup">
+			<soap:operation soapAction="QueryUserGroup" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManGroupMember">
+			<soap:operation soapAction="ManGroupMember" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QuerySubscribedGroup">
+			<soap:operation soapAction="QuerySubscribedGroup" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="PrepaidPro">
+			<soap:operation soapAction="PrepaidPro" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SyncItem">
+			<soap:operation soapAction="SyncItem" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SyncCodeDict">
+			<soap:operation soapAction="SyncCodeDict" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryBillMedium">
+			<soap:operation soapAction="QueryBillMedium" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="OrderBillMedium">
+			<soap:operation soapAction="OrderBillMedium" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SyncOperator">
+			<soap:operation soapAction="SyncOperator" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryPenaltyAmount">
+			<soap:operation soapAction="QueryPenaltyAmount" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryPaymentType">
+			<soap:operation soapAction="QueryPaymentType" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="MultiSubscriberBand">
+			<soap:operation soapAction="MultiSubscriberBand" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManageSalesProd2VASProd">
+			<soap:operation soapAction="ManageSalesProd2VASProd" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SplitBillingSetup">
+			<soap:operation soapAction="SplitBillingSetup" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryFNAllInfo">
+			<soap:operation soapAction="QueryFNAllInfo" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryRechargeBlackListInfo">
+			<soap:operation soapAction="QueryRechargeBlackListInfo" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="AdjustNextBillingDate">
+			<soap:operation soapAction="AdjustNextBillingDate" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManageMaster">
+			<soap:operation soapAction="ManageMaster" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManageSlave">
+			<soap:operation soapAction="ManageSlave" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManageTransferForSlave">
+			<soap:operation soapAction="ManageTransferForSlave" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ModifySubscriberValidity">
+			<soap:operation soapAction="ModifySubscriberValidity" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryUnbilledFUBal">
+			<soap:operation soapAction="QueryUnbilledFUBal" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="Process">
+			<soap:operation soapAction="Process" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SyncContract">
+			<soap:operation soapAction="SyncContract" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="ManCBSService">
+			<soap:operation soapAction="ManCBSService" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QueryCycleEndTime">
+			<soap:operation soapAction="QueryCycleEndTime" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="SyncTalkGroupMemberInfo">
+			<soap:operation soapAction="SyncTalkGroupMemberInfo" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/winuvsinterface"/>
+			</output>
+		</operation>
+		<operation name="AdjustCredit">
+			<soap:operation soapAction="AdjustCredit" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</output>
+		</operation>
+		<operation name="QuerySMSNoticeHistory">
+			<soap:operation soapAction="QuerySMSNoticeHistory" style="rpc"/>
+			<input>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="http://bme.huawei.com/uvsinterface"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="UVSInterface_Extend">
+		<port name="UVSInterface_ExtendPort" binding="tns:UVSInterfaceBinding">
+			<soap:address location="http://bme.huawei.com/billing/wsdl/UVSInterface_Extend.wsdl"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:statemgrt="http://www.huawei.com/bme/cbsinterface/statemgrt" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" targetNamespace="http://www.huawei.com/bme/cbsinterface/statemgrt" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="SuspendRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperateType" type="xs:int"/>
+			<xs:element name="SuspendDays" type="xs:int" minOccurs="0"/>
+			<xs:element name="HandleChargeFlag" type="common:HandleChargeFlag" minOccurs="0"/>
+			<xs:element name="Status" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReconnectRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperateType" type="xs:int"/>
+			<xs:element name="Status" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reserved</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClaimMissingRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DisclaimMissingRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifySubscriberValidityRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="ValidityIncrement" type="xs:int"/>
+			<xs:element name="ModifyType" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Merchant" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>保留</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Service" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>保留</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reserve" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>保留</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModifySubscriberValidityResult">
+		<xs:sequence>
+			<xs:element name="LifeCycleState" type="xs:int" nillable="true"/>
+			<xs:element name="ActiveStop" type="common:Date"/>
+			<xs:element name="SuspendStop" type="common:Date"/>
+			<xs:element name="DisableStop" type="common:Date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryAdjustValidityLogRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="StartTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="EndTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryAdjustValidityLogResult">
+		<xs:sequence>
+			<xs:element name="AdjustValidityLog" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TradeTime" type="common:DateTime"/>
+						<xs:element name="ModifyType" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:enumeration value="0"/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ValidityIncrement" type="xs:int"/>
+						<xs:element name="OperatorID" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="24"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="OldActiveStop" type="common:Date"/>
+						<xs:element name="NewActiveStop" type="common:Date"/>
+						<xs:element name="OldSuspendStop" type="common:Date"/>
+						<xs:element name="NewSuspendStop" type="common:Date"/>
+						<xs:element name="OldDisableStop" type="common:Date"/>
+						<xs:element name="NewDisableStop" type="common:Date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubChangeLogRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="StartTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="EndTime" type="common:DateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubChangeLogResult">
+		<xs:sequence>
+			<xs:element name="SubChangeLogList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SubChangeLog" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="MainProductID" type="common:ProductId"/>
+									<xs:element name="OldState">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="11"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="NewState">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="11"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="OperType" type="xs:int"/>
+									<xs:element name="Operator">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="24"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="OperTime" type="common:DateTime"/>
+									<xs:element name="OldPrepaidBal" type="common:Balance"/>
+									<xs:element name="NewPrepaidBal" type="common:Balance"/>
+									<xs:element name="OldPospaidBal" type="common:Balance"/>
+									<xs:element name="NewPospaidBal" type="common:Balance"/>
+									<xs:element name="NewActiveStop" type="common:Date"/>
+									<xs:element name="OldActiveStop" type="common:Date"/>
+									<xs:element name="OldValue" type="xs:string" minOccurs="0"/>
+									<xs:element name="NewValue" type="xs:string" minOccurs="0"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageETUFraudStateRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BalanceToValidityRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="DeductionAmt" type="common:Balance"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="BalanceToValidityResult">
+		<xs:all>
+			<xs:element name="AcctChgRec" type="common:AcctChgRecType"/>
+			<xs:element name="NewActiveStop" type="common:Date"/>
+			<xs:element name="NewSuspendStop" type="common:Date"/>
+			<xs:element name="NewDisableStop" type="common:Date"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ModifyLastActiveDateRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="NewLastActiveDate" type="common:Date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatchModLastActDateRequest">
+		<xs:sequence>
+			<xs:element name="FileName" type="common:FileName"/>
+			<xs:element name="TaskTime" type="common:DateTime" minOccurs="0"/>
+			<xs:element name="ModifyType" type="xs:int" minOccurs="0"/>
+			<xs:element name="NewLastActDate" type="common:Date" minOccurs="0"/>
+			<xs:element name="IncrementDays" type="xs:int" minOccurs="0"/>
+			<xs:element name="OperationDes" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

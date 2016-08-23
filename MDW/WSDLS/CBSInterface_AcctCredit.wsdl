@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:acctcreditmgr="http://www.huawei.com/bme/cbsinterface/acctcreditmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/acctcredit" targetNamespace="http://www.huawei.com/bme/cbsinterface/acctcreditmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:acctcredit="http://www.huawei.com/bme/cbsinterface/acctcredit" targetNamespace="http://www.huawei.com/bme/cbsinterface/acctcreditmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/acctcredit" schemaLocation="CBSInterface_AcctCredit.xsd"/>
+			<element name="ManAcctCreditRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManAcctCreditRequest" type="acctcredit:ManAcctCreditRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManAcctCreditResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAcctCreditRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryAcctCreditRequest" type="acctcredit:QueryAcctCreditRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryAcctCreditResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryAcctCreditResult" type="acctcredit:QueryAcctCreditResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManAcctCreditRequestMessage">
+		<part name="ManAcctCreditRequestMsg" element="acctcreditmgr:ManAcctCreditRequestMsg"/>
+	</message>
+	<message name="ManAcctCreditResultMessage">
+		<part name="ManAcctCreditResultMsg" element="acctcreditmgr:ManAcctCreditResultMsg"/>
+	</message>
+	<message name="QueryAcctCreditRequestMessage">
+		<part name="QueryAcctCreditRequestMsg" element="acctcreditmgr:QueryAcctCreditRequestMsg"/>
+	</message>
+	<message name="QueryAcctCreditResultMessage">
+		<part name="QueryAcctCreditResultMsg" element="acctcreditmgr:QueryAcctCreditResultMsg"/>
+	</message>
+	<portType name="Acctcredit">
+		<operation name="manAcctCredit">
+			<input message="acctcreditmgr:ManAcctCreditRequestMessage"/>
+			<output message="acctcreditmgr:ManAcctCreditResultMessage"/>
+		</operation>
+		<operation name="queryAcctCredit">
+			<input message="acctcreditmgr:QueryAcctCreditRequestMessage"/>
+			<output message="acctcreditmgr:QueryAcctCreditResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="AcctcreditBinding" type="acctcreditmgr:Acctcredit">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="manAcctCredit">
+			<soap:operation soapAction="manAcctCredit" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="queryAcctCredit">
+			<soap:operation soapAction="queryAcctCredit" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+	</binding>
+	<service name="AcctcreditMgrService">
+		<port name="AcctcreditServicePort" binding="acctcreditmgr:AcctcreditBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/acctcredit/wsdl/CBSInterface_AcctCredit.wsdl"/>
+		</port>
+	</service>
+</definitions>

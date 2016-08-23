@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:managecs="http://www.huawei.com/bme/cbsinterface/managecs" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns1="http://www.huawei.com/bme/cbsinterface/managecs" targetNamespace="http://www.huawei.com/bme/cbsinterface/managecs" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/subscribe" schemaLocation="CBSInterface_Subscribe.xsd"/>
+	<xs:complexType name="ManSubCallScreenNoRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="CallScreenType" type="common:CallScreenType" minOccurs="0"/>
+			<xs:element name="CallScreenNoInfo" type="subscribe:CallScreenNoInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubCallScreenNoRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubCallScreenNoResult">
+		<xs:sequence>
+			<xs:element name="CallScreenType" type="common:CallScreenType" minOccurs="0"/>
+			<xs:element name="CallScreenNoInfo" type="subscribe:CallScreenNoInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NonCallScreenNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="effectiveDate" type="common:DateTime"/>
+						<xs:element name="expireDate" type="common:DateTime"/>
+						<xs:element name="weekStart" type="common:Week" nillable="true"/>
+						<xs:element name="weekStop" type="common:Week" nillable="true"/>
+						<xs:element name="routeNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="IRRouteFlag" type="xs:int" nillable="true" minOccurs="0"/>
+						<xs:element name="RoutingMethod" type="xs:int" nillable="true" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManSubOutGoingCallScreenNoRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="CallScreenType" type="common:CallScreenType" minOccurs="0"/>
+			<xs:element name="CallScreenNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="callScreenNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="weekStart" type="common:Week" minOccurs="0"/>
+						<xs:element name="weekStop" type="common:Week" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubOutGoingCallScreenNoRequest">
+		<xs:sequence>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QuerySubOutGoingCallScreenNoResult">
+		<xs:sequence>
+			<xs:element name="CallScreenType" type="common:CallScreenType"/>
+			<xs:element name="CallScreenNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="callScreenNo" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="32"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="effectiveDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="expireDate" type="common:DateTime" minOccurs="0"/>
+						<xs:element name="weekStart" type="common:Week" nillable="true" minOccurs="0"/>
+						<xs:element name="weekStop" type="common:Week" nillable="true" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

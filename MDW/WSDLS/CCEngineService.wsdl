@@ -1,0 +1,4251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.soap.ccengine.mdsp.huawei.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.soap.ccengine.mdsp.huawei.com" xmlns:intf="http://service.soap.ccengine.mdsp.huawei.com" xmlns:tns1="http://struct.soap.ccengine.mdsp.huawei.com/xsd" xmlns:tns2="http://exception.soap.ccengine.mdsp.huawei.com/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://struct.soap.ccengine.mdsp.huawei.com/xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://exception.soap.ccengine.mdsp.huawei.com/xsd"/>
+   <import namespace="http://service.soap.ccengine.mdsp.huawei.com"/>
+   <complexType name="NamedParameter">
+    <sequence>
+     <element name="key" nillable="true" type="xsd:string"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="NamedParameterList">
+    <sequence>
+     <element name="namedParameters" nillable="true" type="impl:ArrayOf_tns7_NamedParameter"/>
+    </sequence>
+   </complexType>
+   <complexType name="BaseReq">
+    <sequence>
+     <element name="version" nillable="true" type="xsd:string"/>
+     <element name="transactionID" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserID">
+    <sequence>
+     <element name="ID" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="PasswordPrompt">
+    <sequence>
+     <element name="question" nillable="true" type="xsd:string"/>
+     <element name="answer" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LangInfo">
+    <sequence>
+     <element name="language" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserProfile">
+    <sequence>
+     <element name="birthDate" nillable="true" type="xsd:string"/>
+     <element name="officeAddress" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+     <element name="payType" nillable="true" type="xsd:int"/>
+     <element name="gender" nillable="true" type="xsd:int"/>
+     <element name="zipCode" nillable="true" type="xsd:string"/>
+     <element name="passwordPrompt" nillable="true" type="tns1:PasswordPrompt"/>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+     <element name="userState" nillable="true" type="xsd:int"/>
+     <element name="userType" nillable="true" type="xsd:int"/>
+     <element name="homePhone" nillable="true" type="xsd:string"/>
+     <element name="officePhone" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userBrand" nillable="true" type="xsd:int"/>
+     <element name="nationalCode" nillable="true" type="xsd:string"/>
+     <element name="userEmail" nillable="true" type="xsd:string"/>
+     <element name="userSID" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="occupation" nillable="true" type="xsd:string"/>
+     <element name="provinceId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserDataSyncReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="updateType" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="userProfile" nillable="true" type="tns1:UserProfile"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BaseRsp">
+    <sequence>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserDataSyncRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserAuthenticateReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="authType" type="xsd:int"/>
+       <element name="userPwd" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserRegisterProfile">
+    <sequence>
+     <element name="loginAccount" nillable="true" type="xsd:string"/>
+     <element name="qq" nillable="true" type="xsd:string"/>
+     <element name="userMSISDN" nillable="true" type="xsd:string"/>
+     <element name="userAgent" nillable="true" type="xsd:string"/>
+     <element name="nickName" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="msn" nillable="true" type="xsd:string"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserAuthenticateRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="userRegisterProfile" nillable="true" type="tns1:UserRegisterProfile"/>
+       <element name="userProfile" nillable="true" type="tns1:UserProfile"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubScriptionListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="type" nillable="true" type="xsd:string"/>
+       <element name="actionType" nillable="true" type="xsd:string"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="DialectInfo">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SubScriptionInfo">
+    <sequence>
+     <element name="parentName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="spID" nillable="true" type="xsd:string"/>
+     <element name="subScriptionState" nillable="true" type="xsd:int"/>
+     <element name="productOrderKey" nillable="true" type="xsd:long"/>
+     <element name="isAutoExtend" nillable="true" type="xsd:int"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="userID" nillable="true" type="xsd:string"/>
+     <element name="unSubTime" nillable="true" type="xsd:string"/>
+     <element name="subTime" nillable="true" type="xsd:string"/>
+     <element name="parentType" nillable="true" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="spName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="nextChargeTime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SubScriptionList">
+    <sequence>
+     <element name="subScriptionInfos" nillable="true" type="impl:ArrayOf_tns1_SubScriptionInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="SubscriptionHistoryListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="toDate" nillable="true" type="xsd:string"/>
+       <element name="noteNo" type="xsd:int"/>
+       <element name="fromDate" nillable="true" type="xsd:string"/>
+       <element name="startNote" type="xsd:int"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubScriptionHistoryInfo">
+    <sequence>
+     <element name="parentName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="spID" nillable="true" type="xsd:string"/>
+     <element name="operResult" nillable="true" type="xsd:int"/>
+     <element name="subType" nillable="true" type="xsd:int"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="userID" nillable="true" type="xsd:string"/>
+     <element name="parentType" nillable="true" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="operActor" nillable="true" type="xsd:string"/>
+     <element name="operTime" nillable="true" type="xsd:string"/>
+     <element name="channelID" nillable="true" type="xsd:int"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="spName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="SubScriptionHistoryList">
+    <sequence>
+     <element name="subScriptionHistoryInfos" nillable="true" type="impl:ArrayOf_tns1_SubScriptionHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ConsumeHistoryListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="toDate" nillable="true" type="xsd:string"/>
+       <element name="noteNo" type="xsd:int"/>
+       <element name="fromDate" nillable="true" type="xsd:string"/>
+       <element name="startNote" type="xsd:int"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ConsumeHistoryInfo">
+    <sequence>
+     <element name="parentName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="spID" nillable="true" type="xsd:string"/>
+     <element name="consumptionUnit" nillable="true" type="xsd:string"/>
+     <element name="operResult" type="xsd:int"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="fee" nillable="true" type="xsd:string"/>
+     <element name="parentType" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="type" type="xsd:int"/>
+     <element name="transactionID" nillable="true" type="xsd:string"/>
+     <element name="channelID" type="xsd:int"/>
+     <element name="consumption" nillable="true" type="xsd:string"/>
+     <element name="reason" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="timeStamp" nillable="true" type="xsd:string"/>
+     <element name="spName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ConsumeHistoryList">
+    <sequence>
+     <element name="consumeHistoryInfos" nillable="true" type="impl:ArrayOf_tns1_ConsumeHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoyaltyHistoryListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="toDate" nillable="true" type="xsd:string"/>
+       <element name="noteNo" type="xsd:int"/>
+       <element name="fromDate" nillable="true" type="xsd:string"/>
+       <element name="startNote" type="xsd:int"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="LoyaltyHistoryInfo">
+    <sequence>
+     <element name="parentName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="spID" nillable="true" type="xsd:string"/>
+     <element name="loyalty" type="xsd:int"/>
+     <element name="consumptionUnit" nillable="true" type="xsd:string"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="parentType" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="transactionID" nillable="true" type="xsd:string"/>
+     <element name="type" type="xsd:int"/>
+     <element name="channelID" type="xsd:int"/>
+     <element name="consumption" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="timeStamp" nillable="true" type="xsd:string"/>
+     <element name="spName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoyaltyHistoryListGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="loyaltyHistoryInfoList" nillable="true" type="impl:ArrayOf_tns1_LoyaltyHistoryInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="LoyaltyBalanceGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="LoyaltyBalanceGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="loyaltyBalance" type="xsd:long"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubInfo">
+    <sequence>
+     <element name="selectContent" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="operCode" nillable="true" type="xsd:string"/>
+     <element name="channelID" nillable="true" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="isAutoExtend" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductSubscribeReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="channelID" type="xsd:int"/>
+       <element name="subInfo" nillable="true" type="tns1:SubInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubInfoList">
+    <sequence>
+     <element name="subInfos" nillable="true" type="impl:ArrayOf_tns1_SubInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductBatchSubscribeReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="subInfoList" nillable="true" type="tns1:SubInfoList"/>
+       <element name="channelID" type="xsd:int"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductBatchSubscribeRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="resultCode" nillable="true" type="impl:ArrayOf_xsd_int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductUnSubscribeReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="channelID" type="xsd:int"/>
+       <element name="subInfo" nillable="true" type="tns1:SubInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductBatchUnSubscribeReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="subInfoList" nillable="true" type="tns1:SubInfoList"/>
+       <element name="channelID" type="xsd:int"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductBatchUnSubscribeRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="resultCode" nillable="true" type="impl:ArrayOf_xsd_int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PromotionAssignReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="subInfo" nillable="true" type="tns1:SubInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PromotionUseableCheckReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="productID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PromotionUseableCheckRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="booleanResult" type="xsd:boolean"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPasswordUpdateExReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="oldPassword" nillable="true" type="xsd:string"/>
+       <element name="newPassword" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PasswordPromptGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PasswordPromptGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="passwordPrompt" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="DRMContentTryReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="contentID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="DRMContentTryRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="booleanResult" type="xsd:boolean"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PresentUsableAmountListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UsableAmountRecord">
+    <sequence>
+     <element name="srcProductID" nillable="true" type="xsd:string"/>
+     <element name="objectType" type="xsd:int"/>
+     <element name="totalAmount" type="xsd:int"/>
+     <element name="usableAmount" type="xsd:int"/>
+     <element name="objectID" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="usableAmountExpireTime" nillable="true" type="xsd:string"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+     <element name="unit" type="xsd:int"/>
+     <element name="usableAmountApplyTime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="UsableAmountRecordList">
+    <sequence>
+     <element name="usableAmountRecords" nillable="true" type="impl:ArrayOf_tns7_UsableAmountRecord"/>
+    </sequence>
+   </complexType>
+   <complexType name="CodeDictionaryListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="codeType" type="xsd:int"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CodeDictionary">
+    <sequence>
+     <element name="name" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="code" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CodeDictionaryList">
+    <sequence>
+     <element name="codeDictionarys" nillable="true" type="impl:ArrayOf_tns7_CodeDictionary"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectType" nillable="true" type="xsd:int"/>
+       <element name="language" nillable="true" type="tns1:LangInfo"/>
+       <element name="objectID" nillable="true" type="xsd:string"/>
+       <element name="queryType" nillable="true" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductInfo">
+    <sequence>
+     <element name="subCmdList" nillable="true" type="xsd:string"/>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="giftParentID" nillable="true" type="xsd:string"/>
+     <element name="copyrightRuleID" nillable="true" type="xsd:string"/>
+     <element name="orderApplyTime" nillable="true" type="xsd:string"/>
+     <element name="copyrightRuleDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="discountType" nillable="true" type="xsd:int"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="isloyalty" nillable="true" type="xsd:int"/>
+     <element name="presentFlag" nillable="true" type="xsd:int"/>
+     <element name="parentType" nillable="true" type="xsd:int"/>
+     <element name="isSubscribe" nillable="true" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="drmPkgType" nillable="true" type="xsd:int"/>
+     <element name="autoRenew" nillable="true" type="xsd:int"/>
+     <element name="isDRMTry" nillable="true" type="xsd:int"/>
+     <element name="unsubCmdList" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="oerCmd" nillable="true" type="xsd:string"/>
+     <element name="giftProductID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductListGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="productInfoList" nillable="true" type="impl:ArrayOf_tns1_ProductInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ContentCommendReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="recommender" nillable="true" type="tns1:UserID"/>
+       <element name="objectId" nillable="true" type="xsd:string"/>
+       <element name="recommendees" nillable="true" type="impl:ArrayOf_tns7_UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CommendRsp">
+    <sequence>
+     <element name="commendID" nillable="true" type="xsd:string"/>
+     <element name="commendee" nillable="true" type="tns1:UserID"/>
+     <element name="result" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="ContentCommendRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="commendRspList" nillable="true" type="impl:ArrayOf_tns4_CommendRsp"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubscribeAuthenticateReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SubscribeAuthenticateRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="productInfoList" nillable="true" type="impl:ArrayOf_tns1_ProductInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserIDList">
+    <sequence>
+     <element name="userIDLists" nillable="true" type="impl:ArrayOf_tns7_UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="AssignPresentToUsersReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="oaUserID" nillable="true" type="tns1:UserID"/>
+       <element name="subInfo" nillable="true" type="tns1:SubInfo"/>
+       <element name="daUserIDList" nillable="true" type="tns1:UserIDList"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PresentRsp">
+    <sequence>
+     <element name="presentID" nillable="true" type="xsd:string"/>
+     <element name="returnCode" type="xsd:int"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="PresentRspList">
+    <sequence>
+     <element name="presentRspLists" nillable="true" type="impl:ArrayOf_tns4_PresentRsp"/>
+    </sequence>
+   </complexType>
+   <complexType name="PresentInfoGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="presentID" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PresentInfo">
+    <sequence>
+     <element name="daUserID" nillable="true" type="tns1:UserID"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="presentExpireTime" nillable="true" type="xsd:string"/>
+     <element name="presentTime" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="PresentInfoRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="presentInfo" nillable="true" type="tns1:PresentInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserCheckReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="TimesQueryReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="srcProductID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="queryType" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="TimesQueryRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="srcProdTotalAmount" type="xsd:int"/>
+       <element name="srcProdUsedAmount" type="xsd:int"/>
+       <element name="presentProdTotalAmount" type="xsd:int"/>
+       <element name="presentProdUsedAmount" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="RegisterUserReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="actionType" type="xsd:int"/>
+       <element name="userRegisterProfile" nillable="true" type="tns1:UserRegisterProfile"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="RegisterUserRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="HeatBeatCheckReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="HeatBeatCheckRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="result" type="xsd:boolean"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalProfile">
+    <sequence>
+     <element name="attrValue" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="attrName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="attrType" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="weight" type="xsd:float"/>
+     <element name="attrId" nillable="true" type="xsd:string"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserPersonalDataSyncReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="updateType" type="xsd:int"/>
+       <element name="userPersonalProfile" nillable="true" type="tns1:UserPersonalProfile"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalDataSyncRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ServiceGrantReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="serviceType" type="xsd:int"/>
+       <element name="actionType" type="xsd:int"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ServiceGrantRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PasswordResetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="sendMode" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserInfoGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserInfoGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="userRegisterProfile" nillable="true" type="tns1:UserRegisterProfile"/>
+       <element name="userProfile" nillable="true" type="tns1:UserProfile"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CommendInfoGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="commendID" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CommendInfo">
+    <sequence>
+     <element name="daUserID" nillable="true" type="tns1:UserID"/>
+     <element name="commendTime" nillable="true" type="xsd:string"/>
+     <element name="objectId" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="userID" nillable="true" type="tns1:UserID"/>
+     <element name="commendExpireTime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CommendInfoGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="commendInfo" nillable="true" type="tns1:CommendInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalAttr">
+    <sequence>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="attrName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="attrId" nillable="true" type="xsd:string"/>
+     <element name="attrType" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserPersonalAttrSyncReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userPersonalAttr" nillable="true" type="tns1:UserPersonalAttr"/>
+       <element name="updateType" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalAttrSyncRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalAttrGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalAttrGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="userPersonalAttrList" nillable="true" type="impl:ArrayOf_tns1_UserPersonalAttr"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalInfoGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="UserPersonalInfoGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="userPersonalProfileList" nillable="true" type="impl:ArrayOf_tns1_UserPersonalProfile"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductListGetExReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectType" nillable="true" type="xsd:int"/>
+       <element name="language" nillable="true" type="tns1:LangInfo"/>
+       <element name="objectID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="queryType" nillable="true" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PromotionInfo">
+    <sequence>
+     <element name="parentType" nillable="true" type="xsd:int"/>
+     <element name="promotionID" nillable="true" type="xsd:string"/>
+     <element name="promotionDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="promotionName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="promotionType" nillable="true" type="xsd:int"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="DrmPkgRule">
+    <sequence>
+     <element name="pkgRule" nillable="true" type="xsd:int"/>
+     <element name="endTime" nillable="true" type="xsd:string"/>
+     <element name="times" nillable="true" type="xsd:int"/>
+     <element name="executeType" nillable="true" type="xsd:int"/>
+     <element name="potentDay" nillable="true" type="xsd:int"/>
+     <element name="startTime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductInfoEx">
+    <sequence>
+     <element name="productName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="giftParentID" nillable="true" type="xsd:string"/>
+     <element name="isSimpleProduct" nillable="true" type="xsd:int"/>
+     <element name="promotionList" nillable="true" type="impl:ArrayOf_tns1_PromotionInfo"/>
+     <element name="rentFee" nillable="true" type="xsd:float"/>
+     <element name="copyrightRuleDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="parentID" nillable="true" type="xsd:string"/>
+     <element name="productDesc" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+     <element name="presentFlag" nillable="true" type="xsd:int"/>
+     <element name="isloyalty" nillable="true" type="xsd:int"/>
+     <element name="parentType" nillable="true" type="xsd:int"/>
+     <element name="cycleLength" nillable="true" type="xsd:int"/>
+     <element name="drmPkgRule" nillable="true" type="impl:ArrayOf_tns1_DrmPkgRule"/>
+     <element name="autoRenew" nillable="true" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="tns1:NamedParameterList"/>
+     <element name="subCmdList" nillable="true" type="xsd:string"/>
+     <element name="copyrightRuleID" nillable="true" type="xsd:string"/>
+     <element name="ratefee" nillable="true" type="xsd:float"/>
+     <element name="discountType" nillable="true" type="xsd:int"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="isSubscribe" nillable="true" type="xsd:int"/>
+     <element name="chargeMode" nillable="true" type="xsd:int"/>
+     <element name="drmPkgType" nillable="true" type="xsd:int"/>
+     <element name="isDRMTry" nillable="true" type="xsd:int"/>
+     <element name="unsubCmdList" nillable="true" type="xsd:string"/>
+     <element name="oerCmd" nillable="true" type="xsd:string"/>
+     <element name="chargeModeUnit" nillable="true" type="xsd:int"/>
+     <element name="giftProductID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ProductListGetExRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="productInfoExList" nillable="true" type="impl:ArrayOf_tns1_ProductInfoEx"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberInfo">
+    <sequence>
+     <element name="mpnType" nillable="true" type="xsd:int"/>
+     <element name="mpnNumber" nillable="true" type="xsd:string"/>
+     <element name="createtime" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MpnNumberSetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="mpnNumbers" nillable="true" type="impl:ArrayOf_tns8_MpnNumberInfo"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberModifyReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="mpnType" nillable="true" type="xsd:int"/>
+       <element name="mpnNumbers" nillable="true" type="impl:ArrayOf_xsd_string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberCancelReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SelectContentsInPackageReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="productID" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SelectContentsInPackageRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="selectContent" nillable="true" type="impl:ArrayOf_xsd_string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchUserInfoGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userIDs" nillable="true" type="tns1:UserIDList"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchUserInfoGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="userRegisterProfiles" nillable="true" type="impl:ArrayOf_tns1_UserRegisterProfile"/>
+       <element name="userProfiles" nillable="true" type="impl:ArrayOf_tns1_UserProfile"/>
+       <element name="resultCode" nillable="true" type="impl:ArrayOf_xsd_int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberQueryReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="mpnType" nillable="true" type="xsd:int"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberQueryRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="infos" nillable="true" type="impl:ArrayOf_tns8_MpnNumberInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberHistoryQueryReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="toDate" nillable="true" type="xsd:string"/>
+       <element name="noteNo" nillable="true" type="xsd:int"/>
+       <element name="fromDate" nillable="true" type="xsd:string"/>
+       <element name="startNote" nillable="true" type="xsd:int"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnNumberHistoryInfo">
+    <sequence>
+     <element name="mpnType" nillable="true" type="xsd:int"/>
+     <element name="operType" nillable="true" type="xsd:int"/>
+     <element name="opertime" nillable="true" type="xsd:string"/>
+     <element name="mpnNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MpnNumberHistoryQueryRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="infos" nillable="true" type="impl:ArrayOf_tns9_MpnNumberHistoryInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnServiceInfoQueryReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="MpnServiceInfoQueryRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="serviceDesp" nillable="true" type="xsd:string"/>
+       <element name="servicePriceDesp" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PresentInfoWithUserGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PresentInfoWithUserRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="presentInfoList" nillable="true" type="impl:ArrayOf_tns1_PresentInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CommendInfoWithUserGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CommendInfoWithUserGetRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="commendInfoList" nillable="true" type="impl:ArrayOf_tns7_CommendInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="OrderRelationSyncReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="spID" nillable="true" type="xsd:string"/>
+       <element name="effectiveTime" nillable="true" type="xsd:string"/>
+       <element name="serviceID" nillable="true" type="xsd:string"/>
+       <element name="serviceList" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="expiryTime" nillable="true" type="xsd:string"/>
+       <element name="updateDesc" nillable="true" type="xsd:string"/>
+       <element name="productID" nillable="true" type="xsd:string"/>
+       <element name="updateType" nillable="true" type="xsd:int"/>
+       <element name="updateTime" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="OrderRelationSyncRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="hRet" nillable="true" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GetBalanceReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="endUserIdentifier" nillable="true" type="tns1:UserID"/>
+       <element name="endUserPin" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BalanceInfo">
+    <sequence>
+     <element name="balanceType" nillable="true" type="xsd:string"/>
+     <element name="amount" type="xsd:double"/>
+    </sequence>
+   </complexType>
+   <complexType name="GetBalanceRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="result" nillable="true" type="impl:ArrayOf_tns7_BalanceInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PaymentInfoType">
+    <sequence>
+     <element name="currency" nillable="true" type="xsd:string"/>
+     <element name="taxes" nillable="true" type="xsd:int"/>
+     <element name="code" nillable="true" type="xsd:string"/>
+     <element name="endUserIdentifier" nillable="true" type="tns1:UserID"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="referencecode" nillable="true" type="xsd:string"/>
+     <element name="amount" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="GetRequestTokenReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="spId" nillable="true" type="xsd:string"/>
+       <element name="serviceId" nillable="true" type="xsd:string"/>
+       <element name="apiName" nillable="true" type="xsd:int"/>
+       <element name="callbackUrl" nillable="true" type="xsd:string"/>
+       <element name="paymentInfo" nillable="true" type="tns1:PaymentInfoType"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="AccessTokenInfo">
+    <sequence>
+     <element name="accessTokenType" nillable="true" type="xsd:int"/>
+     <element name="expireTime" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="GetRequestTokenRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="callbackConfirmed" nillable="true" type="xsd:int"/>
+       <element name="accessTokenTypeUserChoice" nillable="true" type="tns1:AccessTokenInfo"/>
+       <element name="token" nillable="true" type="xsd:string"/>
+       <element name="tokenSecret" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GetRequestTokenDetailsReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="token" nillable="true" type="xsd:string"/>
+       <element name="langInfo" nillable="true" type="tns1:LangInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GetRequestTokenDetailsRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="serviceName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+       <element name="productType" nillable="true" type="xsd:int"/>
+       <element name="serviceDescription" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+       <element name="ifSubscriptionExist" nillable="true" type="xsd:int"/>
+       <element name="serviceProvName" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+       <element name="serviceProvDescription" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+       <element name="productDescription" nillable="true" type="impl:ArrayOf_tns1_DialectInfo"/>
+       <element name="accessTokenTypeUserChoiceList" nillable="true" type="impl:ArrayOf_tns7_AccessTokenInfo"/>
+       <element name="serviceId" nillable="true" type="xsd:string"/>
+       <element name="paymentInfo" nillable="true" type="tns1:PaymentInfoType"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="AuthorizeRequestTokenReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="accessTokenTypeUserChoice" nillable="true" type="tns1:AccessTokenInfo"/>
+       <element name="token" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="AuthorizeRequestTokenRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="callbackUrl" nillable="true" type="xsd:string"/>
+       <element name="verifier" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GetAccessTokenReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="token" nillable="true" type="xsd:string"/>
+       <element name="verifier" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GetAccessTokenRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="accessTokenTypeUserChoice" nillable="true" type="tns1:AccessTokenInfo"/>
+       <element name="token" nillable="true" type="xsd:string"/>
+       <element name="tokenSecret" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="DemandServiceReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectId" nillable="true" type="xsd:string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="DemandServiceRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="linkID" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ProductUnSubscribeWithOrderKeyReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="channelID" nillable="true" type="xsd:int"/>
+       <element name="productOrderKey" nillable="true" type="xsd:long"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchSubscribeAuthenticateReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectedList" nillable="true" type="impl:ArrayOf_xsd_string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchSubscribeAuthenticateInfo">
+    <sequence>
+     <element name="objectID" nillable="true" type="xsd:string"/>
+     <element name="resultCode" nillable="true" type="xsd:int"/>
+     <element name="productInfoList" nillable="true" type="impl:ArrayOf_tns1_ProductInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="BatchSubscribeAuthenticateRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="infoList" nillable="true" type="impl:ArrayOf_tns7_BatchSubscribeAuthenticateInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchProductListGetReq">
+    <complexContent>
+     <extension base="tns1:BaseReq">
+      <sequence>
+       <element name="objectType" nillable="true" type="xsd:int"/>
+       <element name="language" nillable="true" type="tns1:LangInfo"/>
+       <element name="objectIDList" nillable="true" type="impl:ArrayOf_xsd_string"/>
+       <element name="userID" nillable="true" type="tns1:UserID"/>
+       <element name="queryType" nillable="true" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="BatchProductGetInfo">
+    <sequence>
+     <element name="objectID" nillable="true" type="xsd:string"/>
+     <element name="productInfoExList" nillable="true" type="impl:ArrayOf_tns1_ProductInfoEx"/>
+     <element name="resultCode" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="BatchProductListGetExRsp">
+    <complexContent>
+     <extension base="tns1:BaseRsp">
+      <sequence>
+       <element name="batchProductInfoList" nillable="true" type="impl:ArrayOf_tns1_BatchProductGetInfo"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.soap.ccengine.mdsp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://exception.soap.ccengine.mdsp.huawei.com/xsd"/>
+   <import namespace="http://struct.soap.ccengine.mdsp.huawei.com/xsd"/>
+   <complexType name="ArrayOf_tns7_NamedParameter">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:NamedParameter"/>
+    </sequence>
+   </complexType>
+   <element name="in0" type="tns1:UserDataSyncReq"/>
+   <element name="syncUserDataReturn" type="tns1:UserDataSyncRsp"/>
+   <element name="fault" type="tns2:CCEngineException"/>
+   <element name="in1" type="tns1:UserAuthenticateReq"/>
+   <element name="authenticateUserReturn" type="tns1:UserAuthenticateRsp"/>
+   <element name="in2" type="tns1:SubScriptionListGetReq"/>
+   <complexType name="ArrayOf_tns1_DialectInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:DialectInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_SubScriptionInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:SubScriptionInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getSubScriptionListReturn" type="tns1:SubScriptionList"/>
+   <element name="in3" type="tns1:SubscriptionHistoryListGetReq"/>
+   <complexType name="ArrayOf_tns1_SubScriptionHistoryInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:SubScriptionHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getSubscriptionHistoryListReturn" type="tns1:SubScriptionHistoryList"/>
+   <element name="in4" type="tns1:ConsumeHistoryListGetReq"/>
+   <complexType name="ArrayOf_tns1_ConsumeHistoryInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ConsumeHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getConsumeHistoryListReturn" type="tns1:ConsumeHistoryList"/>
+   <element name="in5" type="tns1:LoyaltyHistoryListGetReq"/>
+   <complexType name="ArrayOf_tns1_LoyaltyHistoryInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:LoyaltyHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getLoyaltyHistoryListReturn" type="tns1:LoyaltyHistoryListGetRsp"/>
+   <element name="in6" type="tns1:LoyaltyBalanceGetReq"/>
+   <element name="getLoyaltyBalanceReturn" type="tns1:LoyaltyBalanceGetRsp"/>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="in7" type="tns1:ProductSubscribeReq"/>
+   <complexType name="ArrayOf_tns1_SubInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:SubInfo"/>
+    </sequence>
+   </complexType>
+   <element name="in8" type="tns1:ProductBatchSubscribeReq"/>
+   <complexType name="ArrayOf_xsd_int">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="subscribeProductsReturn" type="tns1:ProductBatchSubscribeRsp"/>
+   <element name="in9" type="tns1:ProductUnSubscribeReq"/>
+   <element name="in10" type="tns1:ProductBatchUnSubscribeReq"/>
+   <element name="unsubscribeProductsReturn" type="tns1:ProductBatchUnSubscribeRsp"/>
+   <element name="in11" type="tns1:PromotionAssignReq"/>
+   <element name="in12" type="tns1:PromotionUseableCheckReq"/>
+   <element name="checkPromotionUseableReturn" type="tns1:PromotionUseableCheckRsp"/>
+   <element name="in14" type="tns1:UserPasswordUpdateExReq"/>
+   <element name="in15" type="tns1:PasswordPromptGetReq"/>
+   <element name="getPasswordPromptReturn" type="tns1:PasswordPromptGetRsp"/>
+   <element name="in17" type="tns1:DRMContentTryReq"/>
+   <element name="canTryDRMContentReturn" type="tns1:DRMContentTryRsp"/>
+   <element name="in18" type="tns1:PresentUsableAmountListGetReq"/>
+   <complexType name="ArrayOf_tns7_UsableAmountRecord">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UsableAmountRecord"/>
+    </sequence>
+   </complexType>
+   <element name="getPresentUsableAmountListReturn" type="tns1:UsableAmountRecordList"/>
+   <element name="in19" type="tns1:CodeDictionaryListGetReq"/>
+   <complexType name="ArrayOf_tns7_CodeDictionary">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:CodeDictionary"/>
+    </sequence>
+   </complexType>
+   <element name="getCodeDictionaryListReturn" type="tns1:CodeDictionaryList"/>
+   <element name="in20" type="tns1:ProductListGetReq"/>
+   <complexType name="ArrayOf_tns1_ProductInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ProductInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getProductListReturn" type="tns1:ProductListGetRsp"/>
+   <complexType name="ArrayOf_tns7_UserID">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UserID"/>
+    </sequence>
+   </complexType>
+   <element name="in21" type="tns1:ContentCommendReq"/>
+   <complexType name="ArrayOf_tns4_CommendRsp">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:CommendRsp"/>
+    </sequence>
+   </complexType>
+   <element name="commendToUserReturn" type="tns1:ContentCommendRsp"/>
+   <element name="in22" type="tns1:SubscribeAuthenticateReq"/>
+   <element name="authenticateSubscribeReturn" type="tns1:SubscribeAuthenticateRsp"/>
+   <element name="in23" type="tns1:AssignPresentToUsersReq"/>
+   <complexType name="ArrayOf_tns4_PresentRsp">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:PresentRsp"/>
+    </sequence>
+   </complexType>
+   <element name="assignPresentToUsersReturn" type="tns1:PresentRspList"/>
+   <element name="in24" type="tns1:PresentInfoGetReq"/>
+   <element name="getPresentInfoReturn" type="tns1:PresentInfoRsp"/>
+   <element name="in25" type="tns1:UserCheckReq"/>
+   <element name="in26" type="tns1:TimesQueryReq"/>
+   <element name="queryTimesForBuyXSendYReturn" type="tns1:TimesQueryRsp"/>
+   <element name="in27" type="tns1:RegisterUserReq"/>
+   <element name="registerUserReturn" type="tns1:RegisterUserRsp"/>
+   <element name="in28" type="tns1:HeatBeatCheckReq"/>
+   <element name="checkHeatbeatReturn" type="tns1:HeatBeatCheckRsp"/>
+   <element name="in29" type="tns1:UserPersonalDataSyncReq"/>
+   <element name="syncUserPersonalDataReturn" type="tns1:UserPersonalDataSyncRsp"/>
+   <element name="in31" type="tns1:ServiceGrantReq"/>
+   <element name="grantServiceReturn" type="tns1:ServiceGrantRsp"/>
+   <element name="in32" type="tns1:PasswordResetReq"/>
+   <element name="in33" type="tns1:UserInfoGetReq"/>
+   <element name="getUserInfoReturn" type="tns1:UserInfoGetRsp"/>
+   <element name="in34" type="tns1:CommendInfoGetReq"/>
+   <element name="getCommendInfoReturn" type="tns1:CommendInfoGetRsp"/>
+   <element name="in35" type="tns1:UserPersonalAttrSyncReq"/>
+   <element name="syncUserPersonalAttrReturn" type="tns1:UserPersonalAttrSyncRsp"/>
+   <element name="in36" type="tns1:UserPersonalAttrGetReq"/>
+   <complexType name="ArrayOf_tns1_UserPersonalAttr">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UserPersonalAttr"/>
+    </sequence>
+   </complexType>
+   <element name="getUserPersonalAttrReturn" type="tns1:UserPersonalAttrGetRsp"/>
+   <element name="in37" type="tns1:UserPersonalInfoGetReq"/>
+   <complexType name="ArrayOf_tns1_UserPersonalProfile">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UserPersonalProfile"/>
+    </sequence>
+   </complexType>
+   <element name="getUserPersonalInfoReturn" type="tns1:UserPersonalInfoGetRsp"/>
+   <element name="in38" type="tns1:ProductListGetExReq"/>
+   <complexType name="ArrayOf_tns1_PromotionInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:PromotionInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_DrmPkgRule">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:DrmPkgRule"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_ProductInfoEx">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ProductInfoEx"/>
+    </sequence>
+   </complexType>
+   <element name="getProductListExReturn" type="tns1:ProductListGetExRsp"/>
+   <complexType name="ArrayOf_tns8_MpnNumberInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:MpnNumberInfo"/>
+    </sequence>
+   </complexType>
+   <element name="MpnNumberSetReq" type="tns1:MpnNumberSetReq"/>
+   <element name="MpnNumberModifyReq" type="tns1:MpnNumberModifyReq"/>
+   <element name="MpnNumberCancelReq" type="tns1:MpnNumberCancelReq"/>
+   <element name="SelectContentsInPackageReq" type="tns1:SelectContentsInPackageReq"/>
+   <element name="getSelectContentsInPackageReturn" type="tns1:SelectContentsInPackageRsp"/>
+   <element name="BatchUserInfoGetReq" type="tns1:BatchUserInfoGetReq"/>
+   <complexType name="ArrayOf_tns1_UserRegisterProfile">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UserRegisterProfile"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_UserProfile">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:UserProfile"/>
+    </sequence>
+   </complexType>
+   <element name="batchGetUserInfoReturn" type="tns1:BatchUserInfoGetRsp"/>
+   <element name="MpnNumberQueryReq" type="tns1:MpnNumberQueryReq"/>
+   <element name="queryOpenMPNServiceReturn" type="tns1:MpnNumberQueryRsp"/>
+   <element name="MpnNumberHistoryQueryReq" type="tns1:MpnNumberHistoryQueryReq"/>
+   <complexType name="ArrayOf_tns9_MpnNumberHistoryInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:MpnNumberHistoryInfo"/>
+    </sequence>
+   </complexType>
+   <element name="queryMpnNumberHistoryReturn" type="tns1:MpnNumberHistoryQueryRsp"/>
+   <element name="MpnServiceInfoQueryReq" type="tns1:MpnServiceInfoQueryReq"/>
+   <element name="queryMPNServiceInfoReturn" type="tns1:MpnServiceInfoQueryRsp"/>
+   <element name="PresentInfoWithUserGetReq" type="tns1:PresentInfoWithUserGetReq"/>
+   <complexType name="ArrayOf_tns1_PresentInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:PresentInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getPresentInfoWithUserReturn" type="tns1:PresentInfoWithUserRsp"/>
+   <element name="CommendInfoWithUserGetReq" type="tns1:CommendInfoWithUserGetReq"/>
+   <complexType name="ArrayOf_tns7_CommendInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:CommendInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getCommendInfoWithUserReturn" type="tns1:CommendInfoWithUserGetRsp"/>
+   <element name="OrderRelationSyncReq" type="tns1:OrderRelationSyncReq"/>
+   <element name="syncOrderRelationReturn" type="tns1:OrderRelationSyncRsp"/>
+   <element name="GetBalanceReq" type="tns1:GetBalanceReq"/>
+   <complexType name="ArrayOf_tns7_BalanceInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:BalanceInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getBalanceReturn" type="tns1:GetBalanceRsp"/>
+   <element name="GetRequestTokenReq" type="tns1:GetRequestTokenReq"/>
+   <element name="getRequestTokenReturn" type="tns1:GetRequestTokenRsp"/>
+   <element name="GetRequestTokenDetailsReq" type="tns1:GetRequestTokenDetailsReq"/>
+   <complexType name="ArrayOf_tns7_AccessTokenInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:AccessTokenInfo"/>
+    </sequence>
+   </complexType>
+   <element name="getRequestTokenDetailsReturn" type="tns1:GetRequestTokenDetailsRsp"/>
+   <element name="AuthorizeRequestTokenReq" type="tns1:AuthorizeRequestTokenReq"/>
+   <element name="authorizeRequestTokenReturn" type="tns1:AuthorizeRequestTokenRsp"/>
+   <element name="GetAccessTokenReq" type="tns1:GetAccessTokenReq"/>
+   <element name="getAccessTokenReturn" type="tns1:GetAccessTokenRsp"/>
+   <element name="DemandServiceReq" type="tns1:DemandServiceReq"/>
+   <element name="demandServiceReturn" type="tns1:DemandServiceRsp"/>
+   <element name="unsubProductWithOrderKey" type="tns1:ProductUnSubscribeWithOrderKeyReq"/>
+   <element name="BatchSubscribeAuthenticateReq" type="tns1:BatchSubscribeAuthenticateReq"/>
+   <complexType name="ArrayOf_tns7_BatchSubscribeAuthenticateInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:BatchSubscribeAuthenticateInfo"/>
+    </sequence>
+   </complexType>
+   <element name="batchauthenticateSubscribeReturn" type="tns1:BatchSubscribeAuthenticateRsp"/>
+   <element name="BatchProductListGetReq" type="tns1:BatchProductListGetReq"/>
+   <complexType name="ArrayOf_tns1_BatchProductGetInfo">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:BatchProductGetInfo"/>
+    </sequence>
+   </complexType>
+   <element name="batchGetProductListReturn" type="tns1:BatchProductListGetExRsp"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://exception.soap.ccengine.mdsp.huawei.com/xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://struct.soap.ccengine.mdsp.huawei.com/xsd"/>
+   <import namespace="http://service.soap.ccengine.mdsp.huawei.com"/>
+   <complexType name="CCEngineException">
+    <sequence>
+     <element name="errorDesc" nillable="true" type="xsd:string"/>
+     <element name="errorCode" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getUserPersonalAttrResponse">
+
+      <wsdl:part element="intf:getUserPersonalAttrReturn" name="getUserPersonalAttrReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTimesForBuyXSendYResponse">
+
+      <wsdl:part element="intf:queryTimesForBuyXSendYReturn" name="queryTimesForBuyXSendYReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryMpnNumberHistoryRequest">
+
+      <wsdl:part element="intf:MpnNumberHistoryQueryReq" name="MpnNumberHistoryQueryReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserPersonalAttrResponse">
+
+      <wsdl:part element="intf:syncUserPersonalAttrReturn" name="syncUserPersonalAttrReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authenticateUserRequest">
+
+      <wsdl:part element="intf:in1" name="in1"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductWithOrderKeyRequest">
+
+      <wsdl:part element="intf:unsubProductWithOrderKey" name="unsubProductWithOrderKey"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="batchGetUserInfoResponse">
+
+      <wsdl:part element="intf:batchGetUserInfoReturn" name="batchGetUserInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductWithOrderKeyResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserPersonalDataRequest">
+
+      <wsdl:part element="intf:in29" name="in29"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductListExResponse">
+
+      <wsdl:part element="intf:getProductListExReturn" name="getProductListExReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="batchGetUserInfoRequest">
+
+      <wsdl:part element="intf:BatchUserInfoGetReq" name="BatchUserInfoGetReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerUserResponse">
+
+      <wsdl:part element="intf:registerUserReturn" name="registerUserReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="grantServiceResponse">
+
+      <wsdl:part element="intf:grantServiceReturn" name="grantServiceReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserDataRequest">
+
+      <wsdl:part element="intf:in0" name="in0"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCommendInfoResponse">
+
+      <wsdl:part element="intf:getCommendInfoReturn" name="getCommendInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignPromotionResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getLoyaltyHistoryListResponse">
+
+      <wsdl:part element="intf:getLoyaltyHistoryListReturn" name="getLoyaltyHistoryListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLoyaltyBalanceResponse">
+
+      <wsdl:part element="intf:getLoyaltyBalanceReturn" name="getLoyaltyBalanceReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentInfoWithUserResponse">
+
+      <wsdl:part element="intf:getPresentInfoWithUserReturn" name="getPresentInfoWithUserReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubscriptionHistoryListResponse">
+
+      <wsdl:part element="intf:getSubscriptionHistoryListReturn" name="getSubscriptionHistoryListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelMPNNumberResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getAccessTokenRequest">
+
+      <wsdl:part element="intf:GetAccessTokenReq" name="GetAccessTokenReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateUserPasswordExRequest">
+
+      <wsdl:part element="intf:in14" name="in14"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetPasswordRequest">
+
+      <wsdl:part element="intf:in32" name="in32"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignPresentToUsersResponse">
+
+      <wsdl:part element="intf:assignPresentToUsersReturn" name="assignPresentToUsersReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authorizeRequestTokenResponse">
+
+      <wsdl:part element="intf:authorizeRequestTokenReturn" name="authorizeRequestTokenReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubScriptionListResponse">
+
+      <wsdl:part element="intf:getSubScriptionListReturn" name="getSubScriptionListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductRequest">
+
+      <wsdl:part element="intf:in9" name="in9"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodeDictionaryListResponse">
+
+      <wsdl:part element="intf:getCodeDictionaryListReturn" name="getCodeDictionaryListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncOrderRelationRequest">
+
+      <wsdl:part element="intf:OrderRelationSyncReq" name="OrderRelationSyncReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeProductsResponse">
+
+      <wsdl:part element="intf:subscribeProductsReturn" name="subscribeProductsReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkUserResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="checkPromotionUseableRequest">
+
+      <wsdl:part element="intf:in12" name="in12"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="batchGetProductListResponse">
+
+      <wsdl:part element="intf:batchGetProductListReturn" name="batchGetProductListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryTimesForBuyXSendYRequest">
+
+      <wsdl:part element="intf:in26" name="in26"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryOpenMPNServiceResponse">
+
+      <wsdl:part element="intf:queryOpenMPNServiceReturn" name="queryOpenMPNServiceReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLoyaltyHistoryListRequest">
+
+      <wsdl:part element="intf:in5" name="in5"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserDataResponse">
+
+      <wsdl:part element="intf:syncUserDataReturn" name="syncUserDataReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCommendInfoWithUserRequest">
+
+      <wsdl:part element="intf:CommendInfoWithUserGetReq" name="CommendInfoWithUserGetReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerUserRequest">
+
+      <wsdl:part element="intf:in27" name="in27"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserPersonalAttrRequest">
+
+      <wsdl:part element="intf:in36" name="in36"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authenticateSubscribeRequest">
+
+      <wsdl:part element="intf:in22" name="in22"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserPersonalInfoResponse">
+
+      <wsdl:part element="intf:getUserPersonalInfoReturn" name="getUserPersonalInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkHeatbeatResponse">
+
+      <wsdl:part element="intf:checkHeatbeatReturn" name="checkHeatbeatReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authenticateSubscribeResponse">
+
+      <wsdl:part element="intf:authenticateSubscribeReturn" name="authenticateSubscribeReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="demandServiceResponse">
+
+      <wsdl:part element="intf:demandServiceReturn" name="demandServiceReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductListExRequest">
+
+      <wsdl:part element="intf:in38" name="in38"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkHeatbeatRequest">
+
+      <wsdl:part element="intf:in28" name="in28"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAccessTokenResponse">
+
+      <wsdl:part element="intf:getAccessTokenReturn" name="getAccessTokenReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMPNNumberResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserInfoRequest">
+
+      <wsdl:part element="intf:in33" name="in33"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentUsableAmountListRequest">
+
+      <wsdl:part element="intf:in18" name="in18"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateUserPasswordExResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserInfoResponse">
+
+      <wsdl:part element="intf:getUserInfoReturn" name="getUserInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkPromotionUseableResponse">
+
+      <wsdl:part element="intf:checkPromotionUseableReturn" name="checkPromotionUseableReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkUserRequest">
+
+      <wsdl:part element="intf:in25" name="in25"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="batchauthenticateSubscribeResponse">
+
+      <wsdl:part element="intf:batchauthenticateSubscribeReturn" name="batchauthenticateSubscribeReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryMpnNumberHistoryResponse">
+
+      <wsdl:part element="intf:queryMpnNumberHistoryReturn" name="queryMpnNumberHistoryReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserPersonalAttrRequest">
+
+      <wsdl:part element="intf:in35" name="in35"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentInfoResponse">
+
+      <wsdl:part element="intf:getPresentInfoReturn" name="getPresentInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignPromotionRequest">
+
+      <wsdl:part element="intf:in11" name="in11"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryMPNServiceInfoResponse">
+
+      <wsdl:part element="intf:queryMPNServiceInfoReturn" name="queryMPNServiceInfoReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authorizeRequestTokenRequest">
+
+      <wsdl:part element="intf:AuthorizeRequestTokenReq" name="AuthorizeRequestTokenReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductListRequest">
+
+      <wsdl:part element="intf:in20" name="in20"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="demandServiceRequest">
+
+      <wsdl:part element="intf:DemandServiceReq" name="DemandServiceReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentUsableAmountListResponse">
+
+      <wsdl:part element="intf:getPresentUsableAmountListReturn" name="getPresentUsableAmountListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentInfoWithUserRequest">
+
+      <wsdl:part element="intf:PresentInfoWithUserGetReq" name="PresentInfoWithUserGetReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodeDictionaryListRequest">
+
+      <wsdl:part element="intf:in19" name="in19"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyMPNNumberRequest">
+
+      <wsdl:part element="intf:MpnNumberModifyReq" name="MpnNumberModifyReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequestTokenDetailsRequest">
+
+      <wsdl:part element="intf:GetRequestTokenDetailsReq" name="GetRequestTokenDetailsReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeProductRequest">
+
+      <wsdl:part element="intf:in7" name="in7"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getConsumeHistoryListRequest">
+
+      <wsdl:part element="intf:in4" name="in4"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCommendInfoRequest">
+
+      <wsdl:part element="intf:in34" name="in34"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="grantServiceRequest">
+
+      <wsdl:part element="intf:in31" name="in31"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubScriptionListRequest">
+
+      <wsdl:part element="intf:in2" name="in2"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="commendToUserResponse">
+
+      <wsdl:part element="intf:commendToUserReturn" name="commendToUserReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequestTokenResponse">
+
+      <wsdl:part element="intf:getRequestTokenReturn" name="getRequestTokenReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignPresentToUsersRequest">
+
+      <wsdl:part element="intf:in23" name="in23"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelMPNNumberRequest">
+
+      <wsdl:part element="intf:MpnNumberCancelReq" name="MpnNumberCancelReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSelectContentsInPackageResponse">
+
+      <wsdl:part element="intf:getSelectContentsInPackageReturn" name="getSelectContentsInPackageReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBalanceRequest">
+
+      <wsdl:part element="intf:GetBalanceReq" name="GetBalanceReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequestTokenRequest">
+
+      <wsdl:part element="intf:GetRequestTokenReq" name="GetRequestTokenReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeProductResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="queryOpenMPNServiceRequest">
+
+      <wsdl:part element="intf:MpnNumberQueryReq" name="MpnNumberQueryReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authenticateUserResponse">
+
+      <wsdl:part element="intf:authenticateUserReturn" name="authenticateUserReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductsRequest">
+
+      <wsdl:part element="intf:in10" name="in10"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPresentInfoRequest">
+
+      <wsdl:part element="intf:in24" name="in24"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserPersonalInfoRequest">
+
+      <wsdl:part element="intf:in37" name="in37"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="syncOrderRelationResponse">
+
+      <wsdl:part element="intf:syncOrderRelationReturn" name="syncOrderRelationReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryMPNServiceInfoRequest">
+
+      <wsdl:part element="intf:MpnServiceInfoQueryReq" name="MpnServiceInfoQueryReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeProductsRequest">
+
+      <wsdl:part element="intf:in8" name="in8"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="commendToUserRequest">
+
+      <wsdl:part element="intf:in21" name="in21"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetPasswordResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="batchauthenticateSubscribeRequest">
+
+      <wsdl:part element="intf:BatchSubscribeAuthenticateReq" name="BatchSubscribeAuthenticateReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="batchGetProductListRequest">
+
+      <wsdl:part element="intf:BatchProductListGetReq" name="BatchProductListGetReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMPNNumberRequest">
+
+      <wsdl:part element="intf:MpnNumberSetReq" name="MpnNumberSetReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubscriptionHistoryListRequest">
+
+      <wsdl:part element="intf:in3" name="in3"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifyMPNNumberResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getPasswordPromptRequest">
+
+      <wsdl:part element="intf:in15" name="in15"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBalanceResponse">
+
+      <wsdl:part element="intf:getBalanceReturn" name="getBalanceReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSelectContentsInPackageRequest">
+
+      <wsdl:part element="intf:SelectContentsInPackageReq" name="SelectContentsInPackageReq"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequestTokenDetailsResponse">
+
+      <wsdl:part element="intf:getRequestTokenDetailsReturn" name="getRequestTokenDetailsReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="canTryDRMContentRequest">
+
+      <wsdl:part element="intf:in17" name="in17"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductListResponse">
+
+      <wsdl:part element="intf:getProductListReturn" name="getProductListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getConsumeHistoryListResponse">
+
+      <wsdl:part element="intf:getConsumeHistoryListReturn" name="getConsumeHistoryListReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeProductsResponse">
+
+      <wsdl:part element="intf:unsubscribeProductsReturn" name="unsubscribeProductsReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncUserPersonalDataResponse">
+
+      <wsdl:part element="intf:syncUserPersonalDataReturn" name="syncUserPersonalDataReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCommendInfoWithUserResponse">
+
+      <wsdl:part element="intf:getCommendInfoWithUserReturn" name="getCommendInfoWithUserReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPasswordPromptResponse">
+
+      <wsdl:part element="intf:getPasswordPromptReturn" name="getPasswordPromptReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLoyaltyBalanceRequest">
+
+      <wsdl:part element="intf:in6" name="in6"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="canTryDRMContentResponse">
+
+      <wsdl:part element="intf:canTryDRMContentReturn" name="canTryDRMContentReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="CCEngineException">
+
+      <wsdl:part element="intf:fault" name="fault"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CCEngineService">
+
+      <wsdl:operation name="syncUserData" parameterOrder="in0">
+
+         <wsdl:input message="intf:syncUserDataRequest" name="syncUserDataRequest"/>
+
+         <wsdl:output message="intf:syncUserDataResponse" name="syncUserDataResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authenticateUser" parameterOrder="in1">
+
+         <wsdl:input message="intf:authenticateUserRequest" name="authenticateUserRequest"/>
+
+         <wsdl:output message="intf:authenticateUserResponse" name="authenticateUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSubScriptionList" parameterOrder="in2">
+
+         <wsdl:input message="intf:getSubScriptionListRequest" name="getSubScriptionListRequest"/>
+
+         <wsdl:output message="intf:getSubScriptionListResponse" name="getSubScriptionListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSubscriptionHistoryList" parameterOrder="in3">
+
+         <wsdl:input message="intf:getSubscriptionHistoryListRequest" name="getSubscriptionHistoryListRequest"/>
+
+         <wsdl:output message="intf:getSubscriptionHistoryListResponse" name="getSubscriptionHistoryListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getConsumeHistoryList" parameterOrder="in4">
+
+         <wsdl:input message="intf:getConsumeHistoryListRequest" name="getConsumeHistoryListRequest"/>
+
+         <wsdl:output message="intf:getConsumeHistoryListResponse" name="getConsumeHistoryListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLoyaltyHistoryList" parameterOrder="in5">
+
+         <wsdl:input message="intf:getLoyaltyHistoryListRequest" name="getLoyaltyHistoryListRequest"/>
+
+         <wsdl:output message="intf:getLoyaltyHistoryListResponse" name="getLoyaltyHistoryListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLoyaltyBalance" parameterOrder="in6">
+
+         <wsdl:input message="intf:getLoyaltyBalanceRequest" name="getLoyaltyBalanceRequest"/>
+
+         <wsdl:output message="intf:getLoyaltyBalanceResponse" name="getLoyaltyBalanceResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeProduct" parameterOrder="in7">
+
+         <wsdl:input message="intf:subscribeProductRequest" name="subscribeProductRequest"/>
+
+         <wsdl:output message="intf:subscribeProductResponse" name="subscribeProductResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeProducts" parameterOrder="in8">
+
+         <wsdl:input message="intf:subscribeProductsRequest" name="subscribeProductsRequest"/>
+
+         <wsdl:output message="intf:subscribeProductsResponse" name="subscribeProductsResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProduct" parameterOrder="in9">
+
+         <wsdl:input message="intf:unsubscribeProductRequest" name="unsubscribeProductRequest"/>
+
+         <wsdl:output message="intf:unsubscribeProductResponse" name="unsubscribeProductResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProducts" parameterOrder="in10">
+
+         <wsdl:input message="intf:unsubscribeProductsRequest" name="unsubscribeProductsRequest"/>
+
+         <wsdl:output message="intf:unsubscribeProductsResponse" name="unsubscribeProductsResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignPromotion" parameterOrder="in11">
+
+         <wsdl:input message="intf:assignPromotionRequest" name="assignPromotionRequest"/>
+
+         <wsdl:output message="intf:assignPromotionResponse" name="assignPromotionResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkPromotionUseable" parameterOrder="in12">
+
+         <wsdl:input message="intf:checkPromotionUseableRequest" name="checkPromotionUseableRequest"/>
+
+         <wsdl:output message="intf:checkPromotionUseableResponse" name="checkPromotionUseableResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateUserPasswordEx" parameterOrder="in14">
+
+         <wsdl:input message="intf:updateUserPasswordExRequest" name="updateUserPasswordExRequest"/>
+
+         <wsdl:output message="intf:updateUserPasswordExResponse" name="updateUserPasswordExResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPasswordPrompt" parameterOrder="in15">
+
+         <wsdl:input message="intf:getPasswordPromptRequest" name="getPasswordPromptRequest"/>
+
+         <wsdl:output message="intf:getPasswordPromptResponse" name="getPasswordPromptResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="canTryDRMContent" parameterOrder="in17">
+
+         <wsdl:input message="intf:canTryDRMContentRequest" name="canTryDRMContentRequest"/>
+
+         <wsdl:output message="intf:canTryDRMContentResponse" name="canTryDRMContentResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentUsableAmountList" parameterOrder="in18">
+
+         <wsdl:input message="intf:getPresentUsableAmountListRequest" name="getPresentUsableAmountListRequest"/>
+
+         <wsdl:output message="intf:getPresentUsableAmountListResponse" name="getPresentUsableAmountListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodeDictionaryList" parameterOrder="in19">
+
+         <wsdl:input message="intf:getCodeDictionaryListRequest" name="getCodeDictionaryListRequest"/>
+
+         <wsdl:output message="intf:getCodeDictionaryListResponse" name="getCodeDictionaryListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductList" parameterOrder="in20">
+
+         <wsdl:input message="intf:getProductListRequest" name="getProductListRequest"/>
+
+         <wsdl:output message="intf:getProductListResponse" name="getProductListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="commendToUser" parameterOrder="in21">
+
+         <wsdl:input message="intf:commendToUserRequest" name="commendToUserRequest"/>
+
+         <wsdl:output message="intf:commendToUserResponse" name="commendToUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authenticateSubscribe" parameterOrder="in22">
+
+         <wsdl:input message="intf:authenticateSubscribeRequest" name="authenticateSubscribeRequest"/>
+
+         <wsdl:output message="intf:authenticateSubscribeResponse" name="authenticateSubscribeResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignPresentToUsers" parameterOrder="in23">
+
+         <wsdl:input message="intf:assignPresentToUsersRequest" name="assignPresentToUsersRequest"/>
+
+         <wsdl:output message="intf:assignPresentToUsersResponse" name="assignPresentToUsersResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentInfo" parameterOrder="in24">
+
+         <wsdl:input message="intf:getPresentInfoRequest" name="getPresentInfoRequest"/>
+
+         <wsdl:output message="intf:getPresentInfoResponse" name="getPresentInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkUser" parameterOrder="in25">
+
+         <wsdl:input message="intf:checkUserRequest" name="checkUserRequest"/>
+
+         <wsdl:output message="intf:checkUserResponse" name="checkUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryTimesForBuyXSendY" parameterOrder="in26">
+
+         <wsdl:input message="intf:queryTimesForBuyXSendYRequest" name="queryTimesForBuyXSendYRequest"/>
+
+         <wsdl:output message="intf:queryTimesForBuyXSendYResponse" name="queryTimesForBuyXSendYResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registerUser" parameterOrder="in27">
+
+         <wsdl:input message="intf:registerUserRequest" name="registerUserRequest"/>
+
+         <wsdl:output message="intf:registerUserResponse" name="registerUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkHeatbeat" parameterOrder="in28">
+
+         <wsdl:input message="intf:checkHeatbeatRequest" name="checkHeatbeatRequest"/>
+
+         <wsdl:output message="intf:checkHeatbeatResponse" name="checkHeatbeatResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncUserPersonalData" parameterOrder="in29">
+
+         <wsdl:input message="intf:syncUserPersonalDataRequest" name="syncUserPersonalDataRequest"/>
+
+         <wsdl:output message="intf:syncUserPersonalDataResponse" name="syncUserPersonalDataResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="grantService" parameterOrder="in31">
+
+         <wsdl:input message="intf:grantServiceRequest" name="grantServiceRequest"/>
+
+         <wsdl:output message="intf:grantServiceResponse" name="grantServiceResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetPassword" parameterOrder="in32">
+
+         <wsdl:input message="intf:resetPasswordRequest" name="resetPasswordRequest"/>
+
+         <wsdl:output message="intf:resetPasswordResponse" name="resetPasswordResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserInfo" parameterOrder="in33">
+
+         <wsdl:input message="intf:getUserInfoRequest" name="getUserInfoRequest"/>
+
+         <wsdl:output message="intf:getUserInfoResponse" name="getUserInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCommendInfo" parameterOrder="in34">
+
+         <wsdl:input message="intf:getCommendInfoRequest" name="getCommendInfoRequest"/>
+
+         <wsdl:output message="intf:getCommendInfoResponse" name="getCommendInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncUserPersonalAttr" parameterOrder="in35">
+
+         <wsdl:input message="intf:syncUserPersonalAttrRequest" name="syncUserPersonalAttrRequest"/>
+
+         <wsdl:output message="intf:syncUserPersonalAttrResponse" name="syncUserPersonalAttrResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserPersonalAttr" parameterOrder="in36">
+
+         <wsdl:input message="intf:getUserPersonalAttrRequest" name="getUserPersonalAttrRequest"/>
+
+         <wsdl:output message="intf:getUserPersonalAttrResponse" name="getUserPersonalAttrResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserPersonalInfo" parameterOrder="in37">
+
+         <wsdl:input message="intf:getUserPersonalInfoRequest" name="getUserPersonalInfoRequest"/>
+
+         <wsdl:output message="intf:getUserPersonalInfoResponse" name="getUserPersonalInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductListEx" parameterOrder="in38">
+
+         <wsdl:input message="intf:getProductListExRequest" name="getProductListExRequest"/>
+
+         <wsdl:output message="intf:getProductListExResponse" name="getProductListExResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMPNNumber" parameterOrder="MpnNumberSetReq">
+
+         <wsdl:input message="intf:setMPNNumberRequest" name="setMPNNumberRequest"/>
+
+         <wsdl:output message="intf:setMPNNumberResponse" name="setMPNNumberResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyMPNNumber" parameterOrder="MpnNumberModifyReq">
+
+         <wsdl:input message="intf:modifyMPNNumberRequest" name="modifyMPNNumberRequest"/>
+
+         <wsdl:output message="intf:modifyMPNNumberResponse" name="modifyMPNNumberResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelMPNNumber" parameterOrder="MpnNumberCancelReq">
+
+         <wsdl:input message="intf:cancelMPNNumberRequest" name="cancelMPNNumberRequest"/>
+
+         <wsdl:output message="intf:cancelMPNNumberResponse" name="cancelMPNNumberResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSelectContentsInPackage" parameterOrder="SelectContentsInPackageReq">
+
+         <wsdl:input message="intf:getSelectContentsInPackageRequest" name="getSelectContentsInPackageRequest"/>
+
+         <wsdl:output message="intf:getSelectContentsInPackageResponse" name="getSelectContentsInPackageResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchGetUserInfo" parameterOrder="BatchUserInfoGetReq">
+
+         <wsdl:input message="intf:batchGetUserInfoRequest" name="batchGetUserInfoRequest"/>
+
+         <wsdl:output message="intf:batchGetUserInfoResponse" name="batchGetUserInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryOpenMPNService" parameterOrder="MpnNumberQueryReq">
+
+         <wsdl:input message="intf:queryOpenMPNServiceRequest" name="queryOpenMPNServiceRequest"/>
+
+         <wsdl:output message="intf:queryOpenMPNServiceResponse" name="queryOpenMPNServiceResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryMpnNumberHistory" parameterOrder="MpnNumberHistoryQueryReq">
+
+         <wsdl:input message="intf:queryMpnNumberHistoryRequest" name="queryMpnNumberHistoryRequest"/>
+
+         <wsdl:output message="intf:queryMpnNumberHistoryResponse" name="queryMpnNumberHistoryResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryMPNServiceInfo" parameterOrder="MpnServiceInfoQueryReq">
+
+         <wsdl:input message="intf:queryMPNServiceInfoRequest" name="queryMPNServiceInfoRequest"/>
+
+         <wsdl:output message="intf:queryMPNServiceInfoResponse" name="queryMPNServiceInfoResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentInfoWithUser" parameterOrder="PresentInfoWithUserGetReq">
+
+         <wsdl:input message="intf:getPresentInfoWithUserRequest" name="getPresentInfoWithUserRequest"/>
+
+         <wsdl:output message="intf:getPresentInfoWithUserResponse" name="getPresentInfoWithUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCommendInfoWithUser" parameterOrder="CommendInfoWithUserGetReq">
+
+         <wsdl:input message="intf:getCommendInfoWithUserRequest" name="getCommendInfoWithUserRequest"/>
+
+         <wsdl:output message="intf:getCommendInfoWithUserResponse" name="getCommendInfoWithUserResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncOrderRelation" parameterOrder="OrderRelationSyncReq">
+
+         <wsdl:input message="intf:syncOrderRelationRequest" name="syncOrderRelationRequest"/>
+
+         <wsdl:output message="intf:syncOrderRelationResponse" name="syncOrderRelationResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBalance" parameterOrder="GetBalanceReq">
+
+         <wsdl:input message="intf:getBalanceRequest" name="getBalanceRequest"/>
+
+         <wsdl:output message="intf:getBalanceResponse" name="getBalanceResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRequestToken" parameterOrder="GetRequestTokenReq">
+
+         <wsdl:input message="intf:getRequestTokenRequest" name="getRequestTokenRequest"/>
+
+         <wsdl:output message="intf:getRequestTokenResponse" name="getRequestTokenResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRequestTokenDetails" parameterOrder="GetRequestTokenDetailsReq">
+
+         <wsdl:input message="intf:getRequestTokenDetailsRequest" name="getRequestTokenDetailsRequest"/>
+
+         <wsdl:output message="intf:getRequestTokenDetailsResponse" name="getRequestTokenDetailsResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authorizeRequestToken" parameterOrder="AuthorizeRequestTokenReq">
+
+         <wsdl:input message="intf:authorizeRequestTokenRequest" name="authorizeRequestTokenRequest"/>
+
+         <wsdl:output message="intf:authorizeRequestTokenResponse" name="authorizeRequestTokenResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAccessToken" parameterOrder="GetAccessTokenReq">
+
+         <wsdl:input message="intf:getAccessTokenRequest" name="getAccessTokenRequest"/>
+
+         <wsdl:output message="intf:getAccessTokenResponse" name="getAccessTokenResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="demandService" parameterOrder="DemandServiceReq">
+
+         <wsdl:input message="intf:demandServiceRequest" name="demandServiceRequest"/>
+
+         <wsdl:output message="intf:demandServiceResponse" name="demandServiceResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProductWithOrderKey" parameterOrder="unsubProductWithOrderKey">
+
+         <wsdl:input message="intf:unsubscribeProductWithOrderKeyRequest" name="unsubscribeProductWithOrderKeyRequest"/>
+
+         <wsdl:output message="intf:unsubscribeProductWithOrderKeyResponse" name="unsubscribeProductWithOrderKeyResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchauthenticateSubscribe" parameterOrder="BatchSubscribeAuthenticateReq">
+
+         <wsdl:input message="intf:batchauthenticateSubscribeRequest" name="batchauthenticateSubscribeRequest"/>
+
+         <wsdl:output message="intf:batchauthenticateSubscribeResponse" name="batchauthenticateSubscribeResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchGetProductList" parameterOrder="BatchProductListGetReq">
+
+         <wsdl:input message="intf:batchGetProductListRequest" name="batchGetProductListRequest"/>
+
+         <wsdl:output message="intf:batchGetProductListResponse" name="batchGetProductListResponse"/>
+
+         <wsdl:fault message="intf:CCEngineException" name="CCEngineException"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CCEngineServiceSoapBinding" type="intf:CCEngineService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="syncUserData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="syncUserDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncUserDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authenticateUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authenticateUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authenticateUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSubScriptionList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSubScriptionListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSubScriptionListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSubscriptionHistoryList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSubscriptionHistoryListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSubscriptionHistoryListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getConsumeHistoryList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getConsumeHistoryListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getConsumeHistoryListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLoyaltyHistoryList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLoyaltyHistoryListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLoyaltyHistoryListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLoyaltyBalance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLoyaltyBalanceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLoyaltyBalanceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribeProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribeProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsubscribeProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsubscribeProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsubscribeProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsubscribeProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignPromotion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="assignPromotionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="assignPromotionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkPromotionUseable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checkPromotionUseableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checkPromotionUseableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateUserPasswordEx">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateUserPasswordExRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateUserPasswordExResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPasswordPrompt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPasswordPromptRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPasswordPromptResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="canTryDRMContent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="canTryDRMContentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="canTryDRMContentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentUsableAmountList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPresentUsableAmountListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPresentUsableAmountListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodeDictionaryList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCodeDictionaryListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCodeDictionaryListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="commendToUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="commendToUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="commendToUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authenticateSubscribe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authenticateSubscribeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authenticateSubscribeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignPresentToUsers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="assignPresentToUsersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="assignPresentToUsersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPresentInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPresentInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checkUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checkUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryTimesForBuyXSendY">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryTimesForBuyXSendYRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryTimesForBuyXSendYResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registerUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registerUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registerUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkHeatbeat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checkHeatbeatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checkHeatbeatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncUserPersonalData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="syncUserPersonalDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncUserPersonalDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="grantService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="grantServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="grantServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetPassword">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="resetPasswordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="resetPasswordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCommendInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCommendInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCommendInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncUserPersonalAttr">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="syncUserPersonalAttrRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncUserPersonalAttrResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserPersonalAttr">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserPersonalAttrRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserPersonalAttrResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserPersonalInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserPersonalInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserPersonalInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductListEx">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductListExRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductListExResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMPNNumber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMPNNumberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMPNNumberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyMPNNumber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifyMPNNumberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifyMPNNumberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelMPNNumber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelMPNNumberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelMPNNumberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSelectContentsInPackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSelectContentsInPackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSelectContentsInPackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchGetUserInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="batchGetUserInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="batchGetUserInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryOpenMPNService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryOpenMPNServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryOpenMPNServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryMpnNumberHistory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryMpnNumberHistoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryMpnNumberHistoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryMPNServiceInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryMPNServiceInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryMPNServiceInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPresentInfoWithUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPresentInfoWithUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPresentInfoWithUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCommendInfoWithUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCommendInfoWithUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCommendInfoWithUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncOrderRelation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="syncOrderRelationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncOrderRelationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBalance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBalanceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBalanceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRequestToken">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRequestTokenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRequestTokenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRequestTokenDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRequestTokenDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRequestTokenDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authorizeRequestToken">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authorizeRequestTokenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authorizeRequestTokenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAccessToken">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAccessTokenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAccessTokenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="demandService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="demandServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="demandServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribeProductWithOrderKey">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsubscribeProductWithOrderKeyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsubscribeProductWithOrderKeyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchauthenticateSubscribe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="batchauthenticateSubscribeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="batchauthenticateSubscribeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="batchGetProductList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="batchGetProductListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="batchGetProductListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CCEngineException">
+
+            <wsdlsoap:fault name="CCEngineException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CCEngineService">
+
+      <wsdl:port binding="intf:CCEngineServiceSoapBinding" name="CCEngineService">
+
+         <wsdlsoap:address location="http://10.137.23.55:25078/bme/services/CCEngineService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:ns="http://www.huawei.com/bme/cbsinterface/managefc" xmlns:managefcmgr="http://www.huawei.com/bme/cbsinterface/managefcmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefcmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:managefc="http://www.huawei.com/bme/cbsinterface/managefc" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefcmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/managefc" schemaLocation="CBSInterface_FavoriteCust.xsd"/>
+			<element name="ManFavoriteCustRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManFavoriteCustRequest" type="managefc:ManFavoriteCustRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManFavoriteCustResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManFavoriteCustRequestMessage">
+		<part name="ManFavoriteCustRequestMsg" element="managefcmgr:ManFavoriteCustRequestMsg"/>
+	</message>
+	<message name="ManFavoriteCustResultMessage">
+		<part name="ManFavoriteCustResultMsg" element="managefcmgr:ManFavoriteCustResultMsg"/>
+	</message>
+	<portType name="managefc">
+		<operation name="ManFavoriteCust">
+			<input message="managefcmgr:ManFavoriteCustRequestMessage"/>
+			<output message="managefcmgr:ManFavoriteCustResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ManagefcBinding" type="managefcmgr:managefc">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ManFavoriteCust">
+			<soap:operation soapAction="ManFavoriteCust" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ManagefcMgrService">
+		<port name="ManagefcServicePort" binding="managefcmgr:ManagefcBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managefc/wsdl/CBSInterface_FavoriteCust.wsdl"/>
+		</port>
+	</service>
+</definitions>

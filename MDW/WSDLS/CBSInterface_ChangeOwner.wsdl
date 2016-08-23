@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:changeownermgr="http://www.huawei.com/bme/cbsinterface/changeownermgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/changeowner" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeownermgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:changeowner="http://www.huawei.com/bme/cbsinterface/changeowner" targetNamespace="http://www.huawei.com/bme/cbsinterface/changeownermgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/changeowner" schemaLocation="CBSInterface_ChangeOwner.xsd"/>
+			<element name="ChangeOwnerRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeOwnerRequest" type="changeowner:ChangeOwnerRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeOwnerResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ChangeOwnerRequestMessage">
+		<part name="ChangeOwnerRequestMsg" element="changeownermgr:ChangeOwnerRequestMsg"/>
+	</message>
+	<message name="ChangeOwnerResultMessage">
+		<part name="ChangeOwnerResultMsg" element="changeownermgr:ChangeOwnerResultMsg"/>
+	</message>
+	<portType name="ChangeOwnerMgr">
+		<operation name="ChangeOwner">
+			<input message="changeownermgr:ChangeOwnerRequestMessage"/>
+			<output message="changeownermgr:ChangeOwnerResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ChangeOwnerMgrBinding" type="changeownermgr:ChangeOwnerMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ChangeOwner">
+			<soap:operation soapAction="changeowner" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ChangeOwnerMgrService">
+		<port name="ChangeOwnerMgrServicePort" binding="changeownermgr:ChangeOwnerMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/changeowner/wsdl/CBSInterface_ChangeOwner.wsdl"/>
+		</port>
+	</service>
+</definitions>

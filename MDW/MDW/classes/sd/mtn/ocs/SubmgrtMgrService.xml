@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="SubmgrtMgrService"
+                     namespaceURI="http://www.huawei.com/bme/cbsinterface/submgrtmgr"/>
+      <port-info>
+         <wsdl-port localpart="SubmgrtServicePort"
+                    namespaceURI="http://www.huawei.com/bme/cbsinterface/submgrtmgr"/>
+         <runtime/>
+         <operations>
+            <operation name="changeCustBasicInfor"/>
+            <operation name="changeAccountBasicInfor"/>
+            <operation name="changeSubscriberBasicInfor"/>
+            <operation name="changeMSISDN"/>
+            <operation name="changeSIM"/>
+            <operation name="changeCreditLevel"/>
+            <operation name="changeAcctBillCycle"/>
+            <operation name="managePaymentRelation"/>
+            <operation name="batchModifyInitBalance"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns="http://www.huawei.com/bme/cbsinterface/managefavc" xmlns:managefavcmgr="http://www.huawei.com/bme/cbsinterface/managefavcmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefavcmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:managefavc="http://www.huawei.com/bme/cbsinterface/managefavc" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefavcmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/managefavc" schemaLocation="CBSInterface_FavCountry.xsd"/>
+			<element name="ManSubFavCountryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubFavCountryRequest" type="managefavc:ManSubFavCountryRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubFavCountryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManSubFavCountryRequestMessage">
+		<part name="ManSubFavCountryRequestMsg" element="managefavcmgr:ManSubFavCountryRequestMsg"/>
+	</message>
+	<message name="ManSubFavCountryResultMessage">
+		<part name="ManSubFavCountryResultMsg" element="managefavcmgr:ManSubFavCountryResultMsg"/>
+	</message>
+	<portType name="managefavc">
+		<operation name="ManFavCountry">
+			<input message="managefavcmgr:ManSubFavCountryRequestMessage"/>
+			<output message="managefavcmgr:ManSubFavCountryResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ManagefavcBinding" type="managefavcmgr:managefavc">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ManFavCountry">
+			<soap:operation soapAction="ManFavCountry" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ManagefavcMgrService">
+		<port name="ManagefavcServicePort" binding="managefavcmgr:ManagefavcBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/managefavc/wsdl/CBSInterface_FavCountry.wsdl"/>
+		</port>
+	</service>
+</definitions>

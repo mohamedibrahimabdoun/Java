@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://integratedservices.ib.sdp.huawei.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://integratedservices.ib.sdp.huawei.com" xmlns:intf="http://integratedservices.ib.sdp.huawei.com" xmlns:tns1="http://request.integratedservices.ib.sdp.huawei.com" xmlns:tns2="http://response.integratedservices.ib.sdp.huawei.com" xmlns:tns3="http://schema.ib.sdp.huawei.com" xmlns:tns4="http://ib.sdp.huawei.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://schema.ib.sdp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://response.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://request.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://ib.sdp.huawei.com"/>
+   <complexType name="NamedParameter">
+    <sequence>
+     <element name="key" nillable="true" type="xsd:string"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="UserID">
+    <sequence>
+     <element name="ID" nillable="true" type="xsd:string"/>
+     <element name="type" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="Result">
+    <sequence>
+     <element name="resultCode" nillable="true" type="xsd:string"/>
+     <element name="resultMessage" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://integratedservices.ib.sdp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schema.ib.sdp.huawei.com"/>
+   <import namespace="http://response.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://request.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://ib.sdp.huawei.com"/>
+   <complexType name="ArrayOf_tns3_NamedParameter">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:NamedParameter"/>
+    </sequence>
+   </complexType>
+   <element name="in0" type="tns1:SubscribeServiceReq"/>
+   <element name="subscribeServiceReturn" type="tns2:SubscribeServiceRsp"/>
+   <element name="fault" type="tns4:IBException"/>
+   <element name="in1" type="tns1:UnSubscribeServiceReq"/>
+   <element name="unSubscribeServiceReturn" type="tns2:UnSubscribeServiceRsp"/>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="in2" type="tns1:SetSmsServiceFlagReq"/>
+   <complexType name="ArrayOf_tns3_Result">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:Result"/>
+    </sequence>
+   </complexType>
+   <element name="setSmsServiceFlagReturn" type="tns2:SetSmsServiceFlagRsp"/>
+   <element name="in3" type="tns1:SyncMSISDNChangeReq"/>
+   <element name="syncMSISDNChangeReturn" type="tns2:SyncMSISDNChangeRsp"/>
+   <element name="in4" type="tns1:SyncOrderRelationshipReq"/>
+   <element name="syncOrderRelationshipReturn" type="tns2:SyncOrderRelationshipRsp"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://request.integratedservices.ib.sdp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://schema.ib.sdp.huawei.com"/>
+   <import namespace="http://response.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://ib.sdp.huawei.com"/>
+   <complexType name="SubscribeServiceReq">
+    <sequence>
+     <element name="channelID" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="payType" type="xsd:int"/>
+     <element name="serviceType" type="xsd:int"/>
+     <element name="userID" nillable="true" type="tns3:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="UnSubscribeServiceReq">
+    <sequence>
+     <element name="channelID" type="xsd:int"/>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="serviceFlag" type="xsd:int"/>
+     <element name="serviceType" type="xsd:int"/>
+     <element name="userID" nillable="true" type="tns3:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="SetSmsServiceFlagReq">
+    <sequence>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="serviceType" type="xsd:int"/>
+     <element name="smscDeviceCodeList" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="userID" nillable="true" type="tns3:UserID"/>
+    </sequence>
+   </complexType>
+   <complexType name="SyncMSISDNChangeReq">
+    <sequence>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="msisdn" nillable="true" type="xsd:string"/>
+     <element name="newMSISDN" nillable="true" type="xsd:string"/>
+     <element name="notifyAddress" nillable="true" type="xsd:string"/>
+     <element name="syncDevCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SyncOrderRelationshipReq">
+    <sequence>
+     <element name="effectiveTime" nillable="true" type="xsd:string"/>
+     <element name="expiryTime" nillable="true" type="xsd:string"/>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="notifyAddress" nillable="true" type="xsd:string"/>
+     <element name="productID" nillable="true" type="xsd:string"/>
+     <element name="rentSuccess" type="xsd:boolean"/>
+     <element name="serviceID" nillable="true" type="xsd:string"/>
+     <element name="serviceList" nillable="true" type="xsd:string"/>
+     <element name="spID" nillable="true" type="xsd:string"/>
+     <element name="syncDevCode" nillable="true" type="xsd:string"/>
+     <element name="try" type="xsd:boolean"/>
+     <element name="updateDesc" nillable="true" type="xsd:string"/>
+     <element name="updateTime" nillable="true" type="xsd:string"/>
+     <element name="updateType" type="xsd:int"/>
+     <element name="userID" nillable="true" type="tns3:UserID"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://response.integratedservices.ib.sdp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://schema.ib.sdp.huawei.com"/>
+   <import namespace="http://request.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://ib.sdp.huawei.com"/>
+   <complexType name="SubscribeServiceRsp">
+    <sequence>
+     <element name="result" nillable="true" type="tns3:Result"/>
+    </sequence>
+   </complexType>
+   <complexType name="UnSubscribeServiceRsp">
+    <sequence>
+     <element name="result" nillable="true" type="tns3:Result"/>
+    </sequence>
+   </complexType>
+   <complexType name="SetSmsServiceFlagRsp">
+    <sequence>
+     <element name="result" nillable="true" type="tns3:Result"/>
+     <element name="resultList" nillable="true" type="impl:ArrayOf_tns3_Result"/>
+    </sequence>
+   </complexType>
+   <complexType name="SyncMSISDNChangeRsp">
+    <sequence>
+     <element name="extensionInfo" nillable="true" type="impl:ArrayOf_tns3_NamedParameter"/>
+     <element name="result" nillable="true" type="tns3:Result"/>
+    </sequence>
+   </complexType>
+   <complexType name="SyncOrderRelationshipRsp">
+    <sequence>
+     <element name="result" nillable="true" type="tns3:Result"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://ib.sdp.huawei.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://schema.ib.sdp.huawei.com"/>
+   <import namespace="http://response.integratedservices.ib.sdp.huawei.com"/>
+   <import namespace="http://request.integratedservices.ib.sdp.huawei.com"/>
+   <complexType name="IBException">
+    <sequence>
+     <element name="errorCode" nillable="true" type="xsd:string"/>
+     <element name="errorDes" nillable="true" type="xsd:string"/>
+     <element name="sourceDevice" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setSmsServiceFlagResponse">
+
+      <wsdl:part element="impl:setSmsServiceFlagReturn" name="setSmsServiceFlagReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncOrderRelationshipRequest">
+
+      <wsdl:part element="impl:in4" name="in0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unSubscribeServiceRequest">
+
+      <wsdl:part element="impl:in1" name="in0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeServiceResponse">
+
+      <wsdl:part element="impl:subscribeServiceReturn" name="subscribeServiceReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSmsServiceFlagRequest">
+
+      <wsdl:part element="impl:in2" name="in0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unSubscribeServiceResponse">
+
+      <wsdl:part element="impl:unSubscribeServiceReturn" name="unSubscribeServiceReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncOrderRelationshipResponse">
+
+      <wsdl:part element="impl:syncOrderRelationshipReturn" name="syncOrderRelationshipReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncMSISDNChangeResponse">
+
+      <wsdl:part element="impl:syncMSISDNChangeReturn" name="syncMSISDNChangeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="IBException">
+
+      <wsdl:part element="impl:fault" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeServiceRequest">
+
+      <wsdl:part element="impl:in0" name="in0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="syncMSISDNChangeRequest">
+
+      <wsdl:part element="impl:in3" name="in0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IntegratedServices">
+
+      <wsdl:operation name="subscribeService" parameterOrder="in0">
+
+         <wsdl:input message="impl:subscribeServiceRequest" name="subscribeServiceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribeServiceResponse" name="subscribeServiceResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:IBException" name="IBException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unSubscribeService" parameterOrder="in0">
+
+         <wsdl:input message="impl:unSubscribeServiceRequest" name="unSubscribeServiceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:unSubscribeServiceResponse" name="unSubscribeServiceResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:IBException" name="IBException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSmsServiceFlag" parameterOrder="in0">
+
+         <wsdl:input message="impl:setSmsServiceFlagRequest" name="setSmsServiceFlagRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSmsServiceFlagResponse" name="setSmsServiceFlagResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:IBException" name="IBException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncMSISDNChange" parameterOrder="in0">
+
+         <wsdl:input message="impl:syncMSISDNChangeRequest" name="syncMSISDNChangeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:syncMSISDNChangeResponse" name="syncMSISDNChangeResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:IBException" name="IBException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncOrderRelationship" parameterOrder="in0">
+
+         <wsdl:input message="impl:syncOrderRelationshipRequest" name="syncOrderRelationshipRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:syncOrderRelationshipResponse" name="syncOrderRelationshipResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:IBException" name="IBException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IntegratedServicesSoapBinding" type="impl:IntegratedServices">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="subscribeService">
+
+         <wsdlsoap:operation soapAction="subscribeService"/>
+
+         <wsdl:input name="subscribeServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="IBException">
+
+            <wsdlsoap:fault name="IBException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unSubscribeService">
+
+         <wsdlsoap:operation soapAction="unSubscribeService"/>
+
+         <wsdl:input name="unSubscribeServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unSubscribeServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="IBException">
+
+            <wsdlsoap:fault name="IBException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSmsServiceFlag">
+
+         <wsdlsoap:operation soapAction="setSmsServiceFlag"/>
+
+         <wsdl:input name="setSmsServiceFlagRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSmsServiceFlagResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="IBException">
+
+            <wsdlsoap:fault name="IBException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncMSISDNChange">
+
+         <wsdlsoap:operation soapAction="syncMSISDNChange"/>
+
+         <wsdl:input name="syncMSISDNChangeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncMSISDNChangeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="IBException">
+
+            <wsdlsoap:fault name="IBException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="syncOrderRelationship">
+
+         <wsdlsoap:operation soapAction="syncOrderRelationship"/>
+
+         <wsdl:input name="syncOrderRelationshipRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syncOrderRelationshipResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="IBException">
+
+            <wsdlsoap:fault name="IBException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IntegratedServicesService">
+
+      <wsdl:port binding="impl:IntegratedServicesSoapBinding" name="IntegratedServices">
+
+         <wsdlsoap:address location="http://127.0.0.1:80/IB/services/IntegratedServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

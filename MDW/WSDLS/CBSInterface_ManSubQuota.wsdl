@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:ns="http://www.huawei.com/bme/cbsinterface/mansubquota" xmlns:mansubquotamgr="http://www.huawei.com/bme/cbsinterface/mansubquotamgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/mansubquotamgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mansubquota="http://www.huawei.com/bme/cbsinterface/mansubquota" targetNamespace="http://www.huawei.com/bme/cbsinterface/mansubquotamgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/mansubquota" schemaLocation="CBSInterface_ManSubQuota.xsd"/>
+			<element name="ManSubQuotaRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubQuotaRequest" type="mansubquota:ManSubQuotaRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubQuotaResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManSubQuotaRequestMessage">
+		<part name="ManSubQuotaRequestMsg" element="mansubquotamgr:ManSubQuotaRequestMsg"/>
+	</message>
+	<message name="ManSubQuotaResultMessage">
+		<part name="ManSubQuotaResultMsg" element="mansubquotamgr:ManSubQuotaResultMsg"/>
+	</message>
+	<portType name="mansubquota">
+		<operation name="ManSubQuota">
+			<input message="mansubquotamgr:ManSubQuotaRequestMessage"/>
+			<output message="mansubquotamgr:ManSubQuotaResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="mansubquotaBinding" type="mansubquotamgr:mansubquota">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ManSubQuota">
+			<soap:operation soapAction="ManSubQuota" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ManSubQuotaMgrService">
+		<port name="mansubquotaServicePort" binding="mansubquotamgr:mansubquotaBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/mansubquota/wsdl/CBSInterface_ManSubQuota.wsdl"/>
+		</port>
+	</service>
+</definitions>

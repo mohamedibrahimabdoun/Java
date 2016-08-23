@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">dd835eed-adbb-41f7-8235-13a87c2d5532</identifier>
+  </ID>
+  <name>TABS</name>
+</schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:blockserusemgr="http://www.huawei.com/bme/cbsinterface/blockserusemgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/blockseruse" targetNamespace="http://www.huawei.com/bme/cbsinterface/blockserusemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:blockseruse="http://www.huawei.com/bme/cbsinterface/blockseruse" targetNamespace="http://www.huawei.com/bme/cbsinterface/blockserusemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/blockseruse" schemaLocation="CBSInterface_BlockSerUse.xsd"/>
+			<element name="BlockSerUseRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="BlockSerUseRequest" type="blockseruse:BlockSerUseRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="BlockSerUseResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="BlockSerUseRequestMessage">
+		<part name="BlockSerUseRequestMsg" element="blockserusemgr:BlockSerUseRequestMsg"/>
+	</message>
+	<message name="BlockSerUseResultMessage">
+		<part name="BlockSerUseResultMsg" element="blockserusemgr:BlockSerUseResultMsg"/>
+	</message>
+	<portType name="Blockseruse">
+		<operation name="BlockSerUse">
+			<input message="blockserusemgr:BlockSerUseRequestMessage"/>
+			<output message="blockserusemgr:BlockSerUseResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="BlockseruseBinding" type="blockserusemgr:Blockseruse">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="BlockSerUse">
+			<soap:operation soapAction="BlockSerUse" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="BlockSerUseService">
+		<port name="BlockseruseServicePort" binding="blockserusemgr:BlockseruseBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/blockseruse/wsdl/CBSInterface_BlockSerUse.wsdl"/>
+		</port>
+	</service>
+</definitions>

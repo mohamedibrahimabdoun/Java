@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<synonym xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">ed7ef196-838e-4e56-97a6-d70a25b942f1</identifier>
+  </ID>
+  <name>CRM_USER_EQUIPMENTS</name>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CRM_USER_EQUIPMENTS</name>
+        <identifier class="java.math.BigDecimal">89217</identifier>
+        <schemaName>MDW</schemaName>
+        <type>SYNONYM</type>
+      </value>
+    </entry>
+    <entry>
+      <key>Timestamp</key>
+    </entry>
+  </properties>
+  <public>false</public>
+  <reference class="oracle.javatools.db.ReferenceID">
+    <name>CRM_USER_EQUIPMENTS</name>
+    <databaseName>TABS</databaseName>
+  </reference>
+  <schema>
+    <name>MDW</name>
+  </schema>
+</synonym>

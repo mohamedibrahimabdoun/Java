@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:notifymgr="http://www.huawei.com/bme/cbsinterface/notifymgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/submgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/notifymgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:notify="http://www.huawei.com/bme/cbsinterface/notify" targetNamespace="http://www.huawei.com/bme/cbsinterface/notifymgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/notify" schemaLocation="CBSInterface_Notify.xsd"/>
+			<element name="ChangeSubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ChangeSubLowBalPrtRequest" type="notify:ChangeSubLowBalPrtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubLowBalPrtRequest" type="notify:QuerySubLowBalPrtRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubLowBalPrtResult" type="notify:QuerySubLowBalPrtResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageSubNotificationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManageSubNotificationRequest" type="notify:ManageSubNotificationRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManageSubNotificationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManageSubNotificationResult" type="notify:ManageSubNotificationResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ChangeSubLowBalPrtRequestMessage">
+		<part name="ChangeSubLowBalPrtRequestMsg" element="notifymgr:ChangeSubLowBalPrtRequestMsg"/>
+	</message>
+	<message name="ChangeSubLowBalPrtResultMessage">
+		<part name="ChangeSubLowBalPrtResultMsg" element="notifymgr:ChangeSubLowBalPrtResultMsg"/>
+	</message>
+	<message name="QuerySubLowBalPrtRequestMessage">
+		<part name="QuerySubLowBalPrtRequestMsg" element="notifymgr:QuerySubLowBalPrtRequestMsg"/>
+	</message>
+	<message name="QuerySubLowBalPrtResultMessage">
+		<part name="QuerySubLowBalPrtResultMsg" element="notifymgr:QuerySubLowBalPrtResultMsg"/>
+	</message>
+	<message name="ManageSubNotificationRequestMessage">
+		<part name="ManageSubNotificationRequestMsg" element="notifymgr:ManageSubNotificationRequestMsg"/>
+	</message>
+	<message name="ManageSubNotificationResultMessage">
+		<part name="ManageSubNotificationResultMsg" element="notifymgr:ManageSubNotificationResultMsg"/>
+	</message>
+	<portType name="Notify">
+		<operation name="ChangeSubLowBalPrt">
+			<input message="notifymgr:ChangeSubLowBalPrtRequestMessage"/>
+			<output message="notifymgr:ChangeSubLowBalPrtResultMessage"/>
+		</operation>
+		<operation name="QuerySubLowBalPrt">
+			<input message="notifymgr:QuerySubLowBalPrtRequestMessage"/>
+			<output message="notifymgr:QuerySubLowBalPrtResultMessage"/>
+		</operation>
+		<operation name="ManageSubNotification">
+			<input message="notifymgr:ManageSubNotificationRequestMessage"/>
+			<output message="notifymgr:ManageSubNotificationResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="NotifyBinding" type="notifymgr:Notify">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ChangeSubLowBalPrt">
+			<soap:operation soapAction="ChangeSubLowBalPrt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QuerySubLowBalPrt">
+			<soap:operation soapAction="QuerySubLowBalPrt" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ManageSubNotification">
+			<soap:operation soapAction="ManageSubNotification" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="NotifyMgrService">
+		<port name="NotifyServicePort" binding="notifymgr:NotifyBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/notify/wsdl/CBSInterface_Notify.wsdl"/>
+		</port>
+	</service>
+</definitions>

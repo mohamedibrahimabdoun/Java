@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cugenhance="http://www.huawei.com/bme/cbsinterface/cugenhance" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:ns1="http://www.huawei.com/bme/cbsinterface/cugenhance" targetNamespace="http://www.huawei.com/bme/cbsinterface/cugenhance" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:complexType name="ManCUGMemberCallListRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+			<xs:element name="CallNumberList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CallNumberInfo" maxOccurs="100">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="NumberType" type="xs:int"/>
+									<xs:element name="OperationType" type="xs:int"/>
+									<xs:element name="CallNumber">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="23"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ManCUGMemberCallListResult">
+		<xs:all>
+			<xs:element name="ErrorNumberList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ErrorNumberInfo" maxOccurs="100">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="ErrorType" type="xs:int"/>
+									<xs:element name="CallNumber">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="23"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="NumberType" type="xs:int"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGMemberCallListRequest">
+		<xs:all>
+			<xs:element name="SubscriberNo" type="common:SubscriberNo"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="QueryCUGMemberCallListResult">
+		<xs:sequence>
+			<xs:element name="CallNumberList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CallNumberInfo" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="CallNumber">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="23"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="NumberType" type="xs:int"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

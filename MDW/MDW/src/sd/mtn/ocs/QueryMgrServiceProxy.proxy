@@ -1,0 +1,316 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="QueryMgrService.xml"/>
+      <url path="QueryMgrService.wsdl"/>
+      <url path="CBSInterface_NewSubscriber.xsd"/>
+      <url path="CBSInterface_Query.xsd"/>
+      <url path="CBSInterface_Subscribe.xsd"/>
+      <url path="CBSInterface_Common.xsd"/>
+      <url path="CBSInterface_AcctCredit.xsd"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryLastTranInfoResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryBalanceResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeAccountOfferResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QuerySubCosIDResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/ResultHeader.java"/>
+      <url path="QueryMgrServicePortClient.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryBalanceRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/CallScreen.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeOptionalOfferExtRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryCustomerResultMsg.java"/>
+      <url path="QueryMgrService.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/NewSubscriberResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryLastTranInfoRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Subscriber.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryBalanceTransferInfoResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/BalanceType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/CreditType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/AcctChgRecType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BAScenario.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryProductOrderRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryCustomerRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeOptionalOfferResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryBalanceTransferInfoResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/Product.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeOptionalOfferExtResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/SessionEntityType.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/CallScreenNoInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/NewSubscriberRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/BatchNewSubscriberRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/ProductOrderInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/OneTimeCharge.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Customer.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/BatchUnSubscribeRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/QueryAcctCreditResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/Account.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/BindProductSubscriberNoRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/BillingCycleDate.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/QueryAcctCreditRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/SimpleProperty.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/HomeZoneInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryBalanceTransferInfoRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/Accumulator.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryCustomerRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/NewSubscriberExtResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QuerySubCosIDResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BindSubscriberNo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/OfferOrderInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/ManAcctCreditRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryBalanceTransferInfoRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/Service.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QuerySubCosIDRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/UserGroup.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BAAddrInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeOptionalOfferRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/OfferOrder.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QuerySubCosIDRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/HomeZone.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryBalanceResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryProductOrderRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/acctcredit/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryBalanceRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryProductOrderResultMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/package-info.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryLastTranInfoResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryCustomerResult.java"/>
+      <url path="QueryMgr.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/newsubscriber/NewSubscriberExtRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/querymgr/QueryLastTranInfoRequestMsg.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/FamilyNoInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/ObjectFactory.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/BundleSubscriber.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ChangeAccountOfferRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/SubscriberInfo.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/ExpireMode.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/OptionalOfferOrder.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/BADelivery.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/BatchSubscribeRequest.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/query/QueryProductOrderResult.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/subscribe/EffectMode.java"/>
+      <url path="../../../com/huawei/bme/cbsinterface/common/RequestHeader.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="QueryMgrService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.ocs"/>
+            <value n="WSDL2JAVA_UNWRAP_PARAMETERS" v="false"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="QueryMgrServicePortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" path="../../../../../WSDLS/Copy of CBSInterface_Query.wsdl"/>
+      <hash n="PROXY_PORTS">
+         <hash n="QueryMgrServicePort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="false"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="sd.mtn.ocs.QueryMgr"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="QueryMgrServicePort"/>
+            <hash n="OPERATIONS">
+               <hash n="queryBalance">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="queryBalanceTransferInfo">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="queryCustomer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="queryLastTranInfo">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="queryProductOrder">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="querySubCosID">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="172.21.24.100" port="8680" path="/services/QueryMgrService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="QueryMgrService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.huawei.com/bme/cbsinterface/querymgr"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../MDW.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="CBSInterface_NewSubscriber.xsd"/>
+         <url path="CBSInterface_Query.xsd"/>
+         <url path="CBSInterface_Subscribe.xsd"/>
+         <url path="CBSInterface_Common.xsd"/>
+         <url path="CBSInterface_AcctCredit.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="QueryMgrService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+               <value n="BOUND_PORT_TYPE" v="{http://www.huawei.com/bme/cbsinterface/querymgr}QueryMgr"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.huawei.com/bme/cbsinterface/querymgr}QueryMgrBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="queryCustomer"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryCustomerResultMsg.queryCustomer.com.huawei.bme.cbsinterface.querymgr.QueryCustomerRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="queryBalance"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryBalanceResultMsg.queryBalance.com.huawei.bme.cbsinterface.querymgr.QueryBalanceRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="queryProductOrder"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryProductOrderResultMsg.queryProductOrder.com.huawei.bme.cbsinterface.querymgr.QueryProductOrderRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="queryLastTranInfo"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryLastTranInfoResultMsg.queryLastTranInfo.com.huawei.bme.cbsinterface.querymgr.QueryLastTranInfoRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="queryBalanceTransferInfo"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryBalanceTransferInfoResultMsg.queryBalanceTransferInfo.com.huawei.bme.cbsinterface.querymgr.QueryBalanceTransferInfoRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BD_SOAP_ACTION" v="querySubCosID"/>
+                     <value n="BD_SOAP_INPUT_USE" v="1"/>
+                     <value n="BD_SOAP_OUTPUT_USE" v="1"/>
+                     <value n="BD_SOAP_STYLE" v="1"/>
+                     <value n="BOUND_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QuerySubCosIDResultMsg.querySubCosID.com.huawei.bme.cbsinterface.querymgr.QuerySubCosIDRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="ca9a4ba9-013c-1000-82f6-ac1a0149b26f"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="QueryMgrServicePort"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.huawei.com/bme/cbsinterface/querymgr}QueryMgrBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryCustomerResultMsg.queryCustomer.com.huawei.bme.cbsinterface.querymgr.QueryCustomerRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryBalanceResultMsg.queryBalance.com.huawei.bme.cbsinterface.querymgr.QueryBalanceRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryProductOrderResultMsg.queryProductOrder.com.huawei.bme.cbsinterface.querymgr.QueryProductOrderRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryLastTranInfoResultMsg.queryLastTranInfo.com.huawei.bme.cbsinterface.querymgr.QueryLastTranInfoRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QueryBalanceTransferInfoResultMsg.queryBalanceTransferInfo.com.huawei.bme.cbsinterface.querymgr.QueryBalanceTransferInfoRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.huawei.bme.cbsinterface.querymgr.QuerySubCosIDResultMsg.querySubCosID.com.huawei.bme.cbsinterface.querymgr.QuerySubCosIDRequestMsg"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="172.21.24.100" port="8680" path="/services/QueryMgrService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="sd.mtn.ocs"/>
+               <value n="WSDL2JAVA_UNWRAP_PARAMETERS" v="false"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.huawei.com/bme/cbsinterface/querymgr}QueryMgr"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="sd.mtn.ocs.QueryMgrImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="sd.mtn.ocs.QueryMgr"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../MDW.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.huawei.com/bme/cbsinterface/querymgr"/>
+         <value n="WS_URI" v="QueryMgrService"/>
+         <url n="WS_WSDL_FILE" path="../../../../../WSDLS/Copy of CBSInterface_Query.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:subscribe="http://www.huawei.com/bme/cbsinterface/subscribe" xmlns:ns="http://www.huawei.com/bme/cbsinterface/managefn" xmlns:managefnmgr="http://www.huawei.com/bme/cbsinterface/managefnmgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefnmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:managefn="http://www.huawei.com/bme/cbsinterface/managefn" targetNamespace="http://www.huawei.com/bme/cbsinterface/managefnmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/managefn" schemaLocation="CBSInterface_FamilyNumber.xsd"/>
+			<element name="QuerySubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QuerySubFamilyNoRequest" type="managefn:QuerySubFamilyNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QuerySubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QuerySubFamilyNoResult" type="managefn:QuerySubFamilyNoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManSubFamilyNoRequest" type="managefn:ManSubFamilyNoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManSubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="QuerySubFamilyNoRequestMessage">
+		<part name="QuerySubFamilyNoRequestMsg" element="managefnmgr:QuerySubFamilyNoRequestMsg"/>
+	</message>
+	<message name="QuerySubFamilyNoResultMessage">
+		<part name="QuerySubFamilyNoResultMsg" element="managefnmgr:QuerySubFamilyNoResultMsg"/>
+	</message>
+	<message name="ManSubFamilyNoRequestMessage">
+		<part name="ManSubFamilyNoRequestMsg" element="managefnmgr:ManSubFamilyNoRequestMsg"/>
+	</message>
+	<message name="ManSubFamilyNoResultMessage">
+		<part name="ManSubFamilyNoResultMsg" element="managefnmgr:ManSubFamilyNoResultMsg"/>
+	</message>
+	<portType name="FamilyNoMgr">
+		<operation name="queryFN">
+			<input message="managefnmgr:QuerySubFamilyNoRequestMessage"/>
+			<output message="managefnmgr:QuerySubFamilyNoResultMessage"/>
+		</operation>
+		<operation name="manageFN">
+			<input message="managefnmgr:ManSubFamilyNoRequestMessage"/>
+			<output message="managefnmgr:ManSubFamilyNoResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="FamilyNoMgrBinding" type="managefnmgr:FamilyNoMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="queryFN">
+			<soap:operation soapAction="queryFN" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manageFN">
+			<soap:operation soapAction="manageFN" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="FamilyNoMgrService">
+		<port name="FamilyNoMgrServicePort" binding="managefnmgr:FamilyNoMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/ManageFN/wsdl/CBSInterface_FamilyNumber.wsdl"/>
+		</port>
+	</service>
+</definitions>

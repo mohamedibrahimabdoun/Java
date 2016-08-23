@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:payrelmgrtmgr="http://www.huawei.com/bme/cbsinterface/payrelmgrtmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/payrelmgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/payrelmgrtmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:payrelmgrt="http://www.huawei.com/bme/cbsinterface/payrelmgrt" targetNamespace="http://www.huawei.com/bme/cbsinterface/payrelmgrtmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/payrelmgrt" schemaLocation="CBSInterface_PayRelMgrt.xsd"/>
+			<element name="ManPayRelbyAcctRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManPayRelbyAcctRequest" type="payrelmgrt:ManPayRelbyAcctRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPayRelbyAcctResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPayRelbySubRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManPayRelbySubRequest" type="payrelmgrt:ManPayRelbySubRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManPayRelbySubResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPayRelbyAcctRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryPayRelbyAcctRequest" type="payrelmgrt:QueryPayRelbyAcctRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPayRelbyAcctResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryPayRelbyAcctResult" type="payrelmgrt:QueryPayRelbyAcctResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPayRelbySubRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryPayRelbySubRequest" type="payrelmgrt:QueryPayRelbySubRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryPayRelbySubResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryPayRelbySubResult" type="payrelmgrt:QueryPayRelbySubResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManPayRelbyAcctRequestMessage">
+		<part name="ManPayRelbyAcctRequestMsg" element="payrelmgrtmgr:ManPayRelbyAcctRequestMsg"/>
+	</message>
+	<message name="ManPayRelbyAcctResultMessage">
+		<part name="ManPayRelbyAcctResultMsg" element="payrelmgrtmgr:ManPayRelbyAcctResultMsg"/>
+	</message>
+	<message name="ManPayRelbySubRequestMessage">
+		<part name="ManPayRelbySubRequestMsg" element="payrelmgrtmgr:ManPayRelbySubRequestMsg"/>
+	</message>
+	<message name="ManPayRelbySubResultMessage">
+		<part name="ManPayRelbySubResultMsg" element="payrelmgrtmgr:ManPayRelbySubResultMsg"/>
+	</message>
+	<message name="QueryPayRelbyAcctRequestMessage">
+		<part name="QueryPayRelbyAcctRequestMsg" element="payrelmgrtmgr:QueryPayRelbyAcctRequestMsg"/>
+	</message>
+	<message name="QueryPayRelbyAcctResultMessage">
+		<part name="QueryPayRelbyAcctResultMsg" element="payrelmgrtmgr:QueryPayRelbyAcctResultMsg"/>
+	</message>
+	<message name="QueryPayRelbySubRequestMessage">
+		<part name="QueryPayRelbySubRequestMsg" element="payrelmgrtmgr:QueryPayRelbySubRequestMsg"/>
+	</message>
+	<message name="QueryPayRelbySubResultMessage">
+		<part name="QueryPayRelbySubResultMsg" element="payrelmgrtmgr:QueryPayRelbySubResultMsg"/>
+	</message>
+	<portType name="ManPaymentRelationMgr">
+		<operation name="manPayRelbyAcct">
+			<input message="payrelmgrtmgr:ManPayRelbyAcctRequestMessage"/>
+			<output message="payrelmgrtmgr:ManPayRelbyAcctResultMessage"/>
+		</operation>
+		<operation name="manPayRelbySub">
+			<input message="payrelmgrtmgr:ManPayRelbySubRequestMessage"/>
+			<output message="payrelmgrtmgr:ManPayRelbySubResultMessage"/>
+		</operation>
+		<operation name="queryPayRelbyAcct">
+			<input message="payrelmgrtmgr:QueryPayRelbyAcctRequestMessage"/>
+			<output message="payrelmgrtmgr:QueryPayRelbyAcctResultMessage"/>
+		</operation>
+		<operation name="queryPayRelbySub">
+			<input message="payrelmgrtmgr:QueryPayRelbySubRequestMessage"/>
+			<output message="payrelmgrtmgr:QueryPayRelbySubResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ManPaymentRelationMgrBinding" type="payrelmgrtmgr:ManPaymentRelationMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="manPayRelbyAcct">
+			<soap:operation soapAction="manPayRelbyAcct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="manPayRelbySub">
+			<soap:operation soapAction="manPayRelbySub" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryPayRelbyAcct">
+			<soap:operation soapAction="queryPayRelbyAcct" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryPayRelbySub">
+			<soap:operation soapAction="queryPayRelbySub" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ManPaymentRelationMgrService">
+		<port name="ManPaymentRelationMgrServicePort" binding="payrelmgrtmgr:ManPaymentRelationMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/payrelmgrtmgr/wsdl/CBSInterface_PayRelMgrt.wsdl"/>
+		</port>
+	</service>
+</definitions>

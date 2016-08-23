@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:recsmsmgr="http://www.huawei.com/bme/cbsinterface/recsmsmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/recsms" targetNamespace="http://www.huawei.com/bme/cbsinterface/recsmsmgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:recsms="http://www.huawei.com/bme/cbsinterface/recsms" targetNamespace="http://www.huawei.com/bme/cbsinterface/recsmsmgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/recsms" schemaLocation="CBSInterface_ReceivingSMS.xsd"/>
+			<element name="ReceivingSMSMessageRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ReceivingSMSMessageRequest" type="recsms:ReceivingSMSMessageRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ReceivingSMSMessageResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ReceivingSMSMessageRequestMessage">
+		<part name="ReceivingSMSMessageRequestMsg" element="recsmsmgr:ReceivingSMSMessageRequestMsg"/>
+	</message>
+	<message name="ReceivingSMSMessageResultMessage">
+		<part name="ReceivingSMSMessageResultMsg" element="recsmsmgr:ReceivingSMSMessageResultMsg"/>
+	</message>
+	<portType name="Recsms">
+		<operation name="ReceivingSMSMessage">
+			<input message="recsmsmgr:ReceivingSMSMessageRequestMessage"/>
+			<output message="recsmsmgr:ReceivingSMSMessageResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="RecsmsBinding" type="recsmsmgr:Recsms">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ReceivingSMSMessage">
+			<soap:operation soapAction="ReceivingSMSMessage" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ReceivingSMSMessageService">
+		<port name="RecsmsServicePort" binding="recsmsmgr:RecsmsBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/recsms/wsdl/CBSInterface_ReceivingSMS.wsdl"/>
+		</port>
+	</service>
+</definitions>

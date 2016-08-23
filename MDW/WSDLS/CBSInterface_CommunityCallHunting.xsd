@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:community="http://www.huawei.com/bme/cbsinterface/community" xmlns:communitycallhunting="http://www.huawei.com/bme/cbsinterface/communitycallhunting" targetNamespace="http://www.huawei.com/bme/cbsinterface/communitycallhunting" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="CBSInterface_Common.xsd"/>
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/community" schemaLocation="CBSInterface_CommunityMgr.xsd"/>
+	<xs:complexType name="AdjusthuntingPriorityRequest">
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="HuntingMainNumber" type="xs:string"/>
+			<xs:element name="HuntingNo1" type="xs:string"/>
+			<xs:element name="HuntingNo2" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManGrpHuntingListRequest">
+		<xs:annotation>
+			<xs:documentation>集团huntling list管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="HuntingListInfo" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HuntingMainNumber" type="xs:string"/>
+						<xs:element name="NoAnswerTime" type="xs:int" minOccurs="0"/>
+						<xs:element name="HuntingSate" type="xs:int" minOccurs="0"/>
+						<xs:element name="WeekStart" type="xs:int" minOccurs="0"/>
+						<xs:element name="WeekStop" type="xs:int" minOccurs="0"/>
+						<xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+						<xs:element name="StopTime" type="xs:string" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>
+						<xs:element name="HuntingSearch" type="xs:int" minOccurs="0"/>
+						<xs:element name="FinalHuntingNo" type="xs:string" minOccurs="0"/>
+						<xs:element name="RandomRate" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManGrpHuntingNoRequest">
+		<xs:annotation>
+			<xs:documentation>集团hunting no管理</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="HuntingMainNumber" type="xs:string"/>
+			<xs:element name="HuntingNoInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HuntingNumber" type="xs:string" />
+						<xs:element name="HuntingNoType" type="xs:int"/>
+						<xs:element name="Priority" type="xs:int" minOccurs="0"/>
+						<xs:element name="HuntingNumberSate" type="xs:int" minOccurs="0"/>
+						<xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+						<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OperationType" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpHuntingListRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团hunting list</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpHuntingListResult">
+		<xs:sequence>
+			<xs:element name="HuntingListInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HuntingMainNumber" type="xs:string"/>
+						<xs:element name="NoAnswerTime" type="xs:int"/>
+						<xs:element name="HuntingSate" type="xs:int"/>
+						<xs:element name="WeekStart" type="xs:int"/>
+						<xs:element name="WeekStop" type="xs:int"/>
+						<xs:element name="StartTime" type="xs:string"/>
+						<xs:element name="StopTime" type="xs:string"/>
+						<xs:element name="EffectiveDate" type="xs:string"/>
+						<xs:element name="ExpireDate" type="xs:string"/>
+						<xs:element name="HuntingSearch" type="xs:int"/>
+						<xs:element name="FinalHuntingNo" type="xs:string"/>
+						<xs:element name="RandomRate" type="xs:int"/>
+						<xs:element name="LastPriority" type="xs:int"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpHuntingNoRequest">
+		<xs:annotation>
+			<xs:documentation>查询集团hunting no</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupNumber" type="community:GroupNumberType"/>
+			<xs:element name="HuntingMainNumber" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryGrpHuntingNoResult">
+		<xs:sequence>
+			<xs:element name="HuntingMainNumber" type="xs:string"/>
+			<xs:element name="HuntingNumberInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HuntingMainNumber" type="xs:string"/>
+						<xs:element name="HuntingNumber" type="xs:string"/>
+						<xs:element name="Priority" type="xs:int"/>
+						<xs:element name="HuntingNumberSate" type="xs:int"/>
+						<xs:element name="EffectiveDate" type="xs:string"/>
+						<xs:element name="ExpireDate" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

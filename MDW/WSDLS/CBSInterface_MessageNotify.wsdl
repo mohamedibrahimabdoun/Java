@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:messagenotifymgr="http://www.huawei.com/bme/cbsinterface/messagenotifymgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/messagenotify" targetNamespace="http://www.huawei.com/bme/cbsinterface/messagenotifymgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:messagenotify="http://www.huawei.com/bme/cbsinterface/messagenotify" targetNamespace="http://www.huawei.com/bme/cbsinterface/messagenotifymgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/messagenotify" schemaLocation="CBSInterface_MessageNotify.xsd"/>
+			<element name="NotifyRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NotifyRequest" type="messagenotify:NotifyRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="NotifyResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NotifyResult" type="messagenotify:NotifyResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="NotifyRequestMessage">
+		<part name="NotifyRequestMsg" element="messagenotifymgr:NotifyRequestMsg"/>
+	</message>
+	<message name="NotifyResultMessage">
+		<part name="NotifyResultMsg" element="messagenotifymgr:NotifyResultMsg"/>
+	</message>
+	<portType name="MessageNotifyMgr">
+		<operation name="notify">
+			<input message="messagenotifymgr:NotifyRequestMessage"/>
+			<output message="messagenotifymgr:NotifyResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="MessageNotifyMgrBinding" type="messagenotifymgr:MessageNotifyMgr">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="notify">
+			<soap:operation soapAction="notify" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="MessageNotifyMgrService">
+		<port name="MessageNotifyMgrServicePort" binding="messagenotifymgr:MessageNotifyMgrBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/subscribe/wsdl/CBSInterface_MessageNotify.wsdl"/>
+		</port>
+	</service>
+</definitions>

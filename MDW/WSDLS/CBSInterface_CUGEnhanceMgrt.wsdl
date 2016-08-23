@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cugenhance" xmlns:cugenhancemgr="http://www.huawei.com/bme/cbsinterface/cugenhancemgr" targetNamespace="http://www.huawei.com/bme/cbsinterface/cugenhancemgr">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cugenhance="http://www.huawei.com/bme/cbsinterface/cugenhance" targetNamespace="http://www.huawei.com/bme/cbsinterface/cugenhancemgr">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cugenhance" schemaLocation="CBSInterface_CUGEnhanceMgrt.xsd"/>
+			<element name="ManCUGMemberCallListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="ManCUGMemberCallListRequest" type="cugenhance:ManCUGMemberCallListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ManCUGMemberCallListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="ManCUGMemberCallListResult" type="cugenhance:ManCUGMemberCallListResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMemberCallListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="common:RequestHeader"/>
+						<xs:element name="QueryCUGMemberCallListRequest" type="cugenhance:QueryCUGMemberCallListRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCUGMemberCallListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="common:ResultHeader"/>
+						<xs:element name="QueryCUGMemberCallListResult" type="cugenhance:QueryCUGMemberCallListResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	<message name="ManCUGMemberCallListRequestMessage">
+		<part name="ManCUGMemberCallListRequestMsg" element="cugenhancemgr:ManCUGMemberCallListRequestMsg"/>
+	</message>
+	<message name="ManCUGMemberCallListResultMessage">
+		<part name="ManCUGMemberCallListResultMsg" element="cugenhancemgr:ManCUGMemberCallListResultMsg"/>
+	</message>
+	<message name="QueryCUGMemberCallListRequestMessage">
+		<part name="QueryCUGMemberCallListRequestMsg" element="cugenhancemgr:QueryCUGMemberCallListRequestMsg"/>
+	</message>
+	<message name="QueryCUGMemberCallListResultMessage">
+		<part name="QueryCUGMemberCallListResultMsg" element="cugenhancemgr:QueryCUGMemberCallListResultMsg"/>
+	</message>
+	<portType name="CUGEnhance">
+		<operation name="manCUGMemberCallList">
+			<input message="cugenhancemgr:ManCUGMemberCallListRequestMessage"/>
+			<output message="cugenhancemgr:ManCUGMemberCallListResultMessage"/>
+		</operation>
+		<operation name="queryCUGMemberCallList">
+			<input message="cugenhancemgr:QueryCUGMemberCallListRequestMessage"/>
+			<output message="cugenhancemgr:QueryCUGMemberCallListResultMessage"/>
+		</operation>
+	</portType>
+	<binding name="CUGEnhanceBinding" type="cugenhancemgr:CUGEnhance">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="manCUGMemberCallList">
+			<soap:operation soapAction="manCUGMemberCallList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="queryCUGMemberCallList">
+			<soap:operation soapAction="queryCUGMemberCallList" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CUGEnhanceMgrService">
+		<port name="CUGEnhanceServicePort" binding="cugenhancemgr:CUGEnhanceBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/cugenhancemgrt/wsdl/CBSInterface_CUGEnhanceMgrt.wsdl"/>
+		</port>
+	</service>
+</definitions>
